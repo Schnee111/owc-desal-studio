@@ -7,7 +7,7 @@
     <template id="s2-template">
       <style>
         /*@CSS*/
-        #s2-root .hdr { font-size: 38px; }
+        
         #s2-root .hdr .m { font: 700 26px "IBM Plex Mono", monospace; letter-spacing: 0.12em; color: #9beaff; margin-left: 10px; }
         #s2-root .dot {
           position: absolute;
@@ -20,7 +20,7 @@
         }
       </style>
 
-      <div data-hf-id="hf-bx0t" id="s2-root" data-composition-id="s2" data-width="1920" data-height="1080" data-duration="25">
+      <div data-hf-id="hf-bx0t" id="s2-root" data-composition-id="s2" data-width="1920" data-height="1080" data-duration="{{SCENE_DUR}}">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
             <div data-hf-id="hf-wajx" class="lbl hide" data-k="chamber" style="left: 332px; top: 372px" data-leader="507,390,560,404">Chamber OWC (Kolom Air)</div>
@@ -28,19 +28,19 @@
             <div data-hf-id="hf-hzme" class="lbl hide" data-k="water-col" style="left: 330px; top: 652px" data-leader="462,670,650,662">Kolom air</div>
             <div data-hf-id="hf-xjij" class="lbl hide" data-k="turbine" style="left: 382px; top: 168px" data-leader="560,186,642,200">Turbin Wells (Udara)</div>
             <div data-hf-id="hf-oktx" class="lbl hide k-energy" data-k="gen" style="left: 760px; top: 104px" data-leader="844,144,844,180">Generator</div>
-            <div class="lbl hide k-energy" data-k="cond" style="left: 912px; top: 104px" data-leader="943,144,943,191">Pengondisi daya</div>
+            <div data-hf-id="hf-silv" class="lbl hide k-energy" data-k="cond" style="left: 912px; top: 104px" data-leader="943,144,943,191">Pengondisi daya</div>
             <div data-hf-id="hf-iysi" class="lbl hide" data-k="building" style="left: 1016px; top: 262px">Gedung desalinasi Osmosis Balik (RO)</div>
             <div data-hf-id="hf-kmwd" class="lbl hide" data-k="intake" style="left: 168px; top: 742px" data-leader="338,760,398,818">Intake air laut</div>
             <div data-hf-id="hf-jhro" class="lbl hide wrap" data-k="filter" style="left: 834px; top: 402px" data-leader="996,433,1040,433">Filter pra-pengolahan</div>
             <div data-hf-id="hf-3zht" class="lbl hide" data-k="pump" style="left: 1122px; top: 516px" data-leader="1220,516,1220,488">Pompa tekanan tinggi</div>
             <div data-hf-id="hf-id9d" class="lbl hide" data-k="membrane" style="left: 1272px; top: 334px" data-leader="1400,372,1400,398">Membran Osmosis Balik</div>
-            <div class="lbl hide k-fresh" data-k="post" style="left: 1420px; top: 386px" data-leader="1531,422,1531,440">Pascapengolahan</div>
+            <div data-hf-id="hf-1mrc" class="lbl hide k-fresh" data-k="post" style="left: 1420px; top: 386px" data-leader="1531,422,1531,440">Pascapengolahan</div>
             <div data-hf-id="hf-jca6" class="lbl hide k-fresh" data-k="tank" style="left: 1585px; top: 516px" data-leader="1620,516,1620,495">Tangki air bersih</div>
             <div data-hf-id="hf-zkun" class="lbl hide k-brine" data-k="brine" style="left: 760px; top: 944px" data-leader="835,944,835,940">Saluran brine (air pekat)</div>
           </div>
           <div data-hf-id="hf-lu65" class="dot"></div>
         </div>
-        <div data-hf-id="hf-tyyu" class="hdr"><span data-hf-id="hf-2drr" class="k">OWC-DESAL</span><span data-hf-id="hf-y677" class="m">Potongan melintang sistem</span></div>
+        <div data-hf-id="hf-tyyu" class="hdr"><span data-hf-id="hf-2drr" class="k">Potongan</span> OWC-DESAL</div>
       </div>
 
       <script>
@@ -50,16 +50,20 @@
           const $ = (s) => root.querySelector(s);
           const world = $(".world");
           const { ramp } = window.OWC;
-          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const SUB = /*@SUBTITLE*/;
+          const LEG = /*@LEGACY*/, D = /*@SCENEDUR*/;
+          // beats below were authored against the original take; T maps them onto the current narration
+          const T = LEG ? window.OWC.warp(LEG.words, LEG.offset, LEG.duration, SUB, D) : Object.assign((x) => x, { timeline: (tl) => tl });
+          const sub = window.OWC.mountSubtitle(root, SUB);
           const W = window.OWC.build(world, {
             prefix: "s2",
             scene: 2,
-            fn: { lipOn: (t) => (t >= 4.0 ? 1 : 0), innerFill: (t) => ramp(t, 8.2, 9.8), tank: () => 0.3, glow: (t) => ramp(t, 13.4, 14.8), power: (t) => ramp(t, 15.2, 16.0) },
+            fn: { lipOn: (t) => (t >= T(4.0) ? 1 : 0), innerFill: (t) => ramp(t, T(8.2), T(9.8)), tank: () => 0.3, glow: (t) => ramp(t, T(13.4), T(14.8)), power: (t) => ramp(t, T(15.2), T(16.0)) },
           });
           const L = W.L;
           W.update(0);
           gsap.set(L.arrows, { opacity: 0 });
-          const tl = gsap.timeline({ paused: true });
+          const tl = T.timeline(gsap.timeline({ paused: true }));
 
           const geo = (g) => (g.matches && g.matches("path,rect,circle,line") ? [g] : [...g.querySelectorAll("path,rect,circle,line")]);
           function draw(targets, at, dur, opts = {}) {
@@ -95,19 +99,34 @@
             p.setAttribute("d", d); p.setAttribute("stroke", "#FFD23F"); p.setAttribute("stroke-width", "2.5"); p.setAttribute("stroke-dasharray", "10 8");
             guide.appendChild(p); return p;
           });
-          tl.fromTo(gl[0], { attr: { d: "M690 600 L690 600" } }, { attr: { d: "M690 600 L-120 600" }, duration: 1.0, ease: "power3.out" }, 0.15);
-          tl.fromTo(gl[1], { attr: { d: "M690 600 L690 600" } }, { attr: { d: "M690 600 L1960 600" }, duration: 1.0, ease: "power3.out" }, 0.15);
-          tl.to(guide, { opacity: 0, duration: 1.4, ease: "power1.inOut" }, 2.4);
+          tl.fromTo(gl[0], { attr: { d: "M690 600 L690 600" } }, { attr: { d: "M690 600 L-120 600" }, duration: 0.7, ease: "power3.out" }, 0.0);
+          tl.fromTo(gl[1], { attr: { d: "M690 600 L690 600" } }, { attr: { d: "M690 600 L1960 600" }, duration: 0.7, ease: "power3.out" }, 0.0);
+          tl.to(guide, { opacity: 0, duration: 1.0, ease: "power1.inOut" }, 1.6);
           tl.fromTo($(".dot"), { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.3, duration: 0.65, ease: "power2.in" }, 0.25);
 
           [L.sea, L.chamber, L.air, L.turbine, L.gen, L.power, L.building, L.pipes].forEach((g) => gsap.set(g, { opacity: 1 }));
+          // Before the chamber exists the coast is solid rock at the waterline; the shell is cut into it.
+          const cliff = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          W.svg.insertBefore(cliff, L.chamber);
+          const cliffFill = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          cliffFill.setAttribute("d", "M560 500 L820 500 L820 797 L560 797Z");
+          cliffFill.setAttribute("fill", "#DED4BD");
+          const cliffEdge = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          cliffEdge.setAttribute("d", "M560 790 L560 500 L820 500");
+          cliffEdge.setAttribute("fill", "none");
+          cliffEdge.setAttribute("stroke", "#293F3D");
+          cliffEdge.setAttribute("stroke-width", "3");
+          cliff.appendChild(cliffFill);
+          cliff.appendChild(cliffEdge);
+          tl.fromTo(cliff, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 0.35);
+          tl.to(cliff, { opacity: 0, duration: 0.7, ease: "power2.in" }, 3.4);
           gsap.set(L.cw, { opacity: 0 });
 
-          fadeIn(L.sea, 0.9, 1.1);
+          fadeIn(L.sea, 0.25, 0.8);
           tl.fromTo(L.innerWater, { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power1.out", immediateRender: true }, 4.0);
-          draw(L.seabed, 0.7, 1.3, { ease: "power1.inOut" });
-          fadeIn(L.earthFill, 1.1, 1.1);
-          draw(L.land, 1.3, 0.9);
+          draw(L.seabed, 0.3, 1.0, { ease: "power1.inOut" });
+          fadeIn(L.earthFill, 0.35, 0.8);
+          draw(L.land, 0.45, 0.8);
           fadeIn($(".hdr"), 0.8, 0.55);
 
           // Chamber (VO: "ruang Kolom Air Berosilasi" at 4.25s, "kolom air" at 9.05s, "kolom udara" at 11.25s)
@@ -170,7 +189,7 @@
           W.update(0);
           const clock = { t: 0 };
           tl.fromTo(clock, { t: 0 }, {
-            t: 25, duration: 25, ease: "none",
+            t: D, duration: D, ease: "none",
             onUpdate: () => {
               W.update(clock.t);
               if (sub) sub.update(clock.t);

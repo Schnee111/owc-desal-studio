@@ -39,7 +39,7 @@
         }
       </style>
 
-      <div data-hf-id="hf-hnk1" id="s3-root" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="18">
+      <div data-hf-id="hf-hnk1" id="s3-root" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="{{SCENE_DUR}}">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
             <div data-hf-id="hf-xjij" class="lbl hide" data-k="turbine" style="left: 410px; top: 168px" data-leader="560,186,642,200">Turbin Wells</div>
@@ -49,12 +49,6 @@
         </div>
         <div data-hf-id="hf-ndox" class="hdr"><span data-hf-id="hf-1j0g" class="k">Fase 1.</span> Ombak naik</div>
         <div data-hf-id="hf-9lgo" class="press">Aliran udara: <b data-hf-id="hf-mtdc" class="pw">keluar</b><div data-hf-id="hf-rq4r" class="meter"><i data-hf-id="hf-wt6k"></i></div></div>
-        <div class="scale-card">
-          <div class="skick">Skala Fisik Skenario (LKM 3)</div>
-          <div class="srow">Ombak Hs = {{hs}} m · Periode Te = {{te}} dtk (≈{{flux}} kW/m)</div>
-          <div class="srow">Lebar ruang OWC = {{width}} m (rasio miniatur 1:20)</div>
-          <div class="sres">Daya listrik rata-rata skenario ≈ {{meanKw}} kW</div>
-        </div>
         <div data-hf-id="hf-0u8q" class="strip">
           <div data-hf-id="hf-kndt" class="pill">
             <span data-hf-id="hf-pxsn" class="st">Air masuk</span><span data-hf-id="hf-08ha" class="ar">→</span><span data-hf-id="hf-a9tp" class="st">udara tertekan</span><span data-hf-id="hf-wliq" class="ar">→</span><span data-hf-id="hf-6iy3" class="st">udara keluar</span><span data-hf-id="hf-wztr" class="ar">→</span><span data-hf-id="hf-hz0h" class="st">turbin berputar</span>
@@ -69,11 +63,15 @@
           const $ = (s) => root.querySelector(s);
           const world = $(".world");
           const { clamp } = window.OWC;
-          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const SUB = /*@SUBTITLE*/;
+          const LEG = /*@LEGACY*/, D = /*@SCENEDUR*/;
+          // beats below were authored against the original take; T maps them onto the current narration
+          const T = LEG ? window.OWC.warp(LEG.words, LEG.offset, LEG.duration, SUB, D) : Object.assign((x) => x, { timeline: (tl) => tl });
+          const sub = window.OWC.mountSubtitle(root, SUB);
           const W = window.OWC.build(world, { prefix: "s3", scene: 3, fn: { tank: () => 0.3 } });
           const L = W.L;
           W.update(0);
-          const tl = gsap.timeline({ paused: true });
+          const tl = T.timeline(gsap.timeline({ paused: true }));
           const VO = 1.5; // Synced to voStart=46.5s (local 1.5s)
           const lblMap = {};
           root.querySelectorAll(".lbl").forEach((e) => { lblMap[e.dataset.k] = e; });
@@ -98,9 +96,9 @@
           mk("line", { x1: 592, y1: 726, x2: 788, y2: 726, stroke: "#F4EFE4", "stroke-width": 2.5, "stroke-dasharray": "6 4" });
           mk("line", { x1: 592, y1: 716, x2: 592, y2: 736, stroke: "#F4EFE4", "stroke-width": 2.5 });
           mk("line", { x1: 788, y1: 716, x2: 788, y2: 736, stroke: "#F4EFE4", "stroke-width": 2.5 });
-          mk("rect", { x: 632, y: 712, width: 116, height: 26, rx: 4, fill: "#293F3D" });
-          const dimTxt = mk("text", { x: 690, y: 730, fill: "#F4EFE4", "font-size": "17", "font-weight": "600", "text-anchor": "middle" });
-          dimTxt.textContent = "Lebar B = 4 m";
+          mk("rect", { x: 614, y: 709, width: 152, height: 34, rx: 5, fill: "#293F3D" });
+          const dimTxt = mk("text", { x: 690, y: 733, fill: "#F4EFE4", "font-size": "23", "font-weight": "600", "text-anchor": "middle", "font-family": "Source Sans 3, sans-serif" });
+          dimTxt.textContent = "lebar ruang 4 m";
 
           // Camera push in on the OWC
           const F = W.frame(1.3, 560, 0, 420, -2.5);
@@ -116,18 +114,17 @@
           steps.forEach((s) => { s.style.display = "inline-block"; });
 
           tl.fromTo(dimG, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 3.6);
-          tl.fromTo($(".scale-card"), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 4.2);
           tl.fromTo($(".press"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 7.6);
           label("turbine", 12.1);
           tl.fromTo(L.cw, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 12.5);
           label("gen", 13.3);
           label("power", 14.6);
-          tl.to([$(".press"), $(".scale-card"), dimG, $(".pill"), $(".hdr")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 17.4);
+          tl.to([$(".press"), dimG, $(".pill"), $(".hdr")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 17.4);
 
           const meter = $(".meter i");
           const clock = { t: 0 };
           tl.fromTo(clock, { t: 0 }, {
-            t: 18, duration: 18, ease: "none",
+            t: D, duration: D, ease: "none",
             onUpdate: () => {
               const r = W.update(clock.t);
               if (sub) sub.update(clock.t);
