@@ -6,7 +6,7 @@
  </div></div>
  <div data-hf-id="hf-z1qa" class="allocation water-allocation">
   <div data-hf-id="hf-4q5g" class="service-intro">
-   <h1 data-hf-id="hf-kdqf">Siapa yang dilayani?</h1>
+   <h1 data-hf-id="hf-kdqf">Kebutuhan harian fasilitas</h1>
    <p data-hf-id="hf-i33t" class="service-number">{{visitors}}<span data-hf-id="hf-m5cp"> pengunjung / hari</span></p>
    <p data-hf-id="hf-jfee">Satu fasilitas wisata: toilet &amp; bilas, {{kiosks}} kios, petugas, kebersihan.</p>
   </div>
@@ -47,7 +47,7 @@
  tl.fromTo(q('.facility-title'),{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
 
  // Beat 1 · water: the visitor count lands on "200", each row lights as it is named
- const tWho=cue('Siapa',1,0.9),tBag=cue('5',1,6.6),tEn=cue('Energinya',1,12.8);
+ const tWho=cue('Kembali',1,0.6),tBag=cue('5',1,6.6),tEn=cue('Energinya',1,12.8);
  tl.to(dimmed(waterLit),{opacity:.22,duration:.7,ease:'power2.inOut'},tWho-0.3);
  tl.fromTo(q('.water-allocation'),{opacity:0},{opacity:1,duration:.3,ease:'none'},tWho-0.3);
  tl.fromTo(q('.water-allocation .service-intro'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:'power3.out'},tWho-0.3);
