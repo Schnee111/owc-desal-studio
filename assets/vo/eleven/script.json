@@ -1,7 +1,7 @@
 [
   {
     "id": "s1",
-    "text": "[serious, concerned] Mei dua ribu dua puluh enam: Kelingking dan Broken Beach di Nusa Penida belum teraliri air bersih, dan sumur pesisir Kuta Utara terintrusi air laut. [thoughtful] Padahal potensi energi laut Indonesia sekitar enam puluh tiga gigawatt, belum dimanfaatkan. [curious, hopeful] Bisakah ombak menghasilkan listrik, sekaligus air bersih?",
+    "text": "[serious, concerned] Mei dua ribu dua puluh enam: Kelingking dan Broken Beach di Nusa Penida belum teraliri air bersih, dan sumur pesisir Kuta Utara terintrusi air laut. [thoughtful] Padahal potensi energi laut Indonesia sekitar enam puluh tiga gigawatt, dan pemanfaatannya belum optimal. [warm, clear] Kami mengusulkan pemanfaatan yang spesifik: satu fasilitas wisata pantai dengan dua ratus pengunjung sehari, lengkap dengan toilet, kios, dan lampu jalur. Fasilitas ini butuh air bersih dan listrik, juga di malam hari. [confident] Ombak tetap datang siang dan malam, tepat di samping sumber air bakunya, yaitu laut. [curious, hopeful] Bisakah ombak menghasilkan listrik, sekaligus air bersih?",
     "display": [
       [
         "Mei dua ribu dua puluh enam:",
@@ -10,6 +10,10 @@
       [
         "enam puluh tiga gigawatt,",
         "63 GW,"
+      ],
+      [
+        "dua ratus",
+        "200"
       ]
     ]
   },
@@ -61,7 +65,7 @@
   },
   {
     "id": "s7",
-    "text": "[friendly, practical] Siapa yang dilayani? Satu fasilitas wisata dengan dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. [analytical] Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan.",
+    "text": "[friendly, practical] Kembali ke fasilitas tadi: dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. [analytical] Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan.",
     "display": [
       [
         "empat puluh tiga koma dua kilowatt jam",

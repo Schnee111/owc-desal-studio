@@ -1,194 +1,179 @@
 {
- "text": "Siapa yang dilayani? Satu fasilitas wisata dengan 200 pengunjung sehari. 5 m³ air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata 2 kW sepanjang hari, tersisa 43,2 kWh setelah rugi-rugi. 25 untuk mengolah air, 3,6 untuk fasilitas, sisanya cadangan.",
- "spoken": "[friendly, practical] Siapa yang dilayani? Satu fasilitas wisata dengan dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. [analytical] Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan.",
+ "text": "Kembali ke fasilitas tadi: 200 pengunjung sehari. 5 m³ air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata 2 kW sepanjang hari, tersisa 43,2 kWh setelah rugi-rugi. 25 untuk mengolah air, 3,6 untuk fasilitas, sisanya cadangan.",
+ "spoken": "[friendly, practical] Kembali ke fasilitas tadi: dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. [analytical] Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan.",
  "words": [
   {
-   "t": 0.08,
-   "d": 0.32,
-   "w": "Siapa"
+   "t": 0.072,
+   "d": 0.328,
+   "w": "Kembali"
   },
   {
    "t": 0.44,
    "d": 0.04,
-   "w": "yang"
+   "w": "ke"
   },
   {
    "t": 0.56,
-   "d": 0.72,
-   "w": "dilayani?"
+   "d": 0.4,
+   "w": "fasilitas"
   },
   {
-   "t": 1.52,
-   "d": 0.2,
-   "w": "Satu"
+   "t": 1.04,
+   "d": 0.52,
+   "w": "tadi:"
   },
   {
    "t": 1.76,
    "d": 0.48,
-   "w": "fasilitas"
-  },
-  {
-   "t": 2.36,
-   "d": 0.44,
-   "w": "wisata"
-  },
-  {
-   "t": 2.88,
-   "d": 0.24,
-   "w": "dengan"
-  },
-  {
-   "t": 3.2,
-   "d": 0.48,
    "w": "200"
   },
   {
-   "t": 3.76,
+   "t": 2.32,
    "d": 0.4,
    "w": "pengunjung"
   },
   {
-   "t": 4.24,
-   "d": 0.64,
+   "t": 2.8,
+   "d": 0.72,
    "w": "sehari."
   },
   {
-   "t": 5.12,
+   "t": 3.76,
    "d": 0.72,
    "w": "5 m³"
   },
   {
-   "t": 5.92,
+   "t": 4.56,
    "d": 0.32,
    "w": "air"
   },
   {
-   "t": 6.32,
+   "t": 4.96,
    "d": 0.4,
    "w": "dibagi"
   },
   {
-   "t": 6.8,
+   "t": 5.44,
    "d": 0.16,
    "w": "untuk"
   },
   {
-   "t": 7.04,
-   "d": 0.4,
+   "t": 5.68,
+   "d": 0.32,
    "w": "sanitasi"
   },
   {
-   "t": 7.52,
-   "d": 0.64,
+   "t": 6.08,
+   "d": 0.72,
    "w": "pengunjung,"
   },
   {
-   "t": 8.32,
-   "d": 0.48,
+   "t": 6.96,
+   "d": 0.56,
    "w": "kios,"
   },
   {
-   "t": 8.88,
-   "d": 0.64,
+   "t": 7.6,
+   "d": 0.6,
    "w": "petugas,"
   },
   {
-   "t": 9.6,
-   "d": 0.08,
+   "t": 8.24,
+   "d": 0.16,
    "w": "dan"
   },
   {
-   "t": 9.76,
+   "t": 8.48,
    "d": 0.76,
    "w": "kebersihan."
   },
   {
-   "t": 10.787,
-   "d": 0.733,
+   "t": 9.507,
+   "d": 0.813,
    "w": "Energinya:"
   },
   {
-   "t": 11.84,
+   "t": 10.48,
    "d": 0.48,
    "w": "rata-rata"
   },
   {
-   "t": 12.48,
-   "d": 0.72,
+   "t": 11.12,
+   "d": 0.64,
    "w": "2 kW"
   },
   {
-   "t": 13.28,
+   "t": 11.84,
    "d": 0.32,
    "w": "sepanjang"
   },
   {
-   "t": 13.68,
-   "d": 0.56,
+   "t": 12.24,
+   "d": 0.64,
    "w": "hari,"
   },
   {
-   "t": 14.36,
-   "d": 0.44,
+   "t": 12.96,
+   "d": 0.4,
    "w": "tersisa"
   },
   {
-   "t": 14.88,
-   "d": 2.08,
+   "t": 13.48,
+   "d": 2.04,
    "w": "43,2 kWh"
   },
   {
-   "t": 17.04,
+   "t": 15.6,
    "d": 0.32,
    "w": "setelah"
   },
   {
-   "t": 17.4,
+   "t": 15.96,
    "d": 1,
    "w": "rugi-rugi."
   },
   {
-   "t": 18.427,
-   "d": 0.613,
+   "t": 17,
+   "d": 0.6,
    "w": "25"
   },
   {
-   "t": 19.12,
+   "t": 17.76,
    "d": 0.16,
    "w": "untuk"
   },
   {
-   "t": 19.32,
-   "d": 0.36,
+   "t": 18,
+   "d": 0.32,
    "w": "mengolah"
   },
   {
-   "t": 19.76,
-   "d": 0.56,
+   "t": 18.4,
+   "d": 0.64,
    "w": "air,"
   },
   {
-   "t": 20.4,
-   "d": 0.72,
+   "t": 19.08,
+   "d": 0.68,
    "w": "3,6"
   },
   {
-   "t": 21.2,
+   "t": 19.84,
    "d": 0.16,
    "w": "untuk"
   },
   {
-   "t": 21.44,
+   "t": 20.08,
    "d": 0.88,
    "w": "fasilitas,"
   },
   {
-   "t": 22.44,
+   "t": 21.08,
    "d": 0.44,
    "w": "sisanya"
   },
   {
-   "t": 22.96,
+   "t": 21.6,
    "d": 0.72,
    "w": "cadangan."
   }
