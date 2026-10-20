@@ -1,0 +1,246 @@
+{
+ "text": "Ketika ombak surut, kolom air turun dan udara tersedot masuk. Aliran berbalik, tetapi turbin Wells tetap berputar searah. Kuncinya ada pada bilah simetris: udara dari bawah maupun dari atas mendorong bilah ke arah yang sama. Tapi dayanya naik turun mengikuti ombak, sehingga listrik distabilkan dulu oleh pengondisi daya.",
+ "spoken": "[calm] Ketika ombak surut, kolom air turun dan udara tersedot masuk. Aliran berbalik, [intrigued] tetapi turbin Wells tetap berputar searah. Kuncinya ada pada bilah simetris: udara dari bawah maupun dari atas mendorong bilah ke arah yang sama. [thoughtful] Tapi dayanya naik turun mengikuti ombak, sehingga listrik distabilkan dulu oleh pengondisi daya.",
+ "words": [
+  {
+   "t": 0.069,
+   "d": 0.331,
+   "w": "Ketika"
+  },
+  {
+   "t": 0.48,
+   "d": 0.24,
+   "w": "ombak"
+  },
+  {
+   "t": 0.84,
+   "d": 0.68,
+   "w": "surut,"
+  },
+  {
+   "t": 1.6,
+   "d": 0.24,
+   "w": "kolom"
+  },
+  {
+   "t": 1.92,
+   "d": 0.16,
+   "w": "air"
+  },
+  {
+   "t": 2.16,
+   "d": 0.4,
+   "w": "turun"
+  },
+  {
+   "t": 2.64,
+   "d": 0.16,
+   "w": "dan"
+  },
+  {
+   "t": 2.88,
+   "d": 0.32,
+   "w": "udara"
+  },
+  {
+   "t": 3.28,
+   "d": 0.48,
+   "w": "tersedot"
+  },
+  {
+   "t": 3.88,
+   "d": 0.6,
+   "w": "masuk."
+  },
+  {
+   "t": 4.72,
+   "d": 0.32,
+   "w": "Aliran"
+  },
+  {
+   "t": 5.16,
+   "d": 0.76,
+   "w": "berbalik,"
+  },
+  {
+   "t": 6.13,
+   "d": 0.35,
+   "w": "tetapi"
+  },
+  {
+   "t": 6.64,
+   "d": 0.32,
+   "w": "turbin"
+  },
+  {
+   "t": 7.04,
+   "d": 0.32,
+   "w": "Wells"
+  },
+  {
+   "t": 7.44,
+   "d": 0.16,
+   "w": "tetap"
+  },
+  {
+   "t": 7.72,
+   "d": 0.44,
+   "w": "berputar"
+  },
+  {
+   "t": 8.24,
+   "d": 0.68,
+   "w": "searah."
+  },
+  {
+   "t": 9.12,
+   "d": 0.56,
+   "w": "Kuncinya"
+  },
+  {
+   "t": 9.8,
+   "d": 0.12,
+   "w": "ada"
+  },
+  {
+   "t": 9.96,
+   "d": 0.2,
+   "w": "pada"
+  },
+  {
+   "t": 10.24,
+   "d": 0.16,
+   "w": "bilah"
+  },
+  {
+   "t": 10.48,
+   "d": 0.88,
+   "w": "simetris:"
+  },
+  {
+   "t": 11.44,
+   "d": 0.24,
+   "w": "udara"
+  },
+  {
+   "t": 11.72,
+   "d": 0.2,
+   "w": "dari"
+  },
+  {
+   "t": 11.96,
+   "d": 0.36,
+   "w": "bawah"
+  },
+  {
+   "t": 12.4,
+   "d": 0.32,
+   "w": "maupun"
+  },
+  {
+   "t": 12.8,
+   "d": 0.16,
+   "w": "dari"
+  },
+  {
+   "t": 13.04,
+   "d": 0.4,
+   "w": "atas"
+  },
+  {
+   "t": 13.52,
+   "d": 0.4,
+   "w": "mendorong"
+  },
+  {
+   "t": 14.04,
+   "d": 0.2,
+   "w": "bilah"
+  },
+  {
+   "t": 14.32,
+   "d": 0.08,
+   "w": "ke"
+  },
+  {
+   "t": 14.48,
+   "d": 0.16,
+   "w": "arah"
+  },
+  {
+   "t": 14.72,
+   "d": 0.08,
+   "w": "yang"
+  },
+  {
+   "t": 14.88,
+   "d": 0.4,
+   "w": "sama."
+  },
+  {
+   "t": 15.667,
+   "d": 0.333,
+   "w": "Tapi"
+  },
+  {
+   "t": 16.08,
+   "d": 0.4,
+   "w": "dayanya"
+  },
+  {
+   "t": 16.52,
+   "d": 0.2,
+   "w": "naik"
+  },
+  {
+   "t": 16.84,
+   "d": 0.2,
+   "w": "turun"
+  },
+  {
+   "t": 17.08,
+   "d": 0.44,
+   "w": "mengikuti"
+  },
+  {
+   "t": 17.6,
+   "d": 0.72,
+   "w": "ombak,"
+  },
+  {
+   "t": 18.4,
+   "d": 0.48,
+   "w": "sehingga"
+  },
+  {
+   "t": 18.96,
+   "d": 0.32,
+   "w": "listrik"
+  },
+  {
+   "t": 19.36,
+   "d": 0.56,
+   "w": "distabilkan"
+  },
+  {
+   "t": 19.96,
+   "d": 0.28,
+   "w": "dulu"
+  },
+  {
+   "t": 20.32,
+   "d": 0.24,
+   "w": "oleh"
+  },
+  {
+   "t": 20.64,
+   "d": 0.32,
+   "w": "pengondisi"
+  },
+  {
+   "t": 21.04,
+   "d": 0.64,
+   "w": "daya."
+  }
+ ]
+}

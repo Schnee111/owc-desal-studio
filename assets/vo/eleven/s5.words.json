@@ -1,0 +1,311 @@
+{
+ "text": "Listrik itu menghidupkan lampu fasilitas dan pompa tekanan tinggi. Air laut disaring, lalu didorong menembus membran osmosis balik. Molekul air lolos, garam tertahan. Air hasilnya diolah dan diperiksa mutunya sebelum dipakai. Dari setiap 10 liter air laut, 4 liter menjadi air bersih, dan 6 liter kembali sebagai air garam pekat yang harus dibuang dengan aman. Jadi, 5 m³ air bersih sehari memerlukan 12,5 m³ air laut.",
+ "spoken": "[clear, explaining] Listrik itu menghidupkan lampu fasilitas dan pompa tekanan tinggi. Air laut disaring, lalu didorong menembus membran osmosis balik. [focused] Molekul air lolos, garam tertahan. Air hasilnya diolah dan diperiksa mutunya sebelum dipakai. [slowly, emphasizing numbers] Dari setiap sepuluh liter air laut, empat liter menjadi air bersih, dan enam liter kembali sebagai air garam pekat yang harus dibuang dengan aman. [confident] Jadi, lima meter kubik air bersih sehari memerlukan dua belas setengah meter kubik air laut.",
+ "words": [
+  {
+   "t": 0.88,
+   "d": 0.32,
+   "w": "Listrik"
+  },
+  {
+   "t": 1.28,
+   "d": 0.24,
+   "w": "itu"
+  },
+  {
+   "t": 1.6,
+   "d": 0.56,
+   "w": "menghidupkan"
+  },
+  {
+   "t": 2.28,
+   "d": 0.16,
+   "w": "lampu"
+  },
+  {
+   "t": 2.48,
+   "d": 0.72,
+   "w": "fasilitas"
+  },
+  {
+   "t": 3.32,
+   "d": 0.12,
+   "w": "dan"
+  },
+  {
+   "t": 3.52,
+   "d": 0.32,
+   "w": "pompa"
+  },
+  {
+   "t": 3.92,
+   "d": 0.24,
+   "w": "tekanan"
+  },
+  {
+   "t": 4.24,
+   "d": 0.6,
+   "w": "tinggi."
+  },
+  {
+   "t": 5.04,
+   "d": 0.16,
+   "w": "Air"
+  },
+  {
+   "t": 5.28,
+   "d": 0.16,
+   "w": "laut"
+  },
+  {
+   "t": 5.52,
+   "d": 0.8,
+   "w": "disaring,"
+  },
+  {
+   "t": 6.36,
+   "d": 0.2,
+   "w": "lalu"
+  },
+  {
+   "t": 6.68,
+   "d": 0.44,
+   "w": "didorong"
+  },
+  {
+   "t": 7.2,
+   "d": 0.4,
+   "w": "menembus"
+  },
+  {
+   "t": 7.68,
+   "d": 0.24,
+   "w": "membran"
+  },
+  {
+   "t": 8,
+   "d": 0.4,
+   "w": "osmosis"
+  },
+  {
+   "t": 8.48,
+   "d": 0.4,
+   "w": "balik."
+  },
+  {
+   "t": 9.44,
+   "d": 0.24,
+   "w": "Molekul"
+  },
+  {
+   "t": 9.8,
+   "d": 0.12,
+   "w": "air"
+  },
+  {
+   "t": 10.04,
+   "d": 0.68,
+   "w": "lolos,"
+  },
+  {
+   "t": 10.8,
+   "d": 0.32,
+   "w": "garam"
+  },
+  {
+   "t": 11.2,
+   "d": 0.96,
+   "w": "tertahan."
+  },
+  {
+   "t": 12.24,
+   "d": 0.08,
+   "w": "Air"
+  },
+  {
+   "t": 12.4,
+   "d": 0.4,
+   "w": "hasilnya"
+  },
+  {
+   "t": 12.88,
+   "d": 0.48,
+   "w": "diolah"
+  },
+  {
+   "t": 13.44,
+   "d": 0.08,
+   "w": "dan"
+  },
+  {
+   "t": 13.56,
+   "d": 0.44,
+   "w": "diperiksa"
+  },
+  {
+   "t": 14.08,
+   "d": 0.4,
+   "w": "mutunya"
+  },
+  {
+   "t": 14.56,
+   "d": 0.24,
+   "w": "sebelum"
+  },
+  {
+   "t": 14.84,
+   "d": 0.72,
+   "w": "dipakai."
+  },
+  {
+   "t": 15.84,
+   "d": 0.24,
+   "w": "Dari"
+  },
+  {
+   "t": 16.16,
+   "d": 0.32,
+   "w": "setiap"
+  },
+  {
+   "t": 16.56,
+   "d": 0.72,
+   "w": "10 liter"
+  },
+  {
+   "t": 17.36,
+   "d": 0.16,
+   "w": "air"
+  },
+  {
+   "t": 17.6,
+   "d": 0.64,
+   "w": "laut,"
+  },
+  {
+   "t": 18.36,
+   "d": 0.52,
+   "w": "4 liter"
+  },
+  {
+   "t": 18.96,
+   "d": 0.4,
+   "w": "menjadi"
+  },
+  {
+   "t": 19.44,
+   "d": 0.08,
+   "w": "air"
+  },
+  {
+   "t": 19.6,
+   "d": 0.72,
+   "w": "bersih,"
+  },
+  {
+   "t": 20.44,
+   "d": 0.12,
+   "w": "dan"
+  },
+  {
+   "t": 20.64,
+   "d": 0.64,
+   "w": "6 liter"
+  },
+  {
+   "t": 21.44,
+   "d": 0.4,
+   "w": "kembali"
+  },
+  {
+   "t": 21.92,
+   "d": 0.4,
+   "w": "sebagai"
+  },
+  {
+   "t": 22.4,
+   "d": 0.24,
+   "w": "air"
+  },
+  {
+   "t": 22.72,
+   "d": 0.16,
+   "w": "garam"
+  },
+  {
+   "t": 22.96,
+   "d": 0.4,
+   "w": "pekat"
+  },
+  {
+   "t": 23.48,
+   "d": 0.12,
+   "w": "yang"
+  },
+  {
+   "t": 23.68,
+   "d": 0.32,
+   "w": "harus"
+  },
+  {
+   "t": 24.04,
+   "d": 0.36,
+   "w": "dibuang"
+  },
+  {
+   "t": 24.48,
+   "d": 0.16,
+   "w": "dengan"
+  },
+  {
+   "t": 24.72,
+   "d": 0.52,
+   "w": "aman."
+  },
+  {
+   "t": 25.507,
+   "d": 0.493,
+   "w": "Jadi,"
+  },
+  {
+   "t": 26.16,
+   "d": 0.8,
+   "w": "5 m³"
+  },
+  {
+   "t": 27.04,
+   "d": 0.08,
+   "w": "air"
+  },
+  {
+   "t": 27.2,
+   "d": 0.24,
+   "w": "bersih"
+  },
+  {
+   "t": 27.52,
+   "d": 0.48,
+   "w": "sehari"
+  },
+  {
+   "t": 28.16,
+   "d": 0.56,
+   "w": "memerlukan"
+  },
+  {
+   "t": 28.88,
+   "d": 1.44,
+   "w": "12,5 m³"
+  },
+  {
+   "t": 30.4,
+   "d": 0.16,
+   "w": "air"
+  },
+  {
+   "t": 30.6,
+   "d": 0.6,
+   "w": "laut."
+  }
+ ]
+}

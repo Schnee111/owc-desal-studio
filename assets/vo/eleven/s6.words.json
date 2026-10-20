@@ -1,0 +1,111 @@
+{
+ "text": "Angka ini masih skenario desain. Berikutnya: ukur ombak, uji prototipe, dan validasi layanan... OWC-DESAL. Dari ombak, menjadi listrik dan air bersih.",
+ "spoken": "[honest, measured] Angka ini masih skenario desain. [warm, determined] Berikutnya: ukur ombak, uji prototipe, dan validasi layanan... [proud, gentle] O W C Desal. Dari ombak, menjadi listrik dan air bersih.",
+ "words": [
+  {
+   "t": 0.08,
+   "d": 0.32,
+   "w": "Angka"
+  },
+  {
+   "t": 0.48,
+   "d": 0.4,
+   "w": "ini"
+  },
+  {
+   "t": 1.04,
+   "d": 0.2,
+   "w": "masih"
+  },
+  {
+   "t": 1.28,
+   "d": 0.48,
+   "w": "skenario"
+  },
+  {
+   "t": 1.92,
+   "d": 0.6,
+   "w": "desain."
+  },
+  {
+   "t": 2.8,
+   "d": 0.8,
+   "w": "Berikutnya:"
+  },
+  {
+   "t": 3.84,
+   "d": 0.24,
+   "w": "ukur"
+  },
+  {
+   "t": 4.16,
+   "d": 0.6,
+   "w": "ombak,"
+  },
+  {
+   "t": 4.96,
+   "d": 0.16,
+   "w": "uji"
+  },
+  {
+   "t": 5.2,
+   "d": 0.8,
+   "w": "prototipe,"
+  },
+  {
+   "t": 6.08,
+   "d": 0.08,
+   "w": "dan"
+  },
+  {
+   "t": 6.32,
+   "d": 0.32,
+   "w": "validasi"
+  },
+  {
+   "t": 6.76,
+   "d": 0.64,
+   "w": "layanan..."
+  },
+  {
+   "t": 7.68,
+   "d": 1.6,
+   "w": "OWC-DESAL."
+  },
+  {
+   "t": 9.36,
+   "d": 0.16,
+   "w": "Dari"
+  },
+  {
+   "t": 9.68,
+   "d": 0.56,
+   "w": "ombak,"
+  },
+  {
+   "t": 10.32,
+   "d": 0.24,
+   "w": "menjadi"
+  },
+  {
+   "t": 10.72,
+   "d": 0.48,
+   "w": "listrik"
+  },
+  {
+   "t": 11.32,
+   "d": 0.12,
+   "w": "dan"
+  },
+  {
+   "t": 11.52,
+   "d": 0.16,
+   "w": "air"
+  },
+  {
+   "t": 11.76,
+   "d": 0.64,
+   "w": "bersih."
+  }
+ ]
+}

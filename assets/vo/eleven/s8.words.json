@@ -1,0 +1,236 @@
+{
+ "text": "Ombak tidak selalu besar. Saat ombak melemah, pompa osmosis balik dihentikan sementara. Keran tetap mengalir dari tangki 10 m³, cukup untuk dua hari jika tangki penuh. Baterai 8 kWh hanya menyalakan lampu dan sistem kontrol, bukan pompa. Operator terus memantau mutu air, kondisi alat, dan pembuangan air garam.",
+ "spoken": "[calm, steady] Ombak tidak selalu besar. Saat ombak melemah, pompa osmosis balik dihentikan sementara. [reassuring] Keran tetap mengalir dari tangki sepuluh meter kubik, cukup untuk dua hari jika tangki penuh. [precise] Baterai delapan kilowatt jam hanya menyalakan lampu dan sistem kontrol, bukan pompa. [attentive] Operator terus memantau mutu air, kondisi alat, dan pembuangan air garam.",
+ "words": [
+  {
+   "t": 0.08,
+   "d": 0.4,
+   "w": "Ombak"
+  },
+  {
+   "t": 0.56,
+   "d": 0.24,
+   "w": "tidak"
+  },
+  {
+   "t": 0.88,
+   "d": 0.24,
+   "w": "selalu"
+  },
+  {
+   "t": 1.28,
+   "d": 0.64,
+   "w": "besar."
+  },
+  {
+   "t": 2.16,
+   "d": 0.24,
+   "w": "Saat"
+  },
+  {
+   "t": 2.48,
+   "d": 0.24,
+   "w": "ombak"
+  },
+  {
+   "t": 2.76,
+   "d": 0.84,
+   "w": "melemah,"
+  },
+  {
+   "t": 3.64,
+   "d": 0.28,
+   "w": "pompa"
+  },
+  {
+   "t": 4,
+   "d": 0.4,
+   "w": "osmosis"
+  },
+  {
+   "t": 4.48,
+   "d": 0.32,
+   "w": "balik"
+  },
+  {
+   "t": 4.88,
+   "d": 0.48,
+   "w": "dihentikan"
+  },
+  {
+   "t": 5.4,
+   "d": 0.72,
+   "w": "sementara."
+  },
+  {
+   "t": 6.4,
+   "d": 0.16,
+   "w": "Keran"
+  },
+  {
+   "t": 6.64,
+   "d": 0.24,
+   "w": "tetap"
+  },
+  {
+   "t": 6.933,
+   "d": 0.427,
+   "w": "mengalir"
+  },
+  {
+   "t": 7.413,
+   "d": 0.107,
+   "w": "dari"
+  },
+  {
+   "t": 7.6,
+   "d": 0.32,
+   "w": "tangki"
+  },
+  {
+   "t": 8,
+   "d": 1.36,
+   "w": "10 m³,"
+  },
+  {
+   "t": 9.4,
+   "d": 0.28,
+   "w": "cukup"
+  },
+  {
+   "t": 9.76,
+   "d": 0.16,
+   "w": "untuk"
+  },
+  {
+   "t": 9.96,
+   "d": 0.12,
+   "w": "dua"
+  },
+  {
+   "t": 10.16,
+   "d": 0.32,
+   "w": "hari"
+  },
+  {
+   "t": 10.56,
+   "d": 0.16,
+   "w": "jika"
+  },
+  {
+   "t": 10.8,
+   "d": 0.16,
+   "w": "tangki"
+  },
+  {
+   "t": 11.04,
+   "d": 0.8,
+   "w": "penuh."
+  },
+  {
+   "t": 11.909,
+   "d": 0.251,
+   "w": "Baterai"
+  },
+  {
+   "t": 12.24,
+   "d": 1.04,
+   "w": "8 kWh"
+  },
+  {
+   "t": 13.36,
+   "d": 0.24,
+   "w": "hanya"
+  },
+  {
+   "t": 13.68,
+   "d": 0.4,
+   "w": "menyalakan"
+  },
+  {
+   "t": 14.16,
+   "d": 0.32,
+   "w": "lampu"
+  },
+  {
+   "t": 14.56,
+   "d": 0.08,
+   "w": "dan"
+  },
+  {
+   "t": 14.72,
+   "d": 0.32,
+   "w": "sistem"
+  },
+  {
+   "t": 15.12,
+   "d": 0.64,
+   "w": "kontrol,"
+  },
+  {
+   "t": 15.867,
+   "d": 0.213,
+   "w": "bukan"
+  },
+  {
+   "t": 16.16,
+   "d": 0.4,
+   "w": "pompa."
+  },
+  {
+   "t": 17.371,
+   "d": 0.069,
+   "w": "Operator"
+  },
+  {
+   "t": 17.6,
+   "d": 0.24,
+   "w": "terus"
+  },
+  {
+   "t": 17.92,
+   "d": 0.4,
+   "w": "memantau"
+  },
+  {
+   "t": 18.4,
+   "d": 0.16,
+   "w": "mutu"
+  },
+  {
+   "t": 18.64,
+   "d": 0.64,
+   "w": "air,"
+  },
+  {
+   "t": 19.333,
+   "d": 0.347,
+   "w": "kondisi"
+  },
+  {
+   "t": 19.76,
+   "d": 0.48,
+   "w": "alat,"
+  },
+  {
+   "t": 20.32,
+   "d": 0.08,
+   "w": "dan"
+  },
+  {
+   "t": 20.48,
+   "d": 0.48,
+   "w": "pembuangan"
+  },
+  {
+   "t": 21.04,
+   "d": 0.08,
+   "w": "air"
+  },
+  {
+   "t": 21.2,
+   "d": 0.64,
+   "w": "garam."
+  }
+ ]
+}

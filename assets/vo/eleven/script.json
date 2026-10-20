@@ -1,0 +1,116 @@
+[
+  {
+    "id": "s1",
+    "text": "[serious, concerned] Mei dua ribu dua puluh enam: Kelingking dan Broken Beach di Nusa Penida belum teraliri air bersih, dan sumur pesisir Kuta Utara terintrusi air laut. [thoughtful] Padahal potensi energi laut Indonesia sekitar enam puluh tiga gigawatt, belum dimanfaatkan. [curious, hopeful] Bisakah ombak menghasilkan listrik, sekaligus air bersih?",
+    "display": [
+      [
+        "Mei dua ribu dua puluh enam:",
+        "Mei 2026:"
+      ],
+      [
+        "enam puluh tiga gigawatt,",
+        "63 GW,"
+      ]
+    ]
+  },
+  {
+    "id": "s2",
+    "text": "[warm, inviting] Inilah O W C Desal. Di sisi laut berdiri ruang Kolom Air Berosilasi. Bagian bawahnya terbuka ke laut sehingga terisi kolom air, dan di atasnya terperangkap kolom udara. [steady] Udara ini dihubungkan ke turbin udara dan generator. Di sebelahnya, gedung desalinasi osmosis balik siap mengubah air laut menjadi air tawar.",
+    "display": [
+      [
+        "O W C Desal.",
+        "OWC-DESAL."
+      ]
+    ]
+  },
+  {
+    "id": "s3",
+    "text": "[building energy] Saat ombak datang, air masuk ke dalam ruang dan permukaan kolom air naik. Seperti piston, air ini menekan udara di atasnya. [excited] Udara bertekanan tinggi menyembur keluar melewati turbin, memutar generator, dan listrik pun dihasilkan.",
+    "display": []
+  },
+  {
+    "id": "s4",
+    "text": "[calm] Ketika ombak surut, kolom air turun dan udara tersedot masuk. Aliran berbalik, [intrigued] tetapi turbin Wells tetap berputar searah. Kuncinya ada pada bilah simetris: udara dari bawah maupun dari atas mendorong bilah ke arah yang sama. [thoughtful] Tapi dayanya naik turun mengikuti ombak, sehingga listrik distabilkan dulu oleh pengondisi daya.",
+    "display": []
+  },
+  {
+    "id": "s5",
+    "text": "[clear, explaining] Listrik itu menghidupkan lampu fasilitas dan pompa tekanan tinggi. Air laut disaring, lalu didorong menembus membran osmosis balik. [focused] Molekul air lolos, garam tertahan. Air hasilnya diolah dan diperiksa mutunya sebelum dipakai. [slowly, emphasizing numbers] Dari setiap sepuluh liter air laut, empat liter menjadi air bersih, dan enam liter kembali sebagai air garam pekat yang harus dibuang dengan aman. [confident] Jadi, lima meter kubik air bersih sehari memerlukan dua belas setengah meter kubik air laut.",
+    "display": [
+      [
+        "sepuluh liter",
+        "10 liter"
+      ],
+      [
+        "empat liter",
+        "4 liter"
+      ],
+      [
+        "enam liter",
+        "6 liter"
+      ],
+      [
+        "lima meter kubik",
+        "5 m³"
+      ],
+      [
+        "dua belas setengah meter kubik",
+        "12,5 m³"
+      ]
+    ]
+  },
+  {
+    "id": "s7",
+    "text": "[friendly, practical] Siapa yang dilayani? Satu fasilitas wisata dengan dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. [analytical] Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan.",
+    "display": [
+      [
+        "empat puluh tiga koma dua kilowatt jam",
+        "43,2 kWh"
+      ],
+      [
+        "dua ratus",
+        "200"
+      ],
+      [
+        "Lima meter kubik",
+        "5 m³"
+      ],
+      [
+        "dua kilowatt",
+        "2 kW"
+      ],
+      [
+        "Dua puluh lima",
+        "25"
+      ],
+      [
+        "tiga koma enam",
+        "3,6"
+      ]
+    ]
+  },
+  {
+    "id": "s8",
+    "text": "[calm, steady] Ombak tidak selalu besar. Saat ombak melemah, pompa osmosis balik dihentikan sementara. [reassuring] Keran tetap mengalir dari tangki sepuluh meter kubik, cukup untuk dua hari jika tangki penuh. [precise] Baterai delapan kilowatt jam hanya menyalakan lampu dan sistem kontrol, bukan pompa. [attentive] Operator terus memantau mutu air, kondisi alat, dan pembuangan air garam.",
+    "display": [
+      [
+        "sepuluh meter kubik,",
+        "10 m³,"
+      ],
+      [
+        "delapan kilowatt jam",
+        "8 kWh"
+      ]
+    ]
+  },
+  {
+    "id": "s6",
+    "text": "[honest, measured] Angka ini masih skenario desain. [warm, determined] Berikutnya: ukur ombak, uji prototipe, dan validasi layanan... [proud, gentle] O W C Desal. Dari ombak, menjadi listrik dan air bersih.",
+    "display": [
+      [
+        "O W C Desal.",
+        "OWC-DESAL."
+      ]
+    ]
+  }
+]
