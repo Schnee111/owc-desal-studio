@@ -38,7 +38,7 @@ ROOT .vo-w.is-future{color:#293F3D;opacity:.42}
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
 #s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
 #s4-root .inset .cap{font-size:24px;font-weight:600}
-#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600;color:#8E4029}
 #s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
 #s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
 #s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
