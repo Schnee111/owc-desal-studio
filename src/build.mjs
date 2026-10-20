@@ -27,10 +27,12 @@ const refine = read('refine.css');
 const engine = recolor(read('engine.js'));
 const logo = 'data:image/png;base64,' + readFileSync(join(project, 'assets/logo-upi.png')).toString('base64');
 
+// Narration lives in assets/vo/<s.vo>/ (v3 = current script; '' = original Ardi takes).
+const voDir = s => join(project, 'assets/vo', s.vo || '');
+const voManifest = dir => (existsSync(join(dir, 'manifest.json')) ? JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8')) : {});
+
 function loadSubtitleData(s) {
-  const refinedWordsPath = join(project, 'assets/vo/refined', `${s.id}.words.json`);
-  const origWordsPath = join(project, 'assets/vo', `${s.id}.words.json`);
-  const pathToUse = existsSync(refinedWordsPath) ? refinedWordsPath : origWordsPath;
+  const pathToUse = join(voDir(s), `${s.id}.words.json`);
   const parsed = existsSync(pathToUse) ? JSON.parse(readFileSync(pathToUse, 'utf8')) : { text: s.text, words: [] };
   return {
     voOffset: +(s.voStart - s.start).toFixed(3),
@@ -39,12 +41,19 @@ function loadSubtitleData(s) {
   };
 }
 
+const durByNum = Object.fromEntries(scenes.map((s) => [s.num, s.duration]));
+const engineFor = () => engine.replace('/*@DUR*/{}', () => JSON.stringify(durByNum));
+
 for (const s of scenes) {
   const subData = loadSubtitleData(s);
   let html = recolor(read(s.id + '.html'))
     .replace('/*@CSS*/', () => fonts + css.replaceAll('ROOT', '#' + s.id + '-root'))
-    .replace('/*@ENGINE*/', () => engine)
+    .replace('/*@ENGINE*/', () => engineFor())
+    .replace(/\{\{SCENE_DUR\}\}/g, () => String(s.duration))
+    .replace('/*@SCENEDUR*/', () => String(s.duration))
+    .replace('/*@LEGACY*/', () => JSON.stringify(s.legacy || null))
     .replace('/*@MAP*/', () => read('map-data.js'))
+    .replace('/*@BALI*/', () => read('bali-data.js'))
     .replace('/*@LOGO*/', () => logo)
     .replace('/*@SUBTITLE*/', () => JSON.stringify(subData));
 
@@ -60,27 +69,23 @@ for (const s of scenes) {
   writeFileSync(join(out, s.file + '.html'), html);
 }
 
-const manifestPath = join(project, 'assets/vo/refined/manifest.json');
-const voice = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : {};
-
 const audio = scenes
   .map(s => {
-    const refinedMp3 = join(project, 'assets/vo/refined', `${s.id}.mp3`);
-    const hasRefined = existsSync(refinedMp3) && voice[s.id]?.duration;
-    const duration = hasRefined ? voice[s.id].duration : s.voDuration;
+    const duration = voManifest(voDir(s))[s.id]?.duration || s.voDuration;
     if (!duration) return '';
-    const srcPath = hasRefined ? `assets/vo/refined/${s.id}.mp3` : `assets/vo/${s.id}.mp3`;
+    const srcPath = ['assets/vo', s.vo, `${s.id}.mp3`].filter(Boolean).join('/');
     return `<audio id="vo-${s.id}" src="${srcPath}" data-start="${s.voStart}" data-duration="${duration}" data-volume="1" data-track-index="10" data-label="Narasi ${s.title}"></audio>`;
   })
   .filter(Boolean)
   .join('\n');
 
+// Music bed and effects stem from assets/audio/gen_soundscape.py; both are pre-carved under the narration.
 const extraAudio = [
-  existsSync(join(project, 'assets/audio/bgm-ambient.mp3'))
-    ? `<audio id="bgm-ambient" src="assets/audio/bgm-ambient.mp3" data-start="0" data-duration="180" data-volume="0.16" data-track-index="11" data-label="Backsound Ambient Pesisir"></audio>`
+  existsSync(join(project, 'assets/audio/music.mp3'))
+    ? `<audio id="music-bed" src="assets/audio/music.mp3" data-start="0" data-duration="180" data-volume="0.24" data-track-index="11" data-label="Musik latar"></audio>`
     : '',
-  existsSync(join(project, 'assets/audio/sfx-track.mp3'))
-    ? `<audio id="sfx-track" src="assets/audio/sfx-track.mp3" data-start="0" data-duration="180" data-volume="0.22" data-track-index="12" data-label="Efek Suara Ombak, Udara & Air"></audio>`
+  existsSync(join(project, 'assets/audio/sfx.mp3'))
+    ? `<audio id="sfx-track" src="assets/audio/sfx.mp3" data-start="0" data-duration="180" data-volume="0.34" data-track-index="12" data-label="Efek suara: ombak, udara, pompa"></audio>`
     : '',
 ]
   .filter(Boolean)
@@ -93,22 +98,7 @@ writeFileSync(
 </style></head><body><div id="root" data-composition-id="main" data-start="0" data-duration="180" data-width="1920" data-height="1080" data-fps="30">
 ${scenes.map((s, i) => `<div id="el-${s.id}" class="clip" data-composition-id="${s.id}" data-composition-src="compositions/frames/${s.file}.html" data-start="${s.start}" data-duration="${s.duration}" data-track-index="${i + 1}" data-width="1920" data-height="1080" data-label="${i + 1}. ${s.title}" data-track-kind="graphics"></div>`).join('\n')}
 ${audio}
-${extraAudio}<div id="fade-out"></div></div><script>window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});tl.fromTo('#fade-out',{opacity:0},{opacity:1,duration:1.4,ease:'power1.in'},178.6);window.__timelines.main=tl;</script></body></html>`
+${extraAudio}<div id="fade-out"></div></div><script>window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});tl.fromTo('#fade-out',{opacity:0},{opacity:1,duration:1.0,ease:'power1.in'},179);window.__timelines.main=tl;</script></body></html>`
 );
 
-mkdirSync(join(project, 'assets/vo/refined'), { recursive: true });
-writeFileSync(
-  join(project, 'assets/vo/refined/script.json'),
-  JSON.stringify(
-    scenes.map(s => ({
-      id: s.id,
-      text: s.text,
-      elevenText: s.elevenText || s.text,
-      start: s.voStart,
-      window: +(s.start + s.duration - s.voStart - 0.25).toFixed(2),
-    })),
-    null,
-    2
-  )
-);
-console.log(`Built ${scenes.length} scenes (180s) with sliding-card subtitles + BGM/SFX tracks.`);
+console.log(`Built ${scenes.length} scenes (180s).`);
