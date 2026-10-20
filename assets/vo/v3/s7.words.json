@@ -1,0 +1,196 @@
+{
+ "text": "Siapa yang dilayani? Satu fasilitas wisata dengan 200 pengunjung sehari. 5 m³ air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata 2 kW sepanjang hari, tersisa 43,2 kWh setelah rugi-rugi. 25 untuk mengolah air, 3,6 untuk fasilitas, sisanya cadangan.",
+ "spoken": "Siapa yang dilayani? Satu fasilitas wisata dengan dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan.",
+ "words": [
+  {
+   "t": 0.0995,
+   "d": 0.4327,
+   "w": "Siapa"
+  },
+  {
+   "t": 0.5322,
+   "d": 0.1322,
+   "w": "yang"
+  },
+  {
+   "t": 0.6644,
+   "d": 0.6851,
+   "w": "dilayani?"
+  },
+  {
+   "t": 2.1524,
+   "d": 0.3365,
+   "w": "Satu"
+  },
+  {
+   "t": 2.489,
+   "d": 0.4928,
+   "w": "fasilitas"
+  },
+  {
+   "t": 2.9817,
+   "d": 0.4207,
+   "w": "wisata"
+  },
+  {
+   "t": 3.4024,
+   "d": 0.2524,
+   "w": "dengan"
+  },
+  {
+   "t": 3.6548,
+   "d": 0.3485,
+   "w": "200"
+  },
+  {
+   "t": 4.0034,
+   "d": 0.3726,
+   "w": "pengunjung"
+  },
+  {
+   "t": 4.376,
+   "d": 0.5649,
+   "w": "sehari."
+  },
+  {
+   "t": 5.7572,
+   "d": 0.661,
+   "w": "5 m³"
+  },
+  {
+   "t": 6.4182,
+   "d": 0.3005,
+   "w": "air"
+  },
+  {
+   "t": 6.7188,
+   "d": 0.3966,
+   "w": "dibagi"
+  },
+  {
+   "t": 7.1154,
+   "d": 0.2163,
+   "w": "untuk"
+  },
+  {
+   "t": 7.3318,
+   "d": 0.4207,
+   "w": "sanitasi"
+  },
+  {
+   "t": 7.7524,
+   "d": 0.613,
+   "w": "pengunjung,"
+  },
+  {
+   "t": 8.6418,
+   "d": 0.5168,
+   "w": "kios,"
+  },
+  {
+   "t": 9.339,
+   "d": 0.637,
+   "w": "petugas,"
+  },
+  {
+   "t": 10.1683,
+   "d": 0.2644,
+   "w": "dan"
+  },
+  {
+   "t": 10.4327,
+   "d": 0.7091,
+   "w": "kebersihan."
+  },
+  {
+   "t": 11.9591,
+   "d": 0.7452,
+   "w": "Energinya:"
+  },
+  {
+   "t": 12.9688,
+   "d": 0.4808,
+   "w": "rata-rata"
+  },
+  {
+   "t": 13.4495,
+   "d": 0.4568,
+   "w": "2 kW"
+  },
+  {
+   "t": 13.9062,
+   "d": 0.4087,
+   "w": "sepanjang"
+  },
+  {
+   "t": 14.3149,
+   "d": 0.4447,
+   "w": "hari,"
+  },
+  {
+   "t": 15.036,
+   "d": 0.3966,
+   "w": "tersisa"
+  },
+  {
+   "t": 15.4327,
+   "d": 1.5745,
+   "w": "43,2 kWh"
+  },
+  {
+   "t": 17.0072,
+   "d": 0.3125,
+   "w": "setelah"
+  },
+  {
+   "t": 17.3197,
+   "d": 0.637,
+   "w": "rugi-rugi."
+  },
+  {
+   "t": 18.763,
+   "d": 0.625,
+   "w": "25"
+  },
+  {
+   "t": 19.388,
+   "d": 0.2043,
+   "w": "untuk"
+  },
+  {
+   "t": 19.5923,
+   "d": 0.2765,
+   "w": "mengolah"
+  },
+  {
+   "t": 19.8687,
+   "d": 0.4808,
+   "w": "air,"
+  },
+  {
+   "t": 20.638,
+   "d": 0.7091,
+   "w": "3,6"
+  },
+  {
+   "t": 21.3471,
+   "d": 0.2043,
+   "w": "untuk"
+  },
+  {
+   "t": 21.5515,
+   "d": 0.7091,
+   "w": "fasilitas,"
+  },
+  {
+   "t": 22.4409,
+   "d": 0.4447,
+   "w": "sisanya"
+  },
+  {
+   "t": 22.8856,
+   "d": 0.613,
+   "w": "cadangan."
+  }
+ ]
+}

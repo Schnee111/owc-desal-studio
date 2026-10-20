@@ -1,0 +1,109 @@
+[
+  {
+    "id": "s1",
+    "window": 18.6,
+    "rate": "+4%",
+    "text": "Mei dua ribu dua puluh enam. Pantai Kelingking dan Broken Beach di Nusa Penida dilaporkan belum teraliri air bersih. Di Kuta Utara, sumur pesisir terintrusi air laut. Padahal ombak tak pernah berhenti di depan mata. Bisakah ombak itu membantu menyediakan air bersih?",
+    "display": [
+      [
+        "Mei dua ribu dua puluh enam.",
+        "Mei 2026."
+      ]
+    ]
+  },
+  {
+    "id": "s4",
+    "window": 20.6,
+    "rate": "+0%",
+    "text": "Ketika ombak surut, kolom air turun dan udara tersedot masuk. Aliran berbalik, tetapi turbin Wells tetap berputar searah. Kuncinya ada pada bilah simetris: udara dari bawah maupun dari atas mendorong bilah ke arah yang sama. Tapi dayanya naik turun mengikuti ombak, sehingga listrik distabilkan dulu oleh pengondisi daya.",
+    "display": []
+  },
+  {
+    "id": "s5",
+    "window": 29.0,
+    "rate": "+4%",
+    "text": "Listrik itu menghidupkan lampu fasilitas dan pompa tekanan tinggi. Air laut disaring, lalu didorong menembus membran osmosis balik. Molekul air lolos, garam tertahan. Air hasilnya diolah dan diperiksa mutunya sebelum dipakai. Dari setiap sepuluh liter air laut, empat liter menjadi air bersih, dan enam liter kembali sebagai air garam pekat yang harus dibuang dengan aman. Jadi, lima meter kubik air bersih sehari memerlukan dua belas setengah meter kubik air laut.",
+    "display": [
+      [
+        "sepuluh liter",
+        "10 liter"
+      ],
+      [
+        "empat liter",
+        "4 liter"
+      ],
+      [
+        "enam liter",
+        "6 liter"
+      ],
+      [
+        "lima meter kubik",
+        "5 m³"
+      ],
+      [
+        "dua belas setengah meter kubik",
+        "12,5 m³"
+      ]
+    ]
+  },
+  {
+    "id": "s7",
+    "window": 24.8,
+    "rate": "+4%",
+    "text": "Siapa yang dilayani? Satu fasilitas wisata dengan dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan.",
+    "display": [
+      [
+        "empat puluh tiga koma dua kilowatt jam",
+        "43,2 kWh"
+      ],
+      [
+        "dua ratus",
+        "200"
+      ],
+      [
+        "Lima meter kubik",
+        "5 m³"
+      ],
+      [
+        "dua kilowatt",
+        "2 kW"
+      ],
+      [
+        "Dua puluh lima",
+        "25"
+      ],
+      [
+        "tiga koma enam",
+        "3,6"
+      ]
+    ]
+  },
+  {
+    "id": "s8",
+    "window": 22.8,
+    "rate": "+0%",
+    "text": "Ombak tidak selalu besar. Saat ombak melemah, pompa osmosis balik dihentikan sementara. Keran tetap mengalir dari tangki sepuluh meter kubik, cukup untuk dua hari jika tangki penuh. Baterai delapan kilowatt jam hanya menyalakan lampu dan sistem kontrol, bukan pompa. Operator terus memantau mutu air, kondisi alat, dan pembuangan air garam.",
+    "display": [
+      [
+        "sepuluh meter kubik,",
+        "10 m³,"
+      ],
+      [
+        "delapan kilowatt jam",
+        "8 kWh"
+      ]
+    ]
+  },
+  {
+    "id": "s6",
+    "window": 13.2,
+    "rate": "+0%",
+    "text": "Angka ini masih skenario desain. Berikutnya: ukur ombak, uji prototipe, dan validasi layanan. O W C Desal. Dari ombak, untuk air bersih pesisir.",
+    "display": [
+      [
+        "O W C Desal.",
+        "OWC-DESAL."
+      ]
+    ]
+  }
+]

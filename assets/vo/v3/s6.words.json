@@ -1,0 +1,106 @@
+{
+ "text": "Angka ini masih skenario desain. Berikutnya: ukur ombak, uji prototipe, dan validasi layanan. OWC-DESAL. Dari ombak, untuk air bersih pesisir.",
+ "spoken": "Angka ini masih skenario desain. Berikutnya: ukur ombak, uji prototipe, dan validasi layanan. O W C Desal. Dari ombak, untuk air bersih pesisir.",
+ "words": [
+  {
+   "t": 0.1,
+   "d": 0.2875,
+   "w": "Angka"
+  },
+  {
+   "t": 0.3875,
+   "d": 0.25,
+   "w": "ini"
+  },
+  {
+   "t": 0.6375,
+   "d": 0.275,
+   "w": "masih"
+  },
+  {
+   "t": 0.9125,
+   "d": 0.4125,
+   "w": "skenario"
+  },
+  {
+   "t": 1.325,
+   "d": 0.6,
+   "w": "desain."
+  },
+  {
+   "t": 2.7625,
+   "d": 0.7875,
+   "w": "Berikutnya:"
+  },
+  {
+   "t": 3.8125,
+   "d": 0.2625,
+   "w": "ukur"
+  },
+  {
+   "t": 4.075,
+   "d": 0.5125,
+   "w": "ombak,"
+  },
+  {
+   "t": 4.825,
+   "d": 0.2875,
+   "w": "uji"
+  },
+  {
+   "t": 5.1125,
+   "d": 0.7375,
+   "w": "prototipe,"
+  },
+  {
+   "t": 6.075,
+   "d": 0.25,
+   "w": "dan"
+  },
+  {
+   "t": 6.325,
+   "d": 0.4875,
+   "w": "validasi"
+  },
+  {
+   "t": 6.8125,
+   "d": 0.6125,
+   "w": "layanan."
+  },
+  {
+   "t": 8.2625,
+   "d": 1.3125,
+   "w": "OWC-DESAL."
+  },
+  {
+   "t": 10.4125,
+   "d": 0.25,
+   "w": "Dari"
+  },
+  {
+   "t": 10.6625,
+   "d": 0.5375,
+   "w": "ombak,"
+  },
+  {
+   "t": 11.4375,
+   "d": 0.2625,
+   "w": "untuk"
+  },
+  {
+   "t": 11.7,
+   "d": 0.275,
+   "w": "air"
+  },
+  {
+   "t": 11.975,
+   "d": 0.3,
+   "w": "bersih"
+  },
+  {
+   "t": 12.275,
+   "d": 0.6375,
+   "w": "pesisir."
+  }
+ ]
+}

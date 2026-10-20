@@ -1,0 +1,38 @@
+{
+  "s1": {
+    "duration": 17.616,
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+4%",
+    "text": "Mei dua ribu dua puluh enam. Pantai Kelingking dan Broken Beach di Nusa Penida dilaporkan belum teraliri air bersih. Di Kuta Utara, sumur pesisir terintrusi air laut. Padahal ombak tak pernah berhenti di depan mata. Bisakah ombak itu membantu menyediakan air bersih?"
+  },
+  "s4": {
+    "duration": 20.304,
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "text": "Ketika ombak surut, kolom air turun dan udara tersedot masuk. Aliran berbalik, tetapi turbin Wells tetap berputar searah. Kuncinya ada pada bilah simetris: udara dari bawah maupun dari atas mendorong bilah ke arah yang sama. Tapi dayanya naik turun mengikuti ombak, sehingga listrik distabilkan dulu oleh pengondisi daya."
+  },
+  "s5": {
+    "duration": 28.728,
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+4%",
+    "text": "Listrik itu menghidupkan lampu fasilitas dan pompa tekanan tinggi. Air laut disaring, lalu didorong menembus membran osmosis balik. Molekul air lolos, garam tertahan. Air hasilnya diolah dan diperiksa mutunya sebelum dipakai. Dari setiap sepuluh liter air laut, empat liter menjadi air bersih, dan enam liter kembali sebagai air garam pekat yang harus dibuang dengan aman. Jadi, lima meter kubik air bersih sehari memerlukan dua belas setengah meter kubik air laut."
+  },
+  "s7": {
+    "duration": 24.312,
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+4%",
+    "text": "Siapa yang dilayani? Satu fasilitas wisata dengan dua ratus pengunjung sehari. Lima meter kubik air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata dua kilowatt sepanjang hari, tersisa empat puluh tiga koma dua kilowatt jam setelah rugi-rugi. Dua puluh lima untuk mengolah air, tiga koma enam untuk fasilitas, sisanya cadangan."
+  },
+  "s8": {
+    "duration": 22.656,
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "text": "Ombak tidak selalu besar. Saat ombak melemah, pompa osmosis balik dihentikan sementara. Keran tetap mengalir dari tangki sepuluh meter kubik, cukup untuk dua hari jika tangki penuh. Baterai delapan kilowatt jam hanya menyalakan lampu dan sistem kontrol, bukan pompa. Operator terus memantau mutu air, kondisi alat, dan pembuangan air garam."
+  },
+  "s6": {
+    "duration": 13.752,
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "text": "Angka ini masih skenario desain. Berikutnya: ukur ombak, uji prototipe, dan validasi layanan. O W C Desal. Dari ombak, untuk air bersih pesisir."
+  }
+}
