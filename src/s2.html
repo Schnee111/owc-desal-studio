@@ -118,15 +118,15 @@
           cliffEdge.setAttribute("stroke-width", "3");
           cliff.appendChild(cliffFill);
           cliff.appendChild(cliffEdge);
-          tl.fromTo(cliff, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 0.35);
+          gsap.set(cliff, { opacity: 1 });
           tl.to(cliff, { opacity: 0, duration: 0.7, ease: "power2.in" }, 3.4);
           gsap.set(L.cw, { opacity: 0 });
 
-          fadeIn(L.sea, 0.25, 0.8);
+          gsap.set(L.sea, { opacity: 1 }); // Scene 1 ends on this coast, so it is already there
           tl.fromTo(L.innerWater, { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power1.out", immediateRender: true }, 4.0);
-          draw(L.seabed, 0.3, 1.0, { ease: "power1.inOut" });
-          fadeIn(L.earthFill, 0.35, 0.8);
-          draw(L.land, 0.45, 0.8);
+          
+          gsap.set(L.earthFill, { opacity: 1 });
+          
           fadeIn($(".hdr"), 0.8, 0.55);
 
           // Chamber (VO: "ruang Kolom Air Berosilasi" at 4.25s, "kolom air" at 9.05s, "kolom udara" at 11.25s)
