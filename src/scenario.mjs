@@ -25,15 +25,15 @@ scenario.margin = +(scenario.net - scenario.ro - scenario.other).toFixed(1);
 scenario.feed = +(scenario.water / scenario.recovery).toFixed(1);
 scenario.brine = +(scenario.feed - scenario.water).toFixed(1);
 scenario.waterRows = [
-  [4, 'Sanitasi pengunjung (200 org)'],
+  [4, 'Sanitasi 200 pengunjung'],
   [0.5, 'Kebersihan 5 kios'],
   [0.25, 'Kebutuhan 5 petugas'],
   [0.25, 'Perawatan fasilitas'],
 ];
 scenario.energyRows = [
-  [scenario.ro, 'Pompa & unit RO (5 m³)'],
-  [scenario.other, 'Fasilitas (8 lampu, kios, kontrol)'],
-  [scenario.margin, 'Margin & buffer cadangan'],
+  [scenario.ro, 'Mengolah air (RO)'],
+  [scenario.other, 'Lampu, kios, kontrol'],
+  [scenario.margin, 'Cadangan (margin)'],
 ];
 export const display = Object.fromEntries(
   Object.entries(scenario)
