@@ -32,7 +32,7 @@ scenario.waterRows = [
 ];
 scenario.energyRows = [
   [scenario.ro, 'Mengolah air (RO)'],
-  [scenario.other, 'Lampu, kios, kontrol'],
+  [scenario.other, 'Lampu & fasilitas'],
   [scenario.margin, 'Cadangan (margin)'],
 ];
 export const display = Object.fromEntries(
