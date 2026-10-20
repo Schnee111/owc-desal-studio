@@ -100,17 +100,17 @@
         }
       </style>
 
-      <div data-hf-id="hf-29fl" id="s4-root" data-composition-id="s4" data-width="1920" data-height="1080" data-duration="22">
+      <div data-hf-id="hf-29fl" id="s4-root" data-composition-id="s4" data-width="1920" data-height="1080" data-duration="{{SCENE_DUR}}">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
             <div data-hf-id="hf-se6v" class="lbl" data-k="turbine" style="left: 410px; top: 168px" data-leader="560,186,642,200">Turbin Wells</div>
             <div data-hf-id="hf-fc7d" class="lbl k-energy" data-k="gen" style="left: 760px; top: 104px" data-leader="844,144,844,180">Generator</div>
-            <div class="lbl k-energy" data-k="cond" style="left: 825px; top: 256px" data-leader="920,256,943,229">Pengondisi daya</div>
+            <div data-hf-id="hf-sw2v" class="lbl k-energy" data-k="cond" style="left: 825px; top: 256px" data-leader="920,256,943,229">Pengondisi daya</div>
           </div>
         </div>
-        <div data-hf-id="hf-c910" class="hdr"><span data-hf-id="hf-ueg7" class="k">Fase 2.</span> <span data-hf-id="hf-oie3" class="phase-title">Ombak turun</span></div>
+        <div data-hf-id="hf-c910" class="hdr"><span data-hf-id="hf-ueg7" class="k">Fase 2.</span> <span data-hf-id="hf-oie3" class="phase-title">Ombak surut</span></div>
         <div data-hf-id="hf-9lgo" class="press">Aliran udara: <b data-hf-id="hf-497i" class="pw">masuk</b><div data-hf-id="hf-rq4r" class="meter"><s data-hf-id="hf-dljm"></s><i data-hf-id="hf-wt6k"></i><u data-hf-id="hf-w5wo"></u></div></div>
-        <div class="s4-backdrop"></div>
+        <div data-hf-id="hf-4hlo" class="s4-backdrop"></div>
         <div data-hf-id="hf-cx1j" class="inset">
           <div data-hf-id="hf-4655" class="ti">Penampang bilah simetris turbin Wells</div>
           <div data-hf-id="hf-gtij" class="dir">arah putar selalu →</div>
@@ -120,7 +120,7 @@
           <div data-hf-id="hf-ar72" class="gd" style="left: 214px; top: 274px">gaya dorong</div>
           <div data-hf-id="hf-2qo3" class="gd" style="left: 574px; top: 214px">gaya dorong</div>
         </div>
-        <div class="power-fluctuation"><p>Daya generator berubah sepanjang siklus <span>→ disearahkan &amp; distabilkan pengondisi daya</span></p><svg viewBox="0 0 720 84" width="720" height="84"><path d="M4 72 H710" fill="none" stroke="#676953" stroke-width="1.5"/><path class="power-trace" fill="none" stroke="#A64F32" stroke-width="4"/></svg></div>
+        <div data-hf-id="hf-daja" class="power-fluctuation"><p data-hf-id="hf-q1an"><b data-hf-id="hf-4xrj">Daya dari turbin naik turun</b><span data-hf-id="hf-7ty2">6 detik terakhir</span></p><svg data-hf-id="hf-qy9i" viewBox="0 0 720 132" width="720" height="132"><path data-hf-id="hf-iuzc" d="M4 120 H716" fill="none" stroke="#676953" stroke-width="1.5"/><path data-hf-id="hf-wzrt" class="power-area" fill="#A64F32" fill-opacity="0.14"/><path data-hf-id="hf-j1cd" class="power-trace" fill="none" stroke="#A64F32" stroke-width="4" stroke-linejoin="round"/><path data-hf-id="hf-rbem" class="power-mean" fill="none" stroke="#293F3D" stroke-width="2" stroke-dasharray="8 7"/><text data-hf-id="hf-cxb1" class="power-mean-t" x="712" font-size="21" text-anchor="end" fill="#293F3D" font-family="Source Sans 3, sans-serif">rata-rata</text></svg><p data-hf-id="hf-aeld" class="note">Pengondisi daya menstabilkan tegangan sebelum listrik dibagi ke beban.</p></div>
         <div data-hf-id="hf-0u8q" class="strip">
           <div data-hf-id="hf-kndt" class="pill"><span data-hf-id="hf-dyuv" class="ai">Dua arah aliran udara,</span><span data-hf-id="hf-18uy" class="tb">putaran turbin tetap searah</span></div>
         </div>
@@ -133,7 +133,8 @@
           const $ = (s) => root.querySelector(s);
           const world = $(".world");
           const { clamp } = window.OWC;
-          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const SUB = /*@SUBTITLE*/, D = /*@SCENEDUR*/;
+          const sub = window.OWC.mountSubtitle(root, SUB);
           const W = window.OWC.build(world, { prefix: "s4", scene: 4, fn: { tank: () => 0.3 } });
           const L = W.L;
           const F = W.frame(1.3, 560, 0, 420, -2.5);
@@ -190,53 +191,72 @@
             p.blade.style.fillOpacity = 0;
           });
 
+          const cue = window.OWC.cues(SUB);
+          const tKey = cue("Kuncinya", 1, 9.6), tPow = cue("dayanya", 1, 15.7);
           tl.fromTo($(".hdr"), { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.4);
-          tl.fromTo($(".press"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.4);
-          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 5.3);
-          tl.fromTo(L.cw, { scale: 1, svgOrigin: "690 210" }, { scale: 1.18, duration: 0.35, ease: "power2.out", immediateRender: false, svgOrigin: "690 210" }, 5.8);
-          tl.to(L.cw, { scale: 1, duration: 0.55, ease: "power2.inOut", svgOrigin: "690 210" }, 6.15);
+          tl.fromTo($(".press"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, cue("udara", 1, 3.4) - 0.3);
+          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, cue("Aliran", 1, 5.4));
+          tl.to($(".pill"), { opacity: 0, y: 12, duration: 0.35, ease: "power2.in" }, tKey - 0.45);
+          const tOne = cue("searah", 1, 8.2);
+          tl.fromTo(L.cw, { scale: 1, svgOrigin: "690 210" }, { scale: 1.18, duration: 0.35, ease: "power2.out", immediateRender: false, svgOrigin: "690 210" }, tOne - 0.1);
+          tl.to(L.cw, { scale: 1, duration: 0.55, ease: "power2.inOut", svgOrigin: "690 210" }, tOne + 0.25);
 
-          // Inset appears at t=7.8s (VO: "Bilah simetris menghasilkan gaya putar..." at 8.11s) with clean opaque backdrop
-          tl.fromTo($(".s4-backdrop"), { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 7.6);
-          tl.fromTo($(".inset"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 7.8);
+          // Inset lands on "Kuncinya ada pada bilah simetris"; each panel's airflow arrives when its direction is said
+          tl.fromTo($(".s4-backdrop"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, tKey - 0.25);
+          tl.fromTo($(".inset"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, tKey - 0.15);
+          const airAt = [cue("bawah", 1, 12.0), cue("atas", 1, 12.8)];
+          const pushAt = cue("mendorong", 1, 13.1);
           panels.forEach((p, i) => {
-            tl.to(p.blade, { strokeDashoffset: 0, duration: 0.85, ease: "power2.out" }, 8.2 + i * 0.2);
-            tl.to(p.blade, { fillOpacity: 1, duration: 0.45, ease: "power1.out" }, 8.9 + i * 0.2);
-            tl.fromTo(p.air, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 9.4 + i * 0.25);
-            tl.fromTo(p.lift, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 10.1 + i * 0.25);
-            tl.fromTo(p.thrust, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 10.6 + i * 0.25);
+            tl.to(p.blade, { strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }, tKey + 0.2 + i * 0.2);
+            tl.to(p.blade, { fillOpacity: 1, duration: 0.45, ease: "power1.out" }, tKey + 0.8 + i * 0.2);
+            tl.fromTo(p.air, { opacity: 0, y: (i ? -26 : 26) }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, airAt[i] - 0.1);
+            tl.fromTo(p.lift, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, pushAt - 0.1 + i * 0.15);
+            tl.fromTo(p.thrust, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, pushAt + 0.2 + i * 0.15);
           });
-          root.querySelectorAll(".inset .gd").forEach((g, i) => tl.fromTo(g, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 10.8 + i * 0.25));
+          root.querySelectorAll(".inset .gd").forEach((g, i) => tl.fromTo(g, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, pushAt + 0.3 + i * 0.15));
 
-          // Power fluctuation graph appears at t=12.4s right when VO says "Namun torsi dan daya tetap berubah" (12.46s)
-          tl.fromTo($(".power-fluctuation"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 12.4);
-          tl.fromTo(L.conditioner, { scale: 1, svgOrigin: "943 210" }, { scale: 1.25, duration: 0.35, ease: "power2.out", immediateRender: false, svgOrigin: "943 210" }, 15.8);
-          tl.to(L.conditioner, { scale: 1, duration: 0.5, ease: "power2.inOut", svgOrigin: "943 210" }, 16.2);
+          // Power graph lands on "Tapi dayanya naik turun"; the conditioner answers on "pengondisi daya"
+          tl.fromTo($(".power-fluctuation"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, tPow - 0.2);
+          tl.fromTo($(".power-fluctuation .note"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, cue("distabilkan", 1, 18.4) - 0.1);
+          const tCond = cue("pengondisi", 1, 19.5);
+          tl.fromTo(L.conditioner, { scale: 1, svgOrigin: "943 210" }, { scale: 1.25, duration: 0.35, ease: "power2.out", immediateRender: false, svgOrigin: "943 210" }, tCond - 0.1);
+          tl.to(L.conditioner, { scale: 1, duration: 0.5, ease: "power2.inOut", svgOrigin: "943 210" }, tCond + 0.25);
+          // heading turns with the argument: a short dip hides the swap
+          [tKey - 0.25, tPow - 0.25].forEach((at) => {
+            tl.to($(".hdr"), { opacity: 0, duration: 0.18, ease: "power1.in" }, at);
+            tl.to($(".hdr"), { opacity: 1, duration: 0.3, ease: "power2.out" }, at + 0.2);
+          });
 
-          tl.to([$(".press"), $(".pill"), $(".hdr"), $(".inset"), $(".power-fluctuation"), $(".s4-backdrop")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 21.4);
+          tl.to([$(".press"), $(".hdr"), $(".inset"), $(".power-fluctuation"), $(".s4-backdrop")], { opacity: 0, duration: 0.45, ease: "power2.in" }, D - 0.6);
 
           const pm = $(".meter i"), nm = $(".meter s"), pw = $(".press .pw");
           const clock = { t: 0 };
           tl.fromTo(clock, { t: 0 }, {
-            t: 22, duration: 22, ease: "none",
+            t: D, duration: D, ease: "none",
             onUpdate: () => {
               const t = clock.t;
               const r = W.update(t);
               if (sub) sub.update(t);
-              let trace = "";
-              for (let i = 0; i <= 60; i++) {
-                const sample = Math.max(0, t - 6 + i * 0.1);
-                const j = Math.min(W.sim.W.length - 1, Math.round(sample * 120));
-                const k = W.sim.W[j] / OWC.WMAX;
-                trace += (i ? "L" : "M") + (5 + i * 11.6).toFixed(1) + " " + (70 - 60 * k * k).toFixed(1) + " ";
+              // pneumatic power reaching the rotor ∝ |airflow|³: two pulses per wave, near zero at each reversal
+              const P = (x) => { const j = Math.min(W.sim.V.length - 1, Math.max(0, Math.round(x * 120))); return Math.min(1, Math.abs(W.sim.V[j] / 63) ** 3); };
+              let trace = "", sum = 0;
+              for (let i = 0; i <= 72; i++) {
+                const k = P(Math.max(0, t - 6 + i * (6 / 72)));
+                sum += k;
+                trace += (i ? "L" : "M") + (6 + i * 9.8).toFixed(1) + " " + (118 - 104 * k).toFixed(1) + " ";
               }
+              const mean = 118 - 104 * (sum / 73);
               $(".power-trace").setAttribute("d", trace);
+              $(".power-area").setAttribute("d", trace + "L711.6 120 L6 120Z");
+              $(".power-mean").setAttribute("d", `M6 ${mean.toFixed(1)} H716`);
+              $(".power-mean-t").setAttribute("y", (mean - 8).toFixed(1));
               pm.style.transform = `scaleX(${clamp(r.v / 60, 0, 1).toFixed(3)})`;
               nm.style.transform = `scaleX(${clamp(-r.v / 60, 0, 1).toFixed(3)})`;
               const word = Math.abs(r.v) < 1 ? "jeda" : r.v > 1 ? "keluar" : "masuk";
               if (pw.textContent !== word) pw.textContent = word;
-              $(".hdr .k").textContent = t > 12.4 ? "Turbin Wells." : "Fase 2.";
-              $(".phase-title").textContent = t > 12.4 ? "Siklus berulang" : "Ombak turun";
+              const beat = t > tPow - 0.05 ? 2 : t > tKey - 0.05 ? 1 : 0;
+              $(".hdr .k").textContent = ["Fase 2.", "Turbin Wells.", "Turbin Wells."][beat];
+              $(".phase-title").textContent = ["Ombak surut", "Bilah simetris", "Daya berdenyut"][beat];
               const a = clamp(r.v / 15, -1, 1);
               panels[0].bg.setAttribute("opacity", (0.25 + 0.75 * clamp(a, 0, 1)).toFixed(3));
               panels[1].bg.setAttribute("opacity", (0.25 + 0.75 * clamp(-a, 0, 1)).toFixed(3));
