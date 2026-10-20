@@ -1,5 +1,7 @@
 # Peta animasi aktif: basis lama + dua scene baru
 
+> Catatan: dokumen ini merekam peta animasi versi 180 detik. Versi aktif v4 berdurasi 201,7 detik; urutan dan slot scene ada di README.
+
 Total 180 detik. Enam scene asli tetap menjadi basis; pengulangan dan jeda dipadatkan untuk memberi waktu pada dua tambahan yang diminta pengguna. Geometri chamber, turbin, RO, pipa, inset bilah dan kamera utama dipertahankan. Bukan versi panorama baru yang ditolak.
 
 | Waktu | Isi/gerak | Perubahan materi |
