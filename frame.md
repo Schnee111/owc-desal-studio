@@ -20,7 +20,7 @@ ENERGY 2 / RHYTHM 3 / MOTION 2. Energi visual berasal dari pergerakan mesin dan 
 | Tanah | #DED4BD | Penampang pasir/tanah dan pipa bawah permukaan |
 | Beton/mesin | #C8C7B9, #E5E2D5 | Material berisi, tidak bergantung pada glow |
 
-Judul Literata 500, bentuk editorial dan tenang; isi/label Source Sans 3 400/600. Font ditanam lokal agar hasil preview stabil. Label 23px pada koordinat asli, membesar bersama close-up; isi/data penting 27–66px. Judul utama 150px. Teks kecil dipakai untuk batas asumsi, bukan pesan pokok.
+Judul Literata 500, bentuk editorial dan tenang; isi/label Source Sans 3 400/600. Font ditanam lokal agar hasil preview stabil. Label 25px pada koordinat asli, membesar bersama close-up; subtitle 34px; isi/data penting 26–84px. Judul utama 150px. Teks kecil dipakai untuk batas asumsi, bukan pesan pokok.
 
 Tanpa grid, glow, halo, bayangan kartu atau kapsul. Garis pemandu menunjukkan objek yang dilabeli. Panah menunjukkan aliran atau gaya, bukan ornamen. Area inset bilah tetap dibedakan untuk membandingkan dua arah aliran, sesuai fungsi animasi awal. Outline mesin tetap dipakai sebagai batas potongan teknis, sekarang gelap dengan bidang material.
 

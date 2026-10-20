@@ -2,21 +2,22 @@
 workflow: general-video
 flow: companion
 storyboard: yes
-message: "Energi ombak untuk membantu layanan air bersih satu fasilitas wisata pesisir"
+message: "Energi ombak menjadi listrik dan air bersih untuk satu fasilitas wisata pesisir"
 destination: youtube
 aspect: 1920x1080
 language: id
 audience: juri kompetisi dan masyarakat umum
 length: 180s
 angle: concept
-voice: id-ID-ArdiNeural
+voice: ElevenLabs eleven_v4 · River
+audio: narasi + musik latar + efek suara
 ---
 
 ## Arahan aktif
 
-20 Oktober 2026. Pengguna menolak rombakan ilustrasi, tetapi tetap mengharapkan penambahan materi hasil riset. Versi aktif memakai enam scene asli sebagai basis, ditambah dua scene penerapan dan cadangan. Total tetap 180 detik: pembuka 0–20, struktur 20–45, naik 45–63, turun 63–85, RO 85–115, layanan 115–141, cadangan 141–165, penutup 165–180. Geometri mesin dan gerak utama dipertahankan; recap/jeda dipadatkan dan sambungan keadaan mesin disesuaikan dengan urutan baru.
+20 Oktober 2026, revisi v3. Pengguna meminta audit seluruh scene dari sudut pandang penonton dan perbaikan maksimal. Delapan scene, 180 detik, tetap memakai mesin, kamera utama dan palet terang. Urutan: masalah 0–20, struktur 20–45, naik 45–63, surut 63–85, RO 85–115, layanan 115–141, cadangan 141–165, penutup 165–180. Rincian audit: [docs/audit-v3.md](docs/audit-v3.md).
 
-User meminta animasi/transisi dan preview seluruh frame sebelum render. **Jangan encode video sebelum pengguna menyetujui preview.** Ini menggantikan izin render pada brief lama. Narasi saja, suara edge-tts id-ID-ArdiNeural, tanpa layanan login/API key. Lima identitas anggota dan logo UPI dipertahankan. [Galeri](boards/storyboard.html).
+Fokus MSTR: energi listrik dan air bersih sama-sama dihitung. Narasi ElevenLabs Eleven v4, voice River, semua scene. Musik latar dan efek suara sintetis, di-duck di bawah narasi. **Jangan encode video sebelum pengguna menyetujui preview.** Lima identitas anggota dan logo UPI dipertahankan. [Galeri](boards/storyboard.html).
 
 ## Perubahan yang diterapkan
 

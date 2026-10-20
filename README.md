@@ -1,35 +1,33 @@
-# OWC-DESAL (Revisi Komprehensif Kelompok 9)
+# OWC-DESAL (Kelompok 9 · UPI)
 
-Animasi penjelasan OWC dan desalinasi osmosis balik (RO) untuk satu fasilitas wisata pesisir (**8 scene, 180 detik, 1920×1080, 30 fps**).
+Animasi penjelasan OWC (Kolom Air Berosilasi) dan desalinasi osmosis balik (RO) untuk satu fasilitas wisata pesisir. **8 scene, 180 detik, 1920×1080, 30 fps.** Komposisi HyperFrames, CLI dipin ke 0.8.179.
 
-## Pembaruan Utama pada Versi Ini
+## Isi versi ini (revisi v3, 20 Oktober 2026)
 
-1. **Sinkronisasi Penuh Timeline GSAP & Voice-Over (`s1`–`s8`)**:
-   - Memperbaiki keterlambatan 5–9 detik pada Scene 1, Scene 5, Scene 6 (`07-layanan`), dan Scene 8 (`06-kesimpulan`).
-   - Memperbaiki *dwell time* 8 label komponen RO di Scene 2 agar seluruhnya terbaca nyaman ($\ge 3{,}4\text{ detik}$).
-   - Menambahkan **Konteks Masalah Pesisir & Wisata** di Scene 1 (kasus akses air bersih Kelingking/Broken Beach Mei 2026 & intrusi air asin Kuta Utara TDS 10.000–20.000 mg/L).
-   - Menambahkan **Skala Fisik Skenario LKM 3** di Scene 3 ($H_s = 1\text{ m}, T_e = 6\text{ dtk} \approx 2{,}94\text{ kW/m}$, lebar chamber $B = 4\text{ m} \rightarrow \text{daya rata-rata } \approx 2\text{ kW}$).
-   - Menambahkan **Bar Proporsi Neraca Air (40% Produk $5\text{ m}^3$ vs 60% Brine $7{,}5\text{ m}^3$ dari $12{,}5\text{ m}^3$ Umpan)** di Scene 5.
-   - Menerapkan *progressive disclosure* dan badge **`RO SIAGA · Pompa Dijadwalkan Ulang (0 kW)`** di Scene 7 (`08-cadangan`).
-2. **Minimalist Sliding-Card Word Subtitle (`OWC.mountSubtitle`)**:
-   - Subtitle minimalis di bagian bawah layar (hanya teks bersih dengan *sliding highlight card* yang bergeser mulus dari kata ke kata mengikuti timestamp VO).
-3. **Integrasi ElevenLabs v4 (`River` Indonesian Natural Voice + Emotion Audio Tags)**:
-   - Skrip `assets/vo/generate_elevenlabs.mjs` (`npm run vo`) sudah dikonfigurasi dengan suara **River (`SAz9YHcvj6GT2YYXdXww`)**, model **`eleven_v4`**, *emotion/delivery tags* resmi Eleven v4, serta endpoint `/with-timestamps` yang otomatis memperbarui `.words.json` dan membangun ulang subtitle.
-4. **Backsound Ambient (Auto-Ducked) & Sound Effects (SFX) Terintegrasi**:
-   - `assets/audio/bgm-ambient.mp3` (backsound ambient dengan *sidechain ducking* otomatis saat narator berbicara).
-   - `assets/audio/sfx-track.mp3` (efek suara debur ombak pantai, aliran udara/turbin OWC, aliran air membran RO, dan *UI tick* lembut).
+- **Pembuka berbasis masalah air dan energi.** Peta menyelam ke Bali dengan dua penanda bersumber: Kelingking & Broken Beach belum teraliri air bersih (detikBali, 12 Mei 2026) dan sumur pesisir Kuta Utara terintrusi air laut (Manuaba & Sugianto, 2025), lalu potensi energi laut Indonesia ±63 GW yang belum dimanfaatkan (Badan Geologi ESDM). Ditutup pertanyaan "Bisakah ombak menghasilkan listrik, sekaligus air bersih?".
+- **Narasi** (`assets/vo/eleven/`): ElevenLabs Eleven v4, voice River, audio tags per kalimat, dilevel ke −17,5 LUFS. Generate ulang: `ELEVENLABS_API_KEY=... node assets/vo/eleven/generate.mjs s1` (key hanya lewat environment). Versi edge-tts sebelumnya tetap di `assets/vo/v3/`.
+- **Koreografi mengikuti kata.** `OWC.cues()` membaca timing kata dari `words.json`; label, panel, bar, dan zoom muncul tepat saat istilahnya diucapkan.
+- **Subtitle** satu baris 34 px di atas pita kertas, kata yang sedang diucapkan digaris bawah. Angka tampil sebagai digit ("12,5 m³") walau narasi mengucapkannya dengan kata.
+- **Audio**: musik latar dan efek suara (ombak, aliran udara turbin, putaran rotor, pompa RO) disintesis dari simulasi mesin yang sama dengan gambar, lalu di-duck di bawah narasi.
 
-## Cara Menjalankan & Merender di Laptop
+## Menjalankan
 
 ```bash
-# 1. (Opsional tapi direkomendasikan) Generate suara ElevenLabs v4 River + auto-sync subtitle:
-npm run vo
-
-# 2. Build ulang & cek komposisi HyperFrames:
-npm run build
-npm run check
-
-# 3. Preview interaktif di browser atau langsung render ke MP4:
-npm run dev
-npm run render
+node src/build.mjs          # membangun 8 scene + index.html dari src/
+npm run check               # lint + runtime + layout + motion + kontras
+npx hyperframes preview --background   # Studio
+npm run render              # render MP4 (setelah preview disetujui)
 ```
+
+Membuat ulang aset (opsional):
+
+```bash
+node src/export-motion.mjs               # sampel simulasi untuk audio
+python assets/audio/gen_soundscape.py    # music.mp3 + sfx.mp3 (butuh numpy, ffmpeg)
+python src/gen_bali.py ne_10m_land.geojson   # garis pantai detail Bali (Natural Earth 1:10m)
+node src/review-board.mjs                # galeri boards/storyboard.html
+```
+
+Sumber yang diedit ada di `src/` (template scene `s1.html`–`s8.html`, `engine.js`, `refine.css`, `scenario.mjs`). `compositions/frames/` dan `index.html` adalah hasil build; jangan diedit langsung.
+
+Dokumen: [audit dan perubahan v3](docs/audit-v3.md), [riset & batas klaim](docs/research.md), [skenario perhitungan](docs/scenario.md), [galeri](boards/storyboard.html).
