@@ -180,6 +180,9 @@
           draw(L.diffuser, 21.1, 0.35);
           label("brine", 21.1);
 
+          // once the RO building is being described, the OWC labels step back so the eye follows the new part
+          const owcLabels = ["chamber", "air-col", "water-col", "turbine", "gen", "cond"].map(lbl).filter(Boolean);
+          tl.to([...owcLabels, ...owcLabels.map((e) => W.leaders.get(e)).filter(Boolean)], { opacity: 0.38, duration: 0.6, ease: "power2.inOut" }, 17.0);
           // Hold all labels until 24.5s (gives every label 3.4s - 19.9s of comfortable reading time!)
           const allL = [...root.querySelectorAll(".lbl")];
           tl.to(allL, { opacity: 0, duration: 0.45, ease: "power1.in" }, 24.5);
