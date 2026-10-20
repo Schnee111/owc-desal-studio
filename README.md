@@ -1,6 +1,6 @@
 # OWC-DESAL (Kelompok 9 · UPI)
 
-Animasi penjelasan OWC (Kolom Air Berosilasi) dan desalinasi osmosis balik (RO) untuk satu fasilitas wisata pesisir. **8 scene, 180 detik, 1920×1080, 30 fps.** Komposisi HyperFrames, CLI dipin ke 0.8.179.
+Animasi penjelasan OWC (Kolom Air Berosilasi) dan desalinasi osmosis balik (RO) untuk satu fasilitas wisata pesisir. **8 scene, 183,5 detik, 1920×1080, 30 fps.** Komposisi HyperFrames, CLI dipin ke 0.8.179.
 
 ## Isi versi ini (revisi v3, 20 Oktober 2026)
 

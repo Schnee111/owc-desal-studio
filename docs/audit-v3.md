@@ -41,3 +41,13 @@ Narasi lama mengulang "ini skenario desain" di tiga scene dan memakai istilah se
 - Animation map: 1.420 tween, tanpa dead zone.
 - Snapshot di setiap sambungan scene diperiksa; galeri di [boards/storyboard.html](../boards/storyboard.html).
 - Video belum dirender, menunggu persetujuan preview.
+
+## Putaran 3: kepadatan visual (v3.2)
+
+| Scene | Masalah | Perbaikan |
+| --- | --- | --- |
+| 7 | ±6 zona teks sekaligus, mesin tetap bergerak di belakang angka | Satu subjek menyala per beat: beat air hanya tangki & keran, beat energi hanya turbin, generator & jalur listrik; sisanya diredupkan. Label tangki dan catatan kaki dihapus; asumsi pindah ke baris kecil di dalam kartu |
+| 8 | ±8 elemen teks, label tangki mengulang poin daftar | Label tangki, judul "Mode prioritas" dan catatan kaki dihapus; info kios & jadwal RO masuk ke badge dan kartu baterai |
+| 2 | 14 label menyala bersamaan | Label OWC meredup saat gedung RO dibahas |
+| Semua | Teks 22–23 px sulit dibaca di HP/proyektor | Minimum ±24–25 px |
+| Durasi | Judul pembuka, ledger energi dan kartu cadangan hilang terlalu cepat | Tambah waktu baca: total 183,5 dtk |
