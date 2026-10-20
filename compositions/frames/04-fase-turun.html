@@ -1107,7 +1107,7 @@
               if (pw.textContent !== word) pw.textContent = word;
               const beat = t > tPow - 0.05 ? 2 : t > tKey - 0.05 ? 1 : 0;
               $(".hdr .k").textContent = ["Fase 2.", "Turbin Wells.", "Turbin Wells."][beat];
-              $(".phase-title").textContent = ["Ombak surut", "Bilah simetris", "Daya berdenyut"][beat];
+              $(".phase-title").textContent = ["Ombak surut", "Bilah simetris", "Daya tidak konstan"][beat];
               const a = clamp(r.v / 15, -1, 1);
               panels[0].bg.setAttribute("opacity", (0.25 + 0.75 * clamp(a, 0, 1)).toFixed(3));
               panels[1].bg.setAttribute("opacity", (0.25 + 0.75 * clamp(-a, 0, 1)).toFixed(3));
