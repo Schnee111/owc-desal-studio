@@ -87,7 +87,7 @@
         #s6-root .card .plate img { width: 400px; height: auto; display: block; }
       </style>
 
-      <div data-hf-id="hf-4wgl" id="s6-root" data-composition-id="s6" data-width="1920" data-height="1080" data-duration="15">
+      <div data-hf-id="hf-4wgl" id="s6-root" data-composition-id="s6" data-width="1920" data-height="1080" data-duration="{{SCENE_DUR}}">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow=""></div>
         </div>
@@ -99,15 +99,16 @@
           <div data-hf-id="hf-hbiy" class="op">+</div>
           <div data-hf-id="hf-bhqm" class="it"><svg data-hf-id="hf-gokm" width="44" height="58" viewBox="0 0 48 64"><path data-hf-id="hf-aeog" d="M24 4 C24 4 6 28 6 42 A18 18 0 0 0 42 42 C42 28 24 4 24 4Z" fill="#5CC8FF" /></svg>Air bersih</div>
         </div>
-        <div class="pilot-steps">
-          <div class="pilot-header">Satu fasilitas wisata pesisir.<span>Pilot konsep (200 pengunjung · 5 m³/hari · 43,2 kWh bersih) — Tahap lanjutan:</span></div>
-          <div class="p-step"><b>1. Ukur ombak</b><span>Ambil data tinggi gelombang (Hs) &amp; periode (Te) musiman di lokasi</span></div>
-          <div class="p-step"><b>2. Uji alat</b><span>Validasi konversi ruang OWC, turbin Wells, pengondisi daya &amp; skid RO</span></div>
-          <div class="p-step"><b>3. Validasi layanan</b><span>Pastikan mutu air bersih, distribusi &amp; keamanan pembuangan brine</span></div>
+        <div data-hf-id="hf-tt94" class="pilot-steps">
+          <div data-hf-id="hf-6zxu" class="pilot-header">Satu fasilitas, satu pilot.<span data-hf-id="hf-2wkr" class="flag">Angka di video ini: skenario desain, belum diuji</span></div>
+          <div data-hf-id="hf-dm67" class="p-step"><b data-hf-id="hf-t4n0">1</b><div data-hf-id="hf-yeow"><h4 data-hf-id="hf-yt9w">Ukur ombak</h4><span data-hf-id="hf-9oa7">tinggi &amp; periode gelombang musiman di lokasi</span></div></div>
+          <div data-hf-id="hf-cxvj" class="p-step"><b data-hf-id="hf-rxpx">2</b><div data-hf-id="hf-y7yw"><h4 data-hf-id="hf-xhj3">Uji prototipe</h4><span data-hf-id="hf-xbdq">ruang OWC, turbin Wells, pengondisi daya, unit RO</span></div></div>
+          <div data-hf-id="hf-cjki" class="p-step"><b data-hf-id="hf-sc0y">3</b><div data-hf-id="hf-x11t"><h4 data-hf-id="hf-abqi">Validasi layanan</h4><span data-hf-id="hf-l1i6">mutu air, distribusi, pembuangan air garam</span></div></div>
         </div>
         <div data-hf-id="hf-vn2y" class="card">
           <div data-hf-id="hf-h5f4" class="veil"></div>
           <svg data-hf-id="hf-uqvd" class="tt" viewBox="0 0 1920 1080" width="1920" height="1080"><text data-hf-id="hf-dwpa" x="960" y="285" text-anchor="middle">OWC-DESAL</text></svg>
+          <div data-hf-id="hf-77hv" class="tag">Dari ombak, menjadi listrik dan air bersih.</div>
           <div data-hf-id="hf-zgiu" class="team"><span data-hf-id="hf-4ok9" class="k">KELOMPOK 9</span> · Universitas Pendidikan Indonesia</div>
           <div data-hf-id="hf-3ii9" class="members">
             <div data-hf-id="hf-6h7h" class="m"><b data-hf-id="hf-rs0u">2308224</b><span data-hf-id="hf-gipy">Datuk Daneswara Raditya Samsura</span></div>
@@ -127,7 +128,10 @@
           const $ = (s) => root.querySelector(s);
           const world = $(".world");
           const { clamp } = window.OWC;
-          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const SUB = /*@SUBTITLE*/, D = /*@SCENEDUR*/;
+          const cue = window.OWC.cues(SUB);
+          const tCred = cue("OWC-DESAL", 1, 8.6) - 0.25, tTag = cue("Dari", 1, 10.8);
+          const sub = window.OWC.mountSubtitle(root, SUB, { mute: [[tCred, D]] });
           const W = window.OWC.build(world, {
             prefix: "s6",
             scene: 6,
@@ -189,37 +193,47 @@
 
           // Camera pulls back from cross-section to coastline (0.4s - 2.2s)
           tl.to(W.cam, { ...W.frame(0.3, 690, 600, 540, coast(540) - 40), duration: 1.8, ease: "power2.inOut", onUpdate: W.applyCam }, 0.4);
-          tl.to(world, { opacity: 0, duration: 0.5, ease: "power1.in" }, 1.8);
+          // the cross-section closes into an iris around the pilot unit instead of shrinking as a box
+          const iris = { r: 1500 };
+          const [ix, iy] = [540, coast(540) - 40];
+          const camEl = root.querySelector(".cam");
+          const applyIris = () => {
+            const m = `radial-gradient(circle ${iris.r.toFixed(1)}px at ${ix}px ${iy}px, #000 55%, transparent 100%)`;
+            camEl.style.webkitMaskImage = m;
+            camEl.style.maskImage = m;
+          };
+          applyIris();
+          tl.fromTo(iris, { r: 1500 }, { r: 120, duration: 1.7, ease: "power2.inOut", onUpdate: applyIris, immediateRender: false }, 0.5);
+          tl.to(world, { opacity: 0, duration: 0.45, ease: "power1.in" }, 1.75);
           tl.fromTo(pano, { opacity: 0 }, { opacity: 1, duration: 0.65, ease: "power1.out" }, 1.2);
           tl.to(coastLine, { strokeDashoffset: 0, duration: 1.3, ease: "power2.out" }, 1.2);
 
-          // Top summary icons + 3 unified step cards synced to VO ("ukur ombak"[1.69s], "uji alat"[2.67s], "validasi layanan"[3.54s])
-          // Held until t=5.6s (giving 4.8s of comfortable reading time and covering 168.8s = local 3.8s!)
+          // Recap row, then the honest caveat and three next steps, each landing as it is named
           const items = [...root.querySelectorAll(".sum .it")], ops = [...root.querySelectorAll(".sum .op")];
-          [1.0, 1.4, 1.8].forEach((at, i) => tl.fromTo(items[i], { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, at));
-          [1.2, 1.6].forEach((at, i) => tl.fromTo(ops[i], { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, at));
-
-          tl.fromTo($(".pilot-header"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.8);
+          [2.0, 2.3, 2.6].forEach((at, i) => tl.fromTo(items[i], { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.38, ease: "power3.out" }, at));
+          [2.15, 2.45].forEach((at, i) => tl.fromTo(ops[i], { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, at));
+          tl.fromTo($(".pilot-header"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 2.3);
           const pSteps = [...root.querySelectorAll(".p-step")];
-          [1.5, 2.4, 3.3].forEach((at, i) => {
-            if (pSteps[i]) tl.fromTo(pSteps[i], { opacity: 0, x: 18 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, at);
+          [cue("ukur", 1, 4.2), cue("uji", 1, 5.2), cue("validasi", 1, 6.7)].forEach((at, i) => {
+            tl.fromTo(pSteps[i], { opacity: 0, x: 22 }, { opacity: 1, x: 0, duration: 0.42, ease: "power3.out" }, at - 0.1);
           });
 
-          // Transition to Closing Credit Card at t=5.6s right when VO says "O W C Desal, konsep energi dan air bersih pesisir" (5.53s)
-          tl.to([$(".sum"), $(".pilot-steps")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 5.6);
-          tl.to(pano, { opacity: 0.28, duration: 0.5, ease: "power1.inOut" }, 5.6);
-          tl.fromTo($(".card .veil"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.inOut" }, 5.6);
+          // Credits land on the spoken name; the coast tilts down so the sea keeps moving under them
+          tl.to([$(".sum"), $(".pilot-steps")], { opacity: 0, y: -10, duration: 0.4, ease: "power2.in" }, tCred - 0.45);
+          tl.to(pano, { y: 330, opacity: 0.85, duration: 1.0, ease: "power2.inOut" }, tCred - 0.45);
+          tl.fromTo($(".card .veil"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.inOut" }, tCred - 0.4);
           const tt = root.querySelector(".card .tt text");
-          tl.fromTo(root.querySelector(".card .tt"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, 5.8);
-          tl.to(tt, { strokeDashoffset: 0, duration: 0.85, ease: "power2.out" }, 5.8);
-          tl.to(tt, { fillOpacity: 1, duration: 0.4, ease: "power1.out" }, 6.3);
-          tl.fromTo($(".card .team"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 6.3);
-          tl.fromTo(root.querySelectorAll(".card .m"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out", stagger: 0.08 }, 6.5);
-          tl.fromTo($(".card .plate"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 6.8);
+          tl.fromTo(root.querySelector(".card .tt"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, tCred);
+          tl.to(tt, { strokeDashoffset: 0, duration: 0.85, ease: "power2.out" }, tCred);
+          tl.to(tt, { fillOpacity: 1, duration: 0.4, ease: "power1.out" }, tCred + 0.45);
+          tl.fromTo($(".card .tag"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, tTag - 0.05);
+          tl.fromTo($(".card .team"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, tCred + 0.6);
+          tl.fromTo(root.querySelectorAll(".card .m"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out", stagger: 0.08 }, tCred + 0.8);
+          tl.fromTo($(".card .plate"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, tCred + 1.2);
 
           const clock = { t: 0 };
           tl.fromTo(clock, { t: 0 }, {
-            t: 15, duration: 15, ease: "none",
+            t: D, duration: D, ease: "none",
             onUpdate: () => {
               const t = clock.t;
               W.update(t);
