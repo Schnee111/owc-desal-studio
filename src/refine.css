@@ -1,10 +1,10 @@
 /* Studio-Grade Motion & Anti-Slop Refinements (OWC-DESAL).
    Implements origin-aware transforms, tabular numerals, warm coastal materiality, and spring sliding-card subtitle. */
 ROOT{background:#F4EFE4;color:#293F3D;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
-ROOT .lbl{font:600 22px/1.22 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
-ROOT .hdr{font:500 45px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
-ROOT .hdr .k{font-family:'Source Sans 3',sans-serif;font-size:30px;font-weight:600;color:#A64F32}
-ROOT .strip{bottom:76px}
+ROOT .lbl{font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
+ROOT .hdr{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
+ROOT .hdr .k{color:#A64F32}
+ROOT .strip{bottom:122px}
 ROOT .pill{font:600 27px/1.22 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.97);color:#293F3D;border:1.5px solid #C8C7B9;border-radius:7px;padding:10px 22px;gap:14px;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:center bottom;will-change:transform,opacity}
 ROOT .press{background:rgba(244,239,228,0.97)!important;border:1.5px solid #C8C7B9!important;border-radius:7px!important;padding:12px 16px 14px!important;font:600 25px/1.2 'Source Sans 3',sans-serif!important;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:left center;will-change:transform,opacity}
 ROOT .press .meter{border-radius:3px;background:#DEDCD0}
@@ -17,100 +17,91 @@ ROOT .g-building>path:first-child{fill:#E5E2D5}
 ROOT .g-building>path:nth-child(2){stroke:#8C735C;stroke-width:9}
 ROOT .g-turbine>g:nth-of-type(1),ROOT .g-turbine>g:nth-of-type(2){visibility:hidden}
 
-/* Studio-Grade Sliding-Card Word Subtitle (Critically-Damped Spring + Active Micro-Lift) */
-ROOT .vo-sub-layer{position:absolute;left:0;right:0;bottom:14px;height:50px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
-ROOT .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:5px 12px;font:600 26px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;text-shadow:0 1px 8px rgba(244,239,228,0.98),0 0 16px rgba(244,239,228,0.96);will-change:transform,opacity}
-ROOT .vo-sliding-card{position:absolute;left:0;top:50%;height:38px;background:#E59A6E;border:1.5px solid #A64F32;border-radius:8px;box-shadow:0 4px 12px rgba(166,79,50,0.24);z-index:0;pointer-events:none;transform-origin:center center;will-change:transform,width}
-ROOT .vo-w{position:relative;z-index:1;display:inline-block;transition:transform 0.09s cubic-bezier(0.22,1,0.36,1),color 0.08s ease}
-ROOT .vo-w.is-active{color:#182826;font-weight:700;text-shadow:none;transform:translate3d(0,-1.5px,0)}
-ROOT .vo-w.is-past{color:#293F3D;opacity:.92;transform:translate3d(0,0,0)}
-ROOT .vo-w.is-future{color:#293F3D;opacity:.55;transform:translate3d(0,0,0)}
+/* Captions: one calm line on a paper band; a terracotta underline marks the spoken word.
+   No CSS transitions anywhere: every state is set per frame from scene time (seek-safe). */
+ROOT .vo-sub-layer{position:absolute;left:0;right:0;bottom:26px;height:64px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
+ROOT .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:11px;padding:9px 20px 11px;font:600 34px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;background:rgba(244,239,228,0.93);border-radius:10px;box-shadow:0 2px 12px rgba(41,63,61,0.10);will-change:transform,opacity}
+ROOT .vo-w{position:relative;z-index:1;display:inline-block}
+ROOT .vo-w.is-active{color:#182826}
+ROOT .vo-w.is-active::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:4px;border-radius:2px;background:#A64F32}
+ROOT .vo-w.is-past{color:#293F3D}
+ROOT .vo-w.is-future{color:#293F3D;opacity:.42}
 
-/* Scene 1: Coastal Context + Target Scope + Title */
-#s1-root .ocean{font:600 25px 'Source Sans 3',sans-serif;letter-spacing:.14em}
-#s1-root .context-card{position:absolute;left:76px;top:64px;width:640px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-left:5px solid #A64F32;border-radius:7px;padding:14px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.08);opacity:0;z-index:12;transform-origin:left top}
-#s1-root .context-card .ckick{font:700 20px/1.2 'Source Sans 3',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#A64F32;margin-bottom:6px}
-#s1-root .context-card .cbody{font:600 23px/1.32 'Source Sans 3',sans-serif;color:#293F3D}
-#s1-root .context-card .csrc{font:400 19px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px}
-#s1-root .stat{right:84px;top:64px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-right:5px solid #286B75;border-radius:7px;padding:14px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.08);z-index:12;transform-origin:right top}
-#s1-root .stat .kick{font:600 25px 'Source Sans 3',sans-serif;color:#286B75}
-#s1-root .stat .val{font:500 92px/1 Literata,serif;color:#293F3D;margin-top:8px;font-variant-numeric:tabular-nums}
-#s1-root .stat .num{width:auto}
-#s1-root .stat .unit{font:600 32px 'Source Sans 3',sans-serif;margin-left:12px}
-#s1-root .stat .sub-stat{font:400 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px;opacity:0}
-#s1-root .veil{background:radial-gradient(ellipse 960px 380px at 50% 52%, rgba(244,239,228,0.96), rgba(244,239,228,0.82) 65%, rgba(244,239,228,0) 100%)}
-#s1-root .title text{font:500 138px Literata,serif;letter-spacing:-.03em;stroke-width:1.4}
-#s1-root .sub{font:600 38px 'Source Sans 3',sans-serif;top:608px}
-#s1-root .rule{height:3px;border-radius:0;top:676px}
-#s1-root .scope-note{position:absolute;left:50%;top:700px;transform:translateX(-50%);background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:6px;padding:8px 20px;font:600 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D;box-shadow:0 4px 14px rgba(41,63,61,0.07);opacity:0;white-space:nowrap;z-index:15}
 #s1-root .dot,#s2-root .dot{background:#A64F32;width:16px;height:16px;margin:12px;border-radius:50%}
-#s1-root .glow,#s1-root .dots circle:nth-child(-n+2){display:none}
-#s1-root .indo path{fill:#93A28B}
 
 /* Scene 2 */
-#s2-root .hdr .m{font:400 26px 'Source Sans 3',sans-serif;letter-spacing:0;color:#293F3D}
 
-/* Scene 3: Physical Scale Callout */
-#s3-root .scale-card{position:absolute;left:64px;top:492px;width:360px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:7px;padding:12px 16px;box-shadow:0 6px 18px rgba(41,63,61,0.08);opacity:0;transform-origin:left center}
-#s3-root .scale-card .skick{font:700 19px/1.2 'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#286B75;margin-bottom:5px}
-#s3-root .scale-card .srow{font:600 22px/1.3 'Source Sans 3',sans-serif;color:#293F3D;margin:3px 0;font-variant-numeric:tabular-nums}
-#s3-root .scale-card .sres{font:700 23px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:6px;padding-top:6px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
-
-/* Scene 4: Clean Backdrop for Inset & Power Graph */
-#s4-root .s4-backdrop{position:absolute;left:1052px;top:126px;width:826px;height:780px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
-#s4-root .inset{left:1080px;top:144px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
-#s4-root .inset .ti{font:600 28px 'Source Sans 3',sans-serif}
+/* Scene 4: blade inset + live power trace share one paper panel */
+#s4-root .s4-backdrop{position:absolute;left:1052px;top:118px;width:826px;height:822px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
+#s4-root .inset{left:1080px;top:134px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
+#s4-root .inset .ti{font:600 29px 'Source Sans 3',sans-serif}
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
-#s4-root .inset .dir{font-size:22px}
-#s4-root .power-fluctuation{position:absolute;left:1080px;top:666px;width:760px;background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:7px;padding:12px 18px;font:600 24px/1.25 'Source Sans 3',sans-serif;box-shadow:0 4px 12px rgba(41,63,61,0.06);opacity:0}
-#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:center}
-#s4-root .power-fluctuation p span{font:400 20px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
+#s4-root .inset .cap{font-size:24px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
+#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+#s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
+#s4-root .power-fluctuation p span{font:400 22px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .power-fluctuation p.note{display:block;margin-top:8px;font:600 24px/1.3 'Source Sans 3',sans-serif;color:#A64F32;opacity:0}
 
 /* Scene 5: Water Balance Card with Proportional Split Bar */
 #s5-root .ctitle{font:600 26px 'Source Sans 3',sans-serif}
 #s5-root .cap{font:600 21px 'Source Sans 3',sans-serif}
-ROOT .scenario{position:absolute;left:988px;top:586px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-left:5px solid #286B75;border-radius:8px;padding:16px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
-ROOT .scenario .target{display:flex;align-items:baseline;gap:14px;font:600 26px 'Source Sans 3',sans-serif}
-ROOT .scenario .target strong{font:500 58px/1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
-ROOT .scenario .split-bar{display:flex;width:100%;height:22px;border-radius:4px;overflow:hidden;margin:12px 0 10px;background:#DED4BD}
-ROOT .scenario .split-prod{width:40%;background:#286B75;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-ROOT .scenario .split-brine{width:60%;background:#676953;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-ROOT .scenario .balance{display:flex;justify-content:space-between;gap:18px;margin-top:6px;font:600 23px/1.25 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
-ROOT .scenario .balance span{white-space:nowrap}
-ROOT .scenario .assumption{font:400 20px/1.28 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px}
+ROOT .scenario{position:absolute;left:988px;top:560px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 24px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
+ROOT .scenario .bal-head{font:500 36px/1.15 Literata,serif;color:#293F3D}
+ROOT .scenario .bal-head b{font-weight:500;color:#367B86}
+ROOT .scenario .cells{display:flex;gap:8px;margin:16px 0 12px}
+ROOT .scenario .cells i{display:block;width:72px;height:62px;border-radius:6px 6px 10px 10px;background:#A9C3C3;transform-origin:center bottom}
+ROOT .scenario .cell-legend{display:flex;justify-content:space-between;gap:16px;font:600 26px/1.2 'Source Sans 3',sans-serif}
+ROOT .scenario .cell-legend span{opacity:0}
+ROOT .scenario .lg-fresh b{color:#286B75}
+ROOT .scenario .lg-brine b{color:#676953}
+ROOT .scenario .bal-day{display:flex;align-items:baseline;gap:12px;margin-top:16px;padding-top:12px;border-top:1px solid #DED4BD;font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+ROOT .scenario .bal-day b{font:500 34px/1 Literata,serif}
+ROOT .scenario .bal-day .k{font-weight:400;color:#53645D}
+ROOT .scenario .bal-day .ar{color:#A64F32}
+ROOT .scenario .bal-day .b b{color:#676953}
 
 /* Scene 6 (s7) & Scene 7 (s8): Service Allocation & Reserve Mode */
 ROOT .allocation{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
-ROOT .service-intro{position:absolute;left:76px;top:92px;width:440px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:8px;padding:18px 22px;color:#293F3D;box-shadow:0 8px 24px rgba(41,63,61,0.08);transform-origin:left top}
+ROOT .service-intro{position:absolute;left:64px;top:80px;width:500px;border-left:4px solid #286B75;padding:4px 0 6px 26px;color:#293F3D;transform-origin:left top}
 ROOT .energy-allocation .service-intro{border-left-color:#A64F32}
-ROOT .service-intro h1{font:500 44px/1.12 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
-ROOT .service-intro p{font:400 25px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
-ROOT .service-intro .service-number{font:500 68px/1.1 Literata,serif;margin:12px 0 4px;color:#286B75;font-variant-numeric:tabular-nums}
+ROOT .service-intro h1{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
+ROOT .service-intro p{font:400 27px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
+ROOT .service-intro .service-number{font:500 84px/1.05 Literata,serif;margin:10px 0 6px;color:#286B75;font-variant-numeric:tabular-nums}
 ROOT .energy-allocation .service-intro .service-number{color:#A64F32}
-ROOT .service-number span{font:600 26px 'Source Sans 3',sans-serif;color:#293F3D}
-ROOT .service-intro .service-small{font-size:22px;color:#53645D;margin-top:10px}
-ROOT .service-intro .energy-formula{font:600 23px/1.3 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px;padding-top:8px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
+ROOT .service-number span{font:600 28px 'Source Sans 3',sans-serif;color:#293F3D}
+ROOT .service-intro .service-small{font-size:23px;color:#53645D;margin-top:10px}
+ROOT .service-intro .chain{font:600 27px/1.3 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+ROOT .service-intro .chain.c0{font-size:23px;font-weight:400;color:#53645D}
+ROOT .service-intro .chain b{color:#A64F32}
+ROOT .service-intro .chain.c3{font-size:24px;font-weight:400;color:#53645D;margin-top:0}
 ROOT .facility-title{position:absolute;left:1250px;top:36px;width:610px;font:600 25px/1.3 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.96);padding:4px 10px;border-radius:4px}
-ROOT .ledger{position:absolute;left:988px;top:578px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:8px;padding:16px 24px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
-ROOT .ledger h2{font:500 32px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
-ROOT .ledger-row{display:flex;align-items:center;gap:14px;margin:9px 0;font:600 23px/1.15 'Source Sans 3',sans-serif;padding:4px 8px;border-radius:4px;font-variant-numeric:tabular-nums}
-ROOT .ledger-label{width:270px;flex:none}
-ROOT .ledger-space{width:330px;flex:none;height:18px;background:#E5DEC9;border-radius:3px;overflow:hidden}
-ROOT .ledger-bar{height:18px;background:#367B86;transform-origin:left center}
-ROOT .ledger-row strong{font-size:24px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
+ROOT .ledger{position:absolute;left:988px;top:572px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 26px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
+ROOT .ledger h2{font:500 34px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
+ROOT .ledger-row{display:flex;align-items:center;gap:16px;margin:10px 0;font:600 25px/1.15 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
+ROOT .ledger-label{width:300px;flex:none}
+ROOT .ledger-space{width:300px;flex:none;height:22px;background:#E5DEC9;border-radius:3px;overflow:hidden}
+ROOT .ledger-bar{height:22px;background:#367B86;transform-origin:left center}
+ROOT .ledger-row strong{font-size:27px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
 ROOT .ledger-bar.bar-1{background:#676953}
 ROOT .ledger-bar.bar-2{background:#A64F32}
 ROOT .ledger-bar.bar-3{background:#8C735C}
-ROOT .service-footnote{position:absolute;left:76px;bottom:72px;max-width:1760px;font:600 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:5px 12px;opacity:0;z-index:22}
+ROOT .service-footnote{position:absolute;left:64px;bottom:94px;max-width:1500px;white-space:nowrap;font:600 22px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:6px 12px;opacity:0;z-index:22}
 
 /* Scene 7 (s8): Reserve UI & Progressive Cards */
 ROOT .reserve-ui{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
 ROOT .reserve-ui .service-intro{border-left-color:#A64F32}
-ROOT .reserve-state{font:700 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:14px 0 10px}
-ROOT .generation-meter{height:12px;width:340px;background:#DED4BD;border-radius:4px;overflow:hidden}
+ROOT .reserve-state{font:600 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:10px 0 12px}
+ROOT .steps{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid #DED4BD}
+ROOT .steps li{font:400 26px/1.3 'Source Sans 3',sans-serif;margin:0 0 10px;opacity:0}
+ROOT .steps li b{font-weight:700;color:#286B75}
+ROOT .steps li.st-bat b{color:#A64F32}
+ROOT .generation-meter{height:14px;width:100%;background:#DED4BD;border-radius:4px;overflow:hidden}
 ROOT .generation-meter i{display:block;width:100%;height:100%;background:#A64F32;transform-origin:left center}
 ROOT .service-intro .critical-state{font:600 24px/1.28 'Source Sans 3',sans-serif;margin:14px 0 0;padding-top:10px;border-top:1px solid #DED4BD}
-ROOT .ro-standby-badge{position:absolute;left:1045px;top:330px;background:#A64F32;color:#F4EFE4;font:700 21px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
+ROOT .ro-standby-badge{position:absolute;left:1040px;top:322px;background:#A64F32;color:#F4EFE4;font:700 24px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
 ROOT .monitor-badge{position:absolute;left:1010px;top:524px;background:rgba(244,239,228,0.97);border:1.5px solid #286B75;color:#286B75;font:600 20px/1.2 'Source Sans 3',sans-serif;padding:5px 12px;border-radius:5px;box-shadow:0 4px 12px rgba(41,63,61,0.08);opacity:0;z-index:25;transform-origin:left center}
 ROOT .reserve-ledger{position:absolute;left:988px;top:582px;width:852px;display:flex;gap:24px;z-index:20}
 ROOT .reserve-card{flex:1;background:#F4EFE4;border:2px solid #BFB8A4;border-top:5px solid #286B75;border-radius:8px;padding:16px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;transform-origin:center bottom}
@@ -118,20 +109,22 @@ ROOT .reserve-card.bat-card{border-top-color:#A64F32}
 ROOT .reserve-card strong{font:500 58px/1.1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
 ROOT .reserve-card.bat-card strong{color:#A64F32}
 ROOT .reserve-card h2{font:700 25px/1.2 'Source Sans 3',sans-serif;margin:8px 0;color:#293F3D}
-ROOT .reserve-card p{font:400 22px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
+ROOT .reserve-card p{font:400 23px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
 
-/* Scene 8 (s6): Pilot Panorama & Closing Credits */
-#s6-root .sum{font:500 50px Literata,serif;top:48px}
-#s6-root .pilot-steps{position:absolute;left:980px;top:220px;width:840px;display:flex;flex-direction:column;gap:16px;z-index:15}
-#s6-root .pilot-header{font:500 42px/1.15 Literata,serif;color:#293F3D;margin-bottom:4px;opacity:0}
-#s6-root .pilot-header span{display:block;font:600 23px/1.3 'Source Sans 3',sans-serif;color:#286B75;margin-top:4px}
-#s6-root .p-step{background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #A64F32;border-radius:7px;padding:12px 18px;box-shadow:0 6px 18px rgba(41,63,61,0.07);display:flex;align-items:center;gap:16px;opacity:0;transform-origin:left center}
-#s6-root .p-step b{font:700 26px/1 'Source Sans 3',sans-serif;color:#A64F32;min-width:190px}
-#s6-root .p-step span{font:400 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D}
-#s6-root .card .veil{background:#F4EFE4}
+/* Scene 8 (s6): pilot steps as plain numbered rows, credits over a living sea */
+#s6-root .sum{font:500 42px Literata,serif;top:150px;left:40px;right:960px;gap:16px}
+#s6-root .pilot-steps{position:absolute;left:1000px;top:138px;width:840px;display:flex;flex-direction:column;gap:0;z-index:15}
+#s6-root .pilot-header{font:500 48px/1.1 Literata,serif;color:#293F3D;margin-bottom:16px;opacity:0}
+#s6-root .pilot-header .flag{display:block;font:600 25px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:10px}
+#s6-root .p-step{display:flex;align-items:flex-start;gap:26px;padding:13px 0;border-top:1.5px solid #C8C7B9;opacity:0}
+#s6-root .p-step b{font:500 58px/0.9 Literata,serif;color:#A64F32;min-width:48px}
+#s6-root .p-step h4{margin:0;font:600 34px/1.15 'Source Sans 3',sans-serif;color:#293F3D}
+#s6-root .p-step span{display:block;margin-top:2px;font:400 24px/1.3 'Source Sans 3',sans-serif;color:#53645D}
+#s6-root .card .veil{background:linear-gradient(#F4EFE4 0, #F4EFE4 72%, rgba(244,239,228,0) 88%)}
 #s6-root .card .tt text{font:500 136px Literata,serif;letter-spacing:-.03em;stroke-width:1.3}
-#s6-root .card .team{font:600 35px 'Source Sans 3',sans-serif;top:330px}
-#s6-root .card .members{top:410px}
+#s6-root .card .tag{position:absolute;left:0;right:0;top:318px;text-align:center;font:italic 500 36px Literata,serif;color:#286B75;opacity:0}
+#s6-root .card .team{font:600 33px 'Source Sans 3',sans-serif;top:384px}
+#s6-root .card .members{top:450px}
 #s6-root .card .m{font:400 30px/1.5 'Source Sans 3',sans-serif}
 #s6-root .card .m b{font:600 28px/1.6 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
-#s6-root .card .plate{border-radius:8px;top:730px;height:144px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
+#s6-root .card .plate{border-radius:8px;top:735px;height:136px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
