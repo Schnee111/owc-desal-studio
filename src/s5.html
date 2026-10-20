@@ -31,16 +31,16 @@
         #s5-root .pill .late { opacity: 0; }
       </style>
 
-      <div data-hf-id="hf-3la0" id="s5-root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="30">
+      <div data-hf-id="hf-3la0" id="s5-root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="{{SCENE_DUR}}">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
             <div data-hf-id="hf-jt0d" class="ctitle"><span data-hf-id="hf-ryto" class="k">Layanan:</span> 8 lampu jalur, 5 kios dan kontrol</div>
             <div data-hf-id="hf-x4u3" class="cap">Kios wisata</div>
             <div data-hf-id="hf-3zht" class="lbl hide" data-k="pump" style="left: 1122px; top: 516px" data-leader="1220,516,1220,488">Pompa tekanan tinggi</div>
-            <div data-hf-id="hf-id9d" class="lbl hide" data-k="membrane" style="left: 1280px; top: 334px" data-leader="1400,372,1400,398">Membran Reverse Osmosis</div>
+            <div data-hf-id="hf-id9d" class="lbl hide" data-k="membrane" style="left: 1280px; top: 334px" data-leader="1400,372,1400,398">Membran osmosis balik (RO)</div>
             <div data-hf-id="hf-wh92" class="lbl hide k-fresh" data-k="water" style="left: 1280px; top: 554px" data-leader="1380,554,1380,474">Molekul air lolos</div>
             <div data-hf-id="hf-ypgc" class="lbl hide k-brine" data-k="salt" style="left: 1546px; top: 554px" data-leader="1546,572,1528,572">Garam tertahan → brine</div>
-            <div class="lbl hide k-fresh" data-k="post" style="left: 1495px; top: 486px" data-leader="1531,486,1531,470">Pascapengolahan &amp; uji mutu</div>
+            <div data-hf-id="hf-ydyr" class="lbl hide k-fresh" data-k="post" style="left: 1495px; top: 486px" data-leader="1531,486,1531,470">Pascapengolahan &amp; uji mutu</div>
             <div data-hf-id="hf-rwtf" class="lbl hide k-fresh" data-k="tap" style="left: 1736px; top: 330px" data-leader="1800,366,1842,404">Keran umum</div>
           </div>
         </div>
@@ -48,17 +48,10 @@
           <div data-hf-id="hf-kndt" class="pill"><span data-hf-id="hf-r75v" class="k">Pengolahan:</span><span data-hf-id="hf-r1ol">Listrik terkondisi</span><span data-hf-id="hf-08ha" class="ar">→</span><span data-hf-id="hf-jiad">Pompa &amp; Membran RO</span><span data-hf-id="hf-i2vm" class="ar late">→</span><span data-hf-id="hf-5jzi" class="f late">Pascaolah &amp; Produk Air</span></div>
         </div>
         <div data-hf-id="hf-bqba" class="scenario">
-          <div class="target"><strong>{{water}} m³</strong><span>target air bersih produk / hari (recovery asumsi 40%)</span></div>
-          <div class="split-bar">
-            <div class="split-prod">40% Produk ({{water}} m³)</div>
-            <div class="split-brine">60% Air Garam Pekat / Brine ({{brine}} m³)</div>
-          </div>
-          <div class="balance">
-            <span>Umpan masuk: {{feed}} m³/hari</span>
-            <span>Produk air bersih: {{water}} m³/hari</span>
-            <span>Aliran brine: {{brine}} m³/hari</span>
-          </div>
-          <p class="assumption">Produk memerlukan pascapengolahan &amp; pemeriksaan mutu (bukan langsung siap minum); pembuangan outfall brine wajib dirancang dan dipantau.</p>
+          <div data-hf-id="hf-ngf6" class="bal-head">Dari setiap <b data-hf-id="hf-gtvi">10 liter</b> air laut</div>
+          <div data-hf-id="hf-qtwv" class="cells"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><i data-hf-id="hf-ylp6"></i><i data-hf-id="hf-0l8b"></i><i data-hf-id="hf-0zjc"></i><i data-hf-id="hf-zsm9"></i><i data-hf-id="hf-06xa"></i><i data-hf-id="hf-26gf"></i><i data-hf-id="hf-2krg"></i></div>
+          <div data-hf-id="hf-l9xa" class="cell-legend"><span data-hf-id="hf-ykmu" class="lg-fresh"><b data-hf-id="hf-fh51">4 liter</b> air bersih</span><span data-hf-id="hf-32gj" class="lg-brine"><b data-hf-id="hf-55d3">6 liter</b> air garam pekat, dibuang aman</span></div>
+          <div data-hf-id="hf-2tsg" class="bal-day"><span data-hf-id="hf-8eif" class="k">Per hari</span><span data-hf-id="hf-gl83"><b data-hf-id="hf-01ez">{{feed}} m³</b> air laut</span><span data-hf-id="hf-wliq" class="ar">→</span><span data-hf-id="hf-t3oi" class="f"><b data-hf-id="hf-jln0">{{water}} m³</b> air bersih</span><span data-hf-id="hf-irh5" class="ar">+</span><span data-hf-id="hf-at5v" class="b"><b data-hf-id="hf-26aj">{{brine}} m³</b> air garam</span></div>
         </div>
       </div>
 
@@ -69,17 +62,19 @@
           const $ = (s) => root.querySelector(s);
           const world = $(".world");
           const { ramp } = window.OWC;
-          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const SUB = /*@SUBTITLE*/, D = /*@SCENEDUR*/;
+          const sub = window.OWC.mountSubtitle(root, SUB);
+          const cue0 = window.OWC.cues(SUB), tRo = cue0("disaring", 1, 5.3), tTap = cue0("10", 1, 16.6);
           const W = window.OWC.build(world, {
             prefix: "s5",
             scene: 5,
             fn: {
-              gridOn: (t) => ramp(t, 2.6, 5.2),
-              pump: (t) => ramp(t, 3.6, 4.8),
-              ro: (t) => ramp(t, 5.6, 7.0),
+              gridOn: (t) => ramp(t, 1.8, 4.4),
+              pump: (t) => ramp(t, 2.85, 4.0),
+              ro: (t) => ramp(t, tRo - 0.4, tRo + 1.0),
               tank: (t) => 0.3 + 0.42 * ramp(t, 12.0, 28.5),
-              tapOn: (t) => ramp(t, 19.8, 20.8),
-              branch: (t) => ramp(t, 1.4, 2.2),
+              tapOn: (t) => ramp(t, tTap - 0.6, tTap + 0.4),
+              branch: (t) => ramp(t, 1.0, 1.8),
             },
           });
           const L = W.L;
@@ -99,53 +94,62 @@
             if (ld) tl.fromTo(ld, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, at + 0.08);
           }
 
-          // Camera choreography synced to VO:
-          // 0-1.8s: pull out to system; 7.0s-8.5s: zoom into membrane (VO: "melewati membran" at 7.45s);
-          // holds through 19.1s (covering 104s review shot!), then pulls back at 19.2s-20.8s to show full system & water balance through 29.4s (covering 113s review shot!)
+          const cue = window.OWC.cues(SUB);
+          const tZoom = cue("didorong", 1, 6.4) - 0.3, tBack = cue("dipakai", 1, 14.6) + 0.25, tLit = cue("10", 1, 16.6);
+          // Camera: pull out to the system, push into the membrane as it is named, pull back for the water balance
           tl.fromTo(W.cam, { s: F.s, x: F.x, y: -2.5 }, { s: 1, x: 0, y: 0, duration: 1.8, ease: "power2.inOut", onUpdate: W.applyCam }, 0);
           const Z = W.frame(1.9, 1400, 440, 960, 500);
-          tl.to(W.cam, { ...Z, duration: 1.5, ease: "power2.inOut", onUpdate: W.applyCam }, 7.0);
-          tl.to(W.cam, { s: 1, x: 0, y: 0, duration: 1.6, ease: "power2.inOut", onUpdate: W.applyCam }, 19.2);
+          tl.to(W.cam, { ...Z, duration: 1.5, ease: "power2.inOut", onUpdate: W.applyCam }, tZoom);
+          tl.to(W.cam, { s: 1, x: 0, y: 0, duration: 1.3, ease: "power2.inOut", onUpdate: W.applyCam }, tBack);
 
-          // 1. Power split (VO: "lalu dibagi untuk fasilitas dan pompa osmosis balik" at 2.2s - 5.0s)
+          // 1. Power splits to the facility and the pump as they are named
           [L.pwA.base, L.pwB.base].forEach((p) => {
             const len = p.getTotalLength();
             p.style.strokeDasharray = `${len} ${len}`;
             p.style.strokeDashoffset = `${len}`;
           });
-          tl.fromTo([L.brA, L.brB], { opacity: 0 }, { opacity: 1, duration: 0.3 }, 1.2);
-          tl.to([L.pwA.base, L.pwB.base], { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, 1.2);
-          tl.fromTo(L.junction, { scale: 1 }, { scale: 1.8, svgOrigin: "980 210", duration: 0.3, ease: "power2.out", immediateRender: false }, 1.3);
-          tl.to(L.junction, { scale: 1, svgOrigin: "980 210", duration: 0.45, ease: "power2.inOut" }, 1.6);
+          const tSplit = cue("menghidupkan", 1, 1.3) - 0.1;
+          tl.fromTo([L.brA, L.brB], { opacity: 0 }, { opacity: 1, duration: 0.3 }, tSplit);
+          tl.to([L.pwA.base, L.pwB.base], { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, tSplit);
+          tl.fromTo(L.junction, { scale: 1 }, { scale: 1.8, svgOrigin: "980 210", duration: 0.3, ease: "power2.out", immediateRender: false }, tSplit + 0.1);
+          tl.to(L.junction, { scale: 1, svgOrigin: "980 210", duration: 0.45, ease: "power2.inOut" }, tSplit + 0.4);
+          tl.fromTo(L.grid, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, cue("lampu", 1, 1.8) - 0.1);
+          tl.fromTo($(".ctitle"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, cue("fasilitas", 1, 2.0));
+          tl.fromTo($(".cap"), { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, cue("fasilitas", 1, 2.0) + 0.3);
+          label("pump", cue("pompa", 1, 2.85));
+          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, cue("pompa", 1, 2.85) + 0.4);
 
-          // 2. Facility card (VO: "untuk fasilitas" at 2.8s) & RO Pump (VO: "dan pompa osmosis balik" at 3.8s)
-          tl.fromTo(L.grid, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 2.5);
-          tl.fromTo($(".ctitle"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 2.7);
-          tl.fromTo($(".cap"), { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 3.2);
-          label("pump", 3.8);
-          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 4.0);
+          // 2. Membrane: water passes, salt is held
+          tl.fromTo(L.molecules, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, cue("membran", 1, 7.1) - 0.2);
+          label("membrane", cue("membran", 1, 7.1));
+          label("water", cue("Molekul", 1, 9.1));
+          label("salt", cue("garam", 1, 10.5));
 
-          // 3. Membrane filtration & separation (VO: "melewati membran. Air menembus membran, garam tertahan" at 7.45s - 11.8s)
-          tl.fromTo(L.molecules, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 7.4);
-          label("membrane", 7.8);
-          label("water", 9.2);
-          label("salt", 10.6);
+          // 3. Post-treatment and quality check
+          label("post", cue("diolah", 1, 13.0));
+          tl.to(root.querySelectorAll(".pill .late"), { opacity: 1, duration: 0.45, ease: "power1.out", stagger: 0.12 }, cue("diolah", 1, 13.0) + 0.2);
+          tl.to([lblMap["water"], lblMap["salt"], lblMap["post"], W.leaders.get(lblMap["water"]), W.leaders.get(lblMap["salt"]), W.leaders.get(lblMap["post"]), $(".pill")], { opacity: 0, duration: 0.3, ease: "power2.in" }, tBack - 0.3);
 
-          // 4. Post-treatment & quality check (VO: "Produk tetap perlu pascapengolahan dan pemeriksaan mutu" at 12.65s - 15.5s)
-          label("post", 13.0);
-          tl.to(root.querySelectorAll(".pill .late"), { opacity: 1, duration: 0.45, ease: "power1.out", stagger: 0.12 }, 13.2);
-          // Hide close-up post label before pull-back so it doesn't crowd the wide view
-          tl.to([lblMap["water"], lblMap["salt"], lblMap["post"], W.leaders.get(lblMap["water"]), W.leaders.get(lblMap["salt"]), W.leaders.get(lblMap["post"])], { opacity: 0, duration: 0.35 }, 19.15);
+          // 4. Water balance: ten litres of seawater, four become clean water, six return as brine
+          label("tap", tBack + 1.0);
+          const card = $(".scenario"), cells = [...root.querySelectorAll(".cells i")];
+          tl.fromTo(card, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, Math.max(tBack + 1.1, tLit - 0.35));
+          tl.fromTo(cells, { opacity: 0, scale: 1.35 }, { opacity: 1, scale: 1, duration: 0.32, ease: "power3.out", stagger: 0.035 }, Math.max(tBack + 1.25, tLit));
+          const tFresh = cue("4", 1, 18.0), tBrine = cue("6", 1, 19.9), tDay = cue("Jadi", 1, 23.8);
+          tl.to(cells.slice(0, 4), { backgroundColor: "#286B75", duration: 0.3, ease: "power1.out", stagger: 0.06 }, tFresh);
+          tl.fromTo($(".lg-fresh"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tFresh + 0.15);
+          tl.to(cells.slice(4), { backgroundColor: "#676953", y: 8, duration: 0.3, ease: "power2.out", stagger: 0.05 }, tBrine);
+          tl.fromTo($(".lg-brine"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tBrine + 0.15);
+          const day = [...root.querySelectorAll(".bal-day > span")];
+          tl.fromTo(day, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.36, ease: "power3.out", stagger: 0.07 }, tDay);
+          tl.fromTo($(".bal-day .f"), { color: "#293F3D" }, { color: "#286B75", duration: 0.3 }, cue("5", 1, 24.7));
+          tl.fromTo($(".bal-day > span:nth-child(2)"), { color: "#293F3D" }, { color: "#367B86", duration: 0.3 }, cue("12,5", 1, 26.6));
 
-          // 5. Water Balance Scenario Card appears at t=19.8s right as camera finishes pulling back (stays 9.6s through t=29.4s!)
-          label("tap", 20.2);
-          tl.fromTo($(".scenario"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 19.8);
-
-          tl.to([...root.querySelectorAll(".scenario,.pill,.lbl,.ctitle,.cap"), ...W.leaders.values()], { opacity: 0, duration: 0.45, ease: "power1.in" }, 29.4);
+          tl.to([...root.querySelectorAll(".scenario,.lbl,.ctitle,.cap"), ...W.leaders.values()], { opacity: 0, duration: 0.45, ease: "power2.in" }, D - 0.6);
 
           const clock = { t: 0 };
           tl.fromTo(clock, { t: 0 }, {
-            t: 30, duration: 30, ease: "none",
+            t: D, duration: D, ease: "none",
             onUpdate: () => {
               W.update(clock.t);
               if (sub) sub.update(clock.t);
