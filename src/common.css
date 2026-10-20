@@ -1,0 +1,93 @@
+ROOT {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  font-family: Inter, sans-serif;
+  color: #e8eef4;
+}
+ROOT .cam {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+ROOT .world {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+ROOT .dg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+ROOT .lbl {
+  position: absolute;
+  font: 700 21px/1.25 Inter, sans-serif;
+  color: #e8eef4;
+  background: rgba(10, 14, 20, 0.9);
+  border: 2px solid rgba(232, 238, 244, 0.45);
+  border-radius: 7px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+ROOT .lbl.wrap {
+  white-space: normal;
+  width: 158px;
+}
+ROOT .lbl.hide {
+  opacity: 0;
+}
+ROOT .lbl.k-energy {
+  border-color: rgba(255, 159, 28, 0.85);
+}
+ROOT .lbl.k-fresh {
+  border-color: rgba(92, 200, 255, 0.85);
+}
+ROOT .lbl.k-brine {
+  border-color: rgba(143, 168, 154, 0.95);
+}
+ROOT .lbl.k-air {
+  border-color: rgba(155, 234, 255, 0.85);
+}
+ROOT .hdr {
+  position: absolute;
+  right: 72px;
+  top: 52px;
+  font: 900 50px/1 Montserrat, sans-serif;
+  letter-spacing: 0.01em;
+  background: rgba(10, 14, 20, 0.86);
+  border: 2px solid rgba(232, 238, 244, 0.22);
+  border-radius: 10px;
+  padding: 16px 24px 14px;
+  opacity: 0;
+}
+ROOT .hdr .k {
+  color: #ff9f1c;
+}
+ROOT .strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+ROOT .pill {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font: 700 30px/1.2 Inter, sans-serif;
+  background: rgba(10, 14, 20, 0.9);
+  border: 2px solid rgba(232, 238, 244, 0.25);
+  border-radius: 12px;
+  padding: 16px 30px;
+  opacity: 0;
+}
+ROOT .pill .ar {
+  color: #ff9f1c;
+}
