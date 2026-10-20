@@ -7,9 +7,9 @@
     "sfx": "python3 assets/audio/gen_soundscape.py",
     "build": "node src/build.mjs",
     "board": "node src/review-board.mjs",
-    "dev": "npx --yes hyperframes@0.8.177 preview",
-    "check": "npx --yes hyperframes@0.8.177 check",
-    "render": "npx --yes hyperframes@0.8.177 render",
-    "publish": "npx --yes hyperframes@0.8.177 publish"
+    "dev": "npx --yes hyperframes@0.8.179 preview",
+    "check": "npx --yes hyperframes@0.8.179 check",
+    "render": "npx --yes hyperframes@0.8.179 render",
+    "publish": "npx --yes hyperframes@0.8.179 publish"
   }
 }
