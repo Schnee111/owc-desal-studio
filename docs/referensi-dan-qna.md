@@ -82,6 +82,12 @@ Air garam pekat:        12,5 − 5 = 7,5 m³/hari
 **Kenapa memakai 63 GW kalau itu bukan potensi gelombang saja?**
 Kami menyebutnya "potensi energi laut", sesuai kategori di sumber ESDM. Angka itu hanya menunjukkan bahwa energi laut besar tetapi belum dimanfaatkan. Itu tidak dipakai untuk menghitung keluaran alat kami.
 
+**Seberapa besar tekanan udara di ruang OWC?**
+Kecil, hanya orde beberapa kPa (sepersekian atmosfer), tetapi debit udaranya besar. Karena itu narasi menyebut "udara yang tertekan", bukan "bertekanan tinggi". Tekanan tinggi (±55–70 bar) hanya ada di pompa RO, bukan di ruang OWC.
+
+**Apa itu efisiensi tangkap 0,5 dan turbin-generator 0,35?**
+Efisiensi tangkap adalah porsi energi ombak yang berhasil diubah ruang OWC menjadi aliran udara. Efisiensi turbin-generator adalah porsi aliran udara yang menjadi listrik. Keduanya asumsi desain untuk merekonstruksi angka 2 kW di LKM, belum hasil uji.
+
 **Turbin berputar searah, berarti listriknya stabil?**
 Tidak. Arah putarnya tetap, tetapi besar dayanya naik turun mengikuti ombak (lihat grafik di scene 4). Karena itu ada pengondisi daya, baterai, dan tangki sebagai penyangga.
 
