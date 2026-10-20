@@ -1,0 +1,63 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"></head><body><template>
+<style>/*@CSS*/</style>
+<div id="s7-root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="26">
+ <div class="cam"><div class="world" data-layout-allow-overflow="">
+  <div class="facility-title">Sasaran layanan: {{lamps}} lampu jalur, {{kiosks}} kios &amp; kontrol</div>
+  <div class="lbl" style="left:1560px;top:516px" data-leader="1620,516,1620,495">Tangki produk air ({{water}} m³/hari)</div>
+ </div></div>
+ <div class="allocation water-allocation">
+  <div class="service-intro">
+   <h1>Untuk satu fasilitas.</h1>
+   <p class="service-number">{{visitors}}<span> pengunjung / hari</span></p>
+   <p>Melayani sanitasi pengunjung, {{kiosks}} kios wisata, petugas &amp; kebersihan.</p>
+   <p class="service-small">Target air bersih: {{water}} m³/hari dari tangki distribusi.</p>
+  </div>
+  <div class="ledger"><h2>Pembagian {{water}} m³ air bersih / hari</h2><div class="rows" data-chart="water"></div></div>
+ </div>
+ <div class="allocation energy-allocation">
+  <div class="service-intro">
+   <h1>Energi harus dibagi.</h1>
+   <p class="energy-formula">Ombak Hs {{hs}} m · Te {{te}} dtk · Ruang {{width}} m → {{meanKw}} kW rata-rata × {{hours}} jam</p>
+   <p class="service-number">{{gross}}<span> kWh bruto / hari</span></p>
+   <p><strong>{{net}} kWh bersih</strong> setelah allowance rugi listrik 10%.</p>
+  </div>
+  <div class="ledger"><h2>Anggaran {{net}} kWh / hari (satu sumber daya)</h2><div class="rows" data-chart="energy"></div></div>
+ </div>
+ <p class="service-footnote">Skenario desain bersyarat, bukan hasil uji lapangan. Asumsi konsumsi RO {{sec}} kWh/m³; margin {{margin}} kWh menampung fluktuasi &amp; pemulihan cadangan.</p>
+</div>
+<script>/*@ENGINE*/
+(()=>{
+ const S=/*@DATA*/,root=document.getElementById('s7-root'),q=s=>root.querySelector(s);
+ const sub=window.OWC.mountSubtitle(root,/*@SUBTITLE*/);
+ const W=OWC.build(q('.world'),{prefix:'s7',scene:7,fn:{gridOn:()=>1,pump:()=>1,ro:()=>1,tapOn:()=>1,tank:()=>.72}});
+ const L=W.L;W.applyCam();W.update(0);gsap.set([L.brA,L.brB,L.grid,L.molecules],{opacity:1});gsap.set(L.cw,{opacity:0});
+ gsap.to([L.chamber,L.air,L.arrows],{opacity:0.55,duration:0.8});
+ const fmt=v=>String(v).replace('.',',');
+ for(const [kind,rows,total] of [['water',S.waterRows,S.water],['energy',S.energyRows,S.net]]){
+  q(`[data-chart="${kind}"]`).innerHTML=rows.map(([v,label],i)=>`<div class="ledger-row row-${kind}-${i}"><span class="ledger-label">${label}</span><div class="ledger-space"><div class="ledger-bar bar-${i}" style="width:${330*v/total}px"></div></div><strong>${fmt(v)} ${kind==='water'?'m³':'kWh'}</strong></div>`).join('');
+ }
+ const tl=gsap.timeline({paused:true}),clock={t:0};
+ // Beat 1: Origin-aware transform landing for Water Allocation (motionmaxxing Posture rule)
+ tl.fromTo(q('.water-allocation'),{opacity:0},{opacity:1,duration:.45,ease:'power3.out'},.25);
+ tl.fromTo(q('.water-allocation .service-intro'),{opacity:0,x:-20,y:10},{opacity:1,x:0,y:0,duration:.5,ease:'power3.out'},.28);
+ tl.fromTo(q('.water-allocation .ledger'),{opacity:0,y:18},{opacity:1,y:0,duration:.52,ease:'power3.out'},.36);
+ tl.fromTo([...q('[data-chart="water"]').querySelectorAll('.ledger-bar')],{scaleX:0},{scaleX:1,duration:0.85,stagger:.11,ease:'power3.out'},0.75);
+ // Accelerated exit of Beat 1 & decelerated landing of Beat 2 at t=7.3s
+ tl.to(q('.water-allocation'),{opacity:0,y:-10,duration:.32,ease:'power2.in'},7.12);
+ tl.fromTo(q('.energy-allocation'),{opacity:0},{opacity:1,duration:.45,ease:'power3.out'},7.38);
+ tl.fromTo(q('.energy-allocation .service-intro'),{opacity:0,x:-20,y:10},{opacity:1,x:0,y:0,duration:.5,ease:'power3.out'},7.4);
+ tl.fromTo(q('.energy-allocation .ledger'),{opacity:0,y:18},{opacity:1,y:0,duration:.52,ease:'power3.out'},7.48);
+ const eBars=[...q('[data-chart="energy"]').querySelectorAll('.ledger-bar')];
+ const eRows=[...q('[data-chart="energy"]').querySelectorAll('.ledger-row')];
+ tl.fromTo(eBars,{scaleX:0},{scaleX:1,duration:0.85,stagger:.16,ease:'power3.out'},7.95);
+ [13.3,15.4,17.4].forEach((at,i)=>{
+  if(eRows[i]){
+   tl.fromTo(eRows[i],{backgroundColor:'rgba(166,79,50,0)',x:0},{backgroundColor:'rgba(166,79,50,0.12)',x:4,duration:0.38,ease:'power3.out'},at);
+  }
+ });
+ tl.fromTo([q('.facility-title'),q('.service-footnote')],{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
+ tl.to([L.chamber,L.air,L.arrows],{opacity:1,duration:0.5},25.2);
+ tl.to([q('.energy-allocation'),q('.facility-title'),q('.service-footnote'),...root.querySelectorAll('.lbl'),...W.leaders.values()],{opacity:0,y:-8,duration:.42,ease:'power2.in'},25.4);
+ tl.fromTo(clock,{t:0},{t:26,duration:26,ease:'none',onUpdate:()=>{W.update(clock.t);if(sub)sub.update(clock.t);}},0);
+ window.__timelines.s7=tl;
+})();</script></template></body></html>

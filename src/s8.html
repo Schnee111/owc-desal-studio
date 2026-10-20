@@ -1,0 +1,80 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"></head><body><template>
+<style>/*@CSS*/</style>
+<div id="s8-root" data-composition-id="s8" data-width="1920" data-height="1080" data-duration="24">
+ <div class="cam"><div class="world" data-layout-allow-overflow="">
+  <div class="facility-title">Mode prioritas: {{lamps}} lampu jalur &amp; kontrol tetap menyala</div>
+  <div class="lbl" style="left:1465px;top:516px" data-leader="1620,516,1620,495">Cadangan tangki tetap memasok keran</div>
+  <div class="ro-standby-badge">RO SIAGA · Pompa Dijadwalkan Ulang (0 kW)</div>
+  <div class="monitor-badge">Operator pantau: mutu air · kondisi alat · outfall brine</div>
+ </div></div>
+ <div class="reserve-ui">
+  <div class="service-intro">
+   <h1>Ketika ombak melemah.</h1>
+   <h2 class="reserve-state">Produksi menurun.</h2>
+   <div class="generation-meter"><i></i></div>
+   <p class="service-small">Keluaran generator relatif (skema ilustratif).</p>
+   <p class="critical-state">RO dijadwalkan ulang.</p>
+  </div>
+  <div class="reserve-ledger">
+   <div class="reserve-card tank-card">
+    <strong>{{reserve}} m³</strong>
+    <h2>cadangan air terpakai</h2>
+    <p>Menutup 2 hari kebutuhan contoh (2 × {{water}} m³) jika tangki awal penuh via gravitasi.</p>
+   </div>
+   <div class="reserve-card bat-card">
+    <strong>{{battery}} kWh</strong>
+    <h2>baterai nominal</h2>
+    <p>Menopang {{lamps}} lampu jalur &amp; kontrol (2,4 kWh/hari), bukan menjalankan pompa RO 2 hari.</p>
+   </div>
+  </div>
+ </div>
+ <p class="service-footnote">Distribusi gravitasi memerlukan beda tinggi yang cukup. Mutu air bersih, kondisi alat &amp; outfall brine tetap dipantau operator.</p>
+</div>
+<script>/*@ENGINE*/
+(()=>{
+ const S=/*@DATA*/,root=document.getElementById('s8-root'),q=s=>root.querySelector(s),{ramp}=OWC;
+ const sub=window.OWC.mountSubtitle(root,/*@SUBTITLE*/);
+ const pumpAngle=t=>{const u=Math.min(1,Math.max(0,(t-3)/5));return 300*(121+t-5*(u**3-.5*u**4)-Math.max(0,t-8));};
+ const W=OWC.build(q('.world'),{prefix:'s8',scene:8,fn:{gridOn:()=>1,pump:t=>1-ramp(t,3,8),pumpAngle,ro:t=>1-ramp(t,3,8),tapOn:()=>1,tank:t=>.72-.18*ramp(t,8,23)}});
+ const L=W.L;W.applyCam();W.update(0);gsap.set([L.brA,L.brB,L.grid,L.molecules],{opacity:1});gsap.set(L.cw,{opacity:0});
+ const NS='http://www.w3.org/2000/svg',mk=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);parent.appendChild(e);return e;};
+ const battery=mk('g',{class:'battery-buffer',opacity:0},W.svg);
+ mk('path',{d:'M980 210 H1031 V176 M1031 110 V80 H1640 V98',fill:'none',stroke:'#A64F32','stroke-width':3},battery);
+ const priorityFlow=mk('path',{d:'M1031 110 V80 H1640 V98',fill:'none',stroke:'#F4EFE4','stroke-width':2,'stroke-dasharray':'9 12'},battery);
+ mk('rect',{x:1005,y:110,width:52,height:66,rx:3,fill:'#E5E2D5',stroke:'#293F3D','stroke-width':2},battery);
+ const charge=mk('rect',{class:'battery-charge',x:1011,y:120,width:40,height:46,fill:'#A64F32'},battery);
+ const label=mk('text',{x:1072,y:151,fill:'#293F3D','font-size':23,'font-weight':'600'},battery);label.textContent='Baterai 8 kWh';
+
+ const tl=gsap.timeline({paused:true}),clock={t:0};
+ tl.fromTo(q('.reserve-ui'),{opacity:0},{opacity:1,duration:.45,ease:'power3.out'},.25);
+ tl.fromTo(q('.reserve-ui .service-intro'),{opacity:0,x:-20,y:10},{opacity:1,x:0,y:0,duration:.5,ease:'power3.out'},.28);
+ tl.fromTo([q('.facility-title'),q('.service-footnote')],{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
+ // 1. RO Standby badge appears at t=2.5s with subtle origin-aware scale settle
+ tl.fromTo(q('.ro-standby-badge'),{opacity:0,y:10,scale:0.94},{opacity:1,y:0,scale:1,duration:.45,ease:'back.out(1.18)'},2.5);
+ // 2. Tank 10 m3 reserve card appears at t=5.0s
+ tl.fromTo(q('.tank-card'),{opacity:0,y:18},{opacity:1,y:0,duration:.52,ease:'power3.out'},5.0);
+ // 3. Battery SVG + 8 kWh battery card appear at t=2.7s / 10.0s
+ tl.to(battery,{opacity:1,duration:.55,ease:'power2.out'},2.7);
+ tl.fromTo(q('.bat-card'),{opacity:0,y:18},{opacity:1,y:0,duration:.52,ease:'power3.out'},10.0);
+ // 4. Operator monitoring badge appears at t=15.8s
+ tl.fromTo(q('.monitor-badge'),{opacity:0,y:10,scale:0.95},{opacity:1,y:0,scale:1,duration:.45,ease:'power3.out'},15.8);
+
+ tl.to([q('.reserve-ui'),q('.facility-title'),q('.service-footnote'),q('.ro-standby-badge'),q('.monitor-badge'),battery,...root.querySelectorAll('.lbl'),...W.leaders.values()],{opacity:0,y:-8,duration:.42,ease:'power2.in'},23.4);
+ const update=t=>{
+  const r=W.update(t),weak=ramp(t,3,8);
+  if(sub)sub.update(t);
+  priorityFlow.setAttribute('stroke-dashoffset',String(-t*24));
+  q('.generation-meter i').style.transform=`scaleX(${r.k.toFixed(4)})`;
+  q('.reserve-state').textContent=t<8?'Produksi menurun.':'RO siaga (Standby).';
+  q('.critical-state').textContent=t<8?'Produksi RO dijadwalkan ulang.':'Air dari tangki 10 m³. Baterai 8 kWh untuk beban prioritas.';
+  L.pwB.flow.setAttribute('opacity',String((1-weak)*r.k));
+  L.pwA.flow.setAttribute('opacity','0');
+  L.facilityWires.setAttribute('opacity',String(.3*(1-weak)));
+  L.facilityLights.forEach(e=>e.setAttribute('opacity',String(1-.88*weak)));
+  L.kioskPanel.setAttribute('opacity',String(1-.85*weak));L.lampCone.setAttribute('opacity','.4');
+  L.molecules.style.opacity=String(1-weak);
+  const h=46*(1-.14*ramp(t,4,24));charge.setAttribute('height',String(h));charge.setAttribute('y',String(166-h));
+ };
+ tl.fromTo(clock,{t:0},{t:24,duration:24,ease:'none',onUpdate:()=>update(clock.t)},0);update(0);
+ window.__timelines.s8=tl;
+})();</script></template></body></html>

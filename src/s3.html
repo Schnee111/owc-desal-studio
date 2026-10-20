@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template id="s3-template">
+      <style>
+        /*@CSS*/
+        #s3-root .strip { left: auto; right: 72px; }
+        #s3-root .pill .st { opacity: 0.35; color: #e8eef4; }
+        #s3-root .press {
+          position: absolute;
+          left: 64px;
+          top: 372px;
+          width: 360px;
+          background: rgba(10, 14, 20, 0.9);
+          border: 2px solid rgba(155, 234, 255, 0.7);
+          border-radius: 10px;
+          padding: 14px 18px 16px;
+          font: 700 26px/1.2 Inter, sans-serif;
+          opacity: 0;
+        }
+        #s3-root .press b { color: #9beaff; }
+        #s3-root .meter {
+          margin-top: 12px;
+          height: 12px;
+          border-radius: 6px;
+          background: rgba(155, 234, 255, 0.15);
+          overflow: hidden;
+        }
+        #s3-root .meter i {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: #9beaff;
+          transform-origin: 0 50%;
+          transform: scaleX(0);
+        }
+      </style>
+
+      <div data-hf-id="hf-hnk1" id="s3-root" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="18">
+        <div data-hf-id="hf-12x1" class="cam">
+          <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
+            <div data-hf-id="hf-xjij" class="lbl hide" data-k="turbine" style="left: 410px; top: 168px" data-leader="560,186,642,200">Turbin Wells</div>
+            <div data-hf-id="hf-oktx" class="lbl hide k-energy" data-k="gen" style="left: 786px; top: 110px" data-leader="844,148,844,180">Generator</div>
+            <div data-hf-id="hf-iqfn" class="lbl hide k-energy" data-k="power" style="left: 1000px; top: 228px" data-leader="1000,246,980,226">Listrik</div>
+          </div>
+        </div>
+        <div data-hf-id="hf-ndox" class="hdr"><span data-hf-id="hf-1j0g" class="k">Fase 1.</span> Ombak naik</div>
+        <div data-hf-id="hf-9lgo" class="press">Aliran udara: <b data-hf-id="hf-mtdc" class="pw">keluar</b><div data-hf-id="hf-rq4r" class="meter"><i data-hf-id="hf-wt6k"></i></div></div>
+        <div class="scale-card">
+          <div class="skick">Skala Fisik Skenario (LKM 3)</div>
+          <div class="srow">Ombak Hs = {{hs}} m · Periode Te = {{te}} dtk (≈{{flux}} kW/m)</div>
+          <div class="srow">Lebar ruang OWC = {{width}} m (rasio miniatur 1:20)</div>
+          <div class="sres">Daya listrik rata-rata skenario ≈ {{meanKw}} kW</div>
+        </div>
+        <div data-hf-id="hf-0u8q" class="strip">
+          <div data-hf-id="hf-kndt" class="pill">
+            <span data-hf-id="hf-pxsn" class="st">Air masuk</span><span data-hf-id="hf-08ha" class="ar">→</span><span data-hf-id="hf-a9tp" class="st">udara tertekan</span><span data-hf-id="hf-wliq" class="ar">→</span><span data-hf-id="hf-6iy3" class="st">udara keluar</span><span data-hf-id="hf-wztr" class="ar">→</span><span data-hf-id="hf-hz0h" class="st">turbin berputar</span>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        /*@ENGINE*/
+        (() => {
+          const root = document.getElementById("s3-root");
+          const $ = (s) => root.querySelector(s);
+          const world = $(".world");
+          const { clamp } = window.OWC;
+          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const W = window.OWC.build(world, { prefix: "s3", scene: 3, fn: { tank: () => 0.3 } });
+          const L = W.L;
+          W.update(0);
+          const tl = gsap.timeline({ paused: true });
+          const VO = 1.5; // Synced to voStart=46.5s (local 1.5s)
+          const lblMap = {};
+          root.querySelectorAll(".lbl").forEach((e) => { lblMap[e.dataset.k] = e; });
+          function label(k, at) {
+            const el = lblMap[k];
+            tl.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, at);
+            const ld = W.leaders.get(el);
+            if (ld) tl.fromTo(ld, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, at + 0.1);
+          }
+
+          // Add chamber width dimension marker directly inside world SVG
+          const NS = "http://www.w3.org/2000/svg";
+          const dimG = document.createElementNS(NS, "g");
+          dimG.setAttribute("opacity", "0");
+          W.svg.appendChild(dimG);
+          const mk = (tag, attrs) => {
+            const e = document.createElementNS(NS, tag);
+            for (const k in attrs) e.setAttribute(k, attrs[k]);
+            dimG.appendChild(e);
+            return e;
+          };
+          mk("line", { x1: 592, y1: 726, x2: 788, y2: 726, stroke: "#F4EFE4", "stroke-width": 2.5, "stroke-dasharray": "6 4" });
+          mk("line", { x1: 592, y1: 716, x2: 592, y2: 736, stroke: "#F4EFE4", "stroke-width": 2.5 });
+          mk("line", { x1: 788, y1: 716, x2: 788, y2: 736, stroke: "#F4EFE4", "stroke-width": 2.5 });
+          mk("rect", { x: 632, y: 712, width: 116, height: 26, rx: 4, fill: "#293F3D" });
+          const dimTxt = mk("text", { x: 690, y: 730, fill: "#F4EFE4", "font-size": "17", "font-weight": "600", "text-anchor": "middle" });
+          dimTxt.textContent = "Lebar B = 4 m";
+
+          // Camera push in on the OWC
+          const F = W.frame(1.3, 560, 0, 420, -2.5);
+          tl.fromTo(W.cam, { s: 1, x: 0, y: 0 }, { s: F.s, x: F.x, y: -2.5, duration: 2.2, ease: "power2.inOut", onUpdate: W.applyCam }, 0);
+
+          tl.fromTo($(".hdr"), { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.6);
+          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 2.2);
+          const steps = [...root.querySelectorAll(".pill .st")];
+          const colors = ["#5cc8ff", "#9beaff", "#9beaff", "#ffd23f"];
+          // Exact VO word timestamps: "air masuk"(2.96s), "menekan udara"(8.26s), "menyembur keluar"(11.56s), "memutar generator"(13.41s)
+          const stepAt = [2.9, 8.0, 11.4, 13.2];
+          steps.forEach((s, i) => tl.to(s, { opacity: 1, color: colors[i], duration: 0.4, ease: "power1.out" }, stepAt[i]));
+          steps.forEach((s) => { s.style.display = "inline-block"; });
+
+          tl.fromTo(dimG, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 3.6);
+          tl.fromTo($(".scale-card"), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 4.2);
+          tl.fromTo($(".press"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 7.6);
+          label("turbine", 12.1);
+          tl.fromTo(L.cw, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 12.5);
+          label("gen", 13.3);
+          label("power", 14.6);
+          tl.to([$(".press"), $(".scale-card"), dimG, $(".pill"), $(".hdr")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 17.4);
+
+          const meter = $(".meter i");
+          const clock = { t: 0 };
+          tl.fromTo(clock, { t: 0 }, {
+            t: 18, duration: 18, ease: "none",
+            onUpdate: () => {
+              const r = W.update(clock.t);
+              if (sub) sub.update(clock.t);
+              meter.style.transform = `scaleX(${clamp(r.v / 22, 0, 1).toFixed(3)})`;
+              $(".press .pw").textContent = Math.abs(r.v) < 1 ? "jeda" : r.v > 0 ? "keluar" : "masuk";
+            },
+          }, 0);
+
+          window.__timelines["s3"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

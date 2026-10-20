@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template id="s4-template">
+      <style>
+        /*@CSS*/
+        #s4-root .strip { left: auto; right: 72px; }
+        #s4-root .pill .tb { color: #ffd23f; }
+        #s4-root .pill .ai { color: #9beaff; }
+        #s4-root .press {
+          position: absolute;
+          left: 64px;
+          top: 372px;
+          width: 360px;
+          background: rgba(10, 14, 20, 0.9);
+          border: 2px solid rgba(155, 234, 255, 0.7);
+          border-radius: 10px;
+          padding: 14px 18px 16px;
+          font: 700 26px/1.2 Inter, sans-serif;
+          opacity: 0;
+        }
+        #s4-root .press b { color: #9beaff; }
+        #s4-root .meter {
+          position: relative;
+          margin-top: 12px;
+          height: 12px;
+          border-radius: 6px;
+          background: rgba(155, 234, 255, 0.15);
+          overflow: hidden;
+        }
+        #s4-root .meter i {
+          position: absolute;
+          left: 50%;
+          top: 0;
+          width: 50%;
+          height: 100%;
+          background: #9beaff;
+          transform-origin: 0 50%;
+          transform: scaleX(0);
+        }
+        #s4-root .meter s {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 50%;
+          height: 100%;
+          background: #9beaff;
+          transform-origin: 100% 50%;
+          transform: scaleX(0);
+        }
+        #s4-root .meter u {
+          position: absolute;
+          left: calc(50% - 1px);
+          top: 0;
+          width: 2px;
+          height: 100%;
+          background: #e8eef4;
+        }
+        #s4-root .inset {
+          position: absolute;
+          left: 1080px;
+          top: 144px;
+          width: 760px;
+          height: 500px;
+          background: #0a0e14;
+          border: 2px solid rgba(255, 210, 63, 0.7);
+          border-radius: 14px;
+          opacity: 0;
+        }
+        #s4-root .inset .ti {
+          position: absolute;
+          left: 20px;
+          top: 14px;
+          font: 700 28px/1.2 Inter, sans-serif;
+        }
+        #s4-root .inset .dir {
+          position: absolute;
+          right: 26px;
+          top: 18px;
+          font: 700 22px/1.2 Inter, sans-serif;
+          color: #e8eef4;
+        }
+        #s4-root .inset .fo { position: absolute; left: 20px; top: 58px; }
+        #s4-root .inset .cap {
+          position: absolute;
+          top: 454px;
+          width: 340px;
+          text-align: center;
+          font: 700 22px/1.2 Inter, sans-serif;
+          color: #9beaff;
+        }
+        #s4-root .inset .gd {
+          position: absolute;
+          font: 700 20px/1.2 Inter, sans-serif;
+          color: #ffd23f;
+          opacity: 0;
+        }
+      </style>
+
+      <div data-hf-id="hf-29fl" id="s4-root" data-composition-id="s4" data-width="1920" data-height="1080" data-duration="22">
+        <div data-hf-id="hf-12x1" class="cam">
+          <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
+            <div data-hf-id="hf-se6v" class="lbl" data-k="turbine" style="left: 410px; top: 168px" data-leader="560,186,642,200">Turbin Wells</div>
+            <div data-hf-id="hf-fc7d" class="lbl k-energy" data-k="gen" style="left: 760px; top: 104px" data-leader="844,144,844,180">Generator</div>
+            <div class="lbl k-energy" data-k="cond" style="left: 825px; top: 256px" data-leader="920,256,943,229">Pengondisi daya</div>
+          </div>
+        </div>
+        <div data-hf-id="hf-c910" class="hdr"><span data-hf-id="hf-ueg7" class="k">Fase 2.</span> <span data-hf-id="hf-oie3" class="phase-title">Ombak turun</span></div>
+        <div data-hf-id="hf-9lgo" class="press">Aliran udara: <b data-hf-id="hf-497i" class="pw">masuk</b><div data-hf-id="hf-rq4r" class="meter"><s data-hf-id="hf-dljm"></s><i data-hf-id="hf-wt6k"></i><u data-hf-id="hf-w5wo"></u></div></div>
+        <div class="s4-backdrop"></div>
+        <div data-hf-id="hf-cx1j" class="inset">
+          <div data-hf-id="hf-4655" class="ti">Penampang bilah simetris turbin Wells</div>
+          <div data-hf-id="hf-gtij" class="dir">arah putar selalu →</div>
+          <svg data-hf-id="hf-5hly" class="fo" viewBox="0 0 700 400" width="700" height="400" />
+          <div data-hf-id="hf-zq6i" class="cap" style="left: 20px">Fase 1: Udara dari bawah ↑</div>
+          <div data-hf-id="hf-e5rz" class="cap" style="left: 380px">Fase 2: Udara dari atas ↓</div>
+          <div data-hf-id="hf-ar72" class="gd" style="left: 214px; top: 274px">gaya dorong</div>
+          <div data-hf-id="hf-2qo3" class="gd" style="left: 574px; top: 214px">gaya dorong</div>
+        </div>
+        <div class="power-fluctuation"><p>Daya generator berubah sepanjang siklus <span>→ disearahkan &amp; distabilkan pengondisi daya</span></p><svg viewBox="0 0 720 84" width="720" height="84"><path d="M4 72 H710" fill="none" stroke="#676953" stroke-width="1.5"/><path class="power-trace" fill="none" stroke="#A64F32" stroke-width="4"/></svg></div>
+        <div data-hf-id="hf-0u8q" class="strip">
+          <div data-hf-id="hf-kndt" class="pill"><span data-hf-id="hf-dyuv" class="ai">Dua arah aliran udara,</span><span data-hf-id="hf-18uy" class="tb">putaran turbin tetap searah</span></div>
+        </div>
+      </div>
+
+      <script>
+        /*@ENGINE*/
+        (() => {
+          const root = document.getElementById("s4-root");
+          const $ = (s) => root.querySelector(s);
+          const world = $(".world");
+          const { clamp } = window.OWC;
+          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const W = window.OWC.build(world, { prefix: "s4", scene: 4, fn: { tank: () => 0.3 } });
+          const L = W.L;
+          const F = W.frame(1.3, 560, 0, 420, -2.5);
+          Object.assign(W.cam, { s: F.s, x: F.x, y: -2.5 });
+          W.applyCam();
+          W.update(0);
+          gsap.set(L.cw, { opacity: 1 });
+          const tl = gsap.timeline({ paused: true });
+
+          // ---- inset: symmetric blade section (NACA 0015, leading edge toward travel) ----
+          const NS = "http://www.w3.org/2000/svg";
+          const svg = $(".inset .fo");
+          const mk = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; };
+          const foil = (cx, cy) => {
+            const c = 170, up = [], lo = [];
+            for (let i = 0; i <= 40; i++) {
+              const x = (1 - Math.cos((Math.PI * i) / 40)) / 2;
+              const yt = 5 * 0.2 * c * (0.2969 * Math.sqrt(x) - 0.126 * x - 0.3516 * x * x + 0.2843 * x ** 3 - 0.1015 * x ** 4);
+              const px = cx + c / 2 - x * c;
+              up.push(`${px.toFixed(1)} ${(cy - yt).toFixed(1)}`);
+              lo.unshift(`${px.toFixed(1)} ${(cy + yt).toFixed(1)}`);
+            }
+            return "M" + up.join(" L") + " L" + lo.join(" L") + "Z";
+          };
+          const arrow = (x1, y1, x2, y2, color, w, p) => {
+            const g = mk("g", {}, p);
+            const a = Math.atan2(y2 - y1, x2 - x1), hs = w * 3.2;
+            mk("path", { d: `M${x1} ${y1} L${x2 - Math.cos(a) * hs * 0.6} ${y2 - Math.sin(a) * hs * 0.6}`, stroke: color, "stroke-width": w, "stroke-linecap": "round" }, g);
+            const h = [[0, 0], [-hs, hs * 0.6], [-hs, -hs * 0.6]].map(([px, py]) => `${(x2 + px * Math.cos(a) - py * Math.sin(a)).toFixed(1)} ${(y2 + px * Math.sin(a) + py * Math.cos(a)).toFixed(1)}`);
+            mk("path", { d: "M" + h.join(" L") + "Z", fill: color }, g);
+            return g;
+          };
+          const panels = [{ cx: 170, dir: -1 }, { cx: 530, dir: 1 }].map((p) => {
+            const cy = 200;
+            const bg = mk("rect", { x: p.cx - 168, y: 6, width: 336, height: 388, rx: 10, fill: "rgba(255,210,63,0.06)", stroke: "#FFD23F", "stroke-width": 2.5, opacity: 0.25 });
+            const air = mk("g", { opacity: 0 });
+            [-55, 0, 55].forEach((dx) => p.dir < 0
+              ? arrow(p.cx + dx, 360, p.cx + dx, 270, "#9BEAFF", 6, air)
+              : arrow(p.cx + dx, 40, p.cx + dx, 130, "#9BEAFF", 6, air));
+            const blade = mk("path", { d: foil(p.cx, cy), fill: "#18212D", stroke: "#E8EEF4", "stroke-width": 3, "stroke-linejoin": "round" });
+            mk("line", { x1: p.cx - 100, y1: cy, x2: p.cx + 100, y2: cy, stroke: "#E8EEF4", "stroke-opacity": 0.3, "stroke-width": 1.5, "stroke-dasharray": "6 6" });
+            const lift = mk("g", { opacity: 0 });
+            const lx = p.cx + 63, ly = cy + p.dir * 136;
+            arrow(p.cx, cy, lx, ly, "#E8EEF4", 5, lift);
+            mk("path", { d: `M${lx} ${ly} L${lx} ${cy}`, stroke: "#E8EEF4", "stroke-opacity": 0.5, "stroke-width": 2, "stroke-dasharray": "5 5" }, lift);
+            const thrust = mk("g", { opacity: 0 });
+            arrow(p.cx, cy, p.cx + 120, cy, "#FFD23F", 7, thrust);
+            return { bg, air, blade, lift, thrust };
+          });
+          panels.forEach((p) => {
+            const len = p.blade.getTotalLength();
+            p.blade.style.strokeDasharray = `${len} ${len}`;
+            p.blade.style.strokeDashoffset = `${len}`;
+            p.blade.style.fillOpacity = 0;
+          });
+
+          tl.fromTo($(".hdr"), { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.4);
+          tl.fromTo($(".press"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.4);
+          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 5.3);
+          tl.fromTo(L.cw, { scale: 1, svgOrigin: "690 210" }, { scale: 1.18, duration: 0.35, ease: "power2.out", immediateRender: false, svgOrigin: "690 210" }, 5.8);
+          tl.to(L.cw, { scale: 1, duration: 0.55, ease: "power2.inOut", svgOrigin: "690 210" }, 6.15);
+
+          // Inset appears at t=7.8s (VO: "Bilah simetris menghasilkan gaya putar..." at 8.11s) with clean opaque backdrop
+          tl.fromTo($(".s4-backdrop"), { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 7.6);
+          tl.fromTo($(".inset"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 7.8);
+          panels.forEach((p, i) => {
+            tl.to(p.blade, { strokeDashoffset: 0, duration: 0.85, ease: "power2.out" }, 8.2 + i * 0.2);
+            tl.to(p.blade, { fillOpacity: 1, duration: 0.45, ease: "power1.out" }, 8.9 + i * 0.2);
+            tl.fromTo(p.air, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 9.4 + i * 0.25);
+            tl.fromTo(p.lift, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 10.1 + i * 0.25);
+            tl.fromTo(p.thrust, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 10.6 + i * 0.25);
+          });
+          root.querySelectorAll(".inset .gd").forEach((g, i) => tl.fromTo(g, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 10.8 + i * 0.25));
+
+          // Power fluctuation graph appears at t=12.4s right when VO says "Namun torsi dan daya tetap berubah" (12.46s)
+          tl.fromTo($(".power-fluctuation"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 12.4);
+          tl.fromTo(L.conditioner, { scale: 1, svgOrigin: "943 210" }, { scale: 1.25, duration: 0.35, ease: "power2.out", immediateRender: false, svgOrigin: "943 210" }, 15.8);
+          tl.to(L.conditioner, { scale: 1, duration: 0.5, ease: "power2.inOut", svgOrigin: "943 210" }, 16.2);
+
+          tl.to([$(".press"), $(".pill"), $(".hdr"), $(".inset"), $(".power-fluctuation"), $(".s4-backdrop")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 21.4);
+
+          const pm = $(".meter i"), nm = $(".meter s"), pw = $(".press .pw");
+          const clock = { t: 0 };
+          tl.fromTo(clock, { t: 0 }, {
+            t: 22, duration: 22, ease: "none",
+            onUpdate: () => {
+              const t = clock.t;
+              const r = W.update(t);
+              if (sub) sub.update(t);
+              let trace = "";
+              for (let i = 0; i <= 60; i++) {
+                const sample = Math.max(0, t - 6 + i * 0.1);
+                const j = Math.min(W.sim.W.length - 1, Math.round(sample * 120));
+                const k = W.sim.W[j] / OWC.WMAX;
+                trace += (i ? "L" : "M") + (5 + i * 11.6).toFixed(1) + " " + (70 - 60 * k * k).toFixed(1) + " ";
+              }
+              $(".power-trace").setAttribute("d", trace);
+              pm.style.transform = `scaleX(${clamp(r.v / 60, 0, 1).toFixed(3)})`;
+              nm.style.transform = `scaleX(${clamp(-r.v / 60, 0, 1).toFixed(3)})`;
+              const word = Math.abs(r.v) < 1 ? "jeda" : r.v > 1 ? "keluar" : "masuk";
+              if (pw.textContent !== word) pw.textContent = word;
+              $(".hdr .k").textContent = t > 12.4 ? "Turbin Wells." : "Fase 2.";
+              $(".phase-title").textContent = t > 12.4 ? "Siklus berulang" : "Ombak turun";
+              const a = clamp(r.v / 15, -1, 1);
+              panels[0].bg.setAttribute("opacity", (0.25 + 0.75 * clamp(a, 0, 1)).toFixed(3));
+              panels[1].bg.setAttribute("opacity", (0.25 + 0.75 * clamp(-a, 0, 1)).toFixed(3));
+            },
+          }, 0);
+
+          window.__timelines["s4"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

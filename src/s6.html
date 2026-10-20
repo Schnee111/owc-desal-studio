@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template id="s6-template">
+      <style>
+        /*@CSS*/
+        #s6-root .pano { position: absolute; left: 0; top: 0; opacity: 0; }
+        #s6-root .sum {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 22px;
+          font: 900 50px/1 Montserrat, sans-serif;
+          color: #e8eef4;
+        }
+        #s6-root .sum .it { display: flex; align-items: center; gap: 14px; opacity: 0; }
+        #s6-root .sum .op { color: #ff9f1c; opacity: 0; }
+        #s6-root .sum svg { display: block; }
+        #s6-root .card { position: absolute; inset: 0; }
+        #s6-root .card .veil {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse 1100px 620px at 50% 50%, rgba(10, 14, 20, 0.95), rgba(10, 14, 20, 0.7) 70%, rgba(10, 14, 20, 0.5) 100%);
+          opacity: 0;
+        }
+        #s6-root .card .tt { position: absolute; left: 0; top: 0; opacity: 0; }
+        #s6-root .card .tt text {
+          font: 900 136px Montserrat, sans-serif;
+          letter-spacing: 0.02em;
+          fill: #e8eef4;
+          fill-opacity: 0;
+          stroke: #e8eef4;
+          stroke-width: 2.5;
+          stroke-dasharray: 1300 1300;
+          stroke-dashoffset: 1300;
+        }
+        #s6-root .card .team {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 330px;
+          text-align: center;
+          font: 700 35px/1.2 Inter, sans-serif;
+          color: #e8eef4;
+          opacity: 0;
+        }
+        #s6-root .card .team .k { color: #ff9f1c; }
+        #s6-root .card .members {
+          position: absolute;
+          left: 560px;
+          width: 800px;
+          top: 410px;
+        }
+        #s6-root .card .m {
+          display: flex;
+          gap: 26px;
+          font: 400 30px/1.5 Inter, sans-serif;
+          color: #e8eef4;
+          opacity: 0;
+        }
+        #s6-root .card .m b {
+          font: 700 28px/1.6 "IBM Plex Mono", monospace;
+          color: #9beaff;
+          width: 140px;
+          flex: none;
+        }
+        #s6-root .card .plate {
+          position: absolute;
+          left: 720px;
+          top: 730px;
+          width: 480px;
+          height: 144px;
+          border-radius: 12px;
+          background: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+        }
+        #s6-root .card .plate img { width: 400px; height: auto; display: block; }
+      </style>
+
+      <div data-hf-id="hf-4wgl" id="s6-root" data-composition-id="s6" data-width="1920" data-height="1080" data-duration="15">
+        <div data-hf-id="hf-12x1" class="cam">
+          <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow=""></div>
+        </div>
+        <svg data-hf-id="hf-85h2" class="pano" data-layout-allow-overflow="" viewBox="0 0 1920 1080" width="1920" height="1080" />
+        <div data-hf-id="hf-zz21" class="sum">
+          <div data-hf-id="hf-jvrv" class="it"><svg data-hf-id="hf-8p6u" width="74" height="56" viewBox="0 0 78 60"><path data-hf-id="hf-z0xu" d="M4 26 Q14 12 24 26 T44 26 T64 26 T84 26" fill="none" stroke="#4E9BDB" stroke-width="6" stroke-linecap="round" /><path data-hf-id="hf-3arq" d="M4 44 Q14 30 24 44 T44 44 T64 44" fill="none" stroke="#4E9BDB" stroke-width="6" stroke-linecap="round" /></svg>Ombak</div>
+          <div data-hf-id="hf-kux1" class="op">→</div>
+          <div data-hf-id="hf-peir" class="it"><svg data-hf-id="hf-dz42" width="44" height="58" viewBox="0 0 48 64"><path data-hf-id="hf-moo7" d="M30 2 L6 36 L22 36 L16 62 L42 24 L26 24Z" fill="#FF9F1C" /></svg>Listrik</div>
+          <div data-hf-id="hf-hbiy" class="op">+</div>
+          <div data-hf-id="hf-bhqm" class="it"><svg data-hf-id="hf-gokm" width="44" height="58" viewBox="0 0 48 64"><path data-hf-id="hf-aeog" d="M24 4 C24 4 6 28 6 42 A18 18 0 0 0 42 42 C42 28 24 4 24 4Z" fill="#5CC8FF" /></svg>Air bersih</div>
+        </div>
+        <div class="pilot-steps">
+          <div class="pilot-header">Satu fasilitas wisata pesisir.<span>Pilot konsep (200 pengunjung · 5 m³/hari · 43,2 kWh bersih) — Tahap lanjutan:</span></div>
+          <div class="p-step"><b>1. Ukur ombak</b><span>Ambil data tinggi gelombang (Hs) &amp; periode (Te) musiman di lokasi</span></div>
+          <div class="p-step"><b>2. Uji alat</b><span>Validasi konversi ruang OWC, turbin Wells, pengondisi daya &amp; skid RO</span></div>
+          <div class="p-step"><b>3. Validasi layanan</b><span>Pastikan mutu air bersih, distribusi &amp; keamanan pembuangan brine</span></div>
+        </div>
+        <div data-hf-id="hf-vn2y" class="card">
+          <div data-hf-id="hf-h5f4" class="veil"></div>
+          <svg data-hf-id="hf-uqvd" class="tt" viewBox="0 0 1920 1080" width="1920" height="1080"><text data-hf-id="hf-dwpa" x="960" y="285" text-anchor="middle">OWC-DESAL</text></svg>
+          <div data-hf-id="hf-zgiu" class="team"><span data-hf-id="hf-4ok9" class="k">KELOMPOK 9</span> · Universitas Pendidikan Indonesia</div>
+          <div data-hf-id="hf-3ii9" class="members">
+            <div data-hf-id="hf-6h7h" class="m"><b data-hf-id="hf-rs0u">2308224</b><span data-hf-id="hf-gipy">Datuk Daneswara Raditya Samsura</span></div>
+            <div data-hf-id="hf-dj8x" class="m"><b data-hf-id="hf-n5yr">2311399</b><span data-hf-id="hf-mko9">Faisal Nur Qolbi</span></div>
+            <div data-hf-id="hf-eq60" class="m"><b data-hf-id="hf-ezjm">2305771</b><span data-hf-id="hf-ejjh">Muhammad Daffa Maarif</span></div>
+            <div data-hf-id="hf-ebuz" class="m"><b data-hf-id="hf-gntb">2304137</b><span data-hf-id="hf-2wfk">Muhammad Bintang Eighista Dwiputra</span></div>
+            <div data-hf-id="hf-ccbu" class="m"><b data-hf-id="hf-e78m">2308817</b><span data-hf-id="hf-3k5n">Hafidz Tantowi</span></div>
+          </div>
+          <div data-hf-id="hf-69d8" class="plate"><img data-hf-id="hf-ms61" src="/*@LOGO*/" alt="Universitas Pendidikan Indonesia"></div>
+        </div>
+      </div>
+
+      <script>
+        /*@ENGINE*/
+        (() => {
+          const root = document.getElementById("s6-root");
+          const $ = (s) => root.querySelector(s);
+          const world = $(".world");
+          const { clamp } = window.OWC;
+          const sub = window.OWC.mountSubtitle(root, /*@SUBTITLE*/);
+          const W = window.OWC.build(world, {
+            prefix: "s6",
+            scene: 6,
+            fn: { gridOn: () => 1, pump: () => 0, pumpAngle: () => 126.5 * 300, ro: () => 0, tapOn: () => 1, tank: () => 0.54 },
+          });
+          const L = W.L;
+          W.applyCam();
+          W.update(0);
+          gsap.set([L.brA, L.brB, L.grid, L.molecules], { opacity: 1 });
+          gsap.set(L.cw, { opacity: 0 });
+          const tl = gsap.timeline({ paused: true });
+
+          // Panorama: coastline with 1 pilot OWC-DESAL unit and tourist facility buildings
+          const NS = "http://www.w3.org/2000/svg";
+          const pano = $(".pano");
+          const mk = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); (p || pano).appendChild(e); return e; };
+          const coast = (x) => 640 + 30 * Math.sin(x / 190) + 14 * Math.sin(x / 70 + 1);
+          const cpts = [];
+          for (let x = -20; x <= 1940; x += 16) cpts.push([x, coast(x)]);
+          const cd = cpts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+          mk("path", { d: cd + " L1940 1100 L-20 1100Z", fill: "#2B78B8", "fill-opacity": 0.22 });
+          const coastLine = mk("path", { d: cd, fill: "none", stroke: "#4E9BDB", "stroke-width": 3.5 });
+          const waves = [];
+          for (let r = 0; r < 5; r++) {
+            const y0 = 730 + r * 66;
+            let d = "";
+            for (let x = -40; x <= 1960; x += 20) d += (x === -40 ? "M" : "L") + x + " " + (y0 + 7 * Math.sin(x / 38 + r)).toFixed(1);
+            waves.push(mk("path", { d, fill: "none", stroke: "#4E9BDB", "stroke-opacity": 0.5 - r * 0.06, "stroke-width": 2.5, "stroke-dasharray": "46 30" }));
+          }
+          const R = window.OWC.rng(9);
+          const lights = [], rotors = [];
+          const unitsX = [540];
+          unitsX.forEach((ux, u) => {
+            const cy = coast(ux);
+            const g = mk("g", { opacity: 0 });
+            for (let h = 0; h < 5; h++) {
+              const hx = ux - 175 + (h % 3) * 84 + (R() - 0.5) * 16, hy = 340 + Math.floor(h / 3) * 94 + R() * 18;
+              mk("path", { d: `M${hx} ${hy + 42} L${hx} ${hy + 14} L${hx + 24} ${hy - 4} L${hx + 48} ${hy + 14} L${hx + 48} ${hy + 42}Z`, fill: "#121A26", stroke: "#E8EEF4", "stroke-opacity": 0.85, "stroke-width": 2.5 }, g);
+              const lt = mk("rect", { x: hx + 16, y: hy + 18, width: 16, height: 14, rx: 2, fill: "#FFD23F", opacity: 0.85 }, g);
+              lights.push({ el: lt, at: 1.8 + h * 0.12 });
+            }
+            // Power line to facility & water pipe to tap
+            mk("path", { d: `M${ux} ${cy - 90} L${ux} 520 L${ux - 90} 520 L${ux - 90} 475`, fill: "none", stroke: "#FF9F1C", "stroke-width": 3.5, "stroke-dasharray": "9 8" }, g);
+            mk("path", { d: `M${ux + 68} ${cy - 30} L${ux + 150} ${cy - 30} L${ux + 150} ${cy - 54}`, fill: "none", stroke: "#5CC8FF", "stroke-width": 3.5 }, g);
+            mk("circle", { cx: ux + 150, cy: cy - 58, r: 6, fill: "#5CC8FF" }, g);
+            const S = 1.75;
+            const u0 = mk("g", { transform: `translate(${ux} ${cy}) scale(${S}) translate(${-ux} ${-cy})` }, g);
+            mk("rect", { x: ux - 22, y: cy - 30, width: 44, height: 58, rx: 4, fill: "#18212D", stroke: "#E8EEF4", "stroke-width": 2 }, u0);
+            mk("rect", { x: ux + 26, y: cy - 40, width: 64, height: 34, rx: 4, fill: "#121A26", stroke: "#E8EEF4", "stroke-width": 1.6 }, u0);
+            mk("circle", { cx: ux, cy: cy - 46, r: 15, fill: "#0E1520", stroke: "#E8EEF4", "stroke-width": 1.6 }, u0);
+            const rot = mk("g", {}, u0);
+            for (let b = 0; b < 4; b++) mk("rect", { x: ux - 3, y: cy - 59, width: 6, height: 11, rx: 2, fill: "#FFD23F", transform: `rotate(${b * 90} ${ux} ${cy - 46})` }, rot);
+            rotors.push({ el: rot, cx: ux, cy: cy - 46, ph: u * 23 });
+            tl.fromTo(g, { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power1.out" }, 1.6);
+          });
+          const clen = coastLine.getTotalLength();
+          coastLine.style.strokeDasharray = `${clen} ${clen}`;
+          coastLine.style.strokeDashoffset = `${clen}`;
+
+          // Camera pulls back from cross-section to coastline (0.4s - 2.2s)
+          tl.to(W.cam, { ...W.frame(0.3, 690, 600, 540, coast(540) - 40), duration: 1.8, ease: "power2.inOut", onUpdate: W.applyCam }, 0.4);
+          tl.to(world, { opacity: 0, duration: 0.5, ease: "power1.in" }, 1.8);
+          tl.fromTo(pano, { opacity: 0 }, { opacity: 1, duration: 0.65, ease: "power1.out" }, 1.2);
+          tl.to(coastLine, { strokeDashoffset: 0, duration: 1.3, ease: "power2.out" }, 1.2);
+
+          // Top summary icons + 3 unified step cards synced to VO ("ukur ombak"[1.69s], "uji alat"[2.67s], "validasi layanan"[3.54s])
+          // Held until t=5.6s (giving 4.8s of comfortable reading time and covering 168.8s = local 3.8s!)
+          const items = [...root.querySelectorAll(".sum .it")], ops = [...root.querySelectorAll(".sum .op")];
+          [1.0, 1.4, 1.8].forEach((at, i) => tl.fromTo(items[i], { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, at));
+          [1.2, 1.6].forEach((at, i) => tl.fromTo(ops[i], { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, at));
+
+          tl.fromTo($(".pilot-header"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.8);
+          const pSteps = [...root.querySelectorAll(".p-step")];
+          [1.5, 2.4, 3.3].forEach((at, i) => {
+            if (pSteps[i]) tl.fromTo(pSteps[i], { opacity: 0, x: 18 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, at);
+          });
+
+          // Transition to Closing Credit Card at t=5.6s right when VO says "O W C Desal, konsep energi dan air bersih pesisir" (5.53s)
+          tl.to([$(".sum"), $(".pilot-steps")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 5.6);
+          tl.to(pano, { opacity: 0.28, duration: 0.5, ease: "power1.inOut" }, 5.6);
+          tl.fromTo($(".card .veil"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.inOut" }, 5.6);
+          const tt = root.querySelector(".card .tt text");
+          tl.fromTo(root.querySelector(".card .tt"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, 5.8);
+          tl.to(tt, { strokeDashoffset: 0, duration: 0.85, ease: "power2.out" }, 5.8);
+          tl.to(tt, { fillOpacity: 1, duration: 0.4, ease: "power1.out" }, 6.3);
+          tl.fromTo($(".card .team"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 6.3);
+          tl.fromTo(root.querySelectorAll(".card .m"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out", stagger: 0.08 }, 6.5);
+          tl.fromTo($(".card .plate"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 6.8);
+
+          const clock = { t: 0 };
+          tl.fromTo(clock, { t: 0 }, {
+            t: 15, duration: 15, ease: "none",
+            onUpdate: () => {
+              const t = clock.t;
+              W.update(t);
+              if (sub) sub.update(t);
+              L.molecules.style.opacity = "0";
+              L.pwA.flow.setAttribute("opacity", "0"); L.pwB.flow.setAttribute("opacity", "0");
+              L.facilityWires.setAttribute("opacity", "0"); L.facilityLights.forEach((e) => e.setAttribute("opacity", ".12"));
+              L.kioskPanel.setAttribute("opacity", ".15"); L.lampCone.setAttribute("opacity", ".4");
+              waves.forEach((w, i) => w.setAttribute("stroke-dashoffset", (t * (26 + i * 4)).toFixed(1)));
+              rotors.forEach((r) => r.el.setAttribute("transform", `rotate(${(t * 220 + r.ph).toFixed(1)} ${r.cx} ${r.cy})`));
+              lights.forEach((l, i) => {
+                const on = clamp((t - l.at) / 0.4, 0, 1);
+                l.el.setAttribute("opacity", (on * (0.75 + 0.2 * Math.sin(t * 2.3 + i))).toFixed(3));
+              });
+            },
+          }, 0);
+
+          window.__timelines["s6"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
