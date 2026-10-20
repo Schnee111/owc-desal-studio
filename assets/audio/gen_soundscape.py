@@ -10,7 +10,7 @@ that ducks the bed, the 1-4 kHz band hardest, so the voice keeps its room.
     node src/export-motion.mjs
     python assets/audio/gen_soundscape.py      # needs numpy
 
-Writes assets/audio/music.mp3 and assets/audio/sfx.mp3 (48 kHz stereo, 180 s; needs ffmpeg).
+Writes assets/audio/music.mp3 and assets/audio/sfx.mp3 (48 kHz stereo, film length; needs ffmpeg).
 """
 import json
 import subprocess
@@ -22,13 +22,13 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 SR = 48000
-DUR = 180.0
-N = int(SR * DUR)
-t = np.arange(N) / SR
 rng = np.random.default_rng(2026)
 
 motion = json.loads((HERE / 'motion.json').read_text())
 MR = motion['rate']
+DUR = float(motion['total'])
+N = int(SR * DUR)
+t = np.arange(N) / SR
 ST = {sc['id']: sc['start'] for sc in motion['scenes']}
 WORDS = {}
 for sc in motion['scenes']:
@@ -197,7 +197,7 @@ high = mus - low
 duck_low = 1 - 0.35 * speech
 duck_high = 1 - 0.72 * speech
 mus = low * duck_low + high * duck_high
-mus *= smooth(ramp(t, 0, 2.5)) * (1 - smooth(ramp(t, 177.2, 180)))
+mus *= smooth(ramp(t, 0, 2.5)) * (1 - smooth(ramp(t, DUR - 2.8, DUR)))
 
 # ---------------------------------------------------------------- sound effects
 v, w, amp = curve('v'), curve('w'), curve('amp')

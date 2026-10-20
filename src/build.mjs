@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { recolor } from './style-tokens.mjs';
-import { scenes } from './refinement.mjs';
+import { scenes, total } from './refinement.mjs';
 import { scenario, display } from './scenario.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -82,10 +82,10 @@ const audio = scenes
 // Music bed and effects stem from assets/audio/gen_soundscape.py; both are pre-carved under the narration.
 const extraAudio = [
   existsSync(join(project, 'assets/audio/music.mp3'))
-    ? `<audio id="music-bed" src="assets/audio/music.mp3" data-start="0" data-duration="180" data-volume="0.24" data-track-index="11" data-label="Musik latar"></audio>`
+    ? `<audio id="music-bed" src="assets/audio/music.mp3" data-start="0" data-duration="${total}" data-volume="0.24" data-track-index="11" data-label="Musik latar"></audio>`
     : '',
   existsSync(join(project, 'assets/audio/sfx.mp3'))
-    ? `<audio id="sfx-track" src="assets/audio/sfx.mp3" data-start="0" data-duration="180" data-volume="0.34" data-track-index="12" data-label="Efek suara: ombak, udara, pompa"></audio>`
+    ? `<audio id="sfx-track" src="assets/audio/sfx.mp3" data-start="0" data-duration="${total}" data-volume="0.34" data-track-index="12" data-label="Efek suara: ombak, udara, pompa"></audio>`
     : '',
 ]
   .filter(Boolean)
@@ -95,10 +95,10 @@ writeFileSync(
   join(project, 'index.html'),
   `<!doctype html><html lang="id"><head><meta charset="utf-8"><title>OWC-DESAL · Revisi Animasi Presentasi Kelompok 9</title><script src="assets/vendor/gsap.min.js"></script><style>${fonts}
 *{margin:0;padding:0;box-sizing:border-box}html,body{width:1920px;height:1080px;overflow:hidden;background:#F4EFE4}#root{position:relative;width:100%;height:100%;overflow:hidden;background:#F4EFE4}#root>.clip{position:absolute;inset:0}#fade-out{position:absolute;inset:0;background:#F4EFE4;opacity:0;z-index:50}
-</style></head><body><div id="root" data-composition-id="main" data-start="0" data-duration="180" data-width="1920" data-height="1080" data-fps="30">
+</style></head><body><div id="root" data-composition-id="main" data-start="0" data-duration="${total}" data-width="1920" data-height="1080" data-fps="30">
 ${scenes.map((s, i) => `<div id="el-${s.id}" class="clip" data-composition-id="${s.id}" data-composition-src="compositions/frames/${s.file}.html" data-start="${s.start}" data-duration="${s.duration}" data-track-index="${i + 1}" data-width="1920" data-height="1080" data-label="${i + 1}. ${s.title}" data-track-kind="graphics"></div>`).join('\n')}
 ${audio}
-${extraAudio}<div id="fade-out"></div></div><script>window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});tl.fromTo('#fade-out',{opacity:0},{opacity:1,duration:1.0,ease:'power1.in'},179);window.__timelines.main=tl;</script></body></html>`
+${extraAudio}<div id="fade-out"></div></div><script>window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});tl.fromTo('#fade-out',{opacity:0},{opacity:1,duration:1.0,ease:'power1.in'},${total - 1});window.__timelines.main=tl;</script></body></html>`
 );
 
-console.log(`Built ${scenes.length} scenes (180s).`);
+console.log(`Built ${scenes.length} scenes (${total}s).`);
