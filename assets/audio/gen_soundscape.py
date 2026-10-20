@@ -110,9 +110,9 @@ CH = {
 }
 # one chord per argument beat; changes land on scene cuts and on the key reveals
 S2, S3, S4, S5, S7, S8, S6 = (ST[k] for k in ('s2', 's3', 's4', 's5', 's7', 's8', 's6'))
-T_TITLE = cue('s1', 'bersih', 2) + 0.15
+T_TITLE = max(w for w in (cue('s1', 'bersih', n) for n in (1, 2, 3)) if w) + 0.15  # last 'bersih': the question
 T_CRED = cue('s6', 'OWC-DESAL') - 0.25
-PLAN = [(0, 'Bm9'), (cue('s1', 'Padahal'), 'Gmaj9'), (cue('s1', 'Bisakah'), 'Asus'), (T_TITLE, 'Dadd9'),
+PLAN = [(0, 'Bm9'), (cue('s1', 'Padahal'), 'Gmaj9'), (cue('s1', 'Kami'), 'Dadd9'), (cue('s1', 'malam'), 'Em9'), (cue('s1', 'Bisakah'), 'Asus'), (T_TITLE, 'Dadd9'),
         (S2 + 5, 'Gmaj9'), (S2 + 11.5, 'Em9'), (S2 + 17.5, 'Asus'),
         (S3, 'Bm9'), (S3 + 6, 'Gmaj9'), (S3 + 12, 'A'),
         (S4, 'Em9'), (S4 + 6.5, 'Gmaj9'), (S4 + 12, 'Bm9'), (S4 + 17, 'Asus'),
