@@ -1,0 +1,230 @@
+{
+"text": "Indonesia punya garis pantai yang sangat panjang dan ombak yang datang tanpa henti. Potensi energi gelombang lautnya diperkirakan mencapai 63 gigawatt. Di saat yang sama, banyak desa pesisir dan pulau kecil masih kesulitan mendapat listrik dan air bersih. Bagaimana jika satu alat bisa menjawab keduanya?",
+"words": [
+{
+"t": 0.1,
+"d": 0.5125,
+"w": "Indonesia"
+},
+{
+"t": 0.6125,
+"d": 0.225,
+"w": "punya"
+},
+{
+"t": 0.8375,
+"d": 0.225,
+"w": "garis"
+},
+{
+"t": 1.0625,
+"d": 0.375,
+"w": "pantai"
+},
+{
+"t": 1.4375,
+"d": 0.1375,
+"w": "yang"
+},
+{
+"t": 1.575,
+"d": 0.2625,
+"w": "sangat"
+},
+{
+"t": 1.8375,
+"d": 0.4125,
+"w": "panjang"
+},
+{
+"t": 2.25,
+"d": 0.15,
+"w": "dan"
+},
+{
+"t": 2.4,
+"d": 0.3375,
+"w": "ombak"
+},
+{
+"t": 2.7375,
+"d": 0.15,
+"w": "yang"
+},
+{
+"t": 2.8875,
+"d": 0.3125,
+"w": "datang"
+},
+{
+"t": 3.2,
+"d": 0.2625,
+"w": "tanpa"
+},
+{
+"t": 3.4625,
+"d": 0.5375,
+"w": "henti"
+},
+{
+"t": 4.8375,
+"d": 0.4375,
+"w": "Potensi"
+},
+{
+"t": 5.275,
+"d": 0.375,
+"w": "energi"
+},
+{
+"t": 5.65,
+"d": 0.3375,
+"w": "gelombang"
+},
+{
+"t": 5.9875,
+"d": 0.425,
+"w": "lautnya"
+},
+{
+"t": 6.4125,
+"d": 0.5625,
+"w": "diperkirakan"
+},
+{
+"t": 6.975,
+"d": 0.425,
+"w": "mencapai"
+},
+{
+"t": 7.4,
+"d": 0.6875,
+"w": "63"
+},
+{
+"t": 8.0875,
+"d": 0.625,
+"w": "gigawatt"
+},
+{
+"t": 9.5625,
+"d": 0.1125,
+"w": "Di"
+},
+{
+"t": 9.675,
+"d": 0.2375,
+"w": "saat"
+},
+{
+"t": 9.9125,
+"d": 0.125,
+"w": "yang"
+},
+{
+"t": 10.0375,
+"d": 0.525,
+"w": "sama"
+},
+{
+"t": 10.875,
+"d": 0.325,
+"w": "banyak"
+},
+{
+"t": 11.2,
+"d": 0.2,
+"w": "desa"
+},
+{
+"t": 11.4,
+"d": 0.4375,
+"w": "pesisir"
+},
+{
+"t": 11.8375,
+"d": 0.175,
+"w": "dan"
+},
+{
+"t": 12.0125,
+"d": 0.2,
+"w": "pulau"
+},
+{
+"t": 12.2125,
+"d": 0.35,
+"w": "kecil"
+},
+{
+"t": 12.5625,
+"d": 0.2625,
+"w": "masih"
+},
+{
+"t": 12.825,
+"d": 0.4625,
+"w": "kesulitan"
+},
+{
+"t": 13.2875,
+"d": 0.35,
+"w": "mendapat"
+},
+{
+"t": 13.6375,
+"d": 0.4,
+"w": "listrik"
+},
+{
+"t": 14.0375,
+"d": 0.175,
+"w": "dan"
+},
+{
+"t": 14.2125,
+"d": 0.2,
+"w": "air"
+},
+{
+"t": 14.4125,
+"d": 0.575,
+"w": "bersih"
+},
+{
+"t": 15.825,
+"d": 0.6,
+"w": "Bagaimana"
+},
+{
+"t": 16.425,
+"d": 0.225,
+"w": "jika"
+},
+{
+"t": 16.65,
+"d": 0.225,
+"w": "satu"
+},
+{
+"t": 16.875,
+"d": 0.25,
+"w": "alat"
+},
+{
+"t": 17.125,
+"d": 0.225,
+"w": "bisa"
+},
+{
+"t": 17.35,
+"d": 0.3875,
+"w": "menjawab"
+},
+{
+"t": 17.7375,
+"d": 0.675,
+"w": "keduanya"
+}
+]
+}

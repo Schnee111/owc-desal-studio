@@ -1,0 +1,285 @@
+{
+"text": "Bagi masyarakat pesisir, ombak adalah tetangga yang datang setiap hari. Dengan OWC-DESAL, ombak di depan kampung mereka sendiri diubah menjadi listrik untuk rumah nelayan, sekolah, dan usaha warga, sekaligus air tawar untuk kebutuhan sehari-hari. Tanpa bahan bakar, tanpa emisi, dan tanpa menunggu kiriman dari kota. OWC-DESAL, energi dan air bersih dari laut, untuk masyarakat pesisir Indonesia.",
+"words": [
+{
+"t": 0.1125,
+"d": 0.275,
+"w": "Bagi"
+},
+{
+"t": 0.3875,
+"d": 0.45,
+"w": "masyarakat"
+},
+{
+"t": 0.8375,
+"d": 0.6,
+"w": "pesisir"
+},
+{
+"t": 1.725,
+"d": 0.275,
+"w": "ombak"
+},
+{
+"t": 2.0,
+"d": 0.2625,
+"w": "adalah"
+},
+{
+"t": 2.2625,
+"d": 0.3625,
+"w": "tetangga"
+},
+{
+"t": 2.625,
+"d": 0.1625,
+"w": "yang"
+},
+{
+"t": 2.7875,
+"d": 0.325,
+"w": "datang"
+},
+{
+"t": 3.1125,
+"d": 0.35,
+"w": "setiap"
+},
+{
+"t": 3.4625,
+"d": 0.4375,
+"w": "hari"
+},
+{
+"t": 4.75,
+"d": 0.3,
+"w": "Dengan"
+},
+{
+"t": 5.05,
+"d": 0.8125,
+"w": "OWC-DESAL"
+},
+{
+"t": 6.1625,
+"d": 0.275,
+"w": "ombak"
+},
+{
+"t": 6.4375,
+"d": 0.0625,
+"w": "di"
+},
+{
+"t": 6.5,
+"d": 0.275,
+"w": "depan"
+},
+{
+"t": 6.775,
+"d": 0.2875,
+"w": "kampung"
+},
+{
+"t": 7.0625,
+"d": 0.2125,
+"w": "mereka"
+},
+{
+"t": 7.275,
+"d": 0.3625,
+"w": "sendiri"
+},
+{
+"t": 7.6375,
+"d": 0.3375,
+"w": "diubah"
+},
+{
+"t": 7.975,
+"d": 0.325,
+"w": "menjadi"
+},
+{
+"t": 8.3,
+"d": 0.375,
+"w": "listrik"
+},
+{
+"t": 8.675,
+"d": 0.2125,
+"w": "untuk"
+},
+{
+"t": 8.8875,
+"d": 0.2,
+"w": "rumah"
+},
+{
+"t": 9.0875,
+"d": 0.5875,
+"w": "nelayan"
+},
+{
+"t": 9.9375,
+"d": 0.6625,
+"w": "sekolah"
+},
+{
+"t": 10.8125,
+"d": 0.225,
+"w": "dan"
+},
+{
+"t": 11.0375,
+"d": 0.325,
+"w": "usaha"
+},
+{
+"t": 11.3625,
+"d": 0.55,
+"w": "warga"
+},
+{
+"t": 12.175,
+"d": 0.5125,
+"w": "sekaligus"
+},
+{
+"t": 12.6875,
+"d": 0.2,
+"w": "air"
+},
+{
+"t": 12.8875,
+"d": 0.3375,
+"w": "tawar"
+},
+{
+"t": 13.225,
+"d": 0.2125,
+"w": "untuk"
+},
+{
+"t": 13.4375,
+"d": 0.4375,
+"w": "kebutuhan"
+},
+{
+"t": 13.875,
+"d": 0.7125,
+"w": "sehari-hari"
+},
+{
+"t": 15.4375,
+"d": 0.275,
+"w": "Tanpa"
+},
+{
+"t": 15.7125,
+"d": 0.2375,
+"w": "bahan"
+},
+{
+"t": 15.95,
+"d": 0.5125,
+"w": "bakar"
+},
+{
+"t": 16.7375,
+"d": 0.275,
+"w": "tanpa"
+},
+{
+"t": 17.0125,
+"d": 0.6,
+"w": "emisi"
+},
+{
+"t": 17.9,
+"d": 0.2375,
+"w": "dan"
+},
+{
+"t": 18.1375,
+"d": 0.275,
+"w": "tanpa"
+},
+{
+"t": 18.4125,
+"d": 0.325,
+"w": "menunggu"
+},
+{
+"t": 18.7375,
+"d": 0.325,
+"w": "kiriman"
+},
+{
+"t": 19.0625,
+"d": 0.1625,
+"w": "dari"
+},
+{
+"t": 19.225,
+"d": 0.5125,
+"w": "kota"
+},
+{
+"t": 20.575,
+"d": 0.9125,
+"w": "OWC-DESAL"
+},
+{
+"t": 21.7625,
+"d": 0.4625,
+"w": "energi"
+},
+{
+"t": 22.225,
+"d": 0.175,
+"w": "dan"
+},
+{
+"t": 22.4,
+"d": 0.1875,
+"w": "air"
+},
+{
+"t": 22.5875,
+"d": 0.325,
+"w": "bersih"
+},
+{
+"t": 22.9125,
+"d": 0.175,
+"w": "dari"
+},
+{
+"t": 23.0875,
+"d": 0.45,
+"w": "laut"
+},
+{
+"t": 23.7875,
+"d": 0.2375,
+"w": "untuk"
+},
+{
+"t": 24.025,
+"d": 0.4875,
+"w": "masyarakat"
+},
+{
+"t": 24.5125,
+"d": 0.425,
+"w": "pesisir"
+},
+{
+"t": 24.9375,
+"d": 0.75,
+"w": "Indonesia"
+}
+]
+}

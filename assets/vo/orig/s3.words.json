@@ -1,0 +1,180 @@
+{
+"text": "Saat ombak datang, air masuk ke dalam chamber dan permukaan kolom air naik. Seperti piston, air ini menekan udara di atasnya. Udara bertekanan tinggi menyembur keluar melewati turbin Wells, memutar generator, dan listrik pun dihasilkan.",
+"words": [
+{
+"t": 0.1,
+"d": 0.3125,
+"w": "Saat"
+},
+{
+"t": 0.4125,
+"d": 0.25,
+"w": "ombak"
+},
+{
+"t": 0.6625,
+"d": 0.5125,
+"w": "datang"
+},
+{
+"t": 1.4625,
+"d": 0.25,
+"w": "air"
+},
+{
+"t": 1.7125,
+"d": 0.275,
+"w": "masuk"
+},
+{
+"t": 1.9875,
+"d": 0.05,
+"w": "ke"
+},
+{
+"t": 2.0375,
+"d": 0.225,
+"w": "dalam"
+},
+{
+"t": 2.2625,
+"d": 0.35,
+"w": "chamber"
+},
+{
+"t": 2.6125,
+"d": 0.175,
+"w": "dan"
+},
+{
+"t": 2.7875,
+"d": 0.475,
+"w": "permukaan"
+},
+{
+"t": 3.2625,
+"d": 0.2375,
+"w": "kolom"
+},
+{
+"t": 3.5,
+"d": 0.2375,
+"w": "air"
+},
+{
+"t": 3.7375,
+"d": 0.45,
+"w": "naik"
+},
+{
+"t": 5.025,
+"d": 0.4,
+"w": "Seperti"
+},
+{
+"t": 5.425,
+"d": 0.5625,
+"w": "piston"
+},
+{
+"t": 6.2875,
+"d": 0.25,
+"w": "air"
+},
+{
+"t": 6.5375,
+"d": 0.225,
+"w": "ini"
+},
+{
+"t": 6.7625,
+"d": 0.3,
+"w": "menekan"
+},
+{
+"t": 7.0625,
+"d": 0.3375,
+"w": "udara"
+},
+{
+"t": 7.4,
+"d": 0.075,
+"w": "di"
+},
+{
+"t": 7.475,
+"d": 0.65,
+"w": "atasnya"
+},
+{
+"t": 8.975,
+"d": 0.3,
+"w": "Udara"
+},
+{
+"t": 9.275,
+"d": 0.475,
+"w": "bertekanan"
+},
+{
+"t": 9.75,
+"d": 0.3,
+"w": "tinggi"
+},
+{
+"t": 10.05,
+"d": 0.3375,
+"w": "menyembur"
+},
+{
+"t": 10.3875,
+"d": 0.3125,
+"w": "keluar"
+},
+{
+"t": 10.7,
+"d": 0.3875,
+"w": "melewati"
+},
+{
+"t": 11.0875,
+"d": 0.3375,
+"w": "turbin"
+},
+{
+"t": 11.425,
+"d": 0.475,
+"w": "Wells"
+},
+{
+"t": 12.1625,
+"d": 0.3625,
+"w": "memutar"
+},
+{
+"t": 12.525,
+"d": 0.6625,
+"w": "generator"
+},
+{
+"t": 13.45,
+"d": 0.2125,
+"w": "dan"
+},
+{
+"t": 13.6625,
+"d": 0.3375,
+"w": "listrik"
+},
+{
+"t": 14.0,
+"d": 0.175,
+"w": "pun"
+},
+{
+"t": 14.175,
+"d": 0.775,
+"w": "dihasilkan"
+}
+]
+}

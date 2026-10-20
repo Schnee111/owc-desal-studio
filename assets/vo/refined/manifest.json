@@ -1,0 +1,32 @@
+{
+  "s1": {
+    "duration": 16.128,
+    "voice": "id-ID-ArdiNeural",
+    "text": "Di kawasan wisata pesisir, air bersih dibutuhkan pengunjung, kios, dan petugas. O W C Desal mengkaji energi ombak untuk membantu satu fasilitas wisata. Ini skenario desain, dengan lokasi dan keluaran alat yang masih perlu diuji."
+  },
+  "s4": {
+    "duration": 18.0,
+    "voice": "id-ID-ArdiNeural",
+    "text": "Ketika ombak surut, kolom air turun dan udara masuk kembali. Turbin Wells tetap berputar searah. Bilah simetris menghasilkan gaya putar yang searah pada dua arah aliran. Namun torsi dan daya tetap berubah. Karena itu listrik dikondisikan sebelum dibagi ke beban."
+  },
+  "s5": {
+    "duration": 26.4,
+    "voice": "id-ID-ArdiNeural",
+    "text": "Listrik dikondisikan, lalu dibagi untuk fasilitas dan pompa osmosis balik. Air laut disaring dan didorong melewati membran. Air menembus membran, garam tertahan. Produk tetap perlu pascapengolahan dan pemeriksaan mutu. Pada contoh perolehan empat puluh persen, dua belas koma lima meter kubik umpan menjadi lima meter kubik produk dan tujuh koma lima meter kubik air garam pekat. Aliran pekat ini perlu dikelola."
+  },
+  "s7": {
+    "duration": 23.448,
+    "voice": "id-ID-ArdiNeural",
+    "text": "Sasarannya dua ratus pengunjung per hari, lima kios, petugas, dan kebersihan fasilitas. Jika rata-rata dua kilowatt bertahan sehari, energi bersihnya empat puluh tiga koma dua kilowatt jam. Pengolahan air memakai dua puluh lima, fasilitas tiga koma enam, dan sisanya empat belas koma enam sebagai margin. Ini skenario desain, bukan hasil pengujian."
+  },
+  "s8": {
+    "duration": 20.616,
+    "voice": "id-ID-ArdiNeural",
+    "text": "Ketika ombak melemah, produksi osmosis balik dijadwalkan ulang. Tangki sepuluh meter kubik menutup dua hari kebutuhan contoh, jika awalnya penuh. Baterai delapan kilowatt jam nominal menopang lampu dan kontrol, bukan menjalankan RO dua hari. Operator tetap memantau mutu air, alat, dan pembuangan air garam pekat."
+  },
+  "s6": {
+    "duration": 9.36,
+    "voice": "id-ID-ArdiNeural",
+    "text": "Berikutnya, ukur ombak, uji alat, validasi layanan. O W C Desal, konsep energi dan air bersih pesisir."
+  }
+}

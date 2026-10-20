@@ -1,0 +1,255 @@
+{
+"text": "Listrik dari ombak dibagi ke dua tujuan. Sebagian mengalir ke microgrid untuk menerangi rumah dan menggerakkan usaha warga. Sebagian lagi menghidupkan pompa tekanan tinggi di unit Reverse Osmosis. Air laut didorong melewati membran halus. Molekul air lolos, garam tertahan. Hasilnya air tawar untuk desa pesisir, dari energi yang sepenuhnya terbarukan.",
+"words": [
+{
+"t": 0.1,
+"d": 0.4375,
+"w": "Listrik"
+},
+{
+"t": 0.5375,
+"d": 0.175,
+"w": "dari"
+},
+{
+"t": 0.7125,
+"d": 0.35,
+"w": "ombak"
+},
+{
+"t": 1.0625,
+"d": 0.4375,
+"w": "dibagi"
+},
+{
+"t": 1.5,
+"d": 0.1,
+"w": "ke"
+},
+{
+"t": 1.6,
+"d": 0.1875,
+"w": "dua"
+},
+{
+"t": 1.7875,
+"d": 0.625,
+"w": "tujuan"
+},
+{
+"t": 3.25,
+"d": 0.475,
+"w": "Sebagian"
+},
+{
+"t": 3.725,
+"d": 0.325,
+"w": "mengalir"
+},
+{
+"t": 4.05,
+"d": 0.075,
+"w": "ke"
+},
+{
+"t": 4.125,
+"d": 0.525,
+"w": "microgrid"
+},
+{
+"t": 4.65,
+"d": 0.25,
+"w": "untuk"
+},
+{
+"t": 4.9,
+"d": 0.325,
+"w": "menerangi"
+},
+{
+"t": 5.225,
+"d": 0.4,
+"w": "rumah"
+},
+{
+"t": 5.625,
+"d": 0.1875,
+"w": "dan"
+},
+{
+"t": 5.8125,
+"d": 0.4375,
+"w": "menggerakkan"
+},
+{
+"t": 6.25,
+"d": 0.325,
+"w": "usaha"
+},
+{
+"t": 6.575,
+"d": 0.5625,
+"w": "warga"
+},
+{
+"t": 7.975,
+"d": 0.45,
+"w": "Sebagian"
+},
+{
+"t": 8.425,
+"d": 0.275,
+"w": "lagi"
+},
+{
+"t": 8.7,
+"d": 0.575,
+"w": "menghidupkan"
+},
+{
+"t": 9.275,
+"d": 0.2375,
+"w": "pompa"
+},
+{
+"t": 9.5125,
+"d": 0.325,
+"w": "tekanan"
+},
+{
+"t": 9.8375,
+"d": 0.4,
+"w": "tinggi"
+},
+{
+"t": 10.2375,
+"d": 0.125,
+"w": "di"
+},
+{
+"t": 10.3625,
+"d": 0.2625,
+"w": "unit"
+},
+{
+"t": 10.625,
+"d": 0.35,
+"w": "Reverse"
+},
+{
+"t": 10.975,
+"d": 0.775,
+"w": "Osmosis"
+},
+{
+"t": 12.5875,
+"d": 0.3125,
+"w": "Air"
+},
+{
+"t": 12.9,
+"d": 0.3125,
+"w": "laut"
+},
+{
+"t": 13.2125,
+"d": 0.375,
+"w": "didorong"
+},
+{
+"t": 13.5875,
+"d": 0.4,
+"w": "melewati"
+},
+{
+"t": 13.9875,
+"d": 0.325,
+"w": "membran"
+},
+{
+"t": 14.3125,
+"d": 0.5625,
+"w": "halus"
+},
+{
+"t": 15.7125,
+"d": 0.4125,
+"w": "Molekul"
+},
+{
+"t": 16.125,
+"d": 0.2125,
+"w": "air"
+},
+{
+"t": 16.3375,
+"d": 0.55,
+"w": "lolos"
+},
+{
+"t": 17.1,
+"d": 0.3625,
+"w": "garam"
+},
+{
+"t": 17.4625,
+"d": 0.6625,
+"w": "tertahan"
+},
+{
+"t": 18.975,
+"d": 0.45,
+"w": "Hasilnya"
+},
+{
+"t": 19.425,
+"d": 0.1875,
+"w": "air"
+},
+{
+"t": 19.6125,
+"d": 0.3375,
+"w": "tawar"
+},
+{
+"t": 19.95,
+"d": 0.225,
+"w": "untuk"
+},
+{
+"t": 20.175,
+"d": 0.225,
+"w": "desa"
+},
+{
+"t": 20.4,
+"d": 0.6,
+"w": "pesisir"
+},
+{
+"t": 21.275,
+"d": 0.2125,
+"w": "dari"
+},
+{
+"t": 21.4875,
+"d": 0.4125,
+"w": "energi"
+},
+{
+"t": 21.9,
+"d": 0.1,
+"w": "yang"
+},
+{
+"t": 22.0,
+"d": 0.45,
+"w": "sepenuhnya"
+},
+{
+"t": 22.45,
+"d": 0.7375,
+"w": "terbarukan"
+}
+]
+}

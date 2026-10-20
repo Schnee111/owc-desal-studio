@@ -1,0 +1,58 @@
+[
+  {
+    "id": "s1",
+    "text": "Di kawasan wisata pesisir, air bersih dibutuhkan pengunjung, kios, dan petugas. O W C Desal mengkaji energi ombak untuk membantu satu fasilitas wisata. Ini skenario desain, dengan lokasi dan keluaran alat yang masih perlu diuji.",
+    "elevenText": "[warm, engaging narration] Di kawasan wisata pesisir, air bersih dibutuhkan pengunjung, kios, dan petugas. [confident, informative] O W C Desal mengkaji energi ombak untuk membantu satu fasilitas wisata. [thoughtful, measured] Ini skenario desain, dengan lokasi dan keluaran alat yang masih perlu diuji.",
+    "start": 1,
+    "window": 18.75
+  },
+  {
+    "id": "s2",
+    "text": "Inilah OWC-DESAL. Di sisi laut berdiri ruang Kolom Air Berosilasi. Bagian bawahnya terbuka ke laut sehingga terisi kolom air, dan di atasnya terperangkap kolom udara. Udara ini dihubungkan ke turbin udara dan generator. Di sebelahnya, gedung desalinasi osmosis balik siap mengubah air laut menjadi air tawar.",
+    "elevenText": "[clear, welcoming] Inilah O W C Desal. [measured, informative] Di sisi laut berdiri ruang Kolom Air Berosilasi. Bagian bawahnya terbuka ke laut sehingga terisi kolom air, dan di atasnya terperangkap kolom udara. [steady] Udara ini dihubungkan ke turbin udara dan generator. [warm] Di sebelahnya, gedung desalinasi osmosis balik siap mengubah air laut menjadi air tawar.",
+    "start": 20.6,
+    "window": 24.15
+  },
+  {
+    "id": "s3",
+    "text": "Saat ombak datang, air masuk ke dalam ruang dan permukaan kolom air naik. Seperti piston, air ini menekan udara di atasnya. Udara bertekanan tinggi menyembur keluar melewati turbin, memutar generator, dan listrik pun dihasilkan.",
+    "elevenText": "[focused, dynamic] Saat ombak datang, air masuk ke dalam ruang dan permukaan kolom air naik. [clear, illustrative] Seperti piston, air ini menekan udara di atasnya. [energetic, confident] Udara bertekanan tinggi menyembur keluar melewati turbin, memutar generator, dan listrik pun dihasilkan.",
+    "start": 46.5,
+    "window": 16.25
+  },
+  {
+    "id": "s4",
+    "text": "Ketika ombak surut, kolom air turun dan udara masuk kembali. Turbin Wells tetap berputar searah. Bilah simetris menghasilkan gaya putar yang searah pada dua arah aliran. Namun torsi dan daya tetap berubah. Karena itu listrik dikondisikan sebelum dibagi ke beban.",
+    "elevenText": "[calm, observational] Ketika ombak surut, kolom air turun dan udara masuk kembali. [curious, clear] Turbin Wells tetap berputar searah. Bilah simetris menghasilkan gaya putar yang searah pada dua arah aliran. [thoughtful, measured] Namun torsi dan daya tetap berubah. Karena itu, listrik dikondisikan sebelum dibagi ke beban.",
+    "start": 64,
+    "window": 20.75
+  },
+  {
+    "id": "s5",
+    "text": "Listrik dikondisikan, lalu dibagi untuk fasilitas dan pompa osmosis balik. Air laut disaring dan didorong melewati membran. Air menembus membran, garam tertahan. Produk tetap perlu pascapengolahan dan pemeriksaan mutu. Pada contoh perolehan empat puluh persen, dua belas koma lima meter kubik umpan menjadi lima meter kubik produk dan tujuh koma lima meter kubik air garam pekat. Aliran pekat ini perlu dikelola.",
+    "elevenText": "[clear, structured] Listrik dikondisikan, lalu dibagi untuk fasilitas dan pompa osmosis balik. Air laut disaring dan didorong melewati membran. [focused] Air menembus membran, garam tertahan. [measured] Produk tetap perlu pascapengolahan dan pemeriksaan mutu. [slightly slower, emphasizing numbers] Pada contoh perolehan empat puluh persen, dua belas koma lima meter kubik umpan menjadi lima meter kubik produk, dan tujuh koma lima meter kubik air garam pekat. [serious, attentive] Aliran pekat ini perlu dikelola.",
+    "start": 85.6,
+    "window": 29.15
+  },
+  {
+    "id": "s7",
+    "text": "Sasarannya dua ratus pengunjung per hari, lima kios, petugas, dan kebersihan fasilitas. Jika rata-rata dua kilowatt bertahan sehari, energi bersihnya empat puluh tiga koma dua kilowatt jam. Pengolahan air memakai dua puluh lima, fasilitas tiga koma enam, dan sisanya empat belas koma enam sebagai margin. Ini skenario desain, bukan hasil pengujian.",
+    "elevenText": "[warm, practical] Sasarannya dua ratus pengunjung per hari, lima kios, petugas, dan kebersihan fasilitas. [measured, analytical] Jika rata-rata dua kilowatt bertahan sehari, energi bersihnya empat puluh tiga koma dua kilowatt jam. [clear, emphasizing numbers] Pengolahan air memakai dua puluh lima, fasilitas tiga koma enam, dan sisanya empat belas koma enam sebagai margin. [calm, honest] Ini skenario desain, bukan hasil pengujian.",
+    "start": 115.8,
+    "window": 24.95
+  },
+  {
+    "id": "s8",
+    "text": "Ketika ombak melemah, produksi osmosis balik dijadwalkan ulang. Tangki sepuluh meter kubik menutup dua hari kebutuhan contoh, jika awalnya penuh. Baterai delapan kilowatt jam nominal menopang lampu dan kontrol, bukan menjalankan RO dua hari. Operator tetap memantau mutu air, alat, dan pembuangan air garam pekat.",
+    "elevenText": "[calm, steady] Ketika ombak melemah, produksi osmosis balik dijadwalkan ulang. [reassuring, clear] Tangki sepuluh meter kubik menutup dua hari kebutuhan contoh, jika awalnya penuh. [measured, precise] Baterai delapan kilowatt jam nominal menopang lampu dan kontrol, bukan menjalankan osmosis balik dua hari. [attentive] Operator tetap memantau mutu air, alat, dan pembuangan air garam pekat.",
+    "start": 141.8,
+    "window": 22.95
+  },
+  {
+    "id": "s6",
+    "text": "Berikutnya, ukur ombak, uji alat, validasi layanan. O W C Desal, konsep energi dan air bersih pesisir.",
+    "elevenText": "[optimistic, inspiring] Berikutnya: ukur ombak, uji alat, validasi layanan. [warm, confident conclusion] O W C Desal, konsep energi dan air bersih pesisir.",
+    "start": 165.5,
+    "window": 14.25
+  }
+]
