@@ -76,6 +76,12 @@ Air garam pekat:        12,5 − 5 = 7,5 m³/hari
 
 ## 4. Pertanyaan yang mungkin muncul
 
+**Mana latar belakang pemanfaatan produknya?**
+Di scene 1 (±17–36 dtk): satu fasilitas wisata pantai dengan 200 pengunjung per hari, toilet & bilas, 5 kios, dan 8 lampu jalur. Fasilitas ini butuh air bersih dan listrik, termasuk malam hari untuk lampu jalur. Masalah nyatanya bersumber: Kelingking & Broken Beach belum teraliri air bersih (detikBali, Mei 2026) dan air tanah pesisir Kuta Utara terintrusi air laut (Manuaba & Sugianto, 2025).
+
+**Kenapa energi ombak, bukan panel surya?**
+Ombak tidak bergantung pada siang hari, sedangkan lampu jalur dibutuhkan di malam hari. Sumber energinya juga berada di titik yang sama dengan bahan baku air, yaitu laut, jadi tidak perlu mengangkut air baku. Kami tidak mengklaim ombak lebih murah atau selalu lebih baik daripada surya; kombinasi keduanya bisa menjadi kajian lanjutan.
+
 **Kenapa angkanya 2 kW, padahal di usulan awal 12,4 kW dan 85 m³/hari?**
 12,4 kW tidak bisa ditelusuri sumbernya. Daya ombak yang mengenai chamber 4 m memang ±11,8 kW, tetapi itu daya **ombak**, belum listrik. Setelah efisiensi tangkap (0,5) dan PTO (0,35), hasilnya ±2 kW listrik. Angka 85 m³ cocok dengan 12,4 kW × 24 ÷ 3,5, artinya seluruh energi dianggap untuk RO tanpa rugi dan tanpa beban lain. Kami memisahkan listrik untuk fasilitas dan untuk air, supaya tidak dihitung dua kali.
 

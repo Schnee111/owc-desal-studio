@@ -1,9 +1,10 @@
 # OWC-DESAL (Kelompok 9 · UPI)
 
-Animasi penjelasan OWC (Kolom Air Berosilasi) dan desalinasi osmosis balik (RO) untuk satu fasilitas wisata pesisir. **8 scene, 183,5 detik, 1920×1080, 30 fps.** Komposisi HyperFrames, CLI dipin ke 0.8.179.
+Animasi penjelasan OWC (Kolom Air Berosilasi) dan desalinasi osmosis balik (RO) untuk satu fasilitas wisata pesisir. **8 scene, 201,7 detik (±3 menit 22 detik), 1920×1080, 30 fps.** Komposisi HyperFrames, CLI dipin ke 0.8.179.
 
 ## Isi versi ini (revisi v3, 20 Oktober 2026)
 
+- **Latar belakang pemanfaatan spesifik** (instruksi dosen): sesudah masalah, video menunjukkan sasaran pemakaian, yaitu satu fasilitas wisata pantai (200 pengunjung/hari, toilet & bilas, 5 kios, 8 lampu jalur) yang butuh air bersih dan listrik, juga malam hari; ombak dipilih karena datang siang dan malam, tepat di samping air bakunya.
 - **Pembuka berbasis masalah air dan energi.** Peta menyelam ke Bali dengan dua penanda bersumber: Kelingking & Broken Beach belum teraliri air bersih (detikBali, 12 Mei 2026) dan sumur pesisir Kuta Utara terintrusi air laut (Manuaba & Sugianto, 2025), lalu potensi energi laut Indonesia ±63 GW yang belum dimanfaatkan (Badan Geologi ESDM). Ditutup pertanyaan "Bisakah ombak menghasilkan listrik, sekaligus air bersih?".
 - **Narasi** (`assets/vo/eleven/`): ElevenLabs Eleven v4, voice River, audio tags per kalimat, dilevel ke −17,5 LUFS. Generate ulang: `ELEVENLABS_API_KEY=... node assets/vo/eleven/generate.mjs s1` (key hanya lewat environment). Versi edge-tts sebelumnya tetap di `assets/vo/v3/`.
 - **Koreografi mengikuti kata.** `OWC.cues()` membaca timing kata dari `words.json`; label, panel, bar, dan zoom muncul tepat saat istilahnya diucapkan.

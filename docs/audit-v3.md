@@ -51,3 +51,7 @@ Narasi lama mengulang "ini skenario desain" di tiga scene dan memakai istilah se
 | 2 | 14 label menyala bersamaan | Label OWC meredup saat gedung RO dibahas |
 | Semua | Teks 22–23 px sulit dibaca di HP/proyektor | Minimum ±24–25 px |
 | Durasi | Judul pembuka, ledger energi dan kartu cadangan hilang terlalu cepat | Tambah waktu baca: total 183,5 dtk |
+
+## Putaran 4: latar belakang pemanfaatan spesifik
+
+Instruksi dosen: *buat latar belakang pemanfaatan produk secara spesifik yang menggunakan energi terbarukan yang diusulkan.* Scene 1 kini memuat, setelah bukti masalah dan potensi energi laut: sasaran pemanfaatan (satu fasilitas wisata pantai, 200 pengunjung, toilet & bilas, 5 kios, 8 lampu jalur), dua kebutuhan (air bersih dan listrik, juga malam hari, dengan pergantian ke malam dan lampu menyala), serta alasan memilih ombak (datang siang & malam, berada di samping air baku). Pantai di beat ini memakai garis yang sama dengan penampang scene 2, jadi konstruksi chamber dimulai di lokasi yang baru saja diperkenalkan. Scene 7 tidak lagi bertanya "Siapa yang dilayani?" tetapi kembali ke fasilitas tadi. Narasi s1, s3 (utuh, tanpa sambungan) dan s7 digenerate ulang; total 201,7 dtk.
