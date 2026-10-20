@@ -1,0 +1,15 @@
+{
+  "meanKw": 2,
+  "hours": 24,
+  "delivery": 0.9,
+  "waterM3": 5,
+  "sec": 5,
+  "otherKwh": 3.6,
+  "visitors": 200,
+  "reserveM3": 10,
+  "batteryKwh": 8,
+  "gross": 48,
+  "net": 43.2,
+  "ro": 25,
+  "margin": 14.600000000000003
+}
