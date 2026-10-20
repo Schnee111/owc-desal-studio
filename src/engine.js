@@ -1,4 +1,4 @@
-/* OWC-DESAL cross-section engine + studio-grade motion physics + sliding-card word subtitle.
+/* OWC-DESAL cross-section engine, measured eases and word-synced captions.
    Every dynamic value is a pure function of scene-local time (100% seek-safe). */
 (function () {
   if (window.OWC) return;
@@ -49,15 +49,17 @@
   }
 
   // ---- wave plans per scene (phase φ, amplitude A); level L = MWL - A·sin φ ----
+  // Scene lengths come from src/refinement.mjs through the build; the fallback is the old cut.
+  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, /*@DUR*/{});
   const plans = {
-    2: { dur: 25, phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, 19, 25) },
+    2: { dur: DUR[2], phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, DUR[2] - 6, DUR[2]) },
     3: {
-      dur: 18,
-      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / 14.5)),
+      dur: DUR[3],
+      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / (DUR[3] - 3.5))),
       A: (t) => (t < 3 ? 18 + 42 * smooth(t / 3) : 60),
     },
     4: {
-      dur: 22,
+      dur: DUR[4],
       phi: (t) =>
         t < 1.5 ? Math.PI / 2
         : t < 12 ? Math.PI / 2 + Math.PI * eis((t - 1.5) / 9)
@@ -66,12 +68,14 @@
     },
   };
   const P4END = plans[4].phi(plans[4].dur);
-  plans[5] = { dur: 30, phi: (t) => P4END + WN * t, A: () => 60 };
-  plans[7] = { dur: 26, phi: (t) => plans[5].phi(30) + WN * t, A: () => 60 };
-  plans[8] = { dur: 24, phi: (t) => plans[7].phi(26) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
-  plans[6] = { dur: 15, phi: (t) => plans[8].phi(24) + WN * t, A: () => 9 };
+  plans[5] = { dur: DUR[5], phi: (t) => P4END + WN * t, A: () => 60 };
+  plans[7] = { dur: DUR[7], phi: (t) => plans[5].phi(DUR[5]) + WN * t, A: () => 60 };
+  plans[8] = { dur: DUR[8], phi: (t) => plans[7].phi(DUR[7]) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
+  plans[6] = { dur: DUR[6], phi: (t) => plans[8].phi(DUR[8]) + WN * t, A: () => 9 };
   const previous = { 3: 2, 4: 3, 5: 4, 7: 5, 8: 7, 6: 8 };
-  const offsets = { 2: 0, 3: 25, 4: 43, 5: 65, 7: 95, 8: 121, 6: 145 };
+  // continuous clock for ripples and flows across the cut order 2 → 3 → 4 → 5 → 7 → 8 → 6
+  const offsets = {};
+  [2, 3, 4, 5, 7, 8, 6].reduce((acc, n) => ((offsets[n] = acc), acc + DUR[n]), 0);
   const level = (p, t) => MWL - p.A(t) * Math.sin(p.phi(t));
 
   const simCache = {};
@@ -126,13 +130,60 @@
   }
 
   // ---- Studio-Grade Sliding-Card Word Subtitle Engine (Critically Damped Spring + Posture) ----
-  function mountSubtitle(root, subData) {
+  // Scene-local time of the nth spoken token starting with `word` (case/punctuation
+  // insensitive), so choreography follows the narration instead of hand-typed seconds.
+  const norm = (s) => String(s).toLowerCase().replace(/[^0-9a-zà-ÿ]/g, "");
+  function cues(subData) {
+    const off = (subData && subData.voOffset) || 0;
+    const ws = (subData && subData.words) || [];
+    const at = (word, nth = 1, fallback = 0, end = false) => {
+      const n = norm(word);
+      let c = 0;
+      for (let i = 0; i < ws.length; i++) {
+        // each timed word carries its own display token ('63 GW' is one token), so never re-split the text
+        if (norm(ws[i].w).startsWith(n) && ++c === nth) return off + ws[i].t + (end ? ws[i].d : 0);
+      }
+      return fallback;
+    };
+    at.end = (word, nth = 1, fallback = 0) => at(word, nth, fallback, true);
+    at.voEnd = ws.length ? off + ws[ws.length - 1].t + ws[ws.length - 1].d : 0;
+    return at;
+  }
+
+  // Maps scene times authored against an earlier narration onto the current one:
+  // piecewise-linear through matching words (same script), anchored at 0 and at the scene ends.
+  function warp(oldWords, oldOffset, oldDur, subData, newDur) {
+    const nw = (subData && subData.words) || [];
+    const pts = [[0, 0]];
+    const n = Math.min(oldWords.length, nw.length);
+    for (let i = 0; i < n; i++) pts.push([oldOffset + oldWords[i].t, subData.voOffset + nw[i].t]);
+    pts.push([oldDur, newDur]);
+    pts.sort((a, b) => a[0] - b[0]);
+    const T = (x) => {
+      if (x <= pts[0][0]) return x;
+      for (let i = 1; i < pts.length; i++) {
+        if (x <= pts[i][0]) {
+          const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+          return x1 === x0 ? y1 : y0 + ((x - x0) * (y1 - y0)) / (x1 - x0);
+        }
+      }
+      return x - oldDur + newDur;
+    };
+    // a timeline whose position arguments are written in the old clock
+    T.timeline = (tl) => {
+      for (const m of ["to", "from", "fromTo", "set"]) {
+        const f = tl[m].bind(tl);
+        tl[m] = (...a) => { if (typeof a[a.length - 1] === "number") a[a.length - 1] = T(a[a.length - 1]); return f(...a); };
+      }
+      return tl;
+    };
+    return T;
+  }
+
+  function mountSubtitle(root, subData, opts = {}) {
     if (!subData || !Array.isArray(subData.words) || !subData.words.length) return null;
-    const rawTokens = (subData.text || "").trim().split(/\s+/).filter(Boolean);
-    const words = subData.words.map((w, i) => {
-      const tok = rawTokens[i] || w.w;
-      return { t: w.t, d: w.d, w: tok };
-    });
+    const mute = opts.mute || [];
+    const words = subData.words.map((w) => ({ t: w.t, d: w.d, w: String(w.w).replace(/ /g, "\u00a0") }));
 
     const chunks = [];
     let cur = [];
@@ -147,6 +198,7 @@
         cur.length >= 7 ||
         charCount >= 44 ||
         (endsPunct && cur.length >= 3) ||
+        /[.?!:]$/.test(item.w) ||
         (nextStartsCap && cur.length >= 4)
       ) {
         chunks.push({
@@ -171,9 +223,6 @@
     const chunkEls = chunks.map((ch) => {
       const cEl = document.createElement("div");
       cEl.className = "vo-chunk";
-      const card = document.createElement("span");
-      card.className = "vo-sliding-card";
-      cEl.appendChild(card);
       const spans = ch.words.map((wObj) => {
         const sp = document.createElement("span");
         sp.className = "vo-w";
@@ -182,7 +231,7 @@
         return sp;
       });
       layer.appendChild(cEl);
-      return { ch, cEl, card, spans, boxes: null };
+      return { ch, cEl, spans };
     });
     root.appendChild(layer);
 
@@ -190,6 +239,10 @@
     return {
       update(sceneTime) {
         const voT = sceneTime - voOffset;
+        // On-screen type that already says the line (a question, a title) mutes the caption.
+        let gain = 1;
+        for (const [a, b] of mute) gain = Math.min(gain, 1 - clamp((sceneTime - a + 0.2) / 0.2, 0, 1) * clamp((b - sceneTime) / 0.2, 0, 1));
+        layer.style.opacity = gain.toFixed(3);
         let activeIdx = -1;
         for (let i = 0; i < chunkEls.length; i++) {
           const c = chunkEls[i].ch;
@@ -220,34 +273,11 @@
           item.cEl.style.opacity = (fadeIn * fadeOut).toFixed(3);
           item.cEl.style.transform = `translate3d(0, ${yOffset.toFixed(2)}px, 0)`;
 
-          item.boxes = item.spans.map((sp) => ({
-            left: sp.offsetLeft,
-            width: sp.offsetWidth,
-          }));
-
+          // the spoken word is marked by class only (CSS underline on the span): no layout reads per frame
           let wIdx = 0;
           for (let k = 0; k < c.words.length; k++) {
             if (voT >= c.words[k].t - 0.035) wIdx = k;
           }
-
-          const curBox = item.boxes[wIdx] || { left: 0, width: 60 };
-          const curWord = c.words[wIdx];
-          let x = curBox.left;
-          let w = curBox.width;
-          let stretchX = 1;
-
-          // Critically-damped spring interpolation with subtle velocity stretch (Emil Kowalski / motionmaxxing)
-          if (wIdx > 0) {
-            const prevBox = item.boxes[wIdx - 1];
-            const rawU = clamp((voT - curWord.t) / 0.085, 0, 1);
-            const springU = spring(rawU, 15, 0.84);
-            x = prevBox.left + (curBox.left - prevBox.left) * springU;
-            w = prevBox.width + (curBox.width - prevBox.width) * springU;
-            stretchX = 1 + 0.055 * Math.sin(Math.PI * rawU);
-          }
-
-          item.card.style.transform = `translate3d(${(x - 8).toFixed(1)}px, -50%, 0) scaleX(${stretchX.toFixed(3)})`;
-          item.card.style.width = `${Math.max(24, w + 16).toFixed(1)}px`;
 
           for (let k = 0; k < item.spans.length; k++) {
             const sp = item.spans[k];
@@ -594,5 +624,5 @@
     return { svg, L, update, cam, applyCam, frame, prepDraw, leaders, sim: S, C };
   }
 
-  window.OWC = { build, mountSubtitle, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
+  window.OWC = { build, mountSubtitle, cues, warp, DUR, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
 })();
