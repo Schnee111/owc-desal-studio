@@ -114,6 +114,15 @@
         #s1-root .energy .big span { font: 600 40px 'Source Sans 3', sans-serif; letter-spacing: 0; margin-left: 10px; color: #293F3D; }
         #s1-root .energy .what { margin-top: 10px; font: 600 30px/1.2 'Source Sans 3', sans-serif; color: #293F3D; }
         #s1-root .energy .src { margin-top: 6px; font: 400 24px/1.25 'Source Sans 3', sans-serif; color: #53645D; }
+        #s1-root .coast { position: absolute; left: 0; top: 0; overflow: visible; opacity: 0; transform-origin: 900px 520px; }
+        #s1-root .ctag { position: absolute; opacity: 0; font: 600 30px/1.2 'Source Sans 3', sans-serif; color: #293F3D; white-space: nowrap; will-change: transform, opacity; }
+        #s1-root .ctag small { display: block; font: 400 24px/1.25 'Source Sans 3', sans-serif; color: #53645D; }
+        #s1-root .ctag.big { font: 500 72px/1 Literata, serif; color: #293F3D; letter-spacing: -0.02em; }
+        #s1-root .ctag.big span { font: 600 32px 'Source Sans 3', sans-serif; margin-left: 10px; letter-spacing: 0; }
+        #s1-root .need { position: absolute; left: 96px; opacity: 0; display: flex; align-items: center; gap: 18px; font: 600 40px/1.15 'Source Sans 3', sans-serif; color: #293F3D; white-space: nowrap; will-change: transform, opacity; }
+        #s1-root .need svg { flex: none; }
+        #s1-root .need.water b { color: #286B75; }
+        #s1-root .need.power b { color: #A64F32; }
         #s1-root .ask .wd.en { color: #A64F32; }
         #s1-root .ask { position: absolute; left: 0; right: 0; top: 700px; text-align: center; font: 500 70px/1.16 Literata, serif; letter-spacing: -0.02em; color: #293F3D; }
         #s1-root .ask .wd { display: inline-block; opacity: 0; margin: 0 0.12em; will-change: transform, opacity; }
@@ -160,7 +169,7 @@
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
 #s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
 #s4-root .inset .cap{font-size:24px;font-weight:600}
-#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600;color:#8E4029}
 #s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
 #s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
 #s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
@@ -254,7 +263,7 @@
 #s6-root .card .plate{border-radius:8px;top:735px;height:136px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
 </style>
 
-      <div data-hf-id="hf-bsci" id="s1-root" data-composition-id="s1" data-width="1920" data-height="1080" data-duration="22.3">
+      <div data-hf-id="hf-bsci" id="s1-root" data-composition-id="s1" data-width="1920" data-height="1080" data-duration="42.5">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
             <svg data-hf-id="hf-j0sq" class="dg map" viewBox="0 0 1920 1080" width="1920" height="1080">
@@ -286,6 +295,26 @@
           </div>
           <div data-hf-id="hf-lu65" class="dot"></div>
         </div>
+        <svg class="coast" viewBox="0 0 1920 1080" width="1920" height="1080" data-layout-allow-overflow="">
+          <path class="c-sea" fill="#367B86" fill-opacity="0.85" />
+          <path class="c-crest" fill="none" stroke="#2F6670" stroke-width="3.5" stroke-linejoin="round" />
+          <path d="M560 500 L1930 500 L1930 1090 L-10 1090 L-10 985 L560 790Z" fill="#DED4BD" />
+          <path d="M560 790 L560 500 L1930 500" fill="none" stroke="#293F3D" stroke-width="3" />
+          <path d="M-10 985 L560 790" fill="none" stroke="#293F3D" stroke-opacity="0.75" stroke-width="2.5" />
+          <path class="c-walk" d="M600 548 H1900" fill="none" stroke="#B9AD92" stroke-width="10" stroke-linecap="round" />
+          <g class="c-build" />
+          <g class="c-people" />
+          <g class="c-lamps" />
+          <rect class="c-night" x="-20" y="-20" width="1960" height="1120" fill="#1E3446" opacity="0" />
+          <g class="c-cones" opacity="0" />
+        </svg>
+        <div class="ctag" data-k="toilet" style="left:650px;top:300px">Toilet &amp; bilas</div>
+        <div class="ctag" data-k="kios" style="left:1080px;top:340px">5 kios</div>
+        <div class="ctag" data-k="lampu" style="left:1560px;top:296px">8 lampu jalur</div>
+        <div class="ctag big" data-k="visit" style="left:930px;top:600px">200<span>pengunjung / hari</span><small>1 ikon = 20 orang</small></div>
+        <div class="need water" style="top:150px"><svg width="40" height="54" viewBox="0 0 48 64"><path d="M24 4 C24 4 6 28 6 42 A18 18 0 0 0 42 42 C42 28 24 4 24 4Z" fill="#286B75"/></svg><span>Butuh <b>air bersih</b></span></div>
+        <div class="need power" style="top:226px"><svg width="40" height="54" viewBox="0 0 48 64"><path d="M30 2 L6 36 L22 36 L16 62 L42 24 L26 24Z" fill="#A64F32"/></svg><span>Butuh <b>listrik</b>, juga malam hari</span></div>
+        <div class="ctag" data-k="sea" style="left:96px;top:420px">Ombak datang siang &amp; malam<small>air laut di depannya = bahan baku air bersih</small></div>
         <svg data-hf-id="hf-hw9l" class="title" viewBox="0 0 1920 1080" width="1920" height="1080">
           <text data-hf-id="hf-htw5" x="960" y="640" text-anchor="middle">OWC-DESAL</text>
         </svg>
@@ -345,7 +374,7 @@
 
   // ---- wave plans per scene (phase φ, amplitude A); level L = MWL - A·sin φ ----
   // Scene lengths come from src/refinement.mjs through the build; the fallback is the old cut.
-  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":22.3,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":26.5,"8":24.2});
+  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":42.5,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":24.5,"8":24.2});
   const plans = {
     2: { dur: DUR[2], phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, DUR[2] - 6, DUR[2]) },
     3: {
@@ -931,10 +960,12 @@
           const root = document.getElementById("s1-root");
           const $ = (s) => root.querySelector(s);
           const { clamp, frac } = window.OWC;
-          const subData = {"voOffset":0.5,"text":"Mei 2026: Kelingking dan Broken Beach di Nusa Penida belum teraliri air bersih, dan sumur pesisir Kuta Utara terintrusi air laut. Padahal potensi energi laut Indonesia sekitar 63 GW, belum dimanfaatkan. Bisakah ombak menghasilkan listrik, sekaligus air bersih?","words":[{"t":0.08,"d":1.72,"w":"Mei 2026:"},{"t":2.08,"d":0.48,"w":"Kelingking"},{"t":2.64,"d":0.08,"w":"dan"},{"t":2.8,"d":0.24,"w":"Broken"},{"t":3.12,"d":0.24,"w":"Beach"},{"t":3.4,"d":0.04,"w":"di"},{"t":3.48,"d":0.2,"w":"Nusa"},{"t":3.76,"d":0.56,"w":"Penida"},{"t":4.4,"d":0.24,"w":"belum"},{"t":4.72,"d":0.48,"w":"teraliri"},{"t":5.28,"d":0.08,"w":"air"},{"t":5.44,"d":0.8,"w":"bersih,"},{"t":6.32,"d":0.08,"w":"dan"},{"t":6.48,"d":0.24,"w":"sumur"},{"t":6.8,"d":0.32,"w":"pesisir"},{"t":7.2,"d":0.16,"w":"Kuta"},{"t":7.44,"d":0.48,"w":"Utara"},{"t":8,"d":0.56,"w":"terintrusi"},{"t":8.64,"d":0.16,"w":"air"},{"t":8.88,"d":0.56,"w":"laut."},{"t":9.813,"d":0.427,"w":"Padahal"},{"t":10.32,"d":0.4,"w":"potensi"},{"t":10.84,"d":0.2,"w":"energi"},{"t":11.12,"d":0.16,"w":"laut"},{"t":11.36,"d":0.48,"w":"Indonesia"},{"t":11.92,"d":0.4,"w":"sekitar"},{"t":12.4,"d":1.627,"w":"63 GW,"},{"t":14.133,"d":0.107,"w":"belum"},{"t":14.32,"d":0.96,"w":"dimanfaatkan."},{"t":15.6,"d":0.4,"w":"Bisakah"},{"t":16.08,"d":0.24,"w":"ombak"},{"t":16.36,"d":0.52,"w":"menghasilkan"},{"t":17,"d":0.48,"w":"listrik,"},{"t":17.52,"d":0.48,"w":"sekaligus"},{"t":18.08,"d":0.08,"w":"air"},{"t":18.24,"d":0.64,"w":"bersih?"}]};
+          const subData = {"voOffset":0.5,"text":"Mei 2026: Kelingking dan Broken Beach di Nusa Penida belum teraliri air bersih, dan sumur pesisir Kuta Utara terintrusi air laut. Padahal potensi energi laut Indonesia sekitar 63 GW, dan pemanfaatannya belum optimal. Kami mengusulkan pemanfaatan yang spesifik: satu fasilitas wisata pantai dengan 200 pengunjung sehari, lengkap dengan toilet, kios, dan lampu jalur. Fasilitas ini butuh air bersih dan listrik, juga di malam hari. Ombak tetap datang siang dan malam, tepat di samping sumber air bakunya, yaitu laut. Bisakah ombak menghasilkan listrik, sekaligus air bersih?","words":[{"t":0.08,"d":1.84,"w":"Mei 2026:"},{"t":2.24,"d":0.48,"w":"Kelingking"},{"t":2.8,"d":0.08,"w":"dan"},{"t":2.96,"d":0.32,"w":"Broken"},{"t":3.36,"d":0.24,"w":"Beach"},{"t":3.64,"d":0.04,"w":"di"},{"t":3.72,"d":0.2,"w":"Nusa"},{"t":4,"d":0.48,"w":"Penida"},{"t":4.72,"d":0.24,"w":"belum"},{"t":5.04,"d":0.48,"w":"teraliri"},{"t":5.6,"d":0.08,"w":"air"},{"t":5.76,"d":0.6,"w":"bersih,"},{"t":6.56,"d":0.08,"w":"dan"},{"t":6.72,"d":0.24,"w":"sumur"},{"t":7.04,"d":0.32,"w":"pesisir"},{"t":7.44,"d":0.16,"w":"Kuta"},{"t":7.68,"d":0.56,"w":"Utara"},{"t":8.32,"d":0.64,"w":"terintrusi"},{"t":9.04,"d":0.16,"w":"air"},{"t":9.24,"d":0.6,"w":"laut."},{"t":10.16,"d":0.48,"w":"Padahal"},{"t":10.72,"d":0.4,"w":"potensi"},{"t":11.24,"d":0.2,"w":"energi"},{"t":11.52,"d":0.16,"w":"laut"},{"t":11.76,"d":0.56,"w":"Indonesia"},{"t":12.4,"d":0.4,"w":"sekitar"},{"t":12.96,"d":1.56,"w":"63 GW,"},{"t":14.56,"d":0.08,"w":"dan"},{"t":14.68,"d":1,"w":"pemanfaatannya"},{"t":15.84,"d":0.16,"w":"belum"},{"t":16.08,"d":0.68,"w":"optimal."},{"t":17.04,"d":0.16,"w":"Kami"},{"t":17.28,"d":0.56,"w":"mengusulkan"},{"t":17.92,"d":0.56,"w":"pemanfaatan"},{"t":18.56,"d":0.08,"w":"yang"},{"t":18.72,"d":0.8,"w":"spesifik:"},{"t":19.76,"d":0.24,"w":"satu"},{"t":20.08,"d":0.48,"w":"fasilitas"},{"t":20.64,"d":0.32,"w":"wisata"},{"t":21.04,"d":0.4,"w":"pantai"},{"t":21.52,"d":0.24,"w":"dengan"},{"t":21.84,"d":0.56,"w":"200"},{"t":22.48,"d":0.32,"w":"pengunjung"},{"t":22.88,"d":0.667,"w":"sehari,"},{"t":23.573,"d":0.347,"w":"lengkap"},{"t":24,"d":0.16,"w":"dengan"},{"t":24.24,"d":0.667,"w":"toilet,"},{"t":24.933,"d":0.467,"w":"kios,"},{"t":25.44,"d":0.16,"w":"dan"},{"t":25.72,"d":0.2,"w":"lampu"},{"t":26.04,"d":0.64,"w":"jalur."},{"t":26.72,"d":0.48,"w":"Fasilitas"},{"t":27.28,"d":0.24,"w":"ini"},{"t":27.6,"d":0.16,"w":"butuh"},{"t":27.84,"d":0.16,"w":"air"},{"t":28.16,"d":0.24,"w":"bersih"},{"t":28.48,"d":0.16,"w":"dan"},{"t":28.76,"d":0.56,"w":"listrik,"},{"t":29.36,"d":0.24,"w":"juga"},{"t":29.68,"d":0.08,"w":"di"},{"t":29.84,"d":0.16,"w":"malam"},{"t":30.36,"d":0.371,"w":"hari."},{"t":30.8,"d":0.32,"w":"Ombak"},{"t":31.2,"d":0.24,"w":"tetap"},{"t":31.56,"d":0.28,"w":"datang"},{"t":31.92,"d":0.32,"w":"siang"},{"t":32.32,"d":0.08,"w":"dan"},{"t":32.48,"d":0.56,"w":"malam,"},{"t":33.12,"d":0.16,"w":"tepat"},{"t":33.36,"d":0.08,"w":"di"},{"t":33.52,"d":0.24,"w":"samping"},{"t":33.84,"d":0.16,"w":"sumber"},{"t":34.08,"d":0.16,"w":"air"},{"t":34.36,"d":0.627,"w":"bakunya,"},{"t":35.013,"d":0.347,"w":"yaitu"},{"t":35.44,"d":0.727,"w":"laut."},{"t":36.233,"d":0.327,"w":"Bisakah"},{"t":36.64,"d":0.24,"w":"ombak"},{"t":36.92,"d":0.52,"w":"menghasilkan"},{"t":37.52,"d":0.587,"w":"listrik,"},{"t":38.133,"d":0.427,"w":"sekaligus"},{"t":38.64,"d":0.08,"w":"air"},{"t":38.8,"d":0.64,"w":"bersih?"}]};
           const cue = window.OWC.cues(subData);
-          const D = 22.3, tDive = D - 1.5;
-          const tAsk = cue("Bisakah", 1, 16.1), tTitle = cue("bersih", 2, 18.7) + 0.15;
+          const D = 42.5, tDive = cue("Kami", 1, 17.5) - 0.7, tCoast = tDive + 1.2;
+          // first occurrence of a word at or after t0 (the question repeats words said earlier)
+          const after = (w, t0, fb) => { for (let n = 1; n < 12; n++) { const x = cue(w, n, -1); if (x < 0) break; if (x >= t0 - 0.05) return x; } return fb; };
+          const tAsk = cue("Bisakah", 1, 36.7), tTitle = after("bersih", tAsk, tAsk + 2.6) + 0.15;
           const sub = window.OWC.mountSubtitle(root, subData, { mute: [[tAsk - 0.1, D]] });
           const world = $(".world");
           const mk = (tag, attrs, parent) => {
@@ -982,7 +1013,7 @@
             ask.appendChild(s);
             wds.push(s);
           });
-          const askAt = [cue("Bisakah"), cue("ombak"), cue("menghasilkan"), cue("listrik"), cue("sekaligus"), cue("air", 3), cue("bersih", 2)];
+          const askAt = ["Bisakah", "ombak", "menghasilkan", "listrik", "sekaligus", "air", "bersih"].map((w, i) => after(w, tAsk, tAsk + i * 0.35));
 
           const tl = gsap.timeline({ paused: true });
 
@@ -1055,7 +1086,7 @@
           tl.fromTo($(".energy"), { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, tPot - 0.1);
           tl.fromTo($(".energy .big"), { scale: 1.6, transformOrigin: "0% 80%" }, { scale: 1, duration: 0.55, ease: "power3.out" }, cue("63", 1, 12.9) - 0.05);
           tl.fromTo($(".energy .what"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, cue("belum", 2, 14.6) - 0.1);
-          tl.to([places.kuta.el, places.penida.el, places.kuta.lead, places.penida.lead, places.kuta.g, places.penida.g, $(".sea-name"), $(".energy")], { opacity: 0, duration: 0.45, ease: "power2.in" }, tAsk - 0.35);
+          tl.to([places.kuta.el, places.penida.el, places.kuta.lead, places.penida.lead, places.kuta.g, places.penida.g, $(".sea-name"), $(".energy")], { opacity: 0, duration: 0.4, ease: "power2.in" }, tDive - 0.1);
 
           // 4. Question at speech rhythm, then the name lands above it
           wds.forEach((w, i) => {
@@ -1067,19 +1098,93 @@
           tl.to(tt, { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, tTitle);
           tl.to(tt, { fillOpacity: 1, duration: 0.3, ease: "power1.out" }, tTitle + 0.2);
           // push-through: copy accelerates away with the dive, the coast point carries into Scene 2
-          tl.to($(".title"), { scale: 1.18, opacity: 0, duration: 0.5, ease: "power2.in" }, tDive + 0.05);
-          tl.to(ask, { y: 40, opacity: 0, duration: 0.42, ease: "power2.in" }, tDive);
+          tl.to($(".title"), { scale: 1.12, opacity: 0, duration: 0.5, ease: "power2.in" }, D - 0.95);
+          tl.to(ask, { y: 40, opacity: 0, duration: 0.42, ease: "power2.in" }, D - 1.0);
           tl.fromTo(dot, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, tDive + 0.1);
-          tl.to($(".map"), { opacity: 0, duration: 0.45, ease: "power1.in" }, D - 0.45);
+          tl.to($(".map"), { opacity: 0, duration: 0.45, ease: "power1.in" }, tDive + 1.0);
 
+
+          // 5. The proposed use, drawn as the same coast Scene 2 builds on: sea left, cliff at x 560, land at y 500
+          const coast = $(".coast");
+          const cg = (sel) => coast.querySelector(sel);
+          const ink = { fill: "#E5E2D5", stroke: "#293F3D", "stroke-width": 2.5, "stroke-linejoin": "round" };
+          const build = [];
+          const toilet = mk("g", {}, cg(".c-build"));
+          mk("path", { d: "M660 500 V392 H860 V500", ...ink }, toilet);
+          mk("path", { d: "M648 394 L760 350 L872 394Z", ...ink, fill: "#C8C7B9" }, toilet);
+          mk("rect", { x: 700, y: 432, width: 34, height: 68, fill: "#C8C7B9", stroke: "#293F3D", "stroke-width": 2 }, toilet);
+          mk("rect", { x: 786, y: 432, width: 34, height: 68, fill: "#C8C7B9", stroke: "#293F3D", "stroke-width": 2 }, toilet);
+          mk("path", { d: "M760 404 C760 404 750 418 750 425 A10 10 0 0 0 770 425 C770 418 760 404 760 404Z", fill: "#286B75" }, toilet);
+          build.push(toilet);
+          for (let i = 0; i < 5; i++) {
+            const x = 920 + i * 110, k = mk("g", {}, cg(".c-build"));
+            mk("path", { d: `M${x} 500 V438 H${x + 92} V500`, ...ink }, k);
+            mk("path", { d: `M${x - 8} 440 L${x + 4} 418 H${x + 88} L${x + 100} 440Z`, fill: "#A64F32", stroke: "#293F3D", "stroke-width": 2, "stroke-linejoin": "round" }, k);
+            for (let j = 1; j < 4; j++) mk("path", { d: `M${x + 4 + j * 24} 418 L${x - 8 + j * 27} 440`, stroke: "#F4EFE4", "stroke-width": 5, "stroke-opacity": 0.7 }, k);
+            mk("rect", { x: x + 14, y: 462, width: 64, height: 10, fill: "#C8C7B9" }, k);
+            build.push(k);
+          }
+          const lamps = [], cones = [];
+          for (let i = 0; i < 8; i++) {
+            const x = 640 + i * 177, g = mk("g", {}, cg(".c-lamps"));
+            mk("path", { d: `M${x} 548 V432 H${x + 18}`, fill: "none", stroke: "#293F3D", "stroke-width": 4, "stroke-linecap": "round" }, g);
+            mk("path", { d: `M${x + 10} 430 H${x + 34} L${x + 30} 440 H${x + 14}Z`, fill: "#293F3D" }, g);
+            cones.push(mk("path", { d: `M${x + 15} 442 H${x + 29} L${x + 58} 548 H${x - 14}Z`, fill: "#F2C27B" }, cg(".c-cones")));
+            lamps.push(g);
+          }
+          const people = [];
+          for (let i = 0; i < 10; i++) {
+            const x = 930 + i * 52 + (i % 3) * 6, h = 34 + ((i * 7) % 3) * 4, g = mk("g", {}, cg(".c-people"));
+            mk("circle", { cx: x, cy: 548 - h - 9, r: 8, fill: "#293F3D" }, g);
+            mk("path", { d: `M${x - 9} 548 V${548 - h + 10} Q${x} ${548 - h - 2} ${x + 9} ${548 - h + 10} V548Z`, fill: i % 2 ? "#367B86" : "#676953" }, g);
+            people.push(g);
+          }
+          const tags = {};
+          root.querySelectorAll(".ctag").forEach((e) => { tags[e.dataset.k] = e; });
+          const tag = (k) => tags[k];
+          tl.fromTo(coast, { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" }, tCoast);
+          const tFac = Math.max(cue("fasilitas", 1, 20.5) - 0.1, tCoast + 0.5);
+          tl.fromTo(build, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, tFac);
+          tl.fromTo(lamps, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", stagger: 0.05 }, tFac + 0.3);
+          const tVis = cue("200", 1, 22.3);
+          tl.fromTo(people, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", stagger: 0.05 }, tVis - 0.1);
+          tl.fromTo(tag("visit"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, tVis - 0.05);
+          [["toilet", "toilet"], ["kios", "kios"], ["lampu", "lampu"]].forEach(([k, w]) =>
+            tl.fromTo(tag(k), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, cue(w, 1, 24) - 0.08));
+          // the two needs, then night: the lamps are needed exactly when there is no sun
+          tl.fromTo($(".need.water"), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, cue("air", 3, 28.3) - 0.1);
+          tl.fromTo($(".need.power"), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, cue("listrik", 1, 29.2) - 0.1);
+          const tNight = cue("malam", 1, 30.3) - 0.2, tDay = cue("tepat", 1, 33.6);
+          tl.to(cg(".c-night"), { opacity: 0.34, duration: 0.7, ease: "power2.inOut" }, tNight);
+          tl.to(cg(".c-cones"), { opacity: 0.75, duration: 0.6, ease: "power2.out" }, tNight + 0.25);
+          tl.fromTo(tag("sea"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, cue("Ombak", 1, 31.3) - 0.1);
+          tl.to(cg(".c-night"), { opacity: 0, duration: 0.8, ease: "power2.inOut" }, tDay);
+          tl.to(cg(".c-cones"), { opacity: 0, duration: 0.6, ease: "power2.in" }, tDay + 0.1);
+          // the question takes the frame; the coast stays behind it, then hands its shoreline to Scene 2
+          const coastText = [...root.querySelectorAll(".ctag"), $(".need.water"), $(".need.power")];
+          tl.to(coastText, { opacity: 0, y: -10, duration: 0.4, ease: "power2.in" }, tAsk - 0.45);
+          tl.to(coast, { opacity: 0.22, duration: 0.6, ease: "power2.inOut" }, tAsk - 0.4);
+          // hand-off: the facility clears and the bare coast comes back to full strength, as Scene 2 opens on it
+          tl.to([cg(".c-build"), cg(".c-people"), cg(".c-lamps"), cg(".c-walk")], { opacity: 0, duration: 0.45, ease: "power2.in" }, D - 1.0);
+          tl.to(coast, { opacity: 1, duration: 0.6, ease: "power2.inOut" }, D - 0.85);
           const tick = { t: 0 };
-          const swellOn = (t) => clamp((t - (tSea - 0.3)) / 1.2, 0, 1) * (1 - clamp((t - (tAsk - 0.5)) / 0.6, 0, 1));
+          const swellOn = (t) => clamp((t - (tSea - 0.3)) / 1.2, 0, 1) * (1 - clamp((t - (tDive - 0.4)) / 0.5, 0, 1));
           const update = (t) => {
             if (sub) sub.update(t);
             for (const k in places) {
               const s = frac(t * 0.7 + (k === "kuta" ? 0.4 : 0));
               places[k].ring.setAttribute("r", (10 + s * 26).toFixed(1));
               places[k].ring.setAttribute("stroke-opacity", (0.8 * (1 - s)).toFixed(3));
+            }
+            // waves keep rolling in toward the cliff of the proposed site
+            if (t > tCoast - 0.2) {
+              let d = "";
+              for (let x = -10; x <= 560; x += 10) {
+                const y = 600 + 9 * Math.sin(0.012 * x - 2.1 * t) * Math.min(1, (570 - x) / 60) + 3 * Math.sin(0.04 * x + 1.3 * t);
+                d += (x === -10 ? "M" : "L") + x + " " + y.toFixed(1) + " ";
+              }
+              cg(".c-crest").setAttribute("d", d);
+              cg(".c-sea").setAttribute("d", d + "L560 790 L-10 985Z");
             }
             // swell crests travel north toward the coast: the "ombak tak pernah berhenti" beat
             const on = swellOn(t);

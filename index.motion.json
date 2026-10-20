@@ -1,5 +1,5 @@
 {
- "duration": 183.5,
+ "duration": 201.7,
  "assertions": [
   {
    "kind": "appearsBy",
@@ -23,8 +23,18 @@
   },
   {
    "kind": "appearsBy",
+   "selector": "#el-s1 .coast",
+   "bySec": 20
+  },
+  {
+   "kind": "before",
+   "a": "#el-s1 .energy",
+   "b": "#el-s1 .coast"
+  },
+  {
+   "kind": "appearsBy",
    "selector": "#el-s2 .lbl[data-k='chamber']",
-   "bySec": 28.8
+   "bySec": 49.0
   },
   {
    "kind": "before",
@@ -34,27 +44,27 @@
   {
    "kind": "appearsBy",
    "selector": "#el-s4 .inset",
-   "bySec": 73.8
+   "bySec": 94.0
   },
   {
    "kind": "appearsBy",
    "selector": "#el-s4 .power-fluctuation",
-   "bySec": 80.8
+   "bySec": 101.0
   },
   {
    "kind": "appearsBy",
    "selector": "#el-s5 .scenario",
-   "bySec": 104.8
+   "bySec": 125.0
   },
   {
    "kind": "appearsBy",
    "selector": "#el-s7 .water-allocation",
-   "bySec": 121.8
+   "bySec": 141.5
   },
   {
    "kind": "appearsBy",
    "selector": "#el-s7 .energy-allocation",
-   "bySec": 132.8
+   "bySec": 151
   },
   {
    "kind": "staysInFrame",
@@ -67,12 +77,12 @@
   {
    "kind": "appearsBy",
    "selector": "#el-s8 .battery-buffer",
-   "bySec": 160.3
+   "bySec": 178.5
   },
   {
    "kind": "appearsBy",
    "selector": "#el-s6 .card .plate",
-   "bySec": 181.0
+   "bySec": 199.2
   }
  ]
 }

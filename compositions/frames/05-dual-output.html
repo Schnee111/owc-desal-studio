@@ -162,7 +162,7 @@
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
 #s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
 #s4-root .inset .cap{font-size:24px;font-weight:600}
-#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600;color:#8E4029}
 #s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
 #s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
 #s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
@@ -333,7 +333,7 @@
 
   // ---- wave plans per scene (phase φ, amplitude A); level L = MWL - A·sin φ ----
   // Scene lengths come from src/refinement.mjs through the build; the fallback is the old cut.
-  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":22.3,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":26.5,"8":24.2});
+  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":42.5,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":24.5,"8":24.2});
   const plans = {
     2: { dur: DUR[2], phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, DUR[2] - 6, DUR[2]) },
     3: {

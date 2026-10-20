@@ -132,7 +132,7 @@
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
 #s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
 #s4-root .inset .cap{font-size:24px;font-weight:600}
-#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600;color:#8E4029}
 #s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
 #s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
 #s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
@@ -225,13 +225,13 @@
 #s6-root .card .m b{font:600 28px/1.6 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
 #s6-root .card .plate{border-radius:8px;top:735px;height:136px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
 </style>
-<div data-hf-id="hf-zve8" id="s7-root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="26.5">
+<div data-hf-id="hf-zve8" id="s7-root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="24.5">
  <div data-hf-id="hf-12x1" class="cam"><div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
   <div data-hf-id="hf-62cw" class="facility-title">Sasaran layanan: 8 lampu jalur, 5 kios, sistem kontrol</div>
  </div></div>
  <div data-hf-id="hf-z1qa" class="allocation water-allocation">
   <div data-hf-id="hf-4q5g" class="service-intro">
-   <h1 data-hf-id="hf-kdqf">Siapa yang dilayani?</h1>
+   <h1 data-hf-id="hf-kdqf">Kebutuhan harian fasilitas</h1>
    <p data-hf-id="hf-i33t" class="service-number">200<span data-hf-id="hf-m5cp"> pengunjung / hari</span></p>
    <p data-hf-id="hf-jfee">Satu fasilitas wisata: toilet &amp; bilas, 5 kios, petugas, kebersihan.</p>
   </div>
@@ -301,7 +301,7 @@
 
   // ---- wave plans per scene (phase φ, amplitude A); level L = MWL - A·sin φ ----
   // Scene lengths come from src/refinement.mjs through the build; the fallback is the old cut.
-  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":22.3,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":26.5,"8":24.2});
+  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":42.5,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":24.5,"8":24.2});
   const plans = {
     2: { dur: DUR[2], phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, DUR[2] - 6, DUR[2]) },
     3: {
@@ -880,7 +880,7 @@
 
 (()=>{
  const S={"hs":1,"te":6,"width":4,"flux":2.94,"meanKw":2,"hours":24,"delivery":0.9,"water":5,"sec":5,"other":3.6,"visitors":200,"kiosks":5,"lamps":8,"reserve":10,"battery":8,"recovery":0.4,"gross":48,"net":43.2,"ro":25,"margin":14.6,"feed":12.5,"brine":7.5,"waterRows":[[4,"Sanitasi 200 pengunjung"],[0.5,"Kebersihan 5 kios"],[0.25,"Kebutuhan 5 petugas"],[0.25,"Perawatan fasilitas"]],"energyRows":[[25,"Mengolah air (RO)"],[3.6,"Lampu & fasilitas"],[14.6,"Cadangan (margin)"]]},root=document.getElementById('s7-root'),q=s=>root.querySelector(s);
- const SUB={"voOffset":0.6,"text":"Siapa yang dilayani? Satu fasilitas wisata dengan 200 pengunjung sehari. 5 m³ air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata 2 kW sepanjang hari, tersisa 43,2 kWh setelah rugi-rugi. 25 untuk mengolah air, 3,6 untuk fasilitas, sisanya cadangan.","words":[{"t":0.08,"d":0.32,"w":"Siapa"},{"t":0.44,"d":0.04,"w":"yang"},{"t":0.56,"d":0.72,"w":"dilayani?"},{"t":1.52,"d":0.2,"w":"Satu"},{"t":1.76,"d":0.48,"w":"fasilitas"},{"t":2.36,"d":0.44,"w":"wisata"},{"t":2.88,"d":0.24,"w":"dengan"},{"t":3.2,"d":0.48,"w":"200"},{"t":3.76,"d":0.4,"w":"pengunjung"},{"t":4.24,"d":0.64,"w":"sehari."},{"t":5.12,"d":0.72,"w":"5 m³"},{"t":5.92,"d":0.32,"w":"air"},{"t":6.32,"d":0.4,"w":"dibagi"},{"t":6.8,"d":0.16,"w":"untuk"},{"t":7.04,"d":0.4,"w":"sanitasi"},{"t":7.52,"d":0.64,"w":"pengunjung,"},{"t":8.32,"d":0.48,"w":"kios,"},{"t":8.88,"d":0.64,"w":"petugas,"},{"t":9.6,"d":0.08,"w":"dan"},{"t":9.76,"d":0.76,"w":"kebersihan."},{"t":10.787,"d":0.733,"w":"Energinya:"},{"t":11.84,"d":0.48,"w":"rata-rata"},{"t":12.48,"d":0.72,"w":"2 kW"},{"t":13.28,"d":0.32,"w":"sepanjang"},{"t":13.68,"d":0.56,"w":"hari,"},{"t":14.36,"d":0.44,"w":"tersisa"},{"t":14.88,"d":2.08,"w":"43,2 kWh"},{"t":17.04,"d":0.32,"w":"setelah"},{"t":17.4,"d":1,"w":"rugi-rugi."},{"t":18.427,"d":0.613,"w":"25"},{"t":19.12,"d":0.16,"w":"untuk"},{"t":19.32,"d":0.36,"w":"mengolah"},{"t":19.76,"d":0.56,"w":"air,"},{"t":20.4,"d":0.72,"w":"3,6"},{"t":21.2,"d":0.16,"w":"untuk"},{"t":21.44,"d":0.88,"w":"fasilitas,"},{"t":22.44,"d":0.44,"w":"sisanya"},{"t":22.96,"d":0.72,"w":"cadangan."}]},cue=OWC.cues(SUB),D=26.5;
+ const SUB={"voOffset":0.6,"text":"Kembali ke fasilitas tadi: 200 pengunjung sehari. 5 m³ air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata 2 kW sepanjang hari, tersisa 43,2 kWh setelah rugi-rugi. 25 untuk mengolah air, 3,6 untuk fasilitas, sisanya cadangan.","words":[{"t":0.072,"d":0.328,"w":"Kembali"},{"t":0.44,"d":0.04,"w":"ke"},{"t":0.56,"d":0.4,"w":"fasilitas"},{"t":1.04,"d":0.52,"w":"tadi:"},{"t":1.76,"d":0.48,"w":"200"},{"t":2.32,"d":0.4,"w":"pengunjung"},{"t":2.8,"d":0.72,"w":"sehari."},{"t":3.76,"d":0.72,"w":"5 m³"},{"t":4.56,"d":0.32,"w":"air"},{"t":4.96,"d":0.4,"w":"dibagi"},{"t":5.44,"d":0.16,"w":"untuk"},{"t":5.68,"d":0.32,"w":"sanitasi"},{"t":6.08,"d":0.72,"w":"pengunjung,"},{"t":6.96,"d":0.56,"w":"kios,"},{"t":7.6,"d":0.6,"w":"petugas,"},{"t":8.24,"d":0.16,"w":"dan"},{"t":8.48,"d":0.76,"w":"kebersihan."},{"t":9.507,"d":0.813,"w":"Energinya:"},{"t":10.48,"d":0.48,"w":"rata-rata"},{"t":11.12,"d":0.64,"w":"2 kW"},{"t":11.84,"d":0.32,"w":"sepanjang"},{"t":12.24,"d":0.64,"w":"hari,"},{"t":12.96,"d":0.4,"w":"tersisa"},{"t":13.48,"d":2.04,"w":"43,2 kWh"},{"t":15.6,"d":0.32,"w":"setelah"},{"t":15.96,"d":1,"w":"rugi-rugi."},{"t":17,"d":0.6,"w":"25"},{"t":17.76,"d":0.16,"w":"untuk"},{"t":18,"d":0.32,"w":"mengolah"},{"t":18.4,"d":0.64,"w":"air,"},{"t":19.08,"d":0.68,"w":"3,6"},{"t":19.84,"d":0.16,"w":"untuk"},{"t":20.08,"d":0.88,"w":"fasilitas,"},{"t":21.08,"d":0.44,"w":"sisanya"},{"t":21.6,"d":0.72,"w":"cadangan."}]},cue=OWC.cues(SUB),D=24.5;
  const sub=window.OWC.mountSubtitle(root,SUB);
  const W=OWC.build(q('.world'),{prefix:'s7',scene:7,fn:{gridOn:()=>1,pump:()=>1,ro:()=>1,tapOn:()=>1,tank:()=>.72}});
  const L=W.L;W.applyCam();W.update(0);gsap.set([L.brA,L.brB,L.grid,L.molecules],{opacity:1});gsap.set(L.cw,{opacity:0});
@@ -900,7 +900,7 @@
  tl.fromTo(q('.facility-title'),{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
 
  // Beat 1 · water: the visitor count lands on "200", each row lights as it is named
- const tWho=cue('Siapa',1,0.9),tBag=cue('5',1,6.6),tEn=cue('Energinya',1,12.8);
+ const tWho=cue('Kembali',1,0.6),tBag=cue('5',1,6.6),tEn=cue('Energinya',1,12.8);
  tl.to(dimmed(waterLit),{opacity:.22,duration:.7,ease:'power2.inOut'},tWho-0.3);
  tl.fromTo(q('.water-allocation'),{opacity:0},{opacity:1,duration:.3,ease:'none'},tWho-0.3);
  tl.fromTo(q('.water-allocation .service-intro'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:'power3.out'},tWho-0.3);
