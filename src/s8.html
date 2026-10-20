@@ -2,9 +2,7 @@
 <style>/*@CSS*/</style>
 <div data-hf-id="hf-t4n6" id="s8-root" data-composition-id="s8" data-width="1920" data-height="1080" data-duration="{{SCENE_DUR}}">
  <div data-hf-id="hf-12x1" class="cam"><div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
-  <div data-hf-id="hf-lynq" class="facility-title">Mode prioritas: {{lamps}} lampu jalur &amp; kontrol tetap menyala</div>
-  <div data-hf-id="hf-o5tx" class="lbl" style="left:1465px;top:516px" data-leader="1620,516,1620,495">Cadangan tangki tetap memasok keran</div>
-  <div data-hf-id="hf-t5om" class="ro-standby-badge">Pompa RO berhenti sementara</div>
+  <div data-hf-id="hf-t5om" class="ro-standby-badge">Pompa RO berhenti, jalan lagi saat ombak pulih</div>
  </div></div>
  <div data-hf-id="hf-mqav" class="reserve-ui">
   <div data-hf-id="hf-4q5g" class="service-intro">
@@ -27,11 +25,10 @@
    <div data-hf-id="hf-5ds1" class="reserve-card bat-card">
     <strong data-hf-id="hf-wmut">{{battery}} kWh</strong>
     <h2 data-hf-id="hf-i6gr">baterai nominal</h2>
-    <p data-hf-id="hf-2her">{{lamps}} lampu jalur &amp; sistem kontrol ≈ 2,4 kWh/hari. Tidak untuk pompa RO.</p>
+    <p data-hf-id="hf-2her">{{lamps}} lampu jalur &amp; sistem kontrol ≈ 2,4 kWh/hari. Kios dipadamkan, pompa RO tidak ikut.</p>
    </div>
   </div>
  </div>
- <p data-hf-id="hf-bgia" class="service-footnote">Skenario desain · listrik kios diputus sementara saat pasokan rendah · RO dijadwalkan ulang saat ombak pulih</p>
 </div>
 <script>/*@ENGINE*/
 (()=>{
@@ -53,7 +50,6 @@
  const tStop=cue('dihentikan',1,5.6),tKeran=cue('Keran',1,7.6),tBat=cue('Baterai',1,12.9),tOp=cue('Operator',1,18.2);
  tl.fromTo(q('.reserve-ui'),{opacity:0},{opacity:1,duration:.3,ease:'none'},.25);
  tl.fromTo(q('.reserve-ui .service-intro'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:'power3.out'},.28);
- tl.fromTo([q('.facility-title'),q('.service-footnote')],{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
  // the pump stops on "dihentikan"; the badge lands on the building it describes
  tl.fromTo(q('.ro-standby-badge'),{opacity:0,y:12},{opacity:1,y:0,duration:.42,ease:'power3.out'},tStop-0.1);
  // each consequence is added to the list as it is said (accretion, nothing replaced)
@@ -63,7 +59,7 @@
  tl.fromTo(q('.bat-card'),{opacity:0,y:24},{opacity:1,y:0,duration:.5,ease:'power3.out'},cue('8',1,13.3)-0.1);
  tl.fromTo(q('.bat-card p'),{color:'#53645D'},{color:'#A64F32',duration:.3},cue('bukan',1,16.4));
 
- tl.to([q('.reserve-ui'),q('.facility-title'),q('.service-footnote'),q('.ro-standby-badge'),battery,...root.querySelectorAll('.lbl'),...W.leaders.values()],{opacity:0,y:-8,duration:.4,ease:'power2.in'},D-0.45);
+ tl.to([q('.reserve-ui'),q('.ro-standby-badge'),battery],{opacity:0,y:-8,duration:.4,ease:'power2.in'},D-0.45);
  const update=t=>{
   const r=W.update(t),weak=ramp(t,3,8);
   if(sub)sub.update(t);
