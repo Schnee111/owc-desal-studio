@@ -3,7 +3,6 @@
 <div data-hf-id="hf-zve8" id="s7-root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="{{SCENE_DUR}}">
  <div data-hf-id="hf-12x1" class="cam"><div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
   <div data-hf-id="hf-62cw" class="facility-title">Sasaran layanan: {{lamps}} lampu jalur, {{kiosks}} kios, sistem kontrol</div>
-  <div data-hf-id="hf-kx7t" class="lbl" style="left:1560px;top:516px" data-leader="1620,516,1620,495">Tangki air bersih</div>
  </div></div>
  <div data-hf-id="hf-z1qa" class="allocation water-allocation">
   <div data-hf-id="hf-4q5g" class="service-intro">
@@ -11,19 +10,19 @@
    <p data-hf-id="hf-i33t" class="service-number">{{visitors}}<span data-hf-id="hf-m5cp"> pengunjung / hari</span></p>
    <p data-hf-id="hf-jfee">Satu fasilitas wisata: toilet &amp; bilas, {{kiosks}} kios, petugas, kebersihan.</p>
   </div>
-  <div data-hf-id="hf-75x7" class="ledger"><h2 data-hf-id="hf-ngrm">Pembagian {{water}} m³ air bersih / hari</h2><div data-hf-id="hf-oaky" class="rows" data-chart="water"></div></div>
+  <div data-hf-id="hf-75x7" class="ledger"><h2 data-hf-id="hf-ngrm">Pembagian {{water}} m³ air bersih / hari</h2><div data-hf-id="hf-oaky" class="rows" data-chart="water"></div><p class="ledger-note">Asumsi 20 L per pengunjung untuk toilet &amp; bilas; perlu survei lokasi.</p></div>
  </div>
  <div data-hf-id="hf-xbxp" class="allocation energy-allocation">
   <div data-hf-id="hf-dzbw" class="service-intro">
    <h1 data-hf-id="hf-f6im">Anggaran energi harian</h1>
-   <p data-hf-id="hf-ns8r" class="chain c0">ombak {{hs}} m, periode {{te}} dtk, ruang {{width}} m</p>
-   <p data-hf-id="hf-zfvs" class="chain c1">≈ <b data-hf-id="hf-v66s">{{meanKw}} kW</b> rata-rata × {{hours}} jam = <b data-hf-id="hf-6lrp">{{gross}} kWh</b></p>
+   <p class="tag-s">Skenario desain, belum diuji</p>
+   <p class="chain c0">Ombak {{hs}} m, periode {{te}} dtk: {{flux}} kW/m × lebar {{width}} m × efisiensi 0,5 × 0,35</p>
+   <p data-hf-id="hf-zfvs" class="chain c1"><b data-hf-id="hf-v66s">{{meanKw}} kW</b> rata-rata × {{hours}} jam = <b data-hf-id="hf-6lrp">{{gross}} kWh</b></p>
    <p data-hf-id="hf-9smc" class="service-number c2">{{net}}<span data-hf-id="hf-thh0"> kWh siap pakai</span></p>
    <p data-hf-id="hf-sduj" class="chain c3">setelah rugi listrik 10%</p>
   </div>
-  <div data-hf-id="hf-48l7" class="ledger"><h2 data-hf-id="hf-eqbp">Pembagian {{net}} kWh / hari</h2><div data-hf-id="hf-r6wh" class="rows" data-chart="energy"></div></div>
+  <div data-hf-id="hf-48l7" class="ledger"><h2 data-hf-id="hf-eqbp">Pembagian {{net}} kWh / hari</h2><div data-hf-id="hf-r6wh" class="rows" data-chart="energy"></div><p class="ledger-note">RO: {{water}} m³ × {{sec}} kWh/m³ (asumsi). Cadangan menampung ombak lemah &amp; pengisian ulang.</p></div>
  </div>
- <p data-hf-id="hf-bnru" class="service-footnote">Skenario desain, belum diuji · {{flux}} kW/m × {{width}} m × efisiensi tangkap 0,5 × turbin-generator 0,35 ≈ {{meanKw}} kW · RO {{sec}} kWh/m³</p>
 </div>
 <script>/*@ENGINE*/
 (()=>{
@@ -40,12 +39,16 @@
  const eBars=[...q('[data-chart="energy"]').querySelectorAll('.ledger-bar')],eRows=[...q('[data-chart="energy"]').querySelectorAll('.ledger-row')];
  gsap.set([...wRows,...eRows],{opacity:.35});gsap.set([...wBars,...eBars],{scaleX:0});
  const tl=gsap.timeline({paused:true}),clock={t:0};
- // the machine keeps working underneath; the plant recedes a little while the ledgers are read
- tl.to([L.chamber,L.air,L.arrows],{opacity:0.55,duration:0.8,ease:'power1.inOut'},0.2);
- tl.fromTo([q('.facility-title'),q('.service-footnote')],{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
+ // One lit subject per beat: the machine keeps running, but only the part being read stays at full strength.
+ const pipes=['pIntake','pBrine','pFeed1','pFeed2','pPerm'].map(k=>L[k].g);
+ const machine=[L.chamber,L.air,L.arrows,L.turbine,L.gen,L.power,L.bOutline,L.bRoof,L.filter,L.pump,L.module,L.molecules,L.post,L.tank,L.tap,L.pTap.g,L.screen,L.diffuser,L.plume,L.grid,...pipes];
+ const waterLit=[L.tank,L.tap,L.pTap.g,L.grid],energyLit=[L.turbine,L.gen,L.power,L.grid];
+ const dimmed=lit=>machine.filter(e=>!lit.includes(e));
+ tl.fromTo(q('.facility-title'),{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
 
  // Beat 1 · water: the visitor count lands on "200", each row lights as it is named
  const tWho=cue('Siapa',1,0.9),tBag=cue('5',1,6.6),tEn=cue('Energinya',1,12.8);
+ tl.to(dimmed(waterLit),{opacity:.22,duration:.7,ease:'power2.inOut'},tWho-0.3);
  tl.fromTo(q('.water-allocation'),{opacity:0},{opacity:1,duration:.3,ease:'none'},tWho-0.3);
  tl.fromTo(q('.water-allocation .service-intro'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:'power3.out'},tWho-0.3);
  tl.fromTo(q('.water-allocation .service-number'),{opacity:0,y:16},{opacity:1,y:0,duration:.45,ease:'power3.out'},cue('200',1,4.4)-0.05);
@@ -58,17 +61,19 @@
  tl.to(q('.water-allocation'),{opacity:0,y:-12,duration:.32,ease:'power2.in'},tEn-0.45);
 
  // Beat 2 · energy: the chain is built as it is said, then the ledger splits 43,2 kWh
+ tl.to(waterLit.filter(e=>!energyLit.includes(e)),{opacity:.22,duration:.6,ease:'power2.inOut'},tEn-0.45);
+ tl.to(energyLit,{opacity:1,duration:.6,ease:'power2.inOut'},tEn-0.45);
  tl.fromTo(q('.energy-allocation'),{opacity:0},{opacity:1,duration:.3,ease:'none'},tEn-0.1);
  tl.fromTo(q('.energy-allocation .service-intro'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:'power3.out'},tEn-0.1);
- const chain=[[q('.c0'),cue('rata-rata',1,13.8)-0.1],[q('.c1'),cue('sepanjang',1,14.7)],[q('.c2'),cue('43,2',1,16.2)-0.1],[q('.c3'),cue('setelah',1,17.8)]];
+ const chain=[[q('.tag-s'),tEn+0.1],[q('.c0'),cue('rata-rata',1,13.8)-0.1],[q('.c1'),cue('sepanjang',1,14.7)],[q('.c2'),cue('43,2',1,16.2)-0.1],[q('.c3'),cue('setelah',1,17.8)]];
  chain.forEach(([el,at])=>tl.fromTo(el,{opacity:0,y:14},{opacity:1,y:0,duration:.42,ease:'power3.out'},at));
  tl.fromTo(q('.energy-allocation .ledger'),{opacity:0,y:24},{opacity:1,y:0,duration:.5,ease:'power3.out'},cue('rugi-rugi',1,18.1)+0.35);
  [cue('25',1,19.5),cue('3,6',1,21.4),cue('sisanya',1,23.2)].forEach((at,i)=>{
   tl.to(eRows[i],{opacity:1,duration:.25,ease:'power1.out'},at-0.08);
   tl.to(eBars[i],{scaleX:1,duration:.6,ease:'power3.out'},at-0.08);
  });
- tl.to([L.chamber,L.air,L.arrows],{opacity:1,duration:0.5},D-0.8);
- tl.to([q('.energy-allocation'),q('.facility-title'),q('.service-footnote'),...root.querySelectorAll('.lbl'),...W.leaders.values()],{opacity:0,y:-8,duration:.42,ease:'power2.in'},D-0.6);
+ tl.to(machine,{opacity:1,duration:0.6,ease:'power2.inOut'},D-0.9);
+ tl.to([q('.energy-allocation'),q('.facility-title')],{opacity:0,y:-8,duration:.42,ease:'power2.in'},D-0.6);
  tl.fromTo(clock,{t:0},{t:D,duration:D,ease:'none',onUpdate:()=>{W.update(clock.t);if(sub)sub.update(clock.t);}},0);
  window.__timelines.s7=tl;
 })();</script></template></body></html>
