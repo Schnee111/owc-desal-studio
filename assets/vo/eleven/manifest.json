@@ -18,10 +18,11 @@
     "text": "[warm, inviting] Inilah O W C Desal. Di sisi laut berdiri ruang Kolom Air Berosilasi. Bagian bawahnya terbuka ke laut sehingga terisi kolom air, dan di atasnya terperangkap kolom udara. [steady] Udara ini dihubungkan ke turbin udara dan generator. Di sebelahnya, gedung desalinasi osmosis balik siap mengubah air laut menjadi air tawar."
   },
   "s3": {
-    "duration": 14.88,
+    "duration": 15.16,
     "voice": "River (SAz9YHcvj6GT2YYXdXww)",
     "model": "eleven_v4",
-    "text": "[building energy] Saat ombak datang, air masuk ke dalam ruang dan permukaan kolom air naik. Seperti piston, air ini menekan udara di atasnya. [excited] Udara bertekanan tinggi menyembur keluar melewati turbin, memutar generator, dan listrik pun dihasilkan."
+    "text": "[building energy] Saat ombak datang, air masuk ke dalam ruang dan permukaan kolom air naik. Seperti piston, air ini menekan udara di atasnya. [excited] Udara yang tertekan mengalir keluar melewati turbin, memutar generator, dan listrik pun dihasilkan.",
+    "note": "last sentence regenerated separately and spliced at 8.60 s"
   },
   "s4": {
     "duration": 21.6,
