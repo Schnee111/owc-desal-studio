@@ -95,10 +95,10 @@
 /* Studio-Grade Motion & Anti-Slop Refinements (OWC-DESAL).
    Implements origin-aware transforms, tabular numerals, warm coastal materiality, and spring sliding-card subtitle. */
 #s7-root{background:#F4EFE4;color:#293F3D;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
-#s7-root .lbl{font:600 22px/1.22 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
-#s7-root .hdr{font:500 45px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
-#s7-root .hdr .k{font-family:'Source Sans 3',sans-serif;font-size:30px;font-weight:600;color:#A64F32}
-#s7-root .strip{bottom:76px}
+#s7-root .lbl{font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
+#s7-root .hdr{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
+#s7-root .hdr .k{color:#A64F32}
+#s7-root .strip{bottom:122px}
 #s7-root .pill{font:600 27px/1.22 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.97);color:#293F3D;border:1.5px solid #C8C7B9;border-radius:7px;padding:10px 22px;gap:14px;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:center bottom;will-change:transform,opacity}
 #s7-root .press{background:rgba(244,239,228,0.97)!important;border:1.5px solid #C8C7B9!important;border-radius:7px!important;padding:12px 16px 14px!important;font:600 25px/1.2 'Source Sans 3',sans-serif!important;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:left center;will-change:transform,opacity}
 #s7-root .press .meter{border-radius:3px;background:#DEDCD0}
@@ -111,100 +111,91 @@
 #s7-root .g-building>path:nth-child(2){stroke:#8C735C;stroke-width:9}
 #s7-root .g-turbine>g:nth-of-type(1),#s7-root .g-turbine>g:nth-of-type(2){visibility:hidden}
 
-/* Studio-Grade Sliding-Card Word Subtitle (Critically-Damped Spring + Active Micro-Lift) */
-#s7-root .vo-sub-layer{position:absolute;left:0;right:0;bottom:14px;height:50px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
-#s7-root .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:5px 12px;font:600 26px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;text-shadow:0 1px 8px rgba(244,239,228,0.98),0 0 16px rgba(244,239,228,0.96);will-change:transform,opacity}
-#s7-root .vo-sliding-card{position:absolute;left:0;top:50%;height:38px;background:#E59A6E;border:1.5px solid #A64F32;border-radius:8px;box-shadow:0 4px 12px rgba(166,79,50,0.24);z-index:0;pointer-events:none;transform-origin:center center;will-change:transform,width}
-#s7-root .vo-w{position:relative;z-index:1;display:inline-block;transition:transform 0.09s cubic-bezier(0.22,1,0.36,1),color 0.08s ease}
-#s7-root .vo-w.is-active{color:#182826;font-weight:700;text-shadow:none;transform:translate3d(0,-1.5px,0)}
-#s7-root .vo-w.is-past{color:#293F3D;opacity:.92;transform:translate3d(0,0,0)}
-#s7-root .vo-w.is-future{color:#293F3D;opacity:.55;transform:translate3d(0,0,0)}
+/* Captions: one calm line on a paper band; a terracotta underline marks the spoken word.
+   No CSS transitions anywhere: every state is set per frame from scene time (seek-safe). */
+#s7-root .vo-sub-layer{position:absolute;left:0;right:0;bottom:26px;height:64px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
+#s7-root .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:11px;padding:9px 20px 11px;font:600 34px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;background:rgba(244,239,228,0.93);border-radius:10px;box-shadow:0 2px 12px rgba(41,63,61,0.10);will-change:transform,opacity}
+#s7-root .vo-w{position:relative;z-index:1;display:inline-block}
+#s7-root .vo-w.is-active{color:#182826}
+#s7-root .vo-w.is-active::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:4px;border-radius:2px;background:#A64F32}
+#s7-root .vo-w.is-past{color:#293F3D}
+#s7-root .vo-w.is-future{color:#293F3D;opacity:.42}
 
-/* Scene 1: Coastal Context + Target Scope + Title */
-#s1-root .ocean{font:600 25px 'Source Sans 3',sans-serif;letter-spacing:.14em}
-#s1-root .context-card{position:absolute;left:76px;top:64px;width:640px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-left:5px solid #A64F32;border-radius:7px;padding:14px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.08);opacity:0;z-index:12;transform-origin:left top}
-#s1-root .context-card .ckick{font:700 20px/1.2 'Source Sans 3',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#A64F32;margin-bottom:6px}
-#s1-root .context-card .cbody{font:600 23px/1.32 'Source Sans 3',sans-serif;color:#293F3D}
-#s1-root .context-card .csrc{font:400 19px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px}
-#s1-root .stat{right:84px;top:64px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-right:5px solid #286B75;border-radius:7px;padding:14px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.08);z-index:12;transform-origin:right top}
-#s1-root .stat .kick{font:600 25px 'Source Sans 3',sans-serif;color:#286B75}
-#s1-root .stat .val{font:500 92px/1 Literata,serif;color:#293F3D;margin-top:8px;font-variant-numeric:tabular-nums}
-#s1-root .stat .num{width:auto}
-#s1-root .stat .unit{font:600 32px 'Source Sans 3',sans-serif;margin-left:12px}
-#s1-root .stat .sub-stat{font:400 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px;opacity:0}
-#s1-root .veil{background:radial-gradient(ellipse 960px 380px at 50% 52%, rgba(244,239,228,0.96), rgba(244,239,228,0.82) 65%, rgba(244,239,228,0) 100%)}
-#s1-root .title text{font:500 138px Literata,serif;letter-spacing:-.03em;stroke-width:1.4}
-#s1-root .sub{font:600 38px 'Source Sans 3',sans-serif;top:608px}
-#s1-root .rule{height:3px;border-radius:0;top:676px}
-#s1-root .scope-note{position:absolute;left:50%;top:700px;transform:translateX(-50%);background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:6px;padding:8px 20px;font:600 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D;box-shadow:0 4px 14px rgba(41,63,61,0.07);opacity:0;white-space:nowrap;z-index:15}
 #s1-root .dot,#s2-root .dot{background:#A64F32;width:16px;height:16px;margin:12px;border-radius:50%}
-#s1-root .glow,#s1-root .dots circle:nth-child(-n+2){display:none}
-#s1-root .indo path{fill:#93A28B}
 
 /* Scene 2 */
-#s2-root .hdr .m{font:400 26px 'Source Sans 3',sans-serif;letter-spacing:0;color:#293F3D}
 
-/* Scene 3: Physical Scale Callout */
-#s3-root .scale-card{position:absolute;left:64px;top:492px;width:360px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:7px;padding:12px 16px;box-shadow:0 6px 18px rgba(41,63,61,0.08);opacity:0;transform-origin:left center}
-#s3-root .scale-card .skick{font:700 19px/1.2 'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#286B75;margin-bottom:5px}
-#s3-root .scale-card .srow{font:600 22px/1.3 'Source Sans 3',sans-serif;color:#293F3D;margin:3px 0;font-variant-numeric:tabular-nums}
-#s3-root .scale-card .sres{font:700 23px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:6px;padding-top:6px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
-
-/* Scene 4: Clean Backdrop for Inset & Power Graph */
-#s4-root .s4-backdrop{position:absolute;left:1052px;top:126px;width:826px;height:780px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
-#s4-root .inset{left:1080px;top:144px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
-#s4-root .inset .ti{font:600 28px 'Source Sans 3',sans-serif}
+/* Scene 4: blade inset + live power trace share one paper panel */
+#s4-root .s4-backdrop{position:absolute;left:1052px;top:118px;width:826px;height:822px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
+#s4-root .inset{left:1080px;top:134px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
+#s4-root .inset .ti{font:600 29px 'Source Sans 3',sans-serif}
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
-#s4-root .inset .dir{font-size:22px}
-#s4-root .power-fluctuation{position:absolute;left:1080px;top:666px;width:760px;background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:7px;padding:12px 18px;font:600 24px/1.25 'Source Sans 3',sans-serif;box-shadow:0 4px 12px rgba(41,63,61,0.06);opacity:0}
-#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:center}
-#s4-root .power-fluctuation p span{font:400 20px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
+#s4-root .inset .cap{font-size:24px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
+#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+#s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
+#s4-root .power-fluctuation p span{font:400 22px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .power-fluctuation p.note{display:block;margin-top:8px;font:600 24px/1.3 'Source Sans 3',sans-serif;color:#A64F32;opacity:0}
 
 /* Scene 5: Water Balance Card with Proportional Split Bar */
 #s5-root .ctitle{font:600 26px 'Source Sans 3',sans-serif}
 #s5-root .cap{font:600 21px 'Source Sans 3',sans-serif}
-#s7-root .scenario{position:absolute;left:988px;top:586px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-left:5px solid #286B75;border-radius:8px;padding:16px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
-#s7-root .scenario .target{display:flex;align-items:baseline;gap:14px;font:600 26px 'Source Sans 3',sans-serif}
-#s7-root .scenario .target strong{font:500 58px/1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
-#s7-root .scenario .split-bar{display:flex;width:100%;height:22px;border-radius:4px;overflow:hidden;margin:12px 0 10px;background:#DED4BD}
-#s7-root .scenario .split-prod{width:40%;background:#286B75;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-#s7-root .scenario .split-brine{width:60%;background:#676953;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-#s7-root .scenario .balance{display:flex;justify-content:space-between;gap:18px;margin-top:6px;font:600 23px/1.25 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
-#s7-root .scenario .balance span{white-space:nowrap}
-#s7-root .scenario .assumption{font:400 20px/1.28 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px}
+#s7-root .scenario{position:absolute;left:988px;top:560px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 24px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
+#s7-root .scenario .bal-head{font:500 36px/1.15 Literata,serif;color:#293F3D}
+#s7-root .scenario .bal-head b{font-weight:500;color:#367B86}
+#s7-root .scenario .cells{display:flex;gap:8px;margin:16px 0 12px}
+#s7-root .scenario .cells i{display:block;width:72px;height:62px;border-radius:6px 6px 10px 10px;background:#A9C3C3;transform-origin:center bottom}
+#s7-root .scenario .cell-legend{display:flex;justify-content:space-between;gap:16px;font:600 26px/1.2 'Source Sans 3',sans-serif}
+#s7-root .scenario .cell-legend span{opacity:0}
+#s7-root .scenario .lg-fresh b{color:#286B75}
+#s7-root .scenario .lg-brine b{color:#676953}
+#s7-root .scenario .bal-day{display:flex;align-items:baseline;gap:12px;margin-top:16px;padding-top:12px;border-top:1px solid #DED4BD;font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+#s7-root .scenario .bal-day b{font:500 34px/1 Literata,serif}
+#s7-root .scenario .bal-day .k{font-weight:400;color:#53645D}
+#s7-root .scenario .bal-day .ar{color:#A64F32}
+#s7-root .scenario .bal-day .b b{color:#676953}
 
 /* Scene 6 (s7) & Scene 7 (s8): Service Allocation & Reserve Mode */
 #s7-root .allocation{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
-#s7-root .service-intro{position:absolute;left:76px;top:92px;width:440px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:8px;padding:18px 22px;color:#293F3D;box-shadow:0 8px 24px rgba(41,63,61,0.08);transform-origin:left top}
+#s7-root .service-intro{position:absolute;left:64px;top:80px;width:500px;border-left:4px solid #286B75;padding:4px 0 6px 26px;color:#293F3D;transform-origin:left top}
 #s7-root .energy-allocation .service-intro{border-left-color:#A64F32}
-#s7-root .service-intro h1{font:500 44px/1.12 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
-#s7-root .service-intro p{font:400 25px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
-#s7-root .service-intro .service-number{font:500 68px/1.1 Literata,serif;margin:12px 0 4px;color:#286B75;font-variant-numeric:tabular-nums}
+#s7-root .service-intro h1{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
+#s7-root .service-intro p{font:400 27px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
+#s7-root .service-intro .service-number{font:500 84px/1.05 Literata,serif;margin:10px 0 6px;color:#286B75;font-variant-numeric:tabular-nums}
 #s7-root .energy-allocation .service-intro .service-number{color:#A64F32}
-#s7-root .service-number span{font:600 26px 'Source Sans 3',sans-serif;color:#293F3D}
-#s7-root .service-intro .service-small{font-size:22px;color:#53645D;margin-top:10px}
-#s7-root .service-intro .energy-formula{font:600 23px/1.3 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px;padding-top:8px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
+#s7-root .service-number span{font:600 28px 'Source Sans 3',sans-serif;color:#293F3D}
+#s7-root .service-intro .service-small{font-size:23px;color:#53645D;margin-top:10px}
+#s7-root .service-intro .chain{font:600 27px/1.3 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+#s7-root .service-intro .chain.c0{font-size:23px;font-weight:400;color:#53645D}
+#s7-root .service-intro .chain b{color:#A64F32}
+#s7-root .service-intro .chain.c3{font-size:24px;font-weight:400;color:#53645D;margin-top:0}
 #s7-root .facility-title{position:absolute;left:1250px;top:36px;width:610px;font:600 25px/1.3 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.96);padding:4px 10px;border-radius:4px}
-#s7-root .ledger{position:absolute;left:988px;top:578px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:8px;padding:16px 24px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
-#s7-root .ledger h2{font:500 32px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
-#s7-root .ledger-row{display:flex;align-items:center;gap:14px;margin:9px 0;font:600 23px/1.15 'Source Sans 3',sans-serif;padding:4px 8px;border-radius:4px;font-variant-numeric:tabular-nums}
-#s7-root .ledger-label{width:270px;flex:none}
-#s7-root .ledger-space{width:330px;flex:none;height:18px;background:#E5DEC9;border-radius:3px;overflow:hidden}
-#s7-root .ledger-bar{height:18px;background:#367B86;transform-origin:left center}
-#s7-root .ledger-row strong{font-size:24px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
+#s7-root .ledger{position:absolute;left:988px;top:572px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 26px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
+#s7-root .ledger h2{font:500 34px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
+#s7-root .ledger-row{display:flex;align-items:center;gap:16px;margin:10px 0;font:600 25px/1.15 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
+#s7-root .ledger-label{width:300px;flex:none}
+#s7-root .ledger-space{width:300px;flex:none;height:22px;background:#E5DEC9;border-radius:3px;overflow:hidden}
+#s7-root .ledger-bar{height:22px;background:#367B86;transform-origin:left center}
+#s7-root .ledger-row strong{font-size:27px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
 #s7-root .ledger-bar.bar-1{background:#676953}
 #s7-root .ledger-bar.bar-2{background:#A64F32}
 #s7-root .ledger-bar.bar-3{background:#8C735C}
-#s7-root .service-footnote{position:absolute;left:76px;bottom:72px;max-width:1760px;font:600 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:5px 12px;opacity:0;z-index:22}
+#s7-root .service-footnote{position:absolute;left:64px;bottom:94px;max-width:1500px;white-space:nowrap;font:600 22px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:6px 12px;opacity:0;z-index:22}
 
 /* Scene 7 (s8): Reserve UI & Progressive Cards */
 #s7-root .reserve-ui{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
 #s7-root .reserve-ui .service-intro{border-left-color:#A64F32}
-#s7-root .reserve-state{font:700 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:14px 0 10px}
-#s7-root .generation-meter{height:12px;width:340px;background:#DED4BD;border-radius:4px;overflow:hidden}
+#s7-root .reserve-state{font:600 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:10px 0 12px}
+#s7-root .steps{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid #DED4BD}
+#s7-root .steps li{font:400 26px/1.3 'Source Sans 3',sans-serif;margin:0 0 10px;opacity:0}
+#s7-root .steps li b{font-weight:700;color:#286B75}
+#s7-root .steps li.st-bat b{color:#A64F32}
+#s7-root .generation-meter{height:14px;width:100%;background:#DED4BD;border-radius:4px;overflow:hidden}
 #s7-root .generation-meter i{display:block;width:100%;height:100%;background:#A64F32;transform-origin:left center}
 #s7-root .service-intro .critical-state{font:600 24px/1.28 'Source Sans 3',sans-serif;margin:14px 0 0;padding-top:10px;border-top:1px solid #DED4BD}
-#s7-root .ro-standby-badge{position:absolute;left:1045px;top:330px;background:#A64F32;color:#F4EFE4;font:700 21px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
+#s7-root .ro-standby-badge{position:absolute;left:1040px;top:322px;background:#A64F32;color:#F4EFE4;font:700 24px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
 #s7-root .monitor-badge{position:absolute;left:1010px;top:524px;background:rgba(244,239,228,0.97);border:1.5px solid #286B75;color:#286B75;font:600 20px/1.2 'Source Sans 3',sans-serif;padding:5px 12px;border-radius:5px;box-shadow:0 4px 12px rgba(41,63,61,0.08);opacity:0;z-index:25;transform-origin:left center}
 #s7-root .reserve-ledger{position:absolute;left:988px;top:582px;width:852px;display:flex;gap:24px;z-index:20}
 #s7-root .reserve-card{flex:1;background:#F4EFE4;border:2px solid #BFB8A4;border-top:5px solid #286B75;border-radius:8px;padding:16px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;transform-origin:center bottom}
@@ -212,50 +203,52 @@
 #s7-root .reserve-card strong{font:500 58px/1.1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
 #s7-root .reserve-card.bat-card strong{color:#A64F32}
 #s7-root .reserve-card h2{font:700 25px/1.2 'Source Sans 3',sans-serif;margin:8px 0;color:#293F3D}
-#s7-root .reserve-card p{font:400 22px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
+#s7-root .reserve-card p{font:400 23px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
 
-/* Scene 8 (s6): Pilot Panorama & Closing Credits */
-#s6-root .sum{font:500 50px Literata,serif;top:48px}
-#s6-root .pilot-steps{position:absolute;left:980px;top:220px;width:840px;display:flex;flex-direction:column;gap:16px;z-index:15}
-#s6-root .pilot-header{font:500 42px/1.15 Literata,serif;color:#293F3D;margin-bottom:4px;opacity:0}
-#s6-root .pilot-header span{display:block;font:600 23px/1.3 'Source Sans 3',sans-serif;color:#286B75;margin-top:4px}
-#s6-root .p-step{background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #A64F32;border-radius:7px;padding:12px 18px;box-shadow:0 6px 18px rgba(41,63,61,0.07);display:flex;align-items:center;gap:16px;opacity:0;transform-origin:left center}
-#s6-root .p-step b{font:700 26px/1 'Source Sans 3',sans-serif;color:#A64F32;min-width:190px}
-#s6-root .p-step span{font:400 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D}
-#s6-root .card .veil{background:#F4EFE4}
+/* Scene 8 (s6): pilot steps as plain numbered rows, credits over a living sea */
+#s6-root .sum{font:500 42px Literata,serif;top:150px;left:40px;right:960px;gap:16px}
+#s6-root .pilot-steps{position:absolute;left:1000px;top:138px;width:840px;display:flex;flex-direction:column;gap:0;z-index:15}
+#s6-root .pilot-header{font:500 48px/1.1 Literata,serif;color:#293F3D;margin-bottom:16px;opacity:0}
+#s6-root .pilot-header .flag{display:block;font:600 25px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:10px}
+#s6-root .p-step{display:flex;align-items:flex-start;gap:26px;padding:13px 0;border-top:1.5px solid #C8C7B9;opacity:0}
+#s6-root .p-step b{font:500 58px/0.9 Literata,serif;color:#A64F32;min-width:48px}
+#s6-root .p-step h4{margin:0;font:600 34px/1.15 'Source Sans 3',sans-serif;color:#293F3D}
+#s6-root .p-step span{display:block;margin-top:2px;font:400 24px/1.3 'Source Sans 3',sans-serif;color:#53645D}
+#s6-root .card .veil{background:linear-gradient(#F4EFE4 0, #F4EFE4 72%, rgba(244,239,228,0) 88%)}
 #s6-root .card .tt text{font:500 136px Literata,serif;letter-spacing:-.03em;stroke-width:1.3}
-#s6-root .card .team{font:600 35px 'Source Sans 3',sans-serif;top:330px}
-#s6-root .card .members{top:410px}
+#s6-root .card .tag{position:absolute;left:0;right:0;top:318px;text-align:center;font:italic 500 36px Literata,serif;color:#286B75;opacity:0}
+#s6-root .card .team{font:600 33px 'Source Sans 3',sans-serif;top:384px}
+#s6-root .card .members{top:450px}
 #s6-root .card .m{font:400 30px/1.5 'Source Sans 3',sans-serif}
 #s6-root .card .m b{font:600 28px/1.6 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
-#s6-root .card .plate{border-radius:8px;top:730px;height:144px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
+#s6-root .card .plate{border-radius:8px;top:735px;height:136px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
 </style>
-<div id="s7-root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="26">
- <div class="cam"><div class="world" data-layout-allow-overflow="">
-  <div class="facility-title">Sasaran layanan: 8 lampu jalur, 5 kios &amp; kontrol</div>
-  <div class="lbl" style="left:1560px;top:516px" data-leader="1620,516,1620,495">Tangki produk air (5 m³/hari)</div>
+<div data-hf-id="hf-zve8" id="s7-root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="25">
+ <div data-hf-id="hf-12x1" class="cam"><div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
+  <div data-hf-id="hf-62cw" class="facility-title">Sasaran layanan: 8 lampu jalur, 5 kios &amp; kontrol</div>
+  <div data-hf-id="hf-kx7t" class="lbl" style="left:1560px;top:516px" data-leader="1620,516,1620,495">Tangki air bersih</div>
  </div></div>
- <div class="allocation water-allocation">
-  <div class="service-intro">
-   <h1>Untuk satu fasilitas.</h1>
-   <p class="service-number">200<span> pengunjung / hari</span></p>
-   <p>Melayani sanitasi pengunjung, 5 kios wisata, petugas &amp; kebersihan.</p>
-   <p class="service-small">Target air bersih: 5 m³/hari dari tangki distribusi.</p>
+ <div data-hf-id="hf-z1qa" class="allocation water-allocation">
+  <div data-hf-id="hf-4q5g" class="service-intro">
+   <h1 data-hf-id="hf-kdqf">Siapa yang dilayani?</h1>
+   <p data-hf-id="hf-i33t" class="service-number">200<span data-hf-id="hf-m5cp"> pengunjung / hari</span></p>
+   <p data-hf-id="hf-jfee">Satu fasilitas wisata: toilet &amp; bilas, 5 kios, petugas, kebersihan.</p>
   </div>
-  <div class="ledger"><h2>Pembagian 5 m³ air bersih / hari</h2><div class="rows" data-chart="water"></div></div>
+  <div data-hf-id="hf-75x7" class="ledger"><h2 data-hf-id="hf-ngrm">Pembagian 5 m³ air bersih / hari</h2><div data-hf-id="hf-oaky" class="rows" data-chart="water"></div></div>
  </div>
- <div class="allocation energy-allocation">
-  <div class="service-intro">
-   <h1>Energi harus dibagi.</h1>
-   <p class="energy-formula">Ombak Hs 1 m · Te 6 dtk · Ruang 4 m → 2 kW rata-rata × 24 jam</p>
-   <p class="service-number">48<span> kWh bruto / hari</span></p>
-   <p><strong>43,2 kWh bersih</strong> setelah allowance rugi listrik 10%.</p>
+ <div data-hf-id="hf-xbxp" class="allocation energy-allocation">
+  <div data-hf-id="hf-dzbw" class="service-intro">
+   <h1 data-hf-id="hf-f6im">Anggaran energi harian</h1>
+   <p data-hf-id="hf-ns8r" class="chain c0">ombak 1 m, periode 6 dtk, ruang 4 m</p>
+   <p data-hf-id="hf-zfvs" class="chain c1">≈ <b data-hf-id="hf-v66s">2 kW</b> rata-rata × 24 jam = <b data-hf-id="hf-6lrp">48 kWh</b></p>
+   <p data-hf-id="hf-9smc" class="service-number c2">43,2<span data-hf-id="hf-thh0"> kWh siap pakai</span></p>
+   <p data-hf-id="hf-sduj" class="chain c3">setelah rugi listrik 10%</p>
   </div>
-  <div class="ledger"><h2>Anggaran 43,2 kWh / hari (satu sumber daya)</h2><div class="rows" data-chart="energy"></div></div>
+  <div data-hf-id="hf-48l7" class="ledger"><h2 data-hf-id="hf-eqbp">Pembagian 43,2 kWh / hari</h2><div data-hf-id="hf-r6wh" class="rows" data-chart="energy"></div></div>
  </div>
- <p class="service-footnote">Skenario desain bersyarat, bukan hasil uji lapangan. Asumsi konsumsi RO 5 kWh/m³; margin 14,6 kWh menampung fluktuasi &amp; pemulihan cadangan.</p>
+ <p data-hf-id="hf-bnru" class="service-footnote">Skenario desain, belum diuji · 2,94 kW/m × 4 m × tangkap 0,5 × PTO 0,35 ≈ 2 kW · RO 5 kWh/m³</p>
 </div>
-<script>/* OWC-DESAL cross-section engine + studio-grade motion physics + sliding-card word subtitle.
+<script>/* OWC-DESAL cross-section engine, measured eases and word-synced captions.
    Every dynamic value is a pure function of scene-local time (100% seek-safe). */
 (function () {
   if (window.OWC) return;
@@ -306,15 +299,17 @@
   }
 
   // ---- wave plans per scene (phase φ, amplitude A); level L = MWL - A·sin φ ----
+  // Scene lengths come from src/refinement.mjs through the build; the fallback is the old cut.
+  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":21.5,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":25,"8":23});
   const plans = {
-    2: { dur: 25, phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, 19, 25) },
+    2: { dur: DUR[2], phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, DUR[2] - 6, DUR[2]) },
     3: {
-      dur: 18,
-      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / 14.5)),
+      dur: DUR[3],
+      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / (DUR[3] - 3.5))),
       A: (t) => (t < 3 ? 18 + 42 * smooth(t / 3) : 60),
     },
     4: {
-      dur: 22,
+      dur: DUR[4],
       phi: (t) =>
         t < 1.5 ? Math.PI / 2
         : t < 12 ? Math.PI / 2 + Math.PI * eis((t - 1.5) / 9)
@@ -323,12 +318,14 @@
     },
   };
   const P4END = plans[4].phi(plans[4].dur);
-  plans[5] = { dur: 30, phi: (t) => P4END + WN * t, A: () => 60 };
-  plans[7] = { dur: 26, phi: (t) => plans[5].phi(30) + WN * t, A: () => 60 };
-  plans[8] = { dur: 24, phi: (t) => plans[7].phi(26) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
-  plans[6] = { dur: 15, phi: (t) => plans[8].phi(24) + WN * t, A: () => 9 };
+  plans[5] = { dur: DUR[5], phi: (t) => P4END + WN * t, A: () => 60 };
+  plans[7] = { dur: DUR[7], phi: (t) => plans[5].phi(DUR[5]) + WN * t, A: () => 60 };
+  plans[8] = { dur: DUR[8], phi: (t) => plans[7].phi(DUR[7]) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
+  plans[6] = { dur: DUR[6], phi: (t) => plans[8].phi(DUR[8]) + WN * t, A: () => 9 };
   const previous = { 3: 2, 4: 3, 5: 4, 7: 5, 8: 7, 6: 8 };
-  const offsets = { 2: 0, 3: 25, 4: 43, 5: 65, 7: 95, 8: 121, 6: 145 };
+  // continuous clock for ripples and flows across the cut order 2 → 3 → 4 → 5 → 7 → 8 → 6
+  const offsets = {};
+  [2, 3, 4, 5, 7, 8, 6].reduce((acc, n) => ((offsets[n] = acc), acc + DUR[n]), 0);
   const level = (p, t) => MWL - p.A(t) * Math.sin(p.phi(t));
 
   const simCache = {};
@@ -383,13 +380,60 @@
   }
 
   // ---- Studio-Grade Sliding-Card Word Subtitle Engine (Critically Damped Spring + Posture) ----
-  function mountSubtitle(root, subData) {
+  // Scene-local time of the nth spoken token starting with `word` (case/punctuation
+  // insensitive), so choreography follows the narration instead of hand-typed seconds.
+  const norm = (s) => String(s).toLowerCase().replace(/[^0-9a-zà-ÿ]/g, "");
+  function cues(subData) {
+    const off = (subData && subData.voOffset) || 0;
+    const ws = (subData && subData.words) || [];
+    const at = (word, nth = 1, fallback = 0, end = false) => {
+      const n = norm(word);
+      let c = 0;
+      for (let i = 0; i < ws.length; i++) {
+        // each timed word carries its own display token ('63 GW' is one token), so never re-split the text
+        if (norm(ws[i].w).startsWith(n) && ++c === nth) return off + ws[i].t + (end ? ws[i].d : 0);
+      }
+      return fallback;
+    };
+    at.end = (word, nth = 1, fallback = 0) => at(word, nth, fallback, true);
+    at.voEnd = ws.length ? off + ws[ws.length - 1].t + ws[ws.length - 1].d : 0;
+    return at;
+  }
+
+  // Maps scene times authored against an earlier narration onto the current one:
+  // piecewise-linear through matching words (same script), anchored at 0 and at the scene ends.
+  function warp(oldWords, oldOffset, oldDur, subData, newDur) {
+    const nw = (subData && subData.words) || [];
+    const pts = [[0, 0]];
+    const n = Math.min(oldWords.length, nw.length);
+    for (let i = 0; i < n; i++) pts.push([oldOffset + oldWords[i].t, subData.voOffset + nw[i].t]);
+    pts.push([oldDur, newDur]);
+    pts.sort((a, b) => a[0] - b[0]);
+    const T = (x) => {
+      if (x <= pts[0][0]) return x;
+      for (let i = 1; i < pts.length; i++) {
+        if (x <= pts[i][0]) {
+          const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+          return x1 === x0 ? y1 : y0 + ((x - x0) * (y1 - y0)) / (x1 - x0);
+        }
+      }
+      return x - oldDur + newDur;
+    };
+    // a timeline whose position arguments are written in the old clock
+    T.timeline = (tl) => {
+      for (const m of ["to", "from", "fromTo", "set"]) {
+        const f = tl[m].bind(tl);
+        tl[m] = (...a) => { if (typeof a[a.length - 1] === "number") a[a.length - 1] = T(a[a.length - 1]); return f(...a); };
+      }
+      return tl;
+    };
+    return T;
+  }
+
+  function mountSubtitle(root, subData, opts = {}) {
     if (!subData || !Array.isArray(subData.words) || !subData.words.length) return null;
-    const rawTokens = (subData.text || "").trim().split(/\s+/).filter(Boolean);
-    const words = subData.words.map((w, i) => {
-      const tok = rawTokens[i] || w.w;
-      return { t: w.t, d: w.d, w: tok };
-    });
+    const mute = opts.mute || [];
+    const words = subData.words.map((w) => ({ t: w.t, d: w.d, w: String(w.w).replace(/ /g, "\u00a0") }));
 
     const chunks = [];
     let cur = [];
@@ -404,6 +448,7 @@
         cur.length >= 7 ||
         charCount >= 44 ||
         (endsPunct && cur.length >= 3) ||
+        /[.?!:]$/.test(item.w) ||
         (nextStartsCap && cur.length >= 4)
       ) {
         chunks.push({
@@ -428,9 +473,6 @@
     const chunkEls = chunks.map((ch) => {
       const cEl = document.createElement("div");
       cEl.className = "vo-chunk";
-      const card = document.createElement("span");
-      card.className = "vo-sliding-card";
-      cEl.appendChild(card);
       const spans = ch.words.map((wObj) => {
         const sp = document.createElement("span");
         sp.className = "vo-w";
@@ -439,7 +481,7 @@
         return sp;
       });
       layer.appendChild(cEl);
-      return { ch, cEl, card, spans, boxes: null };
+      return { ch, cEl, spans };
     });
     root.appendChild(layer);
 
@@ -447,6 +489,10 @@
     return {
       update(sceneTime) {
         const voT = sceneTime - voOffset;
+        // On-screen type that already says the line (a question, a title) mutes the caption.
+        let gain = 1;
+        for (const [a, b] of mute) gain = Math.min(gain, 1 - clamp((sceneTime - a + 0.2) / 0.2, 0, 1) * clamp((b - sceneTime) / 0.2, 0, 1));
+        layer.style.opacity = gain.toFixed(3);
         let activeIdx = -1;
         for (let i = 0; i < chunkEls.length; i++) {
           const c = chunkEls[i].ch;
@@ -477,34 +523,11 @@
           item.cEl.style.opacity = (fadeIn * fadeOut).toFixed(3);
           item.cEl.style.transform = `translate3d(0, ${yOffset.toFixed(2)}px, 0)`;
 
-          item.boxes = item.spans.map((sp) => ({
-            left: sp.offsetLeft,
-            width: sp.offsetWidth,
-          }));
-
+          // the spoken word is marked by class only (CSS underline on the span): no layout reads per frame
           let wIdx = 0;
           for (let k = 0; k < c.words.length; k++) {
             if (voT >= c.words[k].t - 0.035) wIdx = k;
           }
-
-          const curBox = item.boxes[wIdx] || { left: 0, width: 60 };
-          const curWord = c.words[wIdx];
-          let x = curBox.left;
-          let w = curBox.width;
-          let stretchX = 1;
-
-          // Critically-damped spring interpolation with subtle velocity stretch (Emil Kowalski / motionmaxxing)
-          if (wIdx > 0) {
-            const prevBox = item.boxes[wIdx - 1];
-            const rawU = clamp((voT - curWord.t) / 0.085, 0, 1);
-            const springU = spring(rawU, 15, 0.84);
-            x = prevBox.left + (curBox.left - prevBox.left) * springU;
-            w = prevBox.width + (curBox.width - prevBox.width) * springU;
-            stretchX = 1 + 0.055 * Math.sin(Math.PI * rawU);
-          }
-
-          item.card.style.transform = `translate3d(${(x - 8).toFixed(1)}px, -50%, 0) scaleX(${stretchX.toFixed(3)})`;
-          item.card.style.width = `${Math.max(24, w + 16).toFixed(1)}px`;
 
           for (let k = 0; k < item.spans.length; k++) {
             const sp = item.spans[k];
@@ -851,41 +874,52 @@
     return { svg, L, update, cam, applyCam, frame, prepDraw, leaders, sim: S, C };
   }
 
-  window.OWC = { build, mountSubtitle, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
+  window.OWC = { build, mountSubtitle, cues, warp, DUR, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
 })();
 
 (()=>{
- const S={"hs":1,"te":6,"width":4,"flux":2.94,"meanKw":2,"hours":24,"delivery":0.9,"water":5,"sec":5,"other":3.6,"visitors":200,"kiosks":5,"lamps":8,"reserve":10,"battery":8,"recovery":0.4,"gross":48,"net":43.2,"ro":25,"margin":14.6,"feed":12.5,"brine":7.5,"waterRows":[[4,"Sanitasi pengunjung (200 org)"],[0.5,"Kebersihan 5 kios"],[0.25,"Kebutuhan 5 petugas"],[0.25,"Perawatan fasilitas"]],"energyRows":[[25,"Pompa & unit RO (5 m³)"],[3.6,"Fasilitas (8 lampu, kios, kontrol)"],[14.6,"Margin & buffer cadangan"]]},root=document.getElementById('s7-root'),q=s=>root.querySelector(s);
- const sub=window.OWC.mountSubtitle(root,{"voOffset":0.8,"text":"Sasarannya dua ratus pengunjung per hari, lima kios, petugas, dan kebersihan fasilitas. Jika rata-rata dua kilowatt bertahan sehari, energi bersihnya empat puluh tiga koma dua kilowatt jam. Pengolahan air memakai dua puluh lima, fasilitas tiga koma enam, dan sisanya empat belas koma enam sebagai margin. Ini skenario desain, bukan hasil pengujian.","words":[{"t":0.1125,"d":0.5875,"w":"Sasarannya"},{"t":0.7,"d":0.15,"w":"dua"},{"t":0.85,"d":0.2125,"w":"ratus"},{"t":1.0625,"d":0.3875,"w":"pengunjung"},{"t":1.45,"d":0.1,"w":"per"},{"t":1.55,"d":0.4625,"w":"hari"},{"t":2.2875,"d":0.25,"w":"lima"},{"t":2.5375,"d":0.4875,"w":"kios"},{"t":3.225,"d":0.65,"w":"petugas"},{"t":4.1,"d":0.2625,"w":"dan"},{"t":4.3625,"d":0.5125,"w":"kebersihan"},{"t":4.875,"d":0.8,"w":"fasilitas"},{"t":6.525,"d":0.2875,"w":"Jika"},{"t":6.8125,"d":0.4,"w":"rata-rata"},{"t":7.2125,"d":0.1875,"w":"dua"},{"t":7.4,"d":0.3,"w":"kilowatt"},{"t":7.7,"d":0.35,"w":"bertahan"},{"t":8.05,"d":0.575,"w":"sehari"},{"t":8.925,"d":0.4375,"w":"energi"},{"t":9.3625,"d":0.45,"w":"bersihnya"},{"t":9.8125,"d":0.225,"w":"empat"},{"t":10.0375,"d":0.1625,"w":"puluh"},{"t":10.2,"d":0.3125,"w":"tiga"},{"t":10.5125,"d":0.25,"w":"koma"},{"t":10.7625,"d":0.225,"w":"dua"},{"t":10.9875,"d":0.325,"w":"kilowatt"},{"t":11.3125,"d":0.45,"w":"jam"},{"t":12.6125,"d":0.3875,"w":"Pengolahan"},{"t":13,"d":0.3,"w":"air"},{"t":13.3,"d":0.35,"w":"memakai"},{"t":13.65,"d":0.15,"w":"dua"},{"t":13.8,"d":0.2,"w":"puluh"},{"t":14,"d":0.4875,"w":"lima"},{"t":14.7625,"d":0.575,"w":"fasilitas"},{"t":15.3375,"d":0.2875,"w":"tiga"},{"t":15.625,"d":0.2,"w":"koma"},{"t":15.825,"d":0.425,"w":"enam"},{"t":16.55,"d":0.2125,"w":"dan"},{"t":16.7625,"d":0.4,"w":"sisanya"},{"t":17.1625,"d":0.2125,"w":"empat"},{"t":17.375,"d":0.2125,"w":"belas"},{"t":17.5875,"d":0.1875,"w":"koma"},{"t":17.775,"d":0.275,"w":"enam"},{"t":18.05,"d":0.35,"w":"sebagai"},{"t":18.4,"d":0.5375,"w":"margin"},{"t":19.7875,"d":0.225,"w":"Ini"},{"t":20.0125,"d":0.4375,"w":"skenario"},{"t":20.45,"d":0.55,"w":"desain"},{"t":21.275,"d":0.3,"w":"bukan"},{"t":21.575,"d":0.325,"w":"hasil"},{"t":21.9,"d":0.7125,"w":"pengujian"}]});
+ const S={"hs":1,"te":6,"width":4,"flux":2.94,"meanKw":2,"hours":24,"delivery":0.9,"water":5,"sec":5,"other":3.6,"visitors":200,"kiosks":5,"lamps":8,"reserve":10,"battery":8,"recovery":0.4,"gross":48,"net":43.2,"ro":25,"margin":14.6,"feed":12.5,"brine":7.5,"waterRows":[[4,"Sanitasi 200 pengunjung"],[0.5,"Kebersihan 5 kios"],[0.25,"Kebutuhan 5 petugas"],[0.25,"Perawatan fasilitas"]],"energyRows":[[25,"Mengolah air (RO)"],[3.6,"Lampu, kios, kontrol"],[14.6,"Cadangan (margin)"]]},root=document.getElementById('s7-root'),q=s=>root.querySelector(s);
+ const SUB={"voOffset":0.6,"text":"Siapa yang dilayani? Satu fasilitas wisata dengan 200 pengunjung sehari. 5 m³ air dibagi untuk sanitasi pengunjung, kios, petugas, dan kebersihan. Energinya: rata-rata 2 kW sepanjang hari, tersisa 43,2 kWh setelah rugi-rugi. 25 untuk mengolah air, 3,6 untuk fasilitas, sisanya cadangan.","words":[{"t":0.08,"d":0.32,"w":"Siapa"},{"t":0.44,"d":0.04,"w":"yang"},{"t":0.56,"d":0.72,"w":"dilayani?"},{"t":1.52,"d":0.2,"w":"Satu"},{"t":1.76,"d":0.48,"w":"fasilitas"},{"t":2.36,"d":0.44,"w":"wisata"},{"t":2.88,"d":0.24,"w":"dengan"},{"t":3.2,"d":0.48,"w":"200"},{"t":3.76,"d":0.4,"w":"pengunjung"},{"t":4.24,"d":0.64,"w":"sehari."},{"t":5.12,"d":0.72,"w":"5 m³"},{"t":5.92,"d":0.32,"w":"air"},{"t":6.32,"d":0.4,"w":"dibagi"},{"t":6.8,"d":0.16,"w":"untuk"},{"t":7.04,"d":0.4,"w":"sanitasi"},{"t":7.52,"d":0.64,"w":"pengunjung,"},{"t":8.32,"d":0.48,"w":"kios,"},{"t":8.88,"d":0.64,"w":"petugas,"},{"t":9.6,"d":0.08,"w":"dan"},{"t":9.76,"d":0.76,"w":"kebersihan."},{"t":10.787,"d":0.733,"w":"Energinya:"},{"t":11.84,"d":0.48,"w":"rata-rata"},{"t":12.48,"d":0.72,"w":"2 kW"},{"t":13.28,"d":0.32,"w":"sepanjang"},{"t":13.68,"d":0.56,"w":"hari,"},{"t":14.36,"d":0.44,"w":"tersisa"},{"t":14.88,"d":2.08,"w":"43,2 kWh"},{"t":17.04,"d":0.32,"w":"setelah"},{"t":17.4,"d":1,"w":"rugi-rugi."},{"t":18.427,"d":0.613,"w":"25"},{"t":19.12,"d":0.16,"w":"untuk"},{"t":19.32,"d":0.36,"w":"mengolah"},{"t":19.76,"d":0.56,"w":"air,"},{"t":20.4,"d":0.72,"w":"3,6"},{"t":21.2,"d":0.16,"w":"untuk"},{"t":21.44,"d":0.88,"w":"fasilitas,"},{"t":22.44,"d":0.44,"w":"sisanya"},{"t":22.96,"d":0.72,"w":"cadangan."}]},cue=OWC.cues(SUB),D=25;
+ const sub=window.OWC.mountSubtitle(root,SUB);
  const W=OWC.build(q('.world'),{prefix:'s7',scene:7,fn:{gridOn:()=>1,pump:()=>1,ro:()=>1,tapOn:()=>1,tank:()=>.72}});
  const L=W.L;W.applyCam();W.update(0);gsap.set([L.brA,L.brB,L.grid,L.molecules],{opacity:1});gsap.set(L.cw,{opacity:0});
- gsap.to([L.chamber,L.air,L.arrows],{opacity:0.55,duration:0.8});
  const fmt=v=>String(v).replace('.',',');
  for(const [kind,rows,total] of [['water',S.waterRows,S.water],['energy',S.energyRows,S.net]]){
-  q(`[data-chart="${kind}"]`).innerHTML=rows.map(([v,label],i)=>`<div class="ledger-row row-${kind}-${i}"><span class="ledger-label">${label}</span><div class="ledger-space"><div class="ledger-bar bar-${i}" style="width:${330*v/total}px"></div></div><strong>${fmt(v)} ${kind==='water'?'m³':'kWh'}</strong></div>`).join('');
+  q(`[data-chart="${kind}"]`).innerHTML=rows.map(([v,label],i)=>`<div class="ledger-row row-${kind}-${i}"><span class="ledger-label">${label}</span><div class="ledger-space"><div class="ledger-bar bar-${i}" style="width:${300*v/total}px"></div></div><strong>${fmt(v)} ${kind==='water'?'m³':'kWh'}</strong></div>`).join('');
  }
+ const wBars=[...q('[data-chart="water"]').querySelectorAll('.ledger-bar')],wRows=[...q('[data-chart="water"]').querySelectorAll('.ledger-row')];
+ const eBars=[...q('[data-chart="energy"]').querySelectorAll('.ledger-bar')],eRows=[...q('[data-chart="energy"]').querySelectorAll('.ledger-row')];
+ gsap.set([...wRows,...eRows],{opacity:.35});gsap.set([...wBars,...eBars],{scaleX:0});
  const tl=gsap.timeline({paused:true}),clock={t:0};
- // Beat 1: Origin-aware transform landing for Water Allocation (motionmaxxing Posture rule)
- tl.fromTo(q('.water-allocation'),{opacity:0},{opacity:1,duration:.45,ease:'power3.out'},.25);
- tl.fromTo(q('.water-allocation .service-intro'),{opacity:0,x:-20,y:10},{opacity:1,x:0,y:0,duration:.5,ease:'power3.out'},.28);
- tl.fromTo(q('.water-allocation .ledger'),{opacity:0,y:18},{opacity:1,y:0,duration:.52,ease:'power3.out'},.36);
- tl.fromTo([...q('[data-chart="water"]').querySelectorAll('.ledger-bar')],{scaleX:0},{scaleX:1,duration:0.85,stagger:.11,ease:'power3.out'},0.75);
- // Accelerated exit of Beat 1 & decelerated landing of Beat 2 at t=7.3s
- tl.to(q('.water-allocation'),{opacity:0,y:-10,duration:.32,ease:'power2.in'},7.12);
- tl.fromTo(q('.energy-allocation'),{opacity:0},{opacity:1,duration:.45,ease:'power3.out'},7.38);
- tl.fromTo(q('.energy-allocation .service-intro'),{opacity:0,x:-20,y:10},{opacity:1,x:0,y:0,duration:.5,ease:'power3.out'},7.4);
- tl.fromTo(q('.energy-allocation .ledger'),{opacity:0,y:18},{opacity:1,y:0,duration:.52,ease:'power3.out'},7.48);
- const eBars=[...q('[data-chart="energy"]').querySelectorAll('.ledger-bar')];
- const eRows=[...q('[data-chart="energy"]').querySelectorAll('.ledger-row')];
- tl.fromTo(eBars,{scaleX:0},{scaleX:1,duration:0.85,stagger:.16,ease:'power3.out'},7.95);
- [13.3,15.4,17.4].forEach((at,i)=>{
-  if(eRows[i]){
-   tl.fromTo(eRows[i],{backgroundColor:'rgba(166,79,50,0)',x:0},{backgroundColor:'rgba(166,79,50,0.12)',x:4,duration:0.38,ease:'power3.out'},at);
-  }
- });
+ // the machine keeps working underneath; the plant recedes a little while the ledgers are read
+ tl.to([L.chamber,L.air,L.arrows],{opacity:0.55,duration:0.8,ease:'power1.inOut'},0.2);
  tl.fromTo([q('.facility-title'),q('.service-footnote')],{opacity:0,y:10},{opacity:1,y:0,duration:.48,ease:'power3.out'},.3);
- tl.to([L.chamber,L.air,L.arrows],{opacity:1,duration:0.5},25.2);
- tl.to([q('.energy-allocation'),q('.facility-title'),q('.service-footnote'),...root.querySelectorAll('.lbl'),...W.leaders.values()],{opacity:0,y:-8,duration:.42,ease:'power2.in'},25.4);
- tl.fromTo(clock,{t:0},{t:26,duration:26,ease:'none',onUpdate:()=>{W.update(clock.t);if(sub)sub.update(clock.t);}},0);
+
+ // Beat 1 · water: the visitor count lands on "200", each row lights as it is named
+ const tWho=cue('Siapa',1,0.9),tBag=cue('5',1,6.6),tEn=cue('Energinya',1,12.8);
+ tl.fromTo(q('.water-allocation'),{opacity:0},{opacity:1,duration:.3,ease:'none'},tWho-0.3);
+ tl.fromTo(q('.water-allocation .service-intro'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:'power3.out'},tWho-0.3);
+ tl.fromTo(q('.water-allocation .service-number'),{opacity:0,y:16},{opacity:1,y:0,duration:.45,ease:'power3.out'},cue('200',1,4.4)-0.05);
+ tl.fromTo(q('.water-allocation .service-intro p:last-child'),{opacity:0},{opacity:1,duration:.4,ease:'power1.out'},cue('pengunjung',1,4.8)+0.4);
+ tl.fromTo(q('.water-allocation .ledger'),{opacity:0,y:24},{opacity:1,y:0,duration:.5,ease:'power3.out'},tBag-0.35);
+ [cue('sanitasi',1,8.1),cue('kios',1,9.4),cue('petugas',1,10.1),cue('kebersihan',1,11.2)].forEach((at,i)=>{
+  tl.to(wRows[i],{opacity:1,duration:.25,ease:'power1.out'},at-0.08);
+  tl.to(wBars[i],{scaleX:1,duration:.6,ease:'power3.out'},at-0.08);
+ });
+ tl.to(q('.water-allocation'),{opacity:0,y:-12,duration:.32,ease:'power2.in'},tEn-0.45);
+
+ // Beat 2 · energy: the chain is built as it is said, then the ledger splits 43,2 kWh
+ tl.fromTo(q('.energy-allocation'),{opacity:0},{opacity:1,duration:.3,ease:'none'},tEn-0.1);
+ tl.fromTo(q('.energy-allocation .service-intro'),{opacity:0,x:-24},{opacity:1,x:0,duration:.5,ease:'power3.out'},tEn-0.1);
+ const chain=[[q('.c0'),cue('rata-rata',1,13.8)-0.1],[q('.c1'),cue('sepanjang',1,14.7)],[q('.c2'),cue('43,2',1,16.2)-0.1],[q('.c3'),cue('setelah',1,17.8)]];
+ chain.forEach(([el,at])=>tl.fromTo(el,{opacity:0,y:14},{opacity:1,y:0,duration:.42,ease:'power3.out'},at));
+ tl.fromTo(q('.energy-allocation .ledger'),{opacity:0,y:24},{opacity:1,y:0,duration:.5,ease:'power3.out'},cue('rugi-rugi',1,18.1)+0.35);
+ [cue('25',1,19.5),cue('3,6',1,21.4),cue('sisanya',1,23.2)].forEach((at,i)=>{
+  tl.to(eRows[i],{opacity:1,duration:.25,ease:'power1.out'},at-0.08);
+  tl.to(eBars[i],{scaleX:1,duration:.6,ease:'power3.out'},at-0.08);
+ });
+ tl.to([L.chamber,L.air,L.arrows],{opacity:1,duration:0.5},D-0.8);
+ tl.to([q('.energy-allocation'),q('.facility-title'),q('.service-footnote'),...root.querySelectorAll('.lbl'),...W.leaders.values()],{opacity:0,y:-8,duration:.42,ease:'power2.in'},D-0.6);
+ tl.fromTo(clock,{t:0},{t:D,duration:D,ease:'none',onUpdate:()=>{W.update(clock.t);if(sub)sub.update(clock.t);}},0);
  window.__timelines.s7=tl;
 })();</script></template></body></html>

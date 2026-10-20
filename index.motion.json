@@ -1,13 +1,17 @@
 {"duration":180,"assertions":[
- {"kind":"appearsBy","selector":"#el-s2 .lbl[data-k='chamber']","bySec":27},
+ {"kind":"appearsBy","selector":"#el-s1 .place[data-k='penida']","bySec":5},
+ {"kind":"before","a":"#el-s1 .place[data-k='penida']","b":"#el-s1 .place[data-k='kuta']"},
+ {"kind":"before","a":"#el-s1 .place[data-k='kuta']","b":"#el-s1 .energy"},
+ {"kind":"appearsBy","selector":"#el-s1 .energy","bySec":13},
+ {"kind":"appearsBy","selector":"#el-s2 .lbl[data-k='chamber']","bySec":28},
  {"kind":"before","a":"#el-s2 .lbl[data-k='chamber']","b":"#el-s2 .lbl[data-k='turbine']"},
  {"kind":"appearsBy","selector":"#el-s4 .inset","bySec":73},
- {"kind":"appearsBy","selector":"#el-s4 .power-fluctuation","bySec":78},
- {"kind":"appearsBy","selector":"#el-s5 .scenario","bySec":113},
- {"kind":"appearsBy","selector":"#el-s7 .water-allocation","bySec":117},
- {"kind":"appearsBy","selector":"#el-s7 .energy-allocation","bySec":129},
+ {"kind":"appearsBy","selector":"#el-s4 .power-fluctuation","bySec":80},
+ {"kind":"appearsBy","selector":"#el-s5 .scenario","bySec":104},
+ {"kind":"appearsBy","selector":"#el-s7 .water-allocation","bySec":121},
+ {"kind":"appearsBy","selector":"#el-s7 .energy-allocation","bySec":132},
  {"kind":"staysInFrame","selector":"#el-s7 .water-allocation .ledger"},
  {"kind":"staysInFrame","selector":"#el-s7 .energy-allocation .ledger"},
- {"kind":"appearsBy","selector":"#el-s8 .battery-buffer","bySec":146},
- {"kind":"appearsBy","selector":"#el-s6 .card .plate","bySec":172}
+ {"kind":"appearsBy","selector":"#el-s8 .battery-buffer","bySec":158},
+ {"kind":"appearsBy","selector":"#el-s6 .card .plate","bySec":177.5}
 ]}

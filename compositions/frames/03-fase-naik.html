@@ -133,10 +133,10 @@
       /* Studio-Grade Motion & Anti-Slop Refinements (OWC-DESAL).
    Implements origin-aware transforms, tabular numerals, warm coastal materiality, and spring sliding-card subtitle. */
 #s3-root{background:#F4EFE4;color:#293F3D;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
-#s3-root .lbl{font:600 22px/1.22 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
-#s3-root .hdr{font:500 45px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
-#s3-root .hdr .k{font-family:'Source Sans 3',sans-serif;font-size:30px;font-weight:600;color:#A64F32}
-#s3-root .strip{bottom:76px}
+#s3-root .lbl{font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
+#s3-root .hdr{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
+#s3-root .hdr .k{color:#A64F32}
+#s3-root .strip{bottom:122px}
 #s3-root .pill{font:600 27px/1.22 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.97);color:#293F3D;border:1.5px solid #C8C7B9;border-radius:7px;padding:10px 22px;gap:14px;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:center bottom;will-change:transform,opacity}
 #s3-root .press{background:rgba(244,239,228,0.97)!important;border:1.5px solid #C8C7B9!important;border-radius:7px!important;padding:12px 16px 14px!important;font:600 25px/1.2 'Source Sans 3',sans-serif!important;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:left center;will-change:transform,opacity}
 #s3-root .press .meter{border-radius:3px;background:#DEDCD0}
@@ -149,100 +149,91 @@
 #s3-root .g-building>path:nth-child(2){stroke:#8C735C;stroke-width:9}
 #s3-root .g-turbine>g:nth-of-type(1),#s3-root .g-turbine>g:nth-of-type(2){visibility:hidden}
 
-/* Studio-Grade Sliding-Card Word Subtitle (Critically-Damped Spring + Active Micro-Lift) */
-#s3-root .vo-sub-layer{position:absolute;left:0;right:0;bottom:14px;height:50px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
-#s3-root .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:5px 12px;font:600 26px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;text-shadow:0 1px 8px rgba(244,239,228,0.98),0 0 16px rgba(244,239,228,0.96);will-change:transform,opacity}
-#s3-root .vo-sliding-card{position:absolute;left:0;top:50%;height:38px;background:#E59A6E;border:1.5px solid #A64F32;border-radius:8px;box-shadow:0 4px 12px rgba(166,79,50,0.24);z-index:0;pointer-events:none;transform-origin:center center;will-change:transform,width}
-#s3-root .vo-w{position:relative;z-index:1;display:inline-block;transition:transform 0.09s cubic-bezier(0.22,1,0.36,1),color 0.08s ease}
-#s3-root .vo-w.is-active{color:#182826;font-weight:700;text-shadow:none;transform:translate3d(0,-1.5px,0)}
-#s3-root .vo-w.is-past{color:#293F3D;opacity:.92;transform:translate3d(0,0,0)}
-#s3-root .vo-w.is-future{color:#293F3D;opacity:.55;transform:translate3d(0,0,0)}
+/* Captions: one calm line on a paper band; a terracotta underline marks the spoken word.
+   No CSS transitions anywhere: every state is set per frame from scene time (seek-safe). */
+#s3-root .vo-sub-layer{position:absolute;left:0;right:0;bottom:26px;height:64px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
+#s3-root .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:11px;padding:9px 20px 11px;font:600 34px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;background:rgba(244,239,228,0.93);border-radius:10px;box-shadow:0 2px 12px rgba(41,63,61,0.10);will-change:transform,opacity}
+#s3-root .vo-w{position:relative;z-index:1;display:inline-block}
+#s3-root .vo-w.is-active{color:#182826}
+#s3-root .vo-w.is-active::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:4px;border-radius:2px;background:#A64F32}
+#s3-root .vo-w.is-past{color:#293F3D}
+#s3-root .vo-w.is-future{color:#293F3D;opacity:.42}
 
-/* Scene 1: Coastal Context + Target Scope + Title */
-#s1-root .ocean{font:600 25px 'Source Sans 3',sans-serif;letter-spacing:.14em}
-#s1-root .context-card{position:absolute;left:76px;top:64px;width:640px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-left:5px solid #A64F32;border-radius:7px;padding:14px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.08);opacity:0;z-index:12;transform-origin:left top}
-#s1-root .context-card .ckick{font:700 20px/1.2 'Source Sans 3',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#A64F32;margin-bottom:6px}
-#s1-root .context-card .cbody{font:600 23px/1.32 'Source Sans 3',sans-serif;color:#293F3D}
-#s1-root .context-card .csrc{font:400 19px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px}
-#s1-root .stat{right:84px;top:64px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-right:5px solid #286B75;border-radius:7px;padding:14px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.08);z-index:12;transform-origin:right top}
-#s1-root .stat .kick{font:600 25px 'Source Sans 3',sans-serif;color:#286B75}
-#s1-root .stat .val{font:500 92px/1 Literata,serif;color:#293F3D;margin-top:8px;font-variant-numeric:tabular-nums}
-#s1-root .stat .num{width:auto}
-#s1-root .stat .unit{font:600 32px 'Source Sans 3',sans-serif;margin-left:12px}
-#s1-root .stat .sub-stat{font:400 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px;opacity:0}
-#s1-root .veil{background:radial-gradient(ellipse 960px 380px at 50% 52%, rgba(244,239,228,0.96), rgba(244,239,228,0.82) 65%, rgba(244,239,228,0) 100%)}
-#s1-root .title text{font:500 138px Literata,serif;letter-spacing:-.03em;stroke-width:1.4}
-#s1-root .sub{font:600 38px 'Source Sans 3',sans-serif;top:608px}
-#s1-root .rule{height:3px;border-radius:0;top:676px}
-#s1-root .scope-note{position:absolute;left:50%;top:700px;transform:translateX(-50%);background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:6px;padding:8px 20px;font:600 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D;box-shadow:0 4px 14px rgba(41,63,61,0.07);opacity:0;white-space:nowrap;z-index:15}
 #s1-root .dot,#s2-root .dot{background:#A64F32;width:16px;height:16px;margin:12px;border-radius:50%}
-#s1-root .glow,#s1-root .dots circle:nth-child(-n+2){display:none}
-#s1-root .indo path{fill:#93A28B}
 
 /* Scene 2 */
-#s2-root .hdr .m{font:400 26px 'Source Sans 3',sans-serif;letter-spacing:0;color:#293F3D}
 
-/* Scene 3: Physical Scale Callout */
-#s3-root .scale-card{position:absolute;left:64px;top:492px;width:360px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:7px;padding:12px 16px;box-shadow:0 6px 18px rgba(41,63,61,0.08);opacity:0;transform-origin:left center}
-#s3-root .scale-card .skick{font:700 19px/1.2 'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#286B75;margin-bottom:5px}
-#s3-root .scale-card .srow{font:600 22px/1.3 'Source Sans 3',sans-serif;color:#293F3D;margin:3px 0;font-variant-numeric:tabular-nums}
-#s3-root .scale-card .sres{font:700 23px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:6px;padding-top:6px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
-
-/* Scene 4: Clean Backdrop for Inset & Power Graph */
-#s4-root .s4-backdrop{position:absolute;left:1052px;top:126px;width:826px;height:780px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
-#s4-root .inset{left:1080px;top:144px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
-#s4-root .inset .ti{font:600 28px 'Source Sans 3',sans-serif}
+/* Scene 4: blade inset + live power trace share one paper panel */
+#s4-root .s4-backdrop{position:absolute;left:1052px;top:118px;width:826px;height:822px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
+#s4-root .inset{left:1080px;top:134px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
+#s4-root .inset .ti{font:600 29px 'Source Sans 3',sans-serif}
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
-#s4-root .inset .dir{font-size:22px}
-#s4-root .power-fluctuation{position:absolute;left:1080px;top:666px;width:760px;background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:7px;padding:12px 18px;font:600 24px/1.25 'Source Sans 3',sans-serif;box-shadow:0 4px 12px rgba(41,63,61,0.06);opacity:0}
-#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:center}
-#s4-root .power-fluctuation p span{font:400 20px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
+#s4-root .inset .cap{font-size:24px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
+#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+#s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
+#s4-root .power-fluctuation p span{font:400 22px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .power-fluctuation p.note{display:block;margin-top:8px;font:600 24px/1.3 'Source Sans 3',sans-serif;color:#A64F32;opacity:0}
 
 /* Scene 5: Water Balance Card with Proportional Split Bar */
 #s5-root .ctitle{font:600 26px 'Source Sans 3',sans-serif}
 #s5-root .cap{font:600 21px 'Source Sans 3',sans-serif}
-#s3-root .scenario{position:absolute;left:988px;top:586px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-left:5px solid #286B75;border-radius:8px;padding:16px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
-#s3-root .scenario .target{display:flex;align-items:baseline;gap:14px;font:600 26px 'Source Sans 3',sans-serif}
-#s3-root .scenario .target strong{font:500 58px/1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
-#s3-root .scenario .split-bar{display:flex;width:100%;height:22px;border-radius:4px;overflow:hidden;margin:12px 0 10px;background:#DED4BD}
-#s3-root .scenario .split-prod{width:40%;background:#286B75;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-#s3-root .scenario .split-brine{width:60%;background:#676953;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-#s3-root .scenario .balance{display:flex;justify-content:space-between;gap:18px;margin-top:6px;font:600 23px/1.25 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
-#s3-root .scenario .balance span{white-space:nowrap}
-#s3-root .scenario .assumption{font:400 20px/1.28 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px}
+#s3-root .scenario{position:absolute;left:988px;top:560px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 24px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
+#s3-root .scenario .bal-head{font:500 36px/1.15 Literata,serif;color:#293F3D}
+#s3-root .scenario .bal-head b{font-weight:500;color:#367B86}
+#s3-root .scenario .cells{display:flex;gap:8px;margin:16px 0 12px}
+#s3-root .scenario .cells i{display:block;width:72px;height:62px;border-radius:6px 6px 10px 10px;background:#A9C3C3;transform-origin:center bottom}
+#s3-root .scenario .cell-legend{display:flex;justify-content:space-between;gap:16px;font:600 26px/1.2 'Source Sans 3',sans-serif}
+#s3-root .scenario .cell-legend span{opacity:0}
+#s3-root .scenario .lg-fresh b{color:#286B75}
+#s3-root .scenario .lg-brine b{color:#676953}
+#s3-root .scenario .bal-day{display:flex;align-items:baseline;gap:12px;margin-top:16px;padding-top:12px;border-top:1px solid #DED4BD;font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+#s3-root .scenario .bal-day b{font:500 34px/1 Literata,serif}
+#s3-root .scenario .bal-day .k{font-weight:400;color:#53645D}
+#s3-root .scenario .bal-day .ar{color:#A64F32}
+#s3-root .scenario .bal-day .b b{color:#676953}
 
 /* Scene 6 (s7) & Scene 7 (s8): Service Allocation & Reserve Mode */
 #s3-root .allocation{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
-#s3-root .service-intro{position:absolute;left:76px;top:92px;width:440px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:8px;padding:18px 22px;color:#293F3D;box-shadow:0 8px 24px rgba(41,63,61,0.08);transform-origin:left top}
+#s3-root .service-intro{position:absolute;left:64px;top:80px;width:500px;border-left:4px solid #286B75;padding:4px 0 6px 26px;color:#293F3D;transform-origin:left top}
 #s3-root .energy-allocation .service-intro{border-left-color:#A64F32}
-#s3-root .service-intro h1{font:500 44px/1.12 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
-#s3-root .service-intro p{font:400 25px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
-#s3-root .service-intro .service-number{font:500 68px/1.1 Literata,serif;margin:12px 0 4px;color:#286B75;font-variant-numeric:tabular-nums}
+#s3-root .service-intro h1{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
+#s3-root .service-intro p{font:400 27px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
+#s3-root .service-intro .service-number{font:500 84px/1.05 Literata,serif;margin:10px 0 6px;color:#286B75;font-variant-numeric:tabular-nums}
 #s3-root .energy-allocation .service-intro .service-number{color:#A64F32}
-#s3-root .service-number span{font:600 26px 'Source Sans 3',sans-serif;color:#293F3D}
-#s3-root .service-intro .service-small{font-size:22px;color:#53645D;margin-top:10px}
-#s3-root .service-intro .energy-formula{font:600 23px/1.3 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px;padding-top:8px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
+#s3-root .service-number span{font:600 28px 'Source Sans 3',sans-serif;color:#293F3D}
+#s3-root .service-intro .service-small{font-size:23px;color:#53645D;margin-top:10px}
+#s3-root .service-intro .chain{font:600 27px/1.3 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+#s3-root .service-intro .chain.c0{font-size:23px;font-weight:400;color:#53645D}
+#s3-root .service-intro .chain b{color:#A64F32}
+#s3-root .service-intro .chain.c3{font-size:24px;font-weight:400;color:#53645D;margin-top:0}
 #s3-root .facility-title{position:absolute;left:1250px;top:36px;width:610px;font:600 25px/1.3 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.96);padding:4px 10px;border-radius:4px}
-#s3-root .ledger{position:absolute;left:988px;top:578px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:8px;padding:16px 24px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
-#s3-root .ledger h2{font:500 32px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
-#s3-root .ledger-row{display:flex;align-items:center;gap:14px;margin:9px 0;font:600 23px/1.15 'Source Sans 3',sans-serif;padding:4px 8px;border-radius:4px;font-variant-numeric:tabular-nums}
-#s3-root .ledger-label{width:270px;flex:none}
-#s3-root .ledger-space{width:330px;flex:none;height:18px;background:#E5DEC9;border-radius:3px;overflow:hidden}
-#s3-root .ledger-bar{height:18px;background:#367B86;transform-origin:left center}
-#s3-root .ledger-row strong{font-size:24px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
+#s3-root .ledger{position:absolute;left:988px;top:572px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 26px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
+#s3-root .ledger h2{font:500 34px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
+#s3-root .ledger-row{display:flex;align-items:center;gap:16px;margin:10px 0;font:600 25px/1.15 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
+#s3-root .ledger-label{width:300px;flex:none}
+#s3-root .ledger-space{width:300px;flex:none;height:22px;background:#E5DEC9;border-radius:3px;overflow:hidden}
+#s3-root .ledger-bar{height:22px;background:#367B86;transform-origin:left center}
+#s3-root .ledger-row strong{font-size:27px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
 #s3-root .ledger-bar.bar-1{background:#676953}
 #s3-root .ledger-bar.bar-2{background:#A64F32}
 #s3-root .ledger-bar.bar-3{background:#8C735C}
-#s3-root .service-footnote{position:absolute;left:76px;bottom:72px;max-width:1760px;font:600 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:5px 12px;opacity:0;z-index:22}
+#s3-root .service-footnote{position:absolute;left:64px;bottom:94px;max-width:1500px;white-space:nowrap;font:600 22px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:6px 12px;opacity:0;z-index:22}
 
 /* Scene 7 (s8): Reserve UI & Progressive Cards */
 #s3-root .reserve-ui{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
 #s3-root .reserve-ui .service-intro{border-left-color:#A64F32}
-#s3-root .reserve-state{font:700 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:14px 0 10px}
-#s3-root .generation-meter{height:12px;width:340px;background:#DED4BD;border-radius:4px;overflow:hidden}
+#s3-root .reserve-state{font:600 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:10px 0 12px}
+#s3-root .steps{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid #DED4BD}
+#s3-root .steps li{font:400 26px/1.3 'Source Sans 3',sans-serif;margin:0 0 10px;opacity:0}
+#s3-root .steps li b{font-weight:700;color:#286B75}
+#s3-root .steps li.st-bat b{color:#A64F32}
+#s3-root .generation-meter{height:14px;width:100%;background:#DED4BD;border-radius:4px;overflow:hidden}
 #s3-root .generation-meter i{display:block;width:100%;height:100%;background:#A64F32;transform-origin:left center}
 #s3-root .service-intro .critical-state{font:600 24px/1.28 'Source Sans 3',sans-serif;margin:14px 0 0;padding-top:10px;border-top:1px solid #DED4BD}
-#s3-root .ro-standby-badge{position:absolute;left:1045px;top:330px;background:#A64F32;color:#F4EFE4;font:700 21px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
+#s3-root .ro-standby-badge{position:absolute;left:1040px;top:322px;background:#A64F32;color:#F4EFE4;font:700 24px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
 #s3-root .monitor-badge{position:absolute;left:1010px;top:524px;background:rgba(244,239,228,0.97);border:1.5px solid #286B75;color:#286B75;font:600 20px/1.2 'Source Sans 3',sans-serif;padding:5px 12px;border-radius:5px;box-shadow:0 4px 12px rgba(41,63,61,0.08);opacity:0;z-index:25;transform-origin:left center}
 #s3-root .reserve-ledger{position:absolute;left:988px;top:582px;width:852px;display:flex;gap:24px;z-index:20}
 #s3-root .reserve-card{flex:1;background:#F4EFE4;border:2px solid #BFB8A4;border-top:5px solid #286B75;border-radius:8px;padding:16px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;transform-origin:center bottom}
@@ -250,26 +241,28 @@
 #s3-root .reserve-card strong{font:500 58px/1.1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
 #s3-root .reserve-card.bat-card strong{color:#A64F32}
 #s3-root .reserve-card h2{font:700 25px/1.2 'Source Sans 3',sans-serif;margin:8px 0;color:#293F3D}
-#s3-root .reserve-card p{font:400 22px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
+#s3-root .reserve-card p{font:400 23px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
 
-/* Scene 8 (s6): Pilot Panorama & Closing Credits */
-#s6-root .sum{font:500 50px Literata,serif;top:48px}
-#s6-root .pilot-steps{position:absolute;left:980px;top:220px;width:840px;display:flex;flex-direction:column;gap:16px;z-index:15}
-#s6-root .pilot-header{font:500 42px/1.15 Literata,serif;color:#293F3D;margin-bottom:4px;opacity:0}
-#s6-root .pilot-header span{display:block;font:600 23px/1.3 'Source Sans 3',sans-serif;color:#286B75;margin-top:4px}
-#s6-root .p-step{background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #A64F32;border-radius:7px;padding:12px 18px;box-shadow:0 6px 18px rgba(41,63,61,0.07);display:flex;align-items:center;gap:16px;opacity:0;transform-origin:left center}
-#s6-root .p-step b{font:700 26px/1 'Source Sans 3',sans-serif;color:#A64F32;min-width:190px}
-#s6-root .p-step span{font:400 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D}
-#s6-root .card .veil{background:#F4EFE4}
+/* Scene 8 (s6): pilot steps as plain numbered rows, credits over a living sea */
+#s6-root .sum{font:500 42px Literata,serif;top:150px;left:40px;right:960px;gap:16px}
+#s6-root .pilot-steps{position:absolute;left:1000px;top:138px;width:840px;display:flex;flex-direction:column;gap:0;z-index:15}
+#s6-root .pilot-header{font:500 48px/1.1 Literata,serif;color:#293F3D;margin-bottom:16px;opacity:0}
+#s6-root .pilot-header .flag{display:block;font:600 25px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:10px}
+#s6-root .p-step{display:flex;align-items:flex-start;gap:26px;padding:13px 0;border-top:1.5px solid #C8C7B9;opacity:0}
+#s6-root .p-step b{font:500 58px/0.9 Literata,serif;color:#A64F32;min-width:48px}
+#s6-root .p-step h4{margin:0;font:600 34px/1.15 'Source Sans 3',sans-serif;color:#293F3D}
+#s6-root .p-step span{display:block;margin-top:2px;font:400 24px/1.3 'Source Sans 3',sans-serif;color:#53645D}
+#s6-root .card .veil{background:linear-gradient(#F4EFE4 0, #F4EFE4 72%, rgba(244,239,228,0) 88%)}
 #s6-root .card .tt text{font:500 136px Literata,serif;letter-spacing:-.03em;stroke-width:1.3}
-#s6-root .card .team{font:600 35px 'Source Sans 3',sans-serif;top:330px}
-#s6-root .card .members{top:410px}
+#s6-root .card .tag{position:absolute;left:0;right:0;top:318px;text-align:center;font:italic 500 36px Literata,serif;color:#286B75;opacity:0}
+#s6-root .card .team{font:600 33px 'Source Sans 3',sans-serif;top:384px}
+#s6-root .card .members{top:450px}
 #s6-root .card .m{font:400 30px/1.5 'Source Sans 3',sans-serif}
 #s6-root .card .m b{font:600 28px/1.6 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
-#s6-root .card .plate{border-radius:8px;top:730px;height:144px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
+#s6-root .card .plate{border-radius:8px;top:735px;height:136px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
 </style>
 
-      <div data-hf-id="hf-hnk1" id="s3-root" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="18">
+      <div data-hf-id="hf-hnk1" id="s3-root" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="17">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
             <div data-hf-id="hf-xjij" class="lbl hide" data-k="turbine" style="left: 410px; top: 168px" data-leader="560,186,642,200">Turbin Wells</div>
@@ -279,12 +272,6 @@
         </div>
         <div data-hf-id="hf-ndox" class="hdr"><span data-hf-id="hf-1j0g" class="k">Fase 1.</span> Ombak naik</div>
         <div data-hf-id="hf-9lgo" class="press">Aliran udara: <b data-hf-id="hf-mtdc" class="pw">keluar</b><div data-hf-id="hf-rq4r" class="meter"><i data-hf-id="hf-wt6k"></i></div></div>
-        <div class="scale-card">
-          <div class="skick">Skala Fisik Skenario (LKM 3)</div>
-          <div class="srow">Ombak Hs = 1 m · Periode Te = 6 dtk (≈2,94 kW/m)</div>
-          <div class="srow">Lebar ruang OWC = 4 m (rasio miniatur 1:20)</div>
-          <div class="sres">Daya listrik rata-rata skenario ≈ 2 kW</div>
-        </div>
         <div data-hf-id="hf-0u8q" class="strip">
           <div data-hf-id="hf-kndt" class="pill">
             <span data-hf-id="hf-pxsn" class="st">Air masuk</span><span data-hf-id="hf-08ha" class="ar">→</span><span data-hf-id="hf-a9tp" class="st">udara tertekan</span><span data-hf-id="hf-wliq" class="ar">→</span><span data-hf-id="hf-6iy3" class="st">udara keluar</span><span data-hf-id="hf-wztr" class="ar">→</span><span data-hf-id="hf-hz0h" class="st">turbin berputar</span>
@@ -293,7 +280,7 @@
       </div>
 
       <script>
-        /* OWC-DESAL cross-section engine + studio-grade motion physics + sliding-card word subtitle.
+        /* OWC-DESAL cross-section engine, measured eases and word-synced captions.
    Every dynamic value is a pure function of scene-local time (100% seek-safe). */
 (function () {
   if (window.OWC) return;
@@ -344,15 +331,17 @@
   }
 
   // ---- wave plans per scene (phase φ, amplitude A); level L = MWL - A·sin φ ----
+  // Scene lengths come from src/refinement.mjs through the build; the fallback is the old cut.
+  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":21.5,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":25,"8":23});
   const plans = {
-    2: { dur: 25, phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, 19, 25) },
+    2: { dur: DUR[2], phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, DUR[2] - 6, DUR[2]) },
     3: {
-      dur: 18,
-      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / 14.5)),
+      dur: DUR[3],
+      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / (DUR[3] - 3.5))),
       A: (t) => (t < 3 ? 18 + 42 * smooth(t / 3) : 60),
     },
     4: {
-      dur: 22,
+      dur: DUR[4],
       phi: (t) =>
         t < 1.5 ? Math.PI / 2
         : t < 12 ? Math.PI / 2 + Math.PI * eis((t - 1.5) / 9)
@@ -361,12 +350,14 @@
     },
   };
   const P4END = plans[4].phi(plans[4].dur);
-  plans[5] = { dur: 30, phi: (t) => P4END + WN * t, A: () => 60 };
-  plans[7] = { dur: 26, phi: (t) => plans[5].phi(30) + WN * t, A: () => 60 };
-  plans[8] = { dur: 24, phi: (t) => plans[7].phi(26) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
-  plans[6] = { dur: 15, phi: (t) => plans[8].phi(24) + WN * t, A: () => 9 };
+  plans[5] = { dur: DUR[5], phi: (t) => P4END + WN * t, A: () => 60 };
+  plans[7] = { dur: DUR[7], phi: (t) => plans[5].phi(DUR[5]) + WN * t, A: () => 60 };
+  plans[8] = { dur: DUR[8], phi: (t) => plans[7].phi(DUR[7]) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
+  plans[6] = { dur: DUR[6], phi: (t) => plans[8].phi(DUR[8]) + WN * t, A: () => 9 };
   const previous = { 3: 2, 4: 3, 5: 4, 7: 5, 8: 7, 6: 8 };
-  const offsets = { 2: 0, 3: 25, 4: 43, 5: 65, 7: 95, 8: 121, 6: 145 };
+  // continuous clock for ripples and flows across the cut order 2 → 3 → 4 → 5 → 7 → 8 → 6
+  const offsets = {};
+  [2, 3, 4, 5, 7, 8, 6].reduce((acc, n) => ((offsets[n] = acc), acc + DUR[n]), 0);
   const level = (p, t) => MWL - p.A(t) * Math.sin(p.phi(t));
 
   const simCache = {};
@@ -421,13 +412,60 @@
   }
 
   // ---- Studio-Grade Sliding-Card Word Subtitle Engine (Critically Damped Spring + Posture) ----
-  function mountSubtitle(root, subData) {
+  // Scene-local time of the nth spoken token starting with `word` (case/punctuation
+  // insensitive), so choreography follows the narration instead of hand-typed seconds.
+  const norm = (s) => String(s).toLowerCase().replace(/[^0-9a-zà-ÿ]/g, "");
+  function cues(subData) {
+    const off = (subData && subData.voOffset) || 0;
+    const ws = (subData && subData.words) || [];
+    const at = (word, nth = 1, fallback = 0, end = false) => {
+      const n = norm(word);
+      let c = 0;
+      for (let i = 0; i < ws.length; i++) {
+        // each timed word carries its own display token ('63 GW' is one token), so never re-split the text
+        if (norm(ws[i].w).startsWith(n) && ++c === nth) return off + ws[i].t + (end ? ws[i].d : 0);
+      }
+      return fallback;
+    };
+    at.end = (word, nth = 1, fallback = 0) => at(word, nth, fallback, true);
+    at.voEnd = ws.length ? off + ws[ws.length - 1].t + ws[ws.length - 1].d : 0;
+    return at;
+  }
+
+  // Maps scene times authored against an earlier narration onto the current one:
+  // piecewise-linear through matching words (same script), anchored at 0 and at the scene ends.
+  function warp(oldWords, oldOffset, oldDur, subData, newDur) {
+    const nw = (subData && subData.words) || [];
+    const pts = [[0, 0]];
+    const n = Math.min(oldWords.length, nw.length);
+    for (let i = 0; i < n; i++) pts.push([oldOffset + oldWords[i].t, subData.voOffset + nw[i].t]);
+    pts.push([oldDur, newDur]);
+    pts.sort((a, b) => a[0] - b[0]);
+    const T = (x) => {
+      if (x <= pts[0][0]) return x;
+      for (let i = 1; i < pts.length; i++) {
+        if (x <= pts[i][0]) {
+          const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+          return x1 === x0 ? y1 : y0 + ((x - x0) * (y1 - y0)) / (x1 - x0);
+        }
+      }
+      return x - oldDur + newDur;
+    };
+    // a timeline whose position arguments are written in the old clock
+    T.timeline = (tl) => {
+      for (const m of ["to", "from", "fromTo", "set"]) {
+        const f = tl[m].bind(tl);
+        tl[m] = (...a) => { if (typeof a[a.length - 1] === "number") a[a.length - 1] = T(a[a.length - 1]); return f(...a); };
+      }
+      return tl;
+    };
+    return T;
+  }
+
+  function mountSubtitle(root, subData, opts = {}) {
     if (!subData || !Array.isArray(subData.words) || !subData.words.length) return null;
-    const rawTokens = (subData.text || "").trim().split(/\s+/).filter(Boolean);
-    const words = subData.words.map((w, i) => {
-      const tok = rawTokens[i] || w.w;
-      return { t: w.t, d: w.d, w: tok };
-    });
+    const mute = opts.mute || [];
+    const words = subData.words.map((w) => ({ t: w.t, d: w.d, w: String(w.w).replace(/ /g, "\u00a0") }));
 
     const chunks = [];
     let cur = [];
@@ -442,6 +480,7 @@
         cur.length >= 7 ||
         charCount >= 44 ||
         (endsPunct && cur.length >= 3) ||
+        /[.?!:]$/.test(item.w) ||
         (nextStartsCap && cur.length >= 4)
       ) {
         chunks.push({
@@ -466,9 +505,6 @@
     const chunkEls = chunks.map((ch) => {
       const cEl = document.createElement("div");
       cEl.className = "vo-chunk";
-      const card = document.createElement("span");
-      card.className = "vo-sliding-card";
-      cEl.appendChild(card);
       const spans = ch.words.map((wObj) => {
         const sp = document.createElement("span");
         sp.className = "vo-w";
@@ -477,7 +513,7 @@
         return sp;
       });
       layer.appendChild(cEl);
-      return { ch, cEl, card, spans, boxes: null };
+      return { ch, cEl, spans };
     });
     root.appendChild(layer);
 
@@ -485,6 +521,10 @@
     return {
       update(sceneTime) {
         const voT = sceneTime - voOffset;
+        // On-screen type that already says the line (a question, a title) mutes the caption.
+        let gain = 1;
+        for (const [a, b] of mute) gain = Math.min(gain, 1 - clamp((sceneTime - a + 0.2) / 0.2, 0, 1) * clamp((b - sceneTime) / 0.2, 0, 1));
+        layer.style.opacity = gain.toFixed(3);
         let activeIdx = -1;
         for (let i = 0; i < chunkEls.length; i++) {
           const c = chunkEls[i].ch;
@@ -515,34 +555,11 @@
           item.cEl.style.opacity = (fadeIn * fadeOut).toFixed(3);
           item.cEl.style.transform = `translate3d(0, ${yOffset.toFixed(2)}px, 0)`;
 
-          item.boxes = item.spans.map((sp) => ({
-            left: sp.offsetLeft,
-            width: sp.offsetWidth,
-          }));
-
+          // the spoken word is marked by class only (CSS underline on the span): no layout reads per frame
           let wIdx = 0;
           for (let k = 0; k < c.words.length; k++) {
             if (voT >= c.words[k].t - 0.035) wIdx = k;
           }
-
-          const curBox = item.boxes[wIdx] || { left: 0, width: 60 };
-          const curWord = c.words[wIdx];
-          let x = curBox.left;
-          let w = curBox.width;
-          let stretchX = 1;
-
-          // Critically-damped spring interpolation with subtle velocity stretch (Emil Kowalski / motionmaxxing)
-          if (wIdx > 0) {
-            const prevBox = item.boxes[wIdx - 1];
-            const rawU = clamp((voT - curWord.t) / 0.085, 0, 1);
-            const springU = spring(rawU, 15, 0.84);
-            x = prevBox.left + (curBox.left - prevBox.left) * springU;
-            w = prevBox.width + (curBox.width - prevBox.width) * springU;
-            stretchX = 1 + 0.055 * Math.sin(Math.PI * rawU);
-          }
-
-          item.card.style.transform = `translate3d(${(x - 8).toFixed(1)}px, -50%, 0) scaleX(${stretchX.toFixed(3)})`;
-          item.card.style.width = `${Math.max(24, w + 16).toFixed(1)}px`;
 
           for (let k = 0; k < item.spans.length; k++) {
             const sp = item.spans[k];
@@ -889,7 +906,7 @@
     return { svg, L, update, cam, applyCam, frame, prepDraw, leaders, sim: S, C };
   }
 
-  window.OWC = { build, mountSubtitle, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
+  window.OWC = { build, mountSubtitle, cues, warp, DUR, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
 })();
 
         (() => {
@@ -897,11 +914,15 @@
           const $ = (s) => root.querySelector(s);
           const world = $(".world");
           const { clamp } = window.OWC;
-          const sub = window.OWC.mountSubtitle(root, {"voOffset":1.5,"text":"Saat ombak datang, air masuk ke dalam ruang dan permukaan kolom air naik. Seperti piston, air ini menekan udara di atasnya. Udara bertekanan tinggi menyembur keluar melewati turbin, memutar generator, dan listrik pun dihasilkan.","words":[{"t":0.1,"d":0.3125,"w":"Saat"},{"t":0.4125,"d":0.25,"w":"ombak"},{"t":0.6625,"d":0.5125,"w":"datang"},{"t":1.4625,"d":0.25,"w":"air"},{"t":1.7125,"d":0.275,"w":"masuk"},{"t":1.9875,"d":0.05,"w":"ke"},{"t":2.0375,"d":0.225,"w":"dalam"},{"t":2.2625,"d":0.2875,"w":"ruang"},{"t":2.55,"d":0.15,"w":"dan"},{"t":2.7,"d":0.475,"w":"permukaan"},{"t":3.175,"d":0.2375,"w":"kolom"},{"t":3.4125,"d":0.25,"w":"air"},{"t":3.6625,"d":0.45,"w":"naik"},{"t":5.025,"d":0.4,"w":"Seperti"},{"t":5.425,"d":0.5625,"w":"piston"},{"t":6.2875,"d":0.25,"w":"air"},{"t":6.5375,"d":0.225,"w":"ini"},{"t":6.7625,"d":0.3,"w":"menekan"},{"t":7.0625,"d":0.3375,"w":"udara"},{"t":7.4,"d":0.075,"w":"di"},{"t":7.475,"d":0.65,"w":"atasnya"},{"t":8.975,"d":0.3,"w":"Udara"},{"t":9.275,"d":0.475,"w":"bertekanan"},{"t":9.75,"d":0.3125,"w":"tinggi"},{"t":10.0625,"d":0.3625,"w":"menyembur"},{"t":10.425,"d":0.2875,"w":"keluar"},{"t":10.7125,"d":0.3625,"w":"melewati"},{"t":11.075,"d":0.5625,"w":"turbin"},{"t":11.9125,"d":0.3625,"w":"memutar"},{"t":12.275,"d":0.6625,"w":"generator"},{"t":13.1875,"d":0.2125,"w":"dan"},{"t":13.4,"d":0.3375,"w":"listrik"},{"t":13.7375,"d":0.175,"w":"pun"},{"t":13.9125,"d":0.775,"w":"dihasilkan"}]});
+          const SUB = {"voOffset":1.2,"text":"Saat ombak datang, air masuk ke dalam ruang dan permukaan kolom air naik. Seperti piston, air ini menekan udara di atasnya. Udara bertekanan tinggi menyembur keluar melewati turbin, memutar generator, dan listrik pun dihasilkan.","words":[{"t":0.24,"d":0.24,"w":"Saat"},{"t":0.56,"d":0.16,"w":"ombak"},{"t":0.8,"d":0.72,"w":"datang,"},{"t":1.6,"d":0.24,"w":"air"},{"t":1.92,"d":0.24,"w":"masuk"},{"t":2.2,"d":0.04,"w":"ke"},{"t":2.28,"d":0.2,"w":"dalam"},{"t":2.56,"d":0.32,"w":"ruang"},{"t":3.04,"d":0.16,"w":"dan"},{"t":3.32,"d":0.36,"w":"permukaan"},{"t":3.76,"d":0.24,"w":"kolom"},{"t":4.08,"d":0.24,"w":"air"},{"t":4.4,"d":0.8,"w":"naik."},{"t":5.28,"d":0.24,"w":"Seperti"},{"t":5.6,"d":0.72,"w":"piston,"},{"t":6.44,"d":0.12,"w":"air"},{"t":6.64,"d":0.16,"w":"ini"},{"t":6.88,"d":0.48,"w":"menekan"},{"t":7.44,"d":0.24,"w":"udara"},{"t":7.72,"d":0.04,"w":"di"},{"t":7.84,"d":0.64,"w":"atasnya."},{"t":8.72,"d":0.32,"w":"Udara"},{"t":9.12,"d":0.4,"w":"bertekanan"},{"t":9.6,"d":0.32,"w":"tinggi"},{"t":10,"d":0.48,"w":"menyembur"},{"t":10.56,"d":0.32,"w":"keluar"},{"t":10.92,"d":0.36,"w":"melewati"},{"t":11.36,"d":0.64,"w":"turbin,"},{"t":12.08,"d":0.24,"w":"memutar"},{"t":12.4,"d":0.8,"w":"generator,"},{"t":13.28,"d":0.08,"w":"dan"},{"t":13.48,"d":0.28,"w":"listrik"},{"t":13.84,"d":0.16,"w":"pun"},{"t":14.04,"d":0.92,"w":"dihasilkan."}]};
+          const LEG = {"words":[{"t":0.1,"d":0.3125,"w":"Saat"},{"t":0.4125,"d":0.25,"w":"ombak"},{"t":0.6625,"d":0.5125,"w":"datang"},{"t":1.4625,"d":0.25,"w":"air"},{"t":1.7125,"d":0.275,"w":"masuk"},{"t":1.9875,"d":0.05,"w":"ke"},{"t":2.0375,"d":0.225,"w":"dalam"},{"t":2.2625,"d":0.2875,"w":"ruang"},{"t":2.55,"d":0.15,"w":"dan"},{"t":2.7,"d":0.475,"w":"permukaan"},{"t":3.175,"d":0.2375,"w":"kolom"},{"t":3.4125,"d":0.25,"w":"air"},{"t":3.6625,"d":0.45,"w":"naik"},{"t":5.025,"d":0.4,"w":"Seperti"},{"t":5.425,"d":0.5625,"w":"piston"},{"t":6.2875,"d":0.25,"w":"air"},{"t":6.5375,"d":0.225,"w":"ini"},{"t":6.7625,"d":0.3,"w":"menekan"},{"t":7.0625,"d":0.3375,"w":"udara"},{"t":7.4,"d":0.075,"w":"di"},{"t":7.475,"d":0.65,"w":"atasnya"},{"t":8.975,"d":0.3,"w":"Udara"},{"t":9.275,"d":0.475,"w":"bertekanan"},{"t":9.75,"d":0.3125,"w":"tinggi"},{"t":10.0625,"d":0.3625,"w":"menyembur"},{"t":10.425,"d":0.2875,"w":"keluar"},{"t":10.7125,"d":0.3625,"w":"melewati"},{"t":11.075,"d":0.5625,"w":"turbin"},{"t":11.9125,"d":0.3625,"w":"memutar"},{"t":12.275,"d":0.6625,"w":"generator"},{"t":13.1875,"d":0.2125,"w":"dan"},{"t":13.4,"d":0.3375,"w":"listrik"},{"t":13.7375,"d":0.175,"w":"pun"},{"t":13.9125,"d":0.775,"w":"dihasilkan"}],"offset":1.5,"duration":18}, D = 17;
+          // beats below were authored against the original take; T maps them onto the current narration
+          const T = LEG ? window.OWC.warp(LEG.words, LEG.offset, LEG.duration, SUB, D) : Object.assign((x) => x, { timeline: (tl) => tl });
+          const sub = window.OWC.mountSubtitle(root, SUB);
           const W = window.OWC.build(world, { prefix: "s3", scene: 3, fn: { tank: () => 0.3 } });
           const L = W.L;
           W.update(0);
-          const tl = gsap.timeline({ paused: true });
+          const tl = T.timeline(gsap.timeline({ paused: true }));
           const VO = 1.5; // Synced to voStart=46.5s (local 1.5s)
           const lblMap = {};
           root.querySelectorAll(".lbl").forEach((e) => { lblMap[e.dataset.k] = e; });
@@ -926,9 +947,9 @@
           mk("line", { x1: 592, y1: 726, x2: 788, y2: 726, stroke: "#F4EFE4", "stroke-width": 2.5, "stroke-dasharray": "6 4" });
           mk("line", { x1: 592, y1: 716, x2: 592, y2: 736, stroke: "#F4EFE4", "stroke-width": 2.5 });
           mk("line", { x1: 788, y1: 716, x2: 788, y2: 736, stroke: "#F4EFE4", "stroke-width": 2.5 });
-          mk("rect", { x: 632, y: 712, width: 116, height: 26, rx: 4, fill: "#293F3D" });
-          const dimTxt = mk("text", { x: 690, y: 730, fill: "#F4EFE4", "font-size": "17", "font-weight": "600", "text-anchor": "middle" });
-          dimTxt.textContent = "Lebar B = 4 m";
+          mk("rect", { x: 614, y: 709, width: 152, height: 34, rx: 5, fill: "#293F3D" });
+          const dimTxt = mk("text", { x: 690, y: 733, fill: "#F4EFE4", "font-size": "23", "font-weight": "600", "text-anchor": "middle", "font-family": "Source Sans 3, sans-serif" });
+          dimTxt.textContent = "lebar ruang 4 m";
 
           // Camera push in on the OWC
           const F = W.frame(1.3, 560, 0, 420, -2.5);
@@ -944,18 +965,17 @@
           steps.forEach((s) => { s.style.display = "inline-block"; });
 
           tl.fromTo(dimG, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 3.6);
-          tl.fromTo($(".scale-card"), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 4.2);
           tl.fromTo($(".press"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 7.6);
           label("turbine", 12.1);
           tl.fromTo(L.cw, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 12.5);
           label("gen", 13.3);
           label("power", 14.6);
-          tl.to([$(".press"), $(".scale-card"), dimG, $(".pill"), $(".hdr")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 17.4);
+          tl.to([$(".press"), dimG, $(".pill"), $(".hdr")], { opacity: 0, duration: 0.45, ease: "power1.in" }, 17.4);
 
           const meter = $(".meter i");
           const clock = { t: 0 };
           tl.fromTo(clock, { t: 0 }, {
-            t: 18, duration: 18, ease: "none",
+            t: D, duration: D, ease: "none",
             onUpdate: () => {
               const r = W.update(clock.t);
               if (sub) sub.update(clock.t);

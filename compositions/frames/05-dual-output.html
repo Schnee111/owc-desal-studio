@@ -125,10 +125,10 @@
       /* Studio-Grade Motion & Anti-Slop Refinements (OWC-DESAL).
    Implements origin-aware transforms, tabular numerals, warm coastal materiality, and spring sliding-card subtitle. */
 #s5-root{background:#F4EFE4;color:#293F3D;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
-#s5-root .lbl{font:600 22px/1.22 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
-#s5-root .hdr{font:500 45px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
-#s5-root .hdr .k{font-family:'Source Sans 3',sans-serif;font-size:30px;font-weight:600;color:#A64F32}
-#s5-root .strip{bottom:76px}
+#s5-root .lbl{font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;background:rgba(244,239,228,0.96);border:1px solid rgba(41,63,61,0.22);border-radius:5px;padding:5px 11px;box-shadow:0 3px 10px rgba(41,63,61,0.06);transform-origin:center bottom;will-change:transform,opacity}
+#s5-root .hdr{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;color:#293F3D;background:rgba(244,239,228,0.96);border:0;border-radius:0;padding:10px 16px;transform-origin:left top;will-change:transform,opacity}
+#s5-root .hdr .k{color:#A64F32}
+#s5-root .strip{bottom:122px}
 #s5-root .pill{font:600 27px/1.22 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.97);color:#293F3D;border:1.5px solid #C8C7B9;border-radius:7px;padding:10px 22px;gap:14px;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:center bottom;will-change:transform,opacity}
 #s5-root .press{background:rgba(244,239,228,0.97)!important;border:1.5px solid #C8C7B9!important;border-radius:7px!important;padding:12px 16px 14px!important;font:600 25px/1.2 'Source Sans 3',sans-serif!important;box-shadow:0 6px 18px rgba(41,63,61,0.07);transform-origin:left center;will-change:transform,opacity}
 #s5-root .press .meter{border-radius:3px;background:#DEDCD0}
@@ -141,100 +141,91 @@
 #s5-root .g-building>path:nth-child(2){stroke:#8C735C;stroke-width:9}
 #s5-root .g-turbine>g:nth-of-type(1),#s5-root .g-turbine>g:nth-of-type(2){visibility:hidden}
 
-/* Studio-Grade Sliding-Card Word Subtitle (Critically-Damped Spring + Active Micro-Lift) */
-#s5-root .vo-sub-layer{position:absolute;left:0;right:0;bottom:14px;height:50px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
-#s5-root .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:5px 12px;font:600 26px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;text-shadow:0 1px 8px rgba(244,239,228,0.98),0 0 16px rgba(244,239,228,0.96);will-change:transform,opacity}
-#s5-root .vo-sliding-card{position:absolute;left:0;top:50%;height:38px;background:#E59A6E;border:1.5px solid #A64F32;border-radius:8px;box-shadow:0 4px 12px rgba(166,79,50,0.24);z-index:0;pointer-events:none;transform-origin:center center;will-change:transform,width}
-#s5-root .vo-w{position:relative;z-index:1;display:inline-block;transition:transform 0.09s cubic-bezier(0.22,1,0.36,1),color 0.08s ease}
-#s5-root .vo-w.is-active{color:#182826;font-weight:700;text-shadow:none;transform:translate3d(0,-1.5px,0)}
-#s5-root .vo-w.is-past{color:#293F3D;opacity:.92;transform:translate3d(0,0,0)}
-#s5-root .vo-w.is-future{color:#293F3D;opacity:.55;transform:translate3d(0,0,0)}
+/* Captions: one calm line on a paper band; a terracotta underline marks the spoken word.
+   No CSS transitions anywhere: every state is set per frame from scene time (seek-safe). */
+#s5-root .vo-sub-layer{position:absolute;left:0;right:0;bottom:26px;height:64px;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:48}
+#s5-root .vo-chunk{position:absolute;display:inline-flex;align-items:center;gap:11px;padding:9px 20px 11px;font:600 34px/1.2 'Source Sans 3',sans-serif;color:#293F3D;white-space:nowrap;opacity:0;background:rgba(244,239,228,0.93);border-radius:10px;box-shadow:0 2px 12px rgba(41,63,61,0.10);will-change:transform,opacity}
+#s5-root .vo-w{position:relative;z-index:1;display:inline-block}
+#s5-root .vo-w.is-active{color:#182826}
+#s5-root .vo-w.is-active::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:4px;border-radius:2px;background:#A64F32}
+#s5-root .vo-w.is-past{color:#293F3D}
+#s5-root .vo-w.is-future{color:#293F3D;opacity:.42}
 
-/* Scene 1: Coastal Context + Target Scope + Title */
-#s1-root .ocean{font:600 25px 'Source Sans 3',sans-serif;letter-spacing:.14em}
-#s1-root .context-card{position:absolute;left:76px;top:64px;width:640px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-left:5px solid #A64F32;border-radius:7px;padding:14px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.08);opacity:0;z-index:12;transform-origin:left top}
-#s1-root .context-card .ckick{font:700 20px/1.2 'Source Sans 3',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#A64F32;margin-bottom:6px}
-#s1-root .context-card .cbody{font:600 23px/1.32 'Source Sans 3',sans-serif;color:#293F3D}
-#s1-root .context-card .csrc{font:400 19px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px}
-#s1-root .stat{right:84px;top:64px;background:rgba(244,239,228,0.96);border:1.5px solid #D5CEBC;border-right:5px solid #286B75;border-radius:7px;padding:14px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.08);z-index:12;transform-origin:right top}
-#s1-root .stat .kick{font:600 25px 'Source Sans 3',sans-serif;color:#286B75}
-#s1-root .stat .val{font:500 92px/1 Literata,serif;color:#293F3D;margin-top:8px;font-variant-numeric:tabular-nums}
-#s1-root .stat .num{width:auto}
-#s1-root .stat .unit{font:600 32px 'Source Sans 3',sans-serif;margin-left:12px}
-#s1-root .stat .sub-stat{font:400 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;margin-top:6px;opacity:0}
-#s1-root .veil{background:radial-gradient(ellipse 960px 380px at 50% 52%, rgba(244,239,228,0.96), rgba(244,239,228,0.82) 65%, rgba(244,239,228,0) 100%)}
-#s1-root .title text{font:500 138px Literata,serif;letter-spacing:-.03em;stroke-width:1.4}
-#s1-root .sub{font:600 38px 'Source Sans 3',sans-serif;top:608px}
-#s1-root .rule{height:3px;border-radius:0;top:676px}
-#s1-root .scope-note{position:absolute;left:50%;top:700px;transform:translateX(-50%);background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:6px;padding:8px 20px;font:600 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D;box-shadow:0 4px 14px rgba(41,63,61,0.07);opacity:0;white-space:nowrap;z-index:15}
 #s1-root .dot,#s2-root .dot{background:#A64F32;width:16px;height:16px;margin:12px;border-radius:50%}
-#s1-root .glow,#s1-root .dots circle:nth-child(-n+2){display:none}
-#s1-root .indo path{fill:#93A28B}
 
 /* Scene 2 */
-#s2-root .hdr .m{font:400 26px 'Source Sans 3',sans-serif;letter-spacing:0;color:#293F3D}
 
-/* Scene 3: Physical Scale Callout */
-#s3-root .scale-card{position:absolute;left:64px;top:492px;width:360px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:7px;padding:12px 16px;box-shadow:0 6px 18px rgba(41,63,61,0.08);opacity:0;transform-origin:left center}
-#s3-root .scale-card .skick{font:700 19px/1.2 'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#286B75;margin-bottom:5px}
-#s3-root .scale-card .srow{font:600 22px/1.3 'Source Sans 3',sans-serif;color:#293F3D;margin:3px 0;font-variant-numeric:tabular-nums}
-#s3-root .scale-card .sres{font:700 23px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:6px;padding-top:6px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
-
-/* Scene 4: Clean Backdrop for Inset & Power Graph */
-#s4-root .s4-backdrop{position:absolute;left:1052px;top:126px;width:826px;height:780px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
-#s4-root .inset{left:1080px;top:144px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
-#s4-root .inset .ti{font:600 28px 'Source Sans 3',sans-serif}
+/* Scene 4: blade inset + live power trace share one paper panel */
+#s4-root .s4-backdrop{position:absolute;left:1052px;top:118px;width:826px;height:822px;background:#F4EFE4;border:1.5px solid #C8C7B9;border-radius:10px;box-shadow:0 10px 28px rgba(41,63,61,0.09);opacity:0;transform-origin:center top}
+#s4-root .inset{left:1080px;top:134px;width:760px;height:500px;background:transparent;border:0;border-radius:0}
+#s4-root .inset .ti{font:600 29px 'Source Sans 3',sans-serif}
 #s4-root .inset .dir,#s4-root .inset .cap,#s4-root .inset .gd{font-family:'Source Sans 3',sans-serif}
-#s4-root .inset .dir{font-size:22px}
-#s4-root .power-fluctuation{position:absolute;left:1080px;top:666px;width:760px;background:#EFE8D8;border:1.5px solid #C8C7B9;border-radius:7px;padding:12px 18px;font:600 24px/1.25 'Source Sans 3',sans-serif;box-shadow:0 4px 12px rgba(41,63,61,0.06);opacity:0}
-#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:center}
-#s4-root .power-fluctuation p span{font:400 20px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .inset .dir{font-size:24px;font-weight:600;color:#A64F32}
+#s4-root .inset .cap{font-size:24px;font-weight:600}
+#s4-root .inset .gd{font-size:23px;font-weight:600}
+#s4-root .power-fluctuation{position:absolute;left:1080px;top:652px;width:770px;padding:0 4px;font:600 26px/1.25 'Source Sans 3',sans-serif;opacity:0}
+#s4-root .power-fluctuation p{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+#s4-root .power-fluctuation p b{font:500 32px/1.1 Literata,serif;color:#293F3D}
+#s4-root .power-fluctuation p span{font:400 22px 'Source Sans 3',sans-serif;color:#53645D}
+#s4-root .power-fluctuation p.note{display:block;margin-top:8px;font:600 24px/1.3 'Source Sans 3',sans-serif;color:#A64F32;opacity:0}
 
 /* Scene 5: Water Balance Card with Proportional Split Bar */
 #s5-root .ctitle{font:600 26px 'Source Sans 3',sans-serif}
 #s5-root .cap{font:600 21px 'Source Sans 3',sans-serif}
-#s5-root .scenario{position:absolute;left:988px;top:586px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-left:5px solid #286B75;border-radius:8px;padding:16px 22px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
-#s5-root .scenario .target{display:flex;align-items:baseline;gap:14px;font:600 26px 'Source Sans 3',sans-serif}
-#s5-root .scenario .target strong{font:500 58px/1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
-#s5-root .scenario .split-bar{display:flex;width:100%;height:22px;border-radius:4px;overflow:hidden;margin:12px 0 10px;background:#DED4BD}
-#s5-root .scenario .split-prod{width:40%;background:#286B75;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-#s5-root .scenario .split-brine{width:60%;background:#676953;display:flex;align-items:center;justify-content:center;color:#F4EFE4;font:700 16px 'Source Sans 3',sans-serif}
-#s5-root .scenario .balance{display:flex;justify-content:space-between;gap:18px;margin-top:6px;font:600 23px/1.25 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
-#s5-root .scenario .balance span{white-space:nowrap}
-#s5-root .scenario .assumption{font:400 20px/1.28 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px}
+#s5-root .scenario{position:absolute;left:988px;top:560px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 24px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;z-index:20;transform-origin:center bottom}
+#s5-root .scenario .bal-head{font:500 36px/1.15 Literata,serif;color:#293F3D}
+#s5-root .scenario .bal-head b{font-weight:500;color:#367B86}
+#s5-root .scenario .cells{display:flex;gap:8px;margin:16px 0 12px}
+#s5-root .scenario .cells i{display:block;width:72px;height:62px;border-radius:6px 6px 10px 10px;background:#A9C3C3;transform-origin:center bottom}
+#s5-root .scenario .cell-legend{display:flex;justify-content:space-between;gap:16px;font:600 26px/1.2 'Source Sans 3',sans-serif}
+#s5-root .scenario .cell-legend span{opacity:0}
+#s5-root .scenario .lg-fresh b{color:#286B75}
+#s5-root .scenario .lg-brine b{color:#676953}
+#s5-root .scenario .bal-day{display:flex;align-items:baseline;gap:12px;margin-top:16px;padding-top:12px;border-top:1px solid #DED4BD;font:600 25px/1.2 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+#s5-root .scenario .bal-day b{font:500 34px/1 Literata,serif}
+#s5-root .scenario .bal-day .k{font-weight:400;color:#53645D}
+#s5-root .scenario .bal-day .ar{color:#A64F32}
+#s5-root .scenario .bal-day .b b{color:#676953}
 
 /* Scene 6 (s7) & Scene 7 (s8): Service Allocation & Reserve Mode */
 #s5-root .allocation{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
-#s5-root .service-intro{position:absolute;left:76px;top:92px;width:440px;background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #286B75;border-radius:8px;padding:18px 22px;color:#293F3D;box-shadow:0 8px 24px rgba(41,63,61,0.08);transform-origin:left top}
+#s5-root .service-intro{position:absolute;left:64px;top:80px;width:500px;border-left:4px solid #286B75;padding:4px 0 6px 26px;color:#293F3D;transform-origin:left top}
 #s5-root .energy-allocation .service-intro{border-left-color:#A64F32}
-#s5-root .service-intro h1{font:500 44px/1.12 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
-#s5-root .service-intro p{font:400 25px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
-#s5-root .service-intro .service-number{font:500 68px/1.1 Literata,serif;margin:12px 0 4px;color:#286B75;font-variant-numeric:tabular-nums}
+#s5-root .service-intro h1{font:500 46px/1.1 Literata,serif;letter-spacing:-.025em;margin:0 0 12px}
+#s5-root .service-intro p{font:400 27px/1.3 'Source Sans 3',sans-serif;margin:8px 0}
+#s5-root .service-intro .service-number{font:500 84px/1.05 Literata,serif;margin:10px 0 6px;color:#286B75;font-variant-numeric:tabular-nums}
 #s5-root .energy-allocation .service-intro .service-number{color:#A64F32}
-#s5-root .service-number span{font:600 26px 'Source Sans 3',sans-serif;color:#293F3D}
-#s5-root .service-intro .service-small{font-size:22px;color:#53645D;margin-top:10px}
-#s5-root .service-intro .energy-formula{font:600 23px/1.3 'Source Sans 3',sans-serif;color:#53645D;margin-top:10px;padding-top:8px;border-top:1px solid #DED4BD;font-variant-numeric:tabular-nums}
+#s5-root .service-number span{font:600 28px 'Source Sans 3',sans-serif;color:#293F3D}
+#s5-root .service-intro .service-small{font-size:23px;color:#53645D;margin-top:10px}
+#s5-root .service-intro .chain{font:600 27px/1.3 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
+#s5-root .service-intro .chain.c0{font-size:23px;font-weight:400;color:#53645D}
+#s5-root .service-intro .chain b{color:#A64F32}
+#s5-root .service-intro .chain.c3{font-size:24px;font-weight:400;color:#53645D;margin-top:0}
 #s5-root .facility-title{position:absolute;left:1250px;top:36px;width:610px;font:600 25px/1.3 'Source Sans 3',sans-serif;background:rgba(244,239,228,0.96);padding:4px 10px;border-radius:4px}
-#s5-root .ledger{position:absolute;left:988px;top:578px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:8px;padding:16px 24px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
-#s5-root .ledger h2{font:500 32px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
-#s5-root .ledger-row{display:flex;align-items:center;gap:14px;margin:9px 0;font:600 23px/1.15 'Source Sans 3',sans-serif;padding:4px 8px;border-radius:4px;font-variant-numeric:tabular-nums}
-#s5-root .ledger-label{width:270px;flex:none}
-#s5-root .ledger-space{width:330px;flex:none;height:18px;background:#E5DEC9;border-radius:3px;overflow:hidden}
-#s5-root .ledger-bar{height:18px;background:#367B86;transform-origin:left center}
-#s5-root .ledger-row strong{font-size:24px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
+#s5-root .ledger{position:absolute;left:988px;top:572px;width:852px;background:#F4EFE4;border:2px solid #BFB8A4;border-radius:10px;padding:18px 26px;box-shadow:0 8px 24px rgba(41,63,61,0.09);transform-origin:right bottom}
+#s5-root .ledger h2{font:500 34px/1.2 Literata,serif;margin:0 0 12px;color:#293F3D}
+#s5-root .ledger-row{display:flex;align-items:center;gap:16px;margin:10px 0;font:600 25px/1.15 'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums}
+#s5-root .ledger-label{width:300px;flex:none}
+#s5-root .ledger-space{width:300px;flex:none;height:22px;background:#E5DEC9;border-radius:3px;overflow:hidden}
+#s5-root .ledger-bar{height:22px;background:#367B86;transform-origin:left center}
+#s5-root .ledger-row strong{font-size:27px;font-weight:700;white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
 #s5-root .ledger-bar.bar-1{background:#676953}
 #s5-root .ledger-bar.bar-2{background:#A64F32}
 #s5-root .ledger-bar.bar-3{background:#8C735C}
-#s5-root .service-footnote{position:absolute;left:76px;bottom:72px;max-width:1760px;font:600 21px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:5px 12px;opacity:0;z-index:22}
+#s5-root .service-footnote{position:absolute;left:64px;bottom:94px;max-width:1500px;white-space:nowrap;font:600 22px/1.25 'Source Sans 3',sans-serif;color:#53645D;background:rgba(244,239,228,0.96);border-left:3px solid #676953;padding:6px 12px;opacity:0;z-index:22}
 
 /* Scene 7 (s8): Reserve UI & Progressive Cards */
 #s5-root .reserve-ui{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:20}
 #s5-root .reserve-ui .service-intro{border-left-color:#A64F32}
-#s5-root .reserve-state{font:700 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:14px 0 10px}
-#s5-root .generation-meter{height:12px;width:340px;background:#DED4BD;border-radius:4px;overflow:hidden}
+#s5-root .reserve-state{font:600 28px/1.2 'Source Sans 3',sans-serif;color:#A64F32;margin:10px 0 12px}
+#s5-root .steps{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid #DED4BD}
+#s5-root .steps li{font:400 26px/1.3 'Source Sans 3',sans-serif;margin:0 0 10px;opacity:0}
+#s5-root .steps li b{font-weight:700;color:#286B75}
+#s5-root .steps li.st-bat b{color:#A64F32}
+#s5-root .generation-meter{height:14px;width:100%;background:#DED4BD;border-radius:4px;overflow:hidden}
 #s5-root .generation-meter i{display:block;width:100%;height:100%;background:#A64F32;transform-origin:left center}
 #s5-root .service-intro .critical-state{font:600 24px/1.28 'Source Sans 3',sans-serif;margin:14px 0 0;padding-top:10px;border-top:1px solid #DED4BD}
-#s5-root .ro-standby-badge{position:absolute;left:1045px;top:330px;background:#A64F32;color:#F4EFE4;font:700 21px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
+#s5-root .ro-standby-badge{position:absolute;left:1040px;top:322px;background:#A64F32;color:#F4EFE4;font:700 24px/1.2 'Source Sans 3',sans-serif;padding:7px 14px;border-radius:6px;box-shadow:0 4px 12px rgba(41,63,61,0.18);opacity:0;z-index:25;transform-origin:left center}
 #s5-root .monitor-badge{position:absolute;left:1010px;top:524px;background:rgba(244,239,228,0.97);border:1.5px solid #286B75;color:#286B75;font:600 20px/1.2 'Source Sans 3',sans-serif;padding:5px 12px;border-radius:5px;box-shadow:0 4px 12px rgba(41,63,61,0.08);opacity:0;z-index:25;transform-origin:left center}
 #s5-root .reserve-ledger{position:absolute;left:988px;top:582px;width:852px;display:flex;gap:24px;z-index:20}
 #s5-root .reserve-card{flex:1;background:#F4EFE4;border:2px solid #BFB8A4;border-top:5px solid #286B75;border-radius:8px;padding:16px 20px;box-shadow:0 8px 24px rgba(41,63,61,0.09);opacity:0;transform-origin:center bottom}
@@ -242,35 +233,37 @@
 #s5-root .reserve-card strong{font:500 58px/1.1 Literata,serif;color:#286B75;font-variant-numeric:tabular-nums}
 #s5-root .reserve-card.bat-card strong{color:#A64F32}
 #s5-root .reserve-card h2{font:700 25px/1.2 'Source Sans 3',sans-serif;margin:8px 0;color:#293F3D}
-#s5-root .reserve-card p{font:400 22px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
+#s5-root .reserve-card p{font:400 23px/1.28 'Source Sans 3',sans-serif;margin:0;color:#53645D}
 
-/* Scene 8 (s6): Pilot Panorama & Closing Credits */
-#s6-root .sum{font:500 50px Literata,serif;top:48px}
-#s6-root .pilot-steps{position:absolute;left:980px;top:220px;width:840px;display:flex;flex-direction:column;gap:16px;z-index:15}
-#s6-root .pilot-header{font:500 42px/1.15 Literata,serif;color:#293F3D;margin-bottom:4px;opacity:0}
-#s6-root .pilot-header span{display:block;font:600 23px/1.3 'Source Sans 3',sans-serif;color:#286B75;margin-top:4px}
-#s6-root .p-step{background:rgba(244,239,228,0.97);border:1.5px solid #C8C7B9;border-left:5px solid #A64F32;border-radius:7px;padding:12px 18px;box-shadow:0 6px 18px rgba(41,63,61,0.07);display:flex;align-items:center;gap:16px;opacity:0;transform-origin:left center}
-#s6-root .p-step b{font:700 26px/1 'Source Sans 3',sans-serif;color:#A64F32;min-width:190px}
-#s6-root .p-step span{font:400 23px/1.25 'Source Sans 3',sans-serif;color:#293F3D}
-#s6-root .card .veil{background:#F4EFE4}
+/* Scene 8 (s6): pilot steps as plain numbered rows, credits over a living sea */
+#s6-root .sum{font:500 42px Literata,serif;top:150px;left:40px;right:960px;gap:16px}
+#s6-root .pilot-steps{position:absolute;left:1000px;top:138px;width:840px;display:flex;flex-direction:column;gap:0;z-index:15}
+#s6-root .pilot-header{font:500 48px/1.1 Literata,serif;color:#293F3D;margin-bottom:16px;opacity:0}
+#s6-root .pilot-header .flag{display:block;font:600 25px/1.3 'Source Sans 3',sans-serif;color:#A64F32;margin-top:10px}
+#s6-root .p-step{display:flex;align-items:flex-start;gap:26px;padding:13px 0;border-top:1.5px solid #C8C7B9;opacity:0}
+#s6-root .p-step b{font:500 58px/0.9 Literata,serif;color:#A64F32;min-width:48px}
+#s6-root .p-step h4{margin:0;font:600 34px/1.15 'Source Sans 3',sans-serif;color:#293F3D}
+#s6-root .p-step span{display:block;margin-top:2px;font:400 24px/1.3 'Source Sans 3',sans-serif;color:#53645D}
+#s6-root .card .veil{background:linear-gradient(#F4EFE4 0, #F4EFE4 72%, rgba(244,239,228,0) 88%)}
 #s6-root .card .tt text{font:500 136px Literata,serif;letter-spacing:-.03em;stroke-width:1.3}
-#s6-root .card .team{font:600 35px 'Source Sans 3',sans-serif;top:330px}
-#s6-root .card .members{top:410px}
+#s6-root .card .tag{position:absolute;left:0;right:0;top:318px;text-align:center;font:italic 500 36px Literata,serif;color:#286B75;opacity:0}
+#s6-root .card .team{font:600 33px 'Source Sans 3',sans-serif;top:384px}
+#s6-root .card .members{top:450px}
 #s6-root .card .m{font:400 30px/1.5 'Source Sans 3',sans-serif}
 #s6-root .card .m b{font:600 28px/1.6 'Source Sans 3',sans-serif;color:#293F3D;font-variant-numeric:tabular-nums}
-#s6-root .card .plate{border-radius:8px;top:730px;height:144px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
+#s6-root .card .plate{border-radius:8px;top:735px;height:136px;border:1.5px solid #DED4BD;box-shadow:0 6px 20px rgba(41,63,61,0.07)}
 </style>
 
-      <div data-hf-id="hf-3la0" id="s5-root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="30">
+      <div data-hf-id="hf-3la0" id="s5-root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="33">
         <div data-hf-id="hf-12x1" class="cam">
           <div data-hf-id="hf-oy59" class="world" data-layout-allow-overflow="">
             <div data-hf-id="hf-jt0d" class="ctitle"><span data-hf-id="hf-ryto" class="k">Layanan:</span> 8 lampu jalur, 5 kios dan kontrol</div>
             <div data-hf-id="hf-x4u3" class="cap">Kios wisata</div>
             <div data-hf-id="hf-3zht" class="lbl hide" data-k="pump" style="left: 1122px; top: 516px" data-leader="1220,516,1220,488">Pompa tekanan tinggi</div>
-            <div data-hf-id="hf-id9d" class="lbl hide" data-k="membrane" style="left: 1280px; top: 334px" data-leader="1400,372,1400,398">Membran Reverse Osmosis</div>
+            <div data-hf-id="hf-id9d" class="lbl hide" data-k="membrane" style="left: 1280px; top: 334px" data-leader="1400,372,1400,398">Membran osmosis balik (RO)</div>
             <div data-hf-id="hf-wh92" class="lbl hide k-fresh" data-k="water" style="left: 1280px; top: 554px" data-leader="1380,554,1380,474">Molekul air lolos</div>
             <div data-hf-id="hf-ypgc" class="lbl hide k-brine" data-k="salt" style="left: 1546px; top: 554px" data-leader="1546,572,1528,572">Garam tertahan → brine</div>
-            <div class="lbl hide k-fresh" data-k="post" style="left: 1495px; top: 486px" data-leader="1531,486,1531,470">Pascapengolahan &amp; uji mutu</div>
+            <div data-hf-id="hf-ydyr" class="lbl hide k-fresh" data-k="post" style="left: 1495px; top: 486px" data-leader="1531,486,1531,470">Pascapengolahan &amp; uji mutu</div>
             <div data-hf-id="hf-rwtf" class="lbl hide k-fresh" data-k="tap" style="left: 1736px; top: 330px" data-leader="1800,366,1842,404">Keran umum</div>
           </div>
         </div>
@@ -278,22 +271,15 @@
           <div data-hf-id="hf-kndt" class="pill"><span data-hf-id="hf-r75v" class="k">Pengolahan:</span><span data-hf-id="hf-r1ol">Listrik terkondisi</span><span data-hf-id="hf-08ha" class="ar">→</span><span data-hf-id="hf-jiad">Pompa &amp; Membran RO</span><span data-hf-id="hf-i2vm" class="ar late">→</span><span data-hf-id="hf-5jzi" class="f late">Pascaolah &amp; Produk Air</span></div>
         </div>
         <div data-hf-id="hf-bqba" class="scenario">
-          <div class="target"><strong>5 m³</strong><span>target air bersih produk / hari (recovery asumsi 40%)</span></div>
-          <div class="split-bar">
-            <div class="split-prod">40% Produk (5 m³)</div>
-            <div class="split-brine">60% Air Garam Pekat / Brine (7,5 m³)</div>
-          </div>
-          <div class="balance">
-            <span>Umpan masuk: 12,5 m³/hari</span>
-            <span>Produk air bersih: 5 m³/hari</span>
-            <span>Aliran brine: 7,5 m³/hari</span>
-          </div>
-          <p class="assumption">Produk memerlukan pascapengolahan &amp; pemeriksaan mutu (bukan langsung siap minum); pembuangan outfall brine wajib dirancang dan dipantau.</p>
+          <div data-hf-id="hf-ngf6" class="bal-head">Dari setiap <b data-hf-id="hf-gtvi">10 liter</b> air laut</div>
+          <div data-hf-id="hf-qtwv" class="cells"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><i data-hf-id="hf-ylp6"></i><i data-hf-id="hf-0l8b"></i><i data-hf-id="hf-0zjc"></i><i data-hf-id="hf-zsm9"></i><i data-hf-id="hf-06xa"></i><i data-hf-id="hf-26gf"></i><i data-hf-id="hf-2krg"></i></div>
+          <div data-hf-id="hf-l9xa" class="cell-legend"><span data-hf-id="hf-ykmu" class="lg-fresh"><b data-hf-id="hf-fh51">4 liter</b> air bersih</span><span data-hf-id="hf-32gj" class="lg-brine"><b data-hf-id="hf-55d3">6 liter</b> air garam pekat, dibuang aman</span></div>
+          <div data-hf-id="hf-2tsg" class="bal-day"><span data-hf-id="hf-8eif" class="k">Per hari</span><span data-hf-id="hf-gl83"><b data-hf-id="hf-01ez">12,5 m³</b> air laut</span><span data-hf-id="hf-wliq" class="ar">→</span><span data-hf-id="hf-t3oi" class="f"><b data-hf-id="hf-jln0">5 m³</b> air bersih</span><span data-hf-id="hf-irh5" class="ar">+</span><span data-hf-id="hf-at5v" class="b"><b data-hf-id="hf-26aj">7,5 m³</b> air garam</span></div>
         </div>
       </div>
 
       <script>
-        /* OWC-DESAL cross-section engine + studio-grade motion physics + sliding-card word subtitle.
+        /* OWC-DESAL cross-section engine, measured eases and word-synced captions.
    Every dynamic value is a pure function of scene-local time (100% seek-safe). */
 (function () {
   if (window.OWC) return;
@@ -344,15 +330,17 @@
   }
 
   // ---- wave plans per scene (phase φ, amplitude A); level L = MWL - A·sin φ ----
+  // Scene lengths come from src/refinement.mjs through the build; the fallback is the old cut.
+  const DUR = Object.assign({ 2: 25, 3: 18, 4: 22, 5: 30, 7: 26, 8: 24, 6: 15 }, {"1":21.5,"2":23.5,"3":17,"4":23.5,"5":33,"6":13.5,"7":25,"8":23});
   const plans = {
-    2: { dur: 25, phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, 19, 25) },
+    2: { dur: DUR[2], phi: (t) => (2 * Math.PI * t) / 5 - 1.5 * Math.PI, A: (t) => 4 + 14 * ramp(t, DUR[2] - 6, DUR[2]) },
     3: {
-      dur: 18,
-      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / 14.5)),
+      dur: DUR[3],
+      phi: (t) => (t < 3 ? -Math.PI / 2 - Math.PI * (1 - t / 3) ** 2 : -Math.PI / 2 + Math.PI * eis((t - 3) / (DUR[3] - 3.5))),
       A: (t) => (t < 3 ? 18 + 42 * smooth(t / 3) : 60),
     },
     4: {
-      dur: 22,
+      dur: DUR[4],
       phi: (t) =>
         t < 1.5 ? Math.PI / 2
         : t < 12 ? Math.PI / 2 + Math.PI * eis((t - 1.5) / 9)
@@ -361,12 +349,14 @@
     },
   };
   const P4END = plans[4].phi(plans[4].dur);
-  plans[5] = { dur: 30, phi: (t) => P4END + WN * t, A: () => 60 };
-  plans[7] = { dur: 26, phi: (t) => plans[5].phi(30) + WN * t, A: () => 60 };
-  plans[8] = { dur: 24, phi: (t) => plans[7].phi(26) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
-  plans[6] = { dur: 15, phi: (t) => plans[8].phi(24) + WN * t, A: () => 9 };
+  plans[5] = { dur: DUR[5], phi: (t) => P4END + WN * t, A: () => 60 };
+  plans[7] = { dur: DUR[7], phi: (t) => plans[5].phi(DUR[5]) + WN * t, A: () => 60 };
+  plans[8] = { dur: DUR[8], phi: (t) => plans[7].phi(DUR[7]) + WN * t, A: (t) => 60 * (1 - 0.85 * ramp(t, 2, 10)) };
+  plans[6] = { dur: DUR[6], phi: (t) => plans[8].phi(DUR[8]) + WN * t, A: () => 9 };
   const previous = { 3: 2, 4: 3, 5: 4, 7: 5, 8: 7, 6: 8 };
-  const offsets = { 2: 0, 3: 25, 4: 43, 5: 65, 7: 95, 8: 121, 6: 145 };
+  // continuous clock for ripples and flows across the cut order 2 → 3 → 4 → 5 → 7 → 8 → 6
+  const offsets = {};
+  [2, 3, 4, 5, 7, 8, 6].reduce((acc, n) => ((offsets[n] = acc), acc + DUR[n]), 0);
   const level = (p, t) => MWL - p.A(t) * Math.sin(p.phi(t));
 
   const simCache = {};
@@ -421,13 +411,60 @@
   }
 
   // ---- Studio-Grade Sliding-Card Word Subtitle Engine (Critically Damped Spring + Posture) ----
-  function mountSubtitle(root, subData) {
+  // Scene-local time of the nth spoken token starting with `word` (case/punctuation
+  // insensitive), so choreography follows the narration instead of hand-typed seconds.
+  const norm = (s) => String(s).toLowerCase().replace(/[^0-9a-zà-ÿ]/g, "");
+  function cues(subData) {
+    const off = (subData && subData.voOffset) || 0;
+    const ws = (subData && subData.words) || [];
+    const at = (word, nth = 1, fallback = 0, end = false) => {
+      const n = norm(word);
+      let c = 0;
+      for (let i = 0; i < ws.length; i++) {
+        // each timed word carries its own display token ('63 GW' is one token), so never re-split the text
+        if (norm(ws[i].w).startsWith(n) && ++c === nth) return off + ws[i].t + (end ? ws[i].d : 0);
+      }
+      return fallback;
+    };
+    at.end = (word, nth = 1, fallback = 0) => at(word, nth, fallback, true);
+    at.voEnd = ws.length ? off + ws[ws.length - 1].t + ws[ws.length - 1].d : 0;
+    return at;
+  }
+
+  // Maps scene times authored against an earlier narration onto the current one:
+  // piecewise-linear through matching words (same script), anchored at 0 and at the scene ends.
+  function warp(oldWords, oldOffset, oldDur, subData, newDur) {
+    const nw = (subData && subData.words) || [];
+    const pts = [[0, 0]];
+    const n = Math.min(oldWords.length, nw.length);
+    for (let i = 0; i < n; i++) pts.push([oldOffset + oldWords[i].t, subData.voOffset + nw[i].t]);
+    pts.push([oldDur, newDur]);
+    pts.sort((a, b) => a[0] - b[0]);
+    const T = (x) => {
+      if (x <= pts[0][0]) return x;
+      for (let i = 1; i < pts.length; i++) {
+        if (x <= pts[i][0]) {
+          const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+          return x1 === x0 ? y1 : y0 + ((x - x0) * (y1 - y0)) / (x1 - x0);
+        }
+      }
+      return x - oldDur + newDur;
+    };
+    // a timeline whose position arguments are written in the old clock
+    T.timeline = (tl) => {
+      for (const m of ["to", "from", "fromTo", "set"]) {
+        const f = tl[m].bind(tl);
+        tl[m] = (...a) => { if (typeof a[a.length - 1] === "number") a[a.length - 1] = T(a[a.length - 1]); return f(...a); };
+      }
+      return tl;
+    };
+    return T;
+  }
+
+  function mountSubtitle(root, subData, opts = {}) {
     if (!subData || !Array.isArray(subData.words) || !subData.words.length) return null;
-    const rawTokens = (subData.text || "").trim().split(/\s+/).filter(Boolean);
-    const words = subData.words.map((w, i) => {
-      const tok = rawTokens[i] || w.w;
-      return { t: w.t, d: w.d, w: tok };
-    });
+    const mute = opts.mute || [];
+    const words = subData.words.map((w) => ({ t: w.t, d: w.d, w: String(w.w).replace(/ /g, "\u00a0") }));
 
     const chunks = [];
     let cur = [];
@@ -442,6 +479,7 @@
         cur.length >= 7 ||
         charCount >= 44 ||
         (endsPunct && cur.length >= 3) ||
+        /[.?!:]$/.test(item.w) ||
         (nextStartsCap && cur.length >= 4)
       ) {
         chunks.push({
@@ -466,9 +504,6 @@
     const chunkEls = chunks.map((ch) => {
       const cEl = document.createElement("div");
       cEl.className = "vo-chunk";
-      const card = document.createElement("span");
-      card.className = "vo-sliding-card";
-      cEl.appendChild(card);
       const spans = ch.words.map((wObj) => {
         const sp = document.createElement("span");
         sp.className = "vo-w";
@@ -477,7 +512,7 @@
         return sp;
       });
       layer.appendChild(cEl);
-      return { ch, cEl, card, spans, boxes: null };
+      return { ch, cEl, spans };
     });
     root.appendChild(layer);
 
@@ -485,6 +520,10 @@
     return {
       update(sceneTime) {
         const voT = sceneTime - voOffset;
+        // On-screen type that already says the line (a question, a title) mutes the caption.
+        let gain = 1;
+        for (const [a, b] of mute) gain = Math.min(gain, 1 - clamp((sceneTime - a + 0.2) / 0.2, 0, 1) * clamp((b - sceneTime) / 0.2, 0, 1));
+        layer.style.opacity = gain.toFixed(3);
         let activeIdx = -1;
         for (let i = 0; i < chunkEls.length; i++) {
           const c = chunkEls[i].ch;
@@ -515,34 +554,11 @@
           item.cEl.style.opacity = (fadeIn * fadeOut).toFixed(3);
           item.cEl.style.transform = `translate3d(0, ${yOffset.toFixed(2)}px, 0)`;
 
-          item.boxes = item.spans.map((sp) => ({
-            left: sp.offsetLeft,
-            width: sp.offsetWidth,
-          }));
-
+          // the spoken word is marked by class only (CSS underline on the span): no layout reads per frame
           let wIdx = 0;
           for (let k = 0; k < c.words.length; k++) {
             if (voT >= c.words[k].t - 0.035) wIdx = k;
           }
-
-          const curBox = item.boxes[wIdx] || { left: 0, width: 60 };
-          const curWord = c.words[wIdx];
-          let x = curBox.left;
-          let w = curBox.width;
-          let stretchX = 1;
-
-          // Critically-damped spring interpolation with subtle velocity stretch (Emil Kowalski / motionmaxxing)
-          if (wIdx > 0) {
-            const prevBox = item.boxes[wIdx - 1];
-            const rawU = clamp((voT - curWord.t) / 0.085, 0, 1);
-            const springU = spring(rawU, 15, 0.84);
-            x = prevBox.left + (curBox.left - prevBox.left) * springU;
-            w = prevBox.width + (curBox.width - prevBox.width) * springU;
-            stretchX = 1 + 0.055 * Math.sin(Math.PI * rawU);
-          }
-
-          item.card.style.transform = `translate3d(${(x - 8).toFixed(1)}px, -50%, 0) scaleX(${stretchX.toFixed(3)})`;
-          item.card.style.width = `${Math.max(24, w + 16).toFixed(1)}px`;
 
           for (let k = 0; k < item.spans.length; k++) {
             const sp = item.spans[k];
@@ -889,7 +905,7 @@
     return { svg, L, update, cam, applyCam, frame, prepDraw, leaders, sim: S, C };
   }
 
-  window.OWC = { build, mountSubtitle, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
+  window.OWC = { build, mountSubtitle, cues, warp, DUR, plans, sim, clamp, smooth, ramp, eis, ease, spring, frac, rng, C, WMAX };
 })();
 
         (() => {
@@ -897,17 +913,19 @@
           const $ = (s) => root.querySelector(s);
           const world = $(".world");
           const { ramp } = window.OWC;
-          const sub = window.OWC.mountSubtitle(root, {"voOffset":0.6,"text":"Listrik dikondisikan, lalu dibagi untuk fasilitas dan pompa osmosis balik. Air laut disaring dan didorong melewati membran. Air menembus membran, garam tertahan. Produk tetap perlu pascapengolahan dan pemeriksaan mutu. Pada contoh perolehan empat puluh persen, dua belas koma lima meter kubik umpan menjadi lima meter kubik produk dan tujuh koma lima meter kubik air garam pekat. Aliran pekat ini perlu dikelola.","words":[{"t":0.1125,"d":0.375,"w":"Listrik"},{"t":0.4875,"d":0.8125,"w":"dikondisikan"},{"t":1.625,"d":0.2375,"w":"lalu"},{"t":1.8625,"d":0.35,"w":"dibagi"},{"t":2.2125,"d":0.2125,"w":"untuk"},{"t":2.425,"d":0.6,"w":"fasilitas"},{"t":3.025,"d":0.1875,"w":"dan"},{"t":3.2125,"d":0.2875,"w":"pompa"},{"t":3.5,"d":0.5,"w":"osmosis"},{"t":4,"d":0.4375,"w":"balik"},{"t":5.275,"d":0.3,"w":"Air"},{"t":5.575,"d":0.3,"w":"laut"},{"t":5.875,"d":0.4875,"w":"disaring"},{"t":6.3625,"d":0.1375,"w":"dan"},{"t":6.5,"d":0.35,"w":"didorong"},{"t":6.85,"d":0.375,"w":"melewati"},{"t":7.225,"d":0.5875,"w":"membran"},{"t":8.65,"d":0.3125,"w":"Air"},{"t":8.9625,"d":0.375,"w":"menembus"},{"t":9.3375,"d":0.5,"w":"membran"},{"t":10.125,"d":0.3875,"w":"garam"},{"t":10.5125,"d":0.7,"w":"tertahan"},{"t":12.05,"d":0.35,"w":"Produk"},{"t":12.4,"d":0.2375,"w":"tetap"},{"t":12.6375,"d":0.225,"w":"perlu"},{"t":12.8625,"d":0.8375,"w":"pascapengolahan"},{"t":13.7,"d":0.1625,"w":"dan"},{"t":13.8625,"d":0.4875,"w":"pemeriksaan"},{"t":14.35,"d":0.4875,"w":"mutu"},{"t":15.6875,"d":0.2125,"w":"Pada"},{"t":15.9,"d":0.3,"w":"contoh"},{"t":16.2,"d":0.375,"w":"perolehan"},{"t":16.575,"d":0.2,"w":"empat"},{"t":16.775,"d":0.1625,"w":"puluh"},{"t":16.9375,"d":0.4875,"w":"persen"},{"t":17.725,"d":0.1875,"w":"dua"},{"t":17.9125,"d":0.225,"w":"belas"},{"t":18.1375,"d":0.175,"w":"koma"},{"t":18.3125,"d":0.1625,"w":"lima"},{"t":18.475,"d":0.2125,"w":"meter"},{"t":18.6875,"d":0.2625,"w":"kubik"},{"t":18.95,"d":0.3125,"w":"umpan"},{"t":19.2625,"d":0.325,"w":"menjadi"},{"t":19.5875,"d":0.1875,"w":"lima"},{"t":19.775,"d":0.225,"w":"meter"},{"t":20,"d":0.25,"w":"kubik"},{"t":20.25,"d":0.3625,"w":"produk"},{"t":20.6125,"d":0.1875,"w":"dan"},{"t":20.8,"d":0.3125,"w":"tujuh"},{"t":21.1125,"d":0.2,"w":"koma"},{"t":21.3125,"d":0.175,"w":"lima"},{"t":21.4875,"d":0.2375,"w":"meter"},{"t":21.725,"d":0.3,"w":"kubik"},{"t":22.025,"d":0.2625,"w":"air"},{"t":22.2875,"d":0.25,"w":"garam"},{"t":22.5375,"d":0.3625,"w":"pekat"},{"t":23.7375,"d":0.3875,"w":"Aliran"},{"t":24.125,"d":0.225,"w":"pekat"},{"t":24.35,"d":0.3,"w":"ini"},{"t":24.65,"d":0.275,"w":"perlu"},{"t":24.925,"d":0.6375,"w":"dikelola"}]});
+          const SUB = {"voOffset":0.5,"text":"Listrik itu menghidupkan lampu fasilitas dan pompa tekanan tinggi. Air laut disaring, lalu didorong menembus membran osmosis balik. Molekul air lolos, garam tertahan. Air hasilnya diolah dan diperiksa mutunya sebelum dipakai. Dari setiap 10 liter air laut, 4 liter menjadi air bersih, dan 6 liter kembali sebagai air garam pekat yang harus dibuang dengan aman. Jadi, 5 m³ air bersih sehari memerlukan 12,5 m³ air laut.","words":[{"t":0.88,"d":0.32,"w":"Listrik"},{"t":1.28,"d":0.24,"w":"itu"},{"t":1.6,"d":0.56,"w":"menghidupkan"},{"t":2.28,"d":0.16,"w":"lampu"},{"t":2.48,"d":0.72,"w":"fasilitas"},{"t":3.32,"d":0.12,"w":"dan"},{"t":3.52,"d":0.32,"w":"pompa"},{"t":3.92,"d":0.24,"w":"tekanan"},{"t":4.24,"d":0.6,"w":"tinggi."},{"t":5.04,"d":0.16,"w":"Air"},{"t":5.28,"d":0.16,"w":"laut"},{"t":5.52,"d":0.8,"w":"disaring,"},{"t":6.36,"d":0.2,"w":"lalu"},{"t":6.68,"d":0.44,"w":"didorong"},{"t":7.2,"d":0.4,"w":"menembus"},{"t":7.68,"d":0.24,"w":"membran"},{"t":8,"d":0.4,"w":"osmosis"},{"t":8.48,"d":0.4,"w":"balik."},{"t":9.44,"d":0.24,"w":"Molekul"},{"t":9.8,"d":0.12,"w":"air"},{"t":10.04,"d":0.68,"w":"lolos,"},{"t":10.8,"d":0.32,"w":"garam"},{"t":11.2,"d":0.96,"w":"tertahan."},{"t":12.24,"d":0.08,"w":"Air"},{"t":12.4,"d":0.4,"w":"hasilnya"},{"t":12.88,"d":0.48,"w":"diolah"},{"t":13.44,"d":0.08,"w":"dan"},{"t":13.56,"d":0.44,"w":"diperiksa"},{"t":14.08,"d":0.4,"w":"mutunya"},{"t":14.56,"d":0.24,"w":"sebelum"},{"t":14.84,"d":0.72,"w":"dipakai."},{"t":15.84,"d":0.24,"w":"Dari"},{"t":16.16,"d":0.32,"w":"setiap"},{"t":16.56,"d":0.72,"w":"10 liter"},{"t":17.36,"d":0.16,"w":"air"},{"t":17.6,"d":0.64,"w":"laut,"},{"t":18.36,"d":0.52,"w":"4 liter"},{"t":18.96,"d":0.4,"w":"menjadi"},{"t":19.44,"d":0.08,"w":"air"},{"t":19.6,"d":0.72,"w":"bersih,"},{"t":20.44,"d":0.12,"w":"dan"},{"t":20.64,"d":0.64,"w":"6 liter"},{"t":21.44,"d":0.4,"w":"kembali"},{"t":21.92,"d":0.4,"w":"sebagai"},{"t":22.4,"d":0.24,"w":"air"},{"t":22.72,"d":0.16,"w":"garam"},{"t":22.96,"d":0.4,"w":"pekat"},{"t":23.48,"d":0.12,"w":"yang"},{"t":23.68,"d":0.32,"w":"harus"},{"t":24.04,"d":0.36,"w":"dibuang"},{"t":24.48,"d":0.16,"w":"dengan"},{"t":24.72,"d":0.52,"w":"aman."},{"t":25.507,"d":0.493,"w":"Jadi,"},{"t":26.16,"d":0.8,"w":"5 m³"},{"t":27.04,"d":0.08,"w":"air"},{"t":27.2,"d":0.24,"w":"bersih"},{"t":27.52,"d":0.48,"w":"sehari"},{"t":28.16,"d":0.56,"w":"memerlukan"},{"t":28.88,"d":1.44,"w":"12,5 m³"},{"t":30.4,"d":0.16,"w":"air"},{"t":30.6,"d":0.6,"w":"laut."}]}, D = 33;
+          const sub = window.OWC.mountSubtitle(root, SUB);
+          const cue0 = window.OWC.cues(SUB), tRo = cue0("disaring", 1, 5.3), tTap = cue0("10", 1, 16.6);
           const W = window.OWC.build(world, {
             prefix: "s5",
             scene: 5,
             fn: {
-              gridOn: (t) => ramp(t, 2.6, 5.2),
-              pump: (t) => ramp(t, 3.6, 4.8),
-              ro: (t) => ramp(t, 5.6, 7.0),
+              gridOn: (t) => ramp(t, 1.8, 4.4),
+              pump: (t) => ramp(t, 2.85, 4.0),
+              ro: (t) => ramp(t, tRo - 0.4, tRo + 1.0),
               tank: (t) => 0.3 + 0.42 * ramp(t, 12.0, 28.5),
-              tapOn: (t) => ramp(t, 19.8, 20.8),
-              branch: (t) => ramp(t, 1.4, 2.2),
+              tapOn: (t) => ramp(t, tTap - 0.6, tTap + 0.4),
+              branch: (t) => ramp(t, 1.0, 1.8),
             },
           });
           const L = W.L;
@@ -927,53 +945,62 @@
             if (ld) tl.fromTo(ld, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, at + 0.08);
           }
 
-          // Camera choreography synced to VO:
-          // 0-1.8s: pull out to system; 7.0s-8.5s: zoom into membrane (VO: "melewati membran" at 7.45s);
-          // holds through 19.1s (covering 104s review shot!), then pulls back at 19.2s-20.8s to show full system & water balance through 29.4s (covering 113s review shot!)
+          const cue = window.OWC.cues(SUB);
+          const tZoom = cue("didorong", 1, 6.4) - 0.3, tBack = cue("dipakai", 1, 14.6) + 0.25, tLit = cue("10", 1, 16.6);
+          // Camera: pull out to the system, push into the membrane as it is named, pull back for the water balance
           tl.fromTo(W.cam, { s: F.s, x: F.x, y: -2.5 }, { s: 1, x: 0, y: 0, duration: 1.8, ease: "power2.inOut", onUpdate: W.applyCam }, 0);
           const Z = W.frame(1.9, 1400, 440, 960, 500);
-          tl.to(W.cam, { ...Z, duration: 1.5, ease: "power2.inOut", onUpdate: W.applyCam }, 7.0);
-          tl.to(W.cam, { s: 1, x: 0, y: 0, duration: 1.6, ease: "power2.inOut", onUpdate: W.applyCam }, 19.2);
+          tl.to(W.cam, { ...Z, duration: 1.5, ease: "power2.inOut", onUpdate: W.applyCam }, tZoom);
+          tl.to(W.cam, { s: 1, x: 0, y: 0, duration: 1.3, ease: "power2.inOut", onUpdate: W.applyCam }, tBack);
 
-          // 1. Power split (VO: "lalu dibagi untuk fasilitas dan pompa osmosis balik" at 2.2s - 5.0s)
+          // 1. Power splits to the facility and the pump as they are named
           [L.pwA.base, L.pwB.base].forEach((p) => {
             const len = p.getTotalLength();
             p.style.strokeDasharray = `${len} ${len}`;
             p.style.strokeDashoffset = `${len}`;
           });
-          tl.fromTo([L.brA, L.brB], { opacity: 0 }, { opacity: 1, duration: 0.3 }, 1.2);
-          tl.to([L.pwA.base, L.pwB.base], { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, 1.2);
-          tl.fromTo(L.junction, { scale: 1 }, { scale: 1.8, svgOrigin: "980 210", duration: 0.3, ease: "power2.out", immediateRender: false }, 1.3);
-          tl.to(L.junction, { scale: 1, svgOrigin: "980 210", duration: 0.45, ease: "power2.inOut" }, 1.6);
+          const tSplit = cue("menghidupkan", 1, 1.3) - 0.1;
+          tl.fromTo([L.brA, L.brB], { opacity: 0 }, { opacity: 1, duration: 0.3 }, tSplit);
+          tl.to([L.pwA.base, L.pwB.base], { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, tSplit);
+          tl.fromTo(L.junction, { scale: 1 }, { scale: 1.8, svgOrigin: "980 210", duration: 0.3, ease: "power2.out", immediateRender: false }, tSplit + 0.1);
+          tl.to(L.junction, { scale: 1, svgOrigin: "980 210", duration: 0.45, ease: "power2.inOut" }, tSplit + 0.4);
+          tl.fromTo(L.grid, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, cue("lampu", 1, 1.8) - 0.1);
+          tl.fromTo($(".ctitle"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, cue("fasilitas", 1, 2.0));
+          tl.fromTo($(".cap"), { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, cue("fasilitas", 1, 2.0) + 0.3);
+          label("pump", cue("pompa", 1, 2.85));
+          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, cue("pompa", 1, 2.85) + 0.4);
 
-          // 2. Facility card (VO: "untuk fasilitas" at 2.8s) & RO Pump (VO: "dan pompa osmosis balik" at 3.8s)
-          tl.fromTo(L.grid, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 2.5);
-          tl.fromTo($(".ctitle"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 2.7);
-          tl.fromTo($(".cap"), { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 3.2);
-          label("pump", 3.8);
-          tl.fromTo($(".pill"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 4.0);
+          // 2. Membrane: water passes, salt is held
+          tl.fromTo(L.molecules, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, cue("membran", 1, 7.1) - 0.2);
+          label("membrane", cue("membran", 1, 7.1));
+          label("water", cue("Molekul", 1, 9.1));
+          label("salt", cue("garam", 1, 10.5));
 
-          // 3. Membrane filtration & separation (VO: "melewati membran. Air menembus membran, garam tertahan" at 7.45s - 11.8s)
-          tl.fromTo(L.molecules, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 7.4);
-          label("membrane", 7.8);
-          label("water", 9.2);
-          label("salt", 10.6);
+          // 3. Post-treatment and quality check
+          label("post", cue("diolah", 1, 13.0));
+          tl.to(root.querySelectorAll(".pill .late"), { opacity: 1, duration: 0.45, ease: "power1.out", stagger: 0.12 }, cue("diolah", 1, 13.0) + 0.2);
+          tl.to([lblMap["water"], lblMap["salt"], lblMap["post"], W.leaders.get(lblMap["water"]), W.leaders.get(lblMap["salt"]), W.leaders.get(lblMap["post"]), $(".pill")], { opacity: 0, duration: 0.3, ease: "power2.in" }, tBack - 0.3);
 
-          // 4. Post-treatment & quality check (VO: "Produk tetap perlu pascapengolahan dan pemeriksaan mutu" at 12.65s - 15.5s)
-          label("post", 13.0);
-          tl.to(root.querySelectorAll(".pill .late"), { opacity: 1, duration: 0.45, ease: "power1.out", stagger: 0.12 }, 13.2);
-          // Hide close-up post label before pull-back so it doesn't crowd the wide view
-          tl.to([lblMap["water"], lblMap["salt"], lblMap["post"], W.leaders.get(lblMap["water"]), W.leaders.get(lblMap["salt"]), W.leaders.get(lblMap["post"])], { opacity: 0, duration: 0.35 }, 19.15);
+          // 4. Water balance: ten litres of seawater, four become clean water, six return as brine
+          label("tap", tBack + 1.0);
+          const card = $(".scenario"), cells = [...root.querySelectorAll(".cells i")];
+          tl.fromTo(card, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, Math.max(tBack + 1.1, tLit - 0.35));
+          tl.fromTo(cells, { opacity: 0, scale: 1.35 }, { opacity: 1, scale: 1, duration: 0.32, ease: "power3.out", stagger: 0.035 }, Math.max(tBack + 1.25, tLit));
+          const tFresh = cue("4", 1, 18.0), tBrine = cue("6", 1, 19.9), tDay = cue("Jadi", 1, 23.8);
+          tl.to(cells.slice(0, 4), { backgroundColor: "#286B75", duration: 0.3, ease: "power1.out", stagger: 0.06 }, tFresh);
+          tl.fromTo($(".lg-fresh"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tFresh + 0.15);
+          tl.to(cells.slice(4), { backgroundColor: "#676953", y: 8, duration: 0.3, ease: "power2.out", stagger: 0.05 }, tBrine);
+          tl.fromTo($(".lg-brine"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, tBrine + 0.15);
+          const day = [...root.querySelectorAll(".bal-day > span")];
+          tl.fromTo(day, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.36, ease: "power3.out", stagger: 0.07 }, tDay);
+          tl.fromTo($(".bal-day .f"), { color: "#293F3D" }, { color: "#286B75", duration: 0.3 }, cue("5", 1, 24.7));
+          tl.fromTo($(".bal-day > span:nth-child(2)"), { color: "#293F3D" }, { color: "#367B86", duration: 0.3 }, cue("12,5", 1, 26.6));
 
-          // 5. Water Balance Scenario Card appears at t=19.8s right as camera finishes pulling back (stays 9.6s through t=29.4s!)
-          label("tap", 20.2);
-          tl.fromTo($(".scenario"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 19.8);
-
-          tl.to([...root.querySelectorAll(".scenario,.pill,.lbl,.ctitle,.cap"), ...W.leaders.values()], { opacity: 0, duration: 0.45, ease: "power1.in" }, 29.4);
+          tl.to([...root.querySelectorAll(".scenario,.lbl,.ctitle,.cap"), ...W.leaders.values()], { opacity: 0, duration: 0.45, ease: "power2.in" }, D - 0.6);
 
           const clock = { t: 0 };
           tl.fromTo(clock, { t: 0 }, {
-            t: 30, duration: 30, ease: "none",
+            t: D, duration: D, ease: "none",
             onUpdate: () => {
               W.update(clock.t);
               if (sub) sub.update(clock.t);
